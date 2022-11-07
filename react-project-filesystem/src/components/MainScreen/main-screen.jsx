@@ -19,11 +19,11 @@ import Button from '@mui/material/Button';
 const Mainscreen = () => {
 return(
     <div className="main">
-        {/* <img
+        <img
             className="img1"
              src={img1}
              alt = ''
-            /> */}
+            />
         <div className="content">
             <h1>Transportation Done</h1> 
             <h1 className="h1s">Right</h1> 
