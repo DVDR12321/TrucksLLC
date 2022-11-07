@@ -1,6 +1,6 @@
 import React from "react";
 import './main-screen.css'
-import img1 from '../../assets/viber_image_2022-11-03_00-14-39-232.jpg'
+import img1 from '../../assets/usamap2.gif'
 import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
 
