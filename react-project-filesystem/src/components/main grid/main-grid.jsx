@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 //import Layout from '../layout/layout';
 import Mainscreen from '../MainScreen/main-screen';
+import Videoplayer from '../video screen/video-player';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -22,7 +23,7 @@ export default function MainGrid() {
             <Mainscreen></Mainscreen>
         </Grid>
         <Grid item xs={12}>
-          <Item>2 Video screen</Item>
+          <Videoplayer></Videoplayer>
         </Grid>
         <Grid container item spacing ={2}>
           <Grid item xs = {6}>

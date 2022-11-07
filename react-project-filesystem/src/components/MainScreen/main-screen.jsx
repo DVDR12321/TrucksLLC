@@ -30,12 +30,12 @@ return(
             <Button 
                 sx={{
                     position:'absolute',
-                    top:"115px",
+                    top:"119px",
                     left:"500px",
                     backgroundColor: "#F00808",
                     fontFamily :'helvetica',
                     fontWeight : 'bold',
-                    fontSize :'20px'
+                    fontSize :'17px'
                     
                 }} 
                 variant="contained"
