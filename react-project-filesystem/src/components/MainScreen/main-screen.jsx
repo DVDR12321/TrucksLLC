@@ -19,22 +19,28 @@ import Button from '@mui/material/Button';
 const Mainscreen = () => {
 return(
     <div className="main">
-        <img
+        {/* <img
             className="img1"
              src={img1}
              alt = ''
-            />
+            /> */}
         <div className="content">
-            <h1>Transportation done</h1> 
+            <h1>Transportation Done</h1> 
             <h1 className="h1s">Right</h1> 
             <Button 
-            sx={{
-                position:'absolute',
-                top:"92px",
-                left:"380px"
-            }} 
-            variant="contained"
-            color = "error"
+                sx={{
+                    position:'absolute',
+                    top:"115px",
+                    left:"500px",
+                    backgroundColor: "#F00808",
+                    fontFamily :'helvetica',
+                    fontWeight : 'bold',
+                    fontSize :'20px'
+                    
+                }} 
+                variant="contained"
+                color = "error"
+                size ='large'
             >
             Join us
             </Button>
