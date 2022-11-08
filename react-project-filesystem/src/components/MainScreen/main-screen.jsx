@@ -54,7 +54,7 @@ return(
                         </Button>
                 </Grid>
             </Grid>
-            <Grid container item xs = {12} spacing={0} style = {{height:"35vh", backgroundColor:'#444444',alignItems:'center', justifyContent:'center'}}>
+            <Grid container item xs = {12} spacing={1} style = {{height:"35vh", backgroundColor:'#444444',alignItems:'center', justifyContent:'center'}}>
                 <Grid item xs={3} >
                     <Brokercard/>
                 </Grid>
