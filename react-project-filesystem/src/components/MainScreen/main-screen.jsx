@@ -1,8 +1,10 @@
 import React from "react";
 import './main-screen.css'
-import img1 from '../../assets/usamap2.gif'
+import img2 from '../../assets/chicago.jpg'
 import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
+import Grid from '@mui/material/Grid';
+import Brokercard from "./broker-card";
 
 // const Mainbutton = styled.button`
 //   padding: 15px;
@@ -18,43 +20,55 @@ import Button from '@mui/material/Button';
 
 const Mainscreen = () => {
 return(
-    <div className="main">
-        <img
-            className="img1"
-             src={img1}
-             alt = ''
-            />
-        <div className="content">
-            <h1>Transportation Done</h1> 
-            <h1 className="h1s">Right</h1> 
-            <Button 
-                sx={{
-                    position:'absolute',
-                    top:"119px",
-                    left:"500px",
-                    backgroundColor: "#F00808",
-                    fontFamily :'helvetica',
-                    fontWeight : 'bold',
-                    fontSize :'17px'
-                    
-                }} 
-                variant="contained"
-                color = "error"
-                size ='large'
-            >
-            Join us
-            </Button>
-            
-            <div className="description">
-            <p>
-            We provide safe and reliable transportation services to a diverse group of
-            customers throughout the continental United States, Canada and Mexico.
-            </p>
-        </div>
-        </div>
-        
-
-    </div>
+    <Grid container >
+            <Grid container spacing={0} items xs={12}  style = {{height:"65vh", backgroundImage: `url(${img2})`, backgroundSize: 'cover'}}>
+                <Grid item xs= {6}>
+                    <div className="main">
+                        <h1 className="h11">
+                            Transporation
+                        </h1>
+                        <h1 className="h12">
+                            Done
+                            <h1 className="h13">
+                            Right
+                        </h1>
+                        </h1>
+                        
+                    </div>
+                </Grid>
+                <Grid item xs = {6}>
+                    <Button 
+                            sx={{
+                                position:'absolute',
+                                top:"300px",
+                                backgroundColor: "#ba000d",
+                                fontFamily :'helvetica',
+                                fontWeight : 'bold',
+                                fontSize :'25px'  
+                            }} 
+                            variant="contained"
+                            color="error"
+                            size ='large'
+                        >
+                        Join us
+                        </Button>
+                </Grid>
+            </Grid>
+            <Grid container item xs = {12} spacing={0} style = {{height:"35vh", backgroundColor:'#444444',alignItems:'center', justifyContent:'center'}}>
+                <Grid item xs={3} >
+                    <Brokercard/>
+                </Grid>
+                <Grid item xs={3} >
+                     <Brokercard/>
+                </Grid>
+                <Grid item xs={3}>
+                     <Brokercard/>
+                </Grid>
+                <Grid item xs={3}>
+                     <Brokercard/>
+                </Grid>
+            </Grid>
+    </Grid>
 );
 }
 export default Mainscreen;
