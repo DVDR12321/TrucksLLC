@@ -1,10 +1,13 @@
 import React from "react";
 import './main-screen.css'
 import img2 from '../../assets/chicago.jpg'
+import img3 from '../../assets/usagif2.gif'
+import img4 from '../../assets/logo.gif'
+import img5 from '../../assets/truckgif.gif'
 import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
 import Grid from '@mui/material/Grid';
-import Brokercard from "./broker-card";
+import Brokercard from "../card-componennt/broker-card";
 
 // const Mainbutton = styled.button`
 //   padding: 15px;
@@ -32,11 +35,11 @@ return(
                             <h1 className="h13">
                             Right
                         </h1>
-                        </h1>
-                        
+                        </h1> 
                     </div>
                 </Grid>
                 <Grid item xs = {6}>
+                    
                     <Button 
                             sx={{
                                 position:'absolute',
@@ -54,15 +57,26 @@ return(
                         </Button>
                 </Grid>
             </Grid>
-            <Grid container item xs = {12} spacing={1} style = {{height:"35vh", backgroundColor:'#444444',alignItems:'center', justifyContent:'center'}}>
+            <Grid container spacing={1} item xs = {12} style = {{height:"35vh", backgroundColor:'#1f1818',alignItems:'center', justifyContent:'center'}}>
                 <Grid item xs={3} >
-                    <Brokercard/>
+                     <Brokercard
+                     imagep={img4}
+                     headerp = 'Who we are'
+                     textp = 'Find out about us and our mission'/>
                 </Grid>
                 <Grid item xs={3} >
-                     <Brokercard/>
+                    <Brokercard 
+                    imagep={img3} 
+                    headerp='Where we are'
+                    textp='Click to find out more about our location and how to reach us'/>
                 </Grid>
-                <Grid item xs={3}>
-                     <Brokercard/>
+                <Grid item xs={3}
+                >
+                     <Brokercard
+                     imagep={img5}
+                     headerp="Our fleet"
+                     textp="Find out about our available assets"
+                     />
                 </Grid>
                 <Grid item xs={3}>
                      <Brokercard/>

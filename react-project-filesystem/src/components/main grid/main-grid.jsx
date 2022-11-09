@@ -18,11 +18,11 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function MainGrid() {
   return (
     <Box sx={{ flexGrow: 2 }}>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
             <Mainscreen></Mainscreen>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item spacing = {1} xs={12}>
           <Videoplayer></Videoplayer>
         </Grid>
         <Grid container item spacing ={2}>
