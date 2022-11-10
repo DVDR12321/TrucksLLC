@@ -11,8 +11,7 @@ const Brokercard = (props) => {
   const {imagep, headerp, textp} = props;
   return (
     <Card variant='outlined' style={{ 
-      transform: 'revert',
-    backgroundColor:'black',
+    backgroundColor:'#000000af',
     opacity:'0.9'}}>
     <CardActionArea >
             <CardMedia

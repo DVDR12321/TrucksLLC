@@ -25,33 +25,35 @@ const Mainscreen = () => {
 return(
     <Grid container >
             <Grid container spacing={0} items xs={12}  style = {{height:"65vh", backgroundImage: `url(${img2})`, backgroundSize: 'cover'}}>
-                <Grid item xs= {6}>
+                <Grid item  xs= {6}  >
                     <div className="main">
                         <h1 className="h11">
                             Transporation
-                        </h1>
-                        <h1 className="h12">
+                            <h1 className="h12">
                             Done
                             <h1 className="h13">
                             Right
                         </h1>
                         </h1> 
+                        </h1>
+                        
                     </div>
                 </Grid>
-                <Grid item xs = {6}>
-                    
+                <Grid item xs = {0} md={6} >
                     <Button 
                             sx={{
-                                position:'absolute',
-                                top:"300px",
+                                position:'relative',
+                                top:"39vb",
+                                left:"1vb",
                                 backgroundColor: "#ba000d",
                                 fontFamily :'helvetica',
                                 fontWeight : 'bold',
-                                fontSize :'25px'  
+                                fontSize :'25px',
+                                height:'7vb',
+                                width:'30vb'
                             }} 
                             variant="contained"
                             color="error"
-                            size ='large'
                         >
                         Join us
                         </Button>
