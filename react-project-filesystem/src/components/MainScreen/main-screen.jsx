@@ -1,9 +1,9 @@
 import React from "react";
-import './main-screen.css'
-import img2 from '../../assets/chicago.jpg'
-import img3 from '../../assets/usagif2.gif'
-import img4 from '../../assets/logo.gif'
-import img5 from '../../assets/truckgif.gif'
+import './main-screen.css';
+import img2 from '../../assets/chicago.jpg';
+import img3 from '../../assets/usagif2.gif';
+import img4 from '../../assets/logo.gif';
+import img5 from '../../assets/truckgif.gif';
 import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
 import Grid from '@mui/material/Grid';
@@ -24,7 +24,7 @@ import Brokercard from "../card-componennt/broker-card";
 const Mainscreen = () => {
 return(
     <Grid container >
-            <Grid container spacing={0} items xs={12}  style = {{height:"65vh", backgroundImage: `url(${img2})`, backgroundSize: 'cover'}}>
+            <Grid container spacing={1} items xs={12}  style = {{height:"60vh", backgroundImage: `url(${img2})`, backgroundSize: 'cover'}}>
                 <Grid item  xs= {6}  >
                     <div className="main">
                         <h1 className="h11">
@@ -36,10 +36,9 @@ return(
                         </h1>
                         </h1> 
                         </h1>
-                        
                     </div>
                 </Grid>
-                <Grid item xs = {0} md={6} >
+                <Grid item xs = {6} >
                     <Button 
                             sx={{
                                 position:'relative',
@@ -59,21 +58,20 @@ return(
                         </Button>
                 </Grid>
             </Grid>
-            <Grid container spacing={1} item xs = {12} style = {{height:"35vh", backgroundColor:'#1f1818',alignItems:'center', justifyContent:'center'}}>
+            <Grid container spacing={1} item xs = {12} style = {{height:"40vh", justifyContent:'center'}}>
                 <Grid item xs={3} >
                      <Brokercard
                      imagep={img4}
                      headerp = 'Who we are'
-                     textp = 'Find out about us and our mission'/>
+                     textp = 'Clic to ind out about us and our mission'/>
                 </Grid>
-                <Grid item xs={3} >
+                <Grid item xs={3}  >
                     <Brokercard 
                     imagep={img3} 
                     headerp='Where we are'
-                    textp='Click to find out more about our location and how to reach us'/>
+                    textp='Find out how to reach us'/>
                 </Grid>
-                <Grid item xs={3}
-                >
+                <Grid item xs={3} >
                      <Brokercard
                      imagep={img5}
                      headerp="Our fleet"

@@ -18,7 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function MainGrid() {
   return (
     <Box sx={{ flexGrow: 2 }}>
-      <Grid container spacing={0}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
             <Mainscreen></Mainscreen>
         </Grid>

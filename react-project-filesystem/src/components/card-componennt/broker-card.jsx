@@ -8,26 +8,30 @@ import './broker-card.css'
 import '../MainScreen/main-screen.css'
 
 const Brokercard = (props) => {
-  const {imagep, headerp, textp} = props;
+  const {imagep, headerp,} = props;
   return (
-    <Card variant='outlined' style={{ 
-    backgroundColor:'#000000af',
-    opacity:'0.9'}}>
+    <Card 
+      sx={{ 
+      backgroundColor:'#000000af',
+      opacity:'0.7',
+      height: '95%'
+    }}
+    >
     <CardActionArea >
             <CardMedia
               component="img"
-              height="140"
+              height="170"
               image={imagep}
               alt="XPO"
-              sx ={{opacity:'1',objectFit:"cover" }}
+              sx ={{opacity:'1',objectFit:"scale-down" }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h3" color='white' component="div" sx={{alignContent:'justify'}}>
+              <Typography gutterBottom variant="h4" color='white' component="div" sx={{textAlign:'center'}}>
                 {headerp}
               </Typography>
-              <Typography variant="body2" color="white" >
+              {/* <Typography variant="body1" color="white" sx={{textAlign:'center'}} >
                 {textp}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </CardActionArea>
     </Card>
