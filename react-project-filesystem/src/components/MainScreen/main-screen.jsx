@@ -48,7 +48,7 @@ return(
                                 backgroundColor: "#ba000d",
                                 fontFamily :'helvetica',
                                 fontWeight : 'bold',
-                                fontSize :'25px',
+                                fontSize :'5vb',
                                 height:'7vb',
                                 width:'30vb'
                             }} 
