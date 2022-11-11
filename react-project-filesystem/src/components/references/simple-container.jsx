@@ -1,6 +1,6 @@
 import React from "react";
 import './simple-container.css';
-import Carousel from  '../carousel/carousel';
+
 
 const Mycontainer = (props) => {
     const {Header, Body} = props;
@@ -8,7 +8,7 @@ const Mycontainer = (props) => {
     <div className="containerq">
         <h1 className = "Header"> {Header} </h1>
         <div className = "Separator"></div>
-        <div className = "Body"> <Carousel></Carousel>  </div>
+        <div className = "Body"> {Body}  </div>
     </div> 
     );
 };  
