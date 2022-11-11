@@ -1,9 +1,10 @@
 import React from "react";
 import './main-screen.css';
 import img2 from '../../assets/chicago.jpg';
-import img3 from '../../assets/usagif2.gif';
+import img3 from '../../assets/usa.webp';
 import img4 from '../../assets/logo.gif';
 import img5 from '../../assets/truckgif.gif';
+import img6 from '../../assets/piechart.webp'
 import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
 import Grid from '@mui/material/Grid';
@@ -79,7 +80,10 @@ return(
                      />
                 </Grid>
                 <Grid item xs={3}>
-                     <Brokercard/>
+                     <Brokercard
+                     imagep = {img6}
+                     headerp = "Our reviews"
+                     />
                 </Grid>
             </Grid>
     </Grid>

@@ -12,7 +12,7 @@ const Brokercard = (props) => {
   return (
     <Card 
       sx={{ 
-      backgroundColor:'#000000af',
+      backgroundColor:'black',
       opacity:'0.7',
       height: '95%'
     }}
@@ -23,7 +23,7 @@ const Brokercard = (props) => {
               height="170"
               image={imagep}
               alt="XPO"
-              sx ={{opacity:'1',objectFit:"scale-down" }}
+              sx ={{objectFit:"scale-down" }}
             />
             <CardContent>
               <Typography gutterBottom variant="h4" color='white' component="div" sx={{textAlign:'center'}}>
