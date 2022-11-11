@@ -1,7 +1,7 @@
 import React from "react";
 import './main-screen.css';
 import img2 from '../../assets/chicago.jpg';
-import img3 from '../../assets/usa.webp';
+import img3 from '../../assets/Usa.webp';
 import img4 from '../../assets/logo.gif';
 import img5 from '../../assets/truckgif.gif';
 import img6 from '../../assets/piechart.webp'

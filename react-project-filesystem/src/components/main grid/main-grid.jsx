@@ -5,6 +5,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Mainscreen from '../MainScreen/main-screen';
 import Videoplayer from '../video screen/video-player';
+import References from '../references/references';
+import Offers from '../offers/offers'
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -25,12 +27,12 @@ export default function MainGrid() {
         <Grid item spacing = {1} xs={12}>
           <Videoplayer></Videoplayer>
         </Grid>
-        <Grid container item spacing ={2}>
+        <Grid container item spacing ={1} sx = {{backgroundColor:'#1f1818'}}>
           <Grid item xs = {6}>
-            <Item> References </Item>
-            </Grid>
+            <References></References>
+          </Grid>
           <Grid item xs = {6}>
-            <Item>WhatWeOffer</Item>
+            <Offers/>
           </Grid>
         </Grid>
         <Grid item xs={12}>

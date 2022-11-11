@@ -1,0 +1,22 @@
+.containerq{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 70vb;
+    width: 80%;
+    background-color:#141010;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px;
+    margin: 30px;
+}
+.Header{
+    color:white;
+    font-size:7vb;
+}
+.Separator{
+    width: 20%;
+    height: 3px;
+    background: #be1010;
+    margin: 0 auto 40px auto;
+}
