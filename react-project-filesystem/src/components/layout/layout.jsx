@@ -1,8 +1,17 @@
-import * as React from "react";
-import MainGrid from "../MainGrid/MainGrid";
+import * as React from 'react';
+import AppHeader from '../Header/AppHeader';
+import MainGrid from '../MainGrid/MainGrid';
+
 
 const Layout = () => {
-  return <MainGrid></MainGrid>;
+
+  return (
+    <>
+    <AppHeader></AppHeader>
+    <MainGrid></MainGrid>
+    </>
+    
+  );
 };
 
 export default Layout;
