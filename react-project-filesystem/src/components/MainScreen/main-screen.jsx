@@ -9,6 +9,13 @@ import Button from '@mui/material/Button';
 //import styled from '@emotion/styled'
 import Grid from '@mui/material/Grid';
 import Brokercard from "../card-componennt/broker-card";
+// Links
+// import AboutUs from '../../Pages/AboutUs/AbouUs';
+// import Apply from '../../Pages/Apply/DriverApplication';
+// import Finances from '../../Pages/Finances/finances';
+// import OurFleet from '../../Pages/OurFleet/OurFleet';
+// import QandA from '../../Pages/QandA/quanda';
+// import {Route, Link} from 'react-router-dom';
 
 // const Mainbutton = styled.button`
 //   padding: 15px;
@@ -77,7 +84,8 @@ return(
                      imagep={img5}
                      headerp="Our fleet"
                      textp="Find out about our available assets"
-                     />
+                     >
+                    </Brokercard>
                 </Grid>
                 <Grid item xs={3}>
                      <Brokercard
