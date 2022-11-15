@@ -11,7 +11,6 @@ const Offers = () => {
             <li>Well maintained fleet</li> 
             <li>Responsible drivers</li> 
             </p>}>
-            
         </Mycontainer>
     )
 };

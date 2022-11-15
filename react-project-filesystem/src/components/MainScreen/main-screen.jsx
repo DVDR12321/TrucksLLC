@@ -55,7 +55,7 @@ return(
                             variant="contained"
                             color="error"
                         >
-                        Join us
+                        Apply
                         </Button>
                 </Grid>
             </Grid>
@@ -63,13 +63,13 @@ return(
                 <Grid item xs={3} >
                      <Brokercard
                      imagep={img4}
-                     headerp = 'Who we are'
+                     headerp = 'Finances'
                      textp = 'Clic to ind out about us and our mission'/>
                 </Grid>
                 <Grid item xs={3}  >
                     <Brokercard 
                     imagep={img3} 
-                    headerp='Where we are'
+                    headerp='About us'
                     textp='Find out how to reach us'/>
                 </Grid>
                 <Grid item xs={3} >
@@ -82,7 +82,7 @@ return(
                 <Grid item xs={3}>
                      <Brokercard
                      imagep = {img6}
-                     headerp = "Our reviews"
+                     headerp = "References"
                      />
                 </Grid>
             </Grid>

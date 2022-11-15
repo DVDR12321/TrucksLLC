@@ -1,6 +1,6 @@
 import React from "react";
 import {DefaultPlayer as Video} from 'react-html5video'
-import videop from '../../assets/videoplaceholder.mp4'
+import videop from '../../assets/vvd.mp4'
 import 'react-html5video/dist/styles.css';
 
 const Videoplayer = () => {
