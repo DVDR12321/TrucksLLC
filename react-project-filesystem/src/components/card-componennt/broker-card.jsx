@@ -6,15 +6,20 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./broker-card.css";
 import "../MainScreen/main-screen.css";
+//import styled from '@emotion/styled';
+
 
 const Brokercard = (props) => {
   const { imagep, headerp } = props;
   return (
     <Card
       sx={{
-        backgroundColor: "black",
-        opacity: "0.7",
+        backgroundColor: 'transparent',
         height: "95%",
+        outlineStyle: 'solid',
+        outlineWidth: '2px',
+        outlineColor: '#ff0000',
+        backdropFilter: 'blur(3px) sepia(90%)',
       }}
     >
       <CardActionArea>
@@ -22,7 +27,7 @@ const Brokercard = (props) => {
           component="img"
           height="170"
           image={imagep}
-          alt="XPO"
+          alt=""
           sx={{ objectFit: "scale-down" }}
         />
         <CardContent>
