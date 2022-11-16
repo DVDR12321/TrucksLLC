@@ -1,10 +1,10 @@
 import React from "react";
 import { DefaultPlayer as Video } from "react-html5video";
 // @ts-ignore
-import videop from '../../assets/vvd.mp4';
+import videop from "../../assets/vvd.mp4";
 import "react-html5video/dist/styles.css";
 
-const Videoplayer = () => {
+const VideoPlayer = () => {
   return (
     <
 // @ts-ignore
@@ -23,4 +23,4 @@ const Videoplayer = () => {
     </Video>
   );
 };
-export default Videoplayer;
+export default VideoPlayer;

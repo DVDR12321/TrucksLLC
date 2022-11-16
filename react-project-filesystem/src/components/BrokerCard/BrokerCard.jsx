@@ -4,12 +4,8 @@ import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import "./broker-card.css";
-import "../MainScreen/main-screen.css";
-//import styled from '@emotion/styled';
 
-
-const Brokercard = (props) => {
+const BrokerCard = (props) => {
   const { imagep, headerp } = props;
   return (
     <Card
@@ -48,4 +44,4 @@ const Brokercard = (props) => {
     </Card>
   );
 };
-export default Brokercard;
+export default BrokerCard;

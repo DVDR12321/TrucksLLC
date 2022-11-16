@@ -1,5 +1,5 @@
 import * as React from "react";
-import MainGrid from "../main grid/main-grid";
+import MainGrid from "../MainGrid/MainGrid";
 
 const Layout = () => {
   return <MainGrid></MainGrid>;

@@ -1,21 +1,21 @@
 import React from "react";
-import Mycontainer from "../references/simple-container";
-import "./offers.css";
+import SimpleContainer from "../References/SimpleContainer";
+import { StyledParagraph } from "./StyledComponents";
 
 const Offers = () => {
   return (
-    <Mycontainer
+    <SimpleContainer
       Header="What we offer"
       Body={
-        <p className="list">
+        <StyledParagraph>
           <li>24 hours Dispatch</li>
           <li>Fleet Monitoring Systems</li>
           <li>Know where your load is any given time</li>
           <li>Well maintained fleet</li>
           <li>Responsible drivers</li>
-        </p>
+        </StyledParagraph>
       }
-    ></Mycontainer>
+    ></SimpleContainer>
   );
 };
 export default Offers;

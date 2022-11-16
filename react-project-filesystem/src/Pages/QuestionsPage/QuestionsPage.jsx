@@ -1,10 +1,10 @@
 import React from "react";
 
-const Questionspage = () => {
+const QuestionsPage = () => {
   return (
     <div>
       <h1>Frequently asked questions</h1>
     </div>
   );
 };
-export default Questionspage;
+export default QuestionsPage;

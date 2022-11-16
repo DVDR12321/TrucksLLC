@@ -1,19 +1,10 @@
 import * as React from "react";
-//import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-//import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import Mainscreen from "../MainScreen/main-screen";
-import Videoplayer from "../video screen/video-player";
-import References from "../references/references";
-import Offers from "../offers/offers";
-//  const Item = styled(Paper)(({ theme }) => ({
-//    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-//    ...theme.typography.body2,
-//    padding: theme.spacing(1),
-//    textAlign: "center",
-//    color: theme.palette.text.secondary,
-//  }));
+import Mainscreen from "../MainScreen/MainScreen";
+import VideoPlayer from "../VideoScreen/VideoPlayer";
+import References from "../References/References";
+import Offers from "../Offers/Offers";
 
 export default function MainGrid() {
   return (
@@ -23,7 +14,7 @@ export default function MainGrid() {
           <Mainscreen></Mainscreen>
         </Grid>
         <Grid item spacing={1} xs={12}>
-          <Videoplayer></Videoplayer>
+          <VideoPlayer></VideoPlayer>
         </Grid>
         <Grid container item spacing={2}>
           <Grid item xs={6}>

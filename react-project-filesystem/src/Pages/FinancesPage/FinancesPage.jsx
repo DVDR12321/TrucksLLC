@@ -1,6 +1,6 @@
 import React from "react";
 
-const Financespage = () => {
+const FinancesPage = () => {
   return (
     <div>
       <h1>Uslovi za vozace</h1>
@@ -8,4 +8,4 @@ const Financespage = () => {
     </div>
   );
 };
-export default Financespage;
+export default FinancesPage;
