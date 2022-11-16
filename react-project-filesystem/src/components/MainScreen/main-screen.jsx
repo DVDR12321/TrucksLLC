@@ -1,7 +1,7 @@
 import React from "react";
 import "./main-screen.css";
 import img2 from "../../assets/chicago.jpg";
-import img3 from "../../assets/usa.webp";
+import img3 from "../../assets/Usa.webp";
 import img4 from "../../assets/logo.gif";
 import img5 from "../../assets/truckgif.gif";
 import img6 from "../../assets/piechart.webp";
@@ -75,25 +75,31 @@ const Mainscreen = () => {
         style={{ height: "40vh", justifyContent: "center" }}
       >
         <Grid item xs={3}>
-          <Brokercard
-            imagep={img4}
-            headerp="Who we are"
-            textp="Clic to ind out about us and our mission"
-          />
+            <Link to = 'finances'>
+                <Brokercard
+                imagep={img4}
+                headerp="Finances"
+                textp="Clic to ind out about us and our mission"
+                />
+            </Link>
         </Grid>
         <Grid item xs={3}>
-          <Brokercard
-            imagep={img3}
-            headerp="Where we are"
-            textp="Find out how to reach us"
-          />
+            <Link to = 'aboutus'>
+                <Brokercard
+                imagep={img3}
+                headerp="About US"
+                textp="Find out how to reach us"
+                />         
+            </Link>
         </Grid>
         <Grid item xs={3}>
-          <Brokercard
-            imagep={img5}
-            headerp="Our fleet"
-            textp="Find out about our available assets"
-          />
+            <Link to = 'fleet'>
+                <Brokercard
+                imagep={img5}
+                headerp="Our fleet"
+                textp="Find out about our available assets"
+                />          
+            </Link>
         </Grid>
         <Grid item xs={3}>
           <Brokercard imagep={img6} headerp="Our reviews" />
