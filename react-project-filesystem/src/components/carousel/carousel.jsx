@@ -1,28 +1,27 @@
 //STEPPER
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+import * as React from "react";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import MobileStepper from "@mui/material/MobileStepper";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: 'CH Robinson',
-    imgPath:
-      'https://i.stack.imgur.com/Xg9VU.jpg',
+    label: "CH Robinson",
+    imgPath: "https://i.stack.imgur.com/Xg9VU.jpg",
   },
   {
-    label: 'XPO Logistics',
+    label: "XPO Logistics",
     imgPath:
-      'https://www.ti-insight.com/wp-content/uploads/2019/05/xpo_logistics.5bfeaf3b4797b-285x231.jpg',
+      "https://www.ti-insight.com/wp-content/uploads/2019/05/xpo_logistics.5bfeaf3b4797b-285x231.jpg",
   },
 ];
 
@@ -49,21 +48,20 @@ function Carousel() {
         square
         elevation={0}
         sx={{
-          position:'relative',
-          display: 'flex',
-          alignItems: 'center',
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
           height: 50,
           pl: 2,
-          bgcolor: 'black',
-          color:'white',
-          textAlign:'center'
-          
+          bgcolor: "black",
+          color: "white",
+          textAlign: "center",
         }}
       >
         <Typography>{images[activeStep].label}</Typography>
       </Paper>
       <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -75,10 +73,10 @@ function Carousel() {
                 component="img"
                 sx={{
                   height: 255,
-                  display: 'block',
+                  display: "block",
                   maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
+                  overflow: "hidden",
+                  width: "100%",
                 }}
                 src={step.imgPath}
                 alt={step.label}
@@ -98,7 +96,7 @@ function Carousel() {
             disabled={activeStep === maxSteps - 1}
           >
             Next
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowLeft />
             ) : (
               <KeyboardArrowRight />
@@ -107,7 +105,7 @@ function Carousel() {
         }
         backButton={
           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            {theme.direction === 'rtl' ? (
+            {theme.direction === "rtl" ? (
               <KeyboardArrowRight />
             ) : (
               <KeyboardArrowLeft />

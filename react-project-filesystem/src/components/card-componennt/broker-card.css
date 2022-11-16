@@ -1,7 +1,7 @@
-.Brokercard{
-    transform: translateZ(0);
-    transition: transform 0.25s ease-out;
+.Brokercard {
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
 }
 .Brokercard:hover {
-    transform: scale(1.01);
-  }
+  transform: scale(1.01);
+}

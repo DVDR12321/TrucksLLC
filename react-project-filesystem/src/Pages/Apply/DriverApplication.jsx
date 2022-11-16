@@ -1,6 +1,6 @@
 import React from "react";
 
 const Joinuspage = () => {
-    return
+  return;
 };
 export default Joinuspage;
