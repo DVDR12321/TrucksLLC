@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Mainscreen from "../MainScreen/MainScreen";
+import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
 import References from "../References/References";
 import Offers from "../Offers/Offers";
@@ -11,17 +11,19 @@ export default function MainGrid() {
     <Box sx={{ flexGrow: 2 }}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Mainscreen></Mainscreen>
+          <MainScreen></MainScreen>
         </Grid>
-        <Grid item spacing={1} xs={12}>
+        <Grid item xs={12}>
           <VideoPlayer></VideoPlayer>
         </Grid>
-        <Grid container item spacing={2}>
-          <Grid item xs={6}>
-            <References></References>
-          </Grid>
-          <Grid item xs={6}>
-            <Offers />
+        <Grid item>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <References></References>
+            </Grid>
+            <Grid item xs={6}>
+              <Offers />
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>

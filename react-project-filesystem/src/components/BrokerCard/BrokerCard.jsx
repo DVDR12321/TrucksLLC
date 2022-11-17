@@ -10,12 +10,12 @@ const BrokerCard = (props) => {
   return (
     <Card
       sx={{
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
         height: "95%",
-        outlineStyle: 'solid',
-        outlineWidth: '2px',
-        outlineColor: '#ff0000',
-        backdropFilter: 'blur(3px) sepia(90%)',
+        outlineStyle: "solid",
+        outlineWidth: "2px",
+        outlineColor: "#ff0000",
+        backdropFilter: "blur(3px) sepia(90%)",
       }}
     >
       <CardActionArea>

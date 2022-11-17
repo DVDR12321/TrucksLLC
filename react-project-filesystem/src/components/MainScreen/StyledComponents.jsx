@@ -13,7 +13,7 @@ export const StyledMainHeading = styled("h1")`
   color: #f7ecec;
 `;
 
-export const StyledSubHeading = styled("h1")`
+export const StyledSubHeading = styled("h2")`
   position: relative;
   font-size: 10vb;
   margin-top: 1vb;
@@ -21,7 +21,7 @@ export const StyledSubHeading = styled("h1")`
   border-bottom: 10px inset #ba000d;
 `;
 
-export const StyledMainRedHeading = styled("h1")`
+export const StyledMainRedHeading = styled("h3")`
   position: relative;
   display: inline;
   font-size: 10vb;

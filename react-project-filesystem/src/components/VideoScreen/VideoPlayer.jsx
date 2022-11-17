@@ -6,8 +6,7 @@ import "react-html5video/dist/styles.css";
 
 const VideoPlayer = () => {
   return (
-    <
-// @ts-ignore
+    <// @ts-ignore
     Video
       autoPlay
       loop
