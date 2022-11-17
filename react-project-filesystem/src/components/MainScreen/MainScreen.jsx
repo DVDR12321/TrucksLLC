@@ -31,11 +31,13 @@ const MainScreen = () => {
             <StyledMainGrid>
               <StyledMainHeading>
                 Transporation
-                <StyledSubHeading>
-                  Done
-                  <StyledMainRedHeading>Right</StyledMainRedHeading>
-                </StyledSubHeading>
+                
               </StyledMainHeading>
+              <StyledSubHeading>
+                  Done
+                 
+                </StyledSubHeading>
+              <StyledMainRedHeading>Right</StyledMainRedHeading>
             </StyledMainGrid>
           </Grid>
           <Grid item xs={6}>

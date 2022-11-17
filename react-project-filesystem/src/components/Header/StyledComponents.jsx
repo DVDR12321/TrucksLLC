@@ -23,7 +23,3 @@ export const StyledText = styled("span")`
   text-transform: none;
   font-family: Arial;
 `;
-
-export const StyledText = styled(Button)`
-    color: black;
-`
