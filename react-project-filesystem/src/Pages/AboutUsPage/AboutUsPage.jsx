@@ -1,6 +1,6 @@
 import React from "react";
 
-const Aboutpage = () => {
+const AboutUsPage = () => {
   return (
     <div>
       <li>Map to the facility</li>
@@ -11,4 +11,4 @@ const Aboutpage = () => {
     </div>
   );
 };
-export default Aboutpage;
+export default AboutUsPage;

@@ -1,16 +1,16 @@
 import React from "react";
-import "./references.css";
-import Mycontainer from "./simple-container";
+import SimpleContainer from "./SimpleContainer";
 import Carousel from "../carousel/carousel";
+import { StyledGrid } from "./StyledComponents";
 
 const References = () => {
   return (
-    <div className="asd">
-      <Mycontainer
+    <StyledGrid>
+      <SimpleContainer
         Header="Our references"
         Body={<Carousel></Carousel>}
-      ></Mycontainer>
-    </div>
+      ></SimpleContainer>
+    </StyledGrid>
   );
 };
 export default References;

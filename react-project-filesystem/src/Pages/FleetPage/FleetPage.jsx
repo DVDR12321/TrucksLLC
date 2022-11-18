@@ -1,6 +1,6 @@
 import React from "react";
 
-const Fleetpage = () => {
+const FleetPage = () => {
   return <div>Our fleet information</div>;
 };
-export default Fleetpage;
+export default FleetPage;
