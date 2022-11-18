@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
-import { Box, List, ListItem, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import { Instagram } from "@mui/icons-material";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 export const StyledBox = styled(Box)`
   border-bottom: 1px;
@@ -9,42 +12,49 @@ export const StyledBox = styled(Box)`
 export const StyledCaption = styled(Typography)`
   font-weight: 700;
   font-family: Montserrat;
-`;
-
-export const StyledSocialMenu = styled(List)`
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0;
-  margin: 0;
-  display: flex;
-`;
-
-export const StyledSocialListItem = styled(ListItem)`
-  list-style: none;
-  margin: 0 10px;
-  &.fa {
-    color: #000000;
-    font-size: 25px;
-    line-height: 50px;
-    transition: 0.5s;
-  }
-  &.fa:hover {
-    color: #ffffff;
-  }
+  text-align: justify;
 `;
 
 export const StyledLink = styled("a")`
-  position: relative;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: white;
-  text-align: center;
+  color: white;
+  text-decoration: none;
+`;
+
+export const StlyedFacebookIcon = styled(FacebookIcon)`
+  padding: 5px 7px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
-  transform: translate(0, 0px);
-  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+  background-color: #322f30;
   &:hover {
-    transform: rotate(0deg) skew(0deg) translate(0, -10px);
+    background-color: #3d5b99;
+  }
+`;
+
+export const StlyedInstagramIcon = styled(Instagram)`
+  padding: 5px 7px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #322f30;
+  &:hover {
+    background-color: #e1306c;
+  }
+`;
+
+export const StlyedYoutubeIcon = styled(YouTubeIcon)`
+  padding: 5px 7px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #322f30;
+  &:hover {
+    background-color: #e64a41;
   }
 `;
