@@ -12,18 +12,18 @@ const QuestionsPage = () => {
         <h1>Header</h1>
       </Grid>
       <Grid item xs={12}>
-        <StyledImg src={image} alt = ''/>  
+        <StyledImg src={image} alt="" />
       </Grid>
       <Grid item xs={12}>
         <QuerryField></QuerryField>
       </Grid>
       <Grid item xs={12}>
-        <h1 style={{textColor:'red'}}>1. About our firm</h1>
+        <h1 style={{ textColor: "red" }}>1. About our firm</h1>
         <Questionform></Questionform>
       </Grid>
       <Grid item xs={12}>
-      <h1 style={{textColor:'red'}}>2. About our fleet</h1>
-      <Questionform></Questionform>
+        <h1 style={{ textColor: "red" }}>2. About our fleet</h1>
+        <Questionform></Questionform>
       </Grid>
     </Grid>
   );

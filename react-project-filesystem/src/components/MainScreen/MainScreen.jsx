@@ -17,16 +17,15 @@ import {
 
 const Mainscreen = () => {
   return (
-    <Grid container style={{
-      height: "100vh",
-      backgroundImage: `url(${img2})`,
-      backgroundSize: "cover",
-    }}>
-      <Grid
-        container
-        spacing={1}
-        xs={12}
-      >
+    <Grid
+      container
+      style={{
+        height: "100vh",
+        backgroundImage: `url(${img2})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <Grid container spacing={1} xs={12}>
         <Grid item xs={6}>
           <StyledMainGrid>
             <StyledMainHeading>
@@ -58,47 +57,46 @@ const Mainscreen = () => {
           </Button>
         </Grid>
         <Grid
-        container
-        spacing={1}
-        item
-        xs={12}
-        style={{ height: "40vh", justifyContent: "center" }}
-      >
-        <Grid item xs={3}>
-          <Link to="finances">
-            <BrokerCard
-              imagep={img4}
-              headerp="Finances"
-              textp="Clic to ind out about us and our mission"
-            />
-          </Link>
-        </Grid>
-        <Grid item xs={3}>
-          <Link to="aboutus">
-            <BrokerCard
-              imagep={img3}
-              headerp="About US"
-              textp="Find out how to reach us"
-            />
-          </Link>
-        </Grid>
-        <Grid item xs={3}>
-          <Link to="fleet">
-            <BrokerCard
-              imagep={img5}
-              headerp="Our fleet"
-              textp="Find out about our available assets"
-            />
-          </Link>
-        </Grid>
+          container
+          spacing={1}
+          item
+          xs={12}
+          style={{ height: "40vh", justifyContent: "center" }}
+        >
           <Grid item xs={3}>
-          <Link to="q&a">
+            <Link to="finances">
+              <BrokerCard
+                imagep={img4}
+                headerp="Finances"
+                textp="Clic to ind out about us and our mission"
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link to="aboutus">
+              <BrokerCard
+                imagep={img3}
+                headerp="About US"
+                textp="Find out how to reach us"
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link to="fleet">
+              <BrokerCard
+                imagep={img5}
+                headerp="Our fleet"
+                textp="Find out about our available assets"
+              />
+            </Link>
+          </Grid>
+          <Grid item xs={3}>
+            <Link to="q&a">
               <BrokerCard imagep={img6} headerp="Our reviews" />
-          </Link>
+            </Link>
+          </Grid>
         </Grid>
       </Grid>
-      </Grid>
-     
     </Grid>
   );
 };
