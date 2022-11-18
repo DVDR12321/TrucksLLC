@@ -1,38 +1,25 @@
-// @ts-nocheck
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Grid,
-  Link,
-  Box,
-  IconButton,
-  SvgIcon,
-} from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import logo from "../../assets/footerlogo.png";
 import { Container } from "@mui/system";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+
 import {
+  StlyedFacebookIcon,
+  StlyedInstagramIcon,
+  StlyedYoutubeIcon,
   StyledBox,
   StyledCaption,
   StyledLink,
-  StyledSocialListItem,
-  StyledSocialMenu,
 } from "./StyledComponents";
-// import {
-//     Security,
-//     Info
-// } from "@mui/material/icons";
 
 const Footer = () => (
   <footer>
     <Box
       px={{ xs: 3, sm: 10 }}
       py={{ xs: 5, sm: 10 }}
-      bgcolor="#111111"
+      bgcolor="#322f30"
       color="white"
     >
       <Container maxWidth="lg">
@@ -60,24 +47,34 @@ const Footer = () => (
             </StyledBox>
             <Box>
               {" "}
-              <PhoneIcon fontSize="xs"></PhoneIcon> +1 312 466 11 01{" "}
+              <PhoneIcon fontSize="small"></PhoneIcon> +1 312 466 11 01{" "}
             </Box>
             <Box>
               {" "}
-              <EmailIcon fontSize="xs" /> info@trucksllc.com{" "}
+              <EmailIcon fontSize="small" /> info@trucksllc.com{" "}
             </Box>
           </Grid>
+          <i className="fa fa-facebook" color="white"></i>
         </Grid>
-        <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-          <hr></hr>
-          Trucks LLC | &reg; {new Date().getFullYear()}
-          {/* <StyledSocialMenu>
-                        <StyledSocialListItem><StyledLink href=""><i className="fa fa-facebook" color="black"></i></StyledLink></StyledSocialListItem>
-                        <StyledSocialListItem><StyledLink href=""><i className="fa fa-twitter"></i></StyledLink></StyledSocialListItem>
-                        <StyledSocialListItem><StyledLink href=""><i className="fa fa-instagram"></i></StyledLink></StyledSocialListItem>
-                        <StyledSocialListItem><StyledLink href=""><i className="fa fa-youtube"></i></StyledLink></StyledSocialListItem>
-                    </StyledSocialMenu> */}
+        <Box textAlign="center" pt={{ xs: 1, sm: 2 }} pb={{ xs: 5, sm: 0 }}>
+          <StyledLink
+            href="https://m.facebook.com/TrucksLLC/?locale2=sr_RS"
+            target="_blank"
+          >
+            <StlyedFacebookIcon />
+          </StyledLink>
+          <StyledLink
+            href="https://www.instagram.com/trucks.llc/"
+            target="_blank"
+          >
+            <StlyedInstagramIcon />
+          </StyledLink>
+          <StyledLink href="" target="_blank">
+            <StlyedYoutubeIcon />
+          </StyledLink>
         </Box>
+        <hr></hr>
+        Trucks LLC | &reg; {new Date().getFullYear()}
       </Container>
     </Box>
   </footer>
