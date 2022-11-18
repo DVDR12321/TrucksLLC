@@ -29,14 +29,8 @@ const MainScreen = () => {
         <Grid container spacing={1}>
           <Grid item xs={6}>
             <StyledMainGrid>
-              <StyledMainHeading>
-                Transporation
-                
-              </StyledMainHeading>
-              <StyledSubHeading>
-                  Done
-                 
-                </StyledSubHeading>
+              <StyledMainHeading>Transporation</StyledMainHeading>
+              <StyledSubHeading>Done</StyledSubHeading>
               <StyledMainRedHeading>Right</StyledMainRedHeading>
             </StyledMainGrid>
           </Grid>
