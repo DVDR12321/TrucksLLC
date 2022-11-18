@@ -1,5 +1,5 @@
 import React from "react";
-import SimpleContainer from "../references/SimpleContainer";
+import SimpleContainer from "../References/SimpleContainer";
 import { StyledParagraph } from "./StyledComponents";
 
 const Offers = () => {

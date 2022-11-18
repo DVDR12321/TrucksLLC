@@ -1,6 +1,6 @@
 import React from "react";
 import SimpleContainer from "./SimpleContainer";
-import Carousel from "../carousel/carousel";
+import Carousel from "../Carousel/Carousel";
 import { StyledGrid } from "./StyledComponents";
 
 const References = () => {

@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Mainscreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
-import References from "../references/references";
-import Offers from "../offers/offers";
+import References from "../References/References";
+import Offers from "../Offers/Offers";
 
 export default function MainGrid() {
   return (
