@@ -88,7 +88,12 @@ const MainScreen = () => {
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <BrokerCard imagep={img6} headerp="Our reviews" />
+            <Link to="q&a">
+                <BrokerCard
+                  imagep={img6}
+                  headerp="Our reviews"
+                />
+              </Link>
             </Grid>
           </Grid>
         </Grid>
