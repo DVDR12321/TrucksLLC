@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^18.0.25",
     "@videojs/themes": "^1.0.1",
     "eslint-config-prettier": "^8.5.0",
     "npm": "^8.19.3",
@@ -23,6 +24,7 @@
     "react-scroll": "^1.8.8",
     "react-swipeable-views": "^0.14.0",
     "react-video": "^1.5.3",
+    "svg-path-properties": "^1.0.13",
     "video.js": "^7.20.3",
     "web-vitals": "^2.1.4"
   },

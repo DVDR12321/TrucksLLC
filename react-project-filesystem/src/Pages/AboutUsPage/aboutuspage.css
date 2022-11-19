@@ -1,0 +1,68 @@
+.app__aboutus{
+    justify-content: center;
+}
+.img__aboutus{
+    width: 500px;
+    height: 370px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.aboutus__text {
+    float:right;
+    width:50%;
+}
+.aboutus__Image{
+    float:left;
+    width:50%;
+}
+
+
+
+.app__ourfleet{
+    position:relative;
+    top:100px;
+    justify-content: center;
+}
+.img__ourfleet{
+    width: 500px;
+    height: 370px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.ourfleet__text {
+    float:left;
+    width:50%;
+    
+}
+.ourfleet_Image{
+    float:right;
+    width:50%;
+}
+
+
+
+.app__benefits{
+    position:relative;
+    top:250px;
+    justify-content: center;
+}
+.img__benefits{
+    width: 500px;
+    height: 370px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.benefits__text {
+    float:right;
+    width:50%;
+}
+.aboutus__Image{
+    float:left;
+    width:50%;
+}

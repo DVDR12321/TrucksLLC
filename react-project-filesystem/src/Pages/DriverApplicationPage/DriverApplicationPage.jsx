@@ -1,6 +1,6 @@
 import React from "react";
 
 const DriverApplicationPage = () => {
-  return <div></div>;
+  return <div>Apply</div>;
 };
 export default DriverApplicationPage;

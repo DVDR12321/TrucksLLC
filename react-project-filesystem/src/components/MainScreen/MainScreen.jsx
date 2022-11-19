@@ -75,7 +75,7 @@ const MainScreen = () => {
               <Link to="">
                 <BrokerCard
                   imagep={img3}
-                  headerp="Finances and benefits"
+                  headerp="Finances&benefits"
                   // textp="Find out how to reach us"
                 />
               </Link>
