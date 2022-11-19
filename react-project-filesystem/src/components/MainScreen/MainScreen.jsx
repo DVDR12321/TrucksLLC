@@ -8,6 +8,8 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
+import { Link as LinkScroll } from 'react-scroll';
+
 import {
   StyledMainGrid,
   StyledMainHeading,
@@ -61,39 +63,39 @@ const MainScreen = () => {
             style={{ height: "40vh", justifyContent: "center" }}
           >
             <Grid item xs={3}>
-              <Link to="finances">
+              <Link to="">
                 <BrokerCard
                   imagep={img4}
-                  headerp="Finances"
-                  textp="Clic to ind out about us and our mission"
+                  headerp="Our Servces"
+                  // textp="Clic to ind out about us and our mission"
                 />
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <Link to="aboutus">
+              <Link to="">
                 <BrokerCard
                   imagep={img3}
-                  headerp="About US"
-                  textp="Find out how to reach us"
+                  headerp="Finances and benefits"
+                  // textp="Find out how to reach us"
                 />
               </Link>
             </Grid>
             <Grid item xs={3}>
-              <Link to="fleet">
+              <Link to="">
                 <BrokerCard
                   imagep={img5}
                   headerp="Our fleet"
-                  textp="Find out about our available assets"
+                  // textp="Find out about our available assets"
                 />
               </Link>
             </Grid>
             <Grid item xs={3}>
-            <Link to="q&a">
+            <LinkScroll to="/#references">
                 <BrokerCard
                   imagep={img6}
-                  headerp="Our reviews"
+                  headerp="References"
                 />
-              </Link>
+              </LinkScroll>
             </Grid>
           </Grid>
         </Grid>

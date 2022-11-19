@@ -15,7 +15,7 @@ const BrokerCard = (props) => {
         outlineStyle: "solid",
         outlineWidth: "2px",
         outlineColor: "#ff0000",
-        backdropFilter: "blur(3px) sepia(90%)",
+        backdropFilter: "blur(4px) sepia(50%)",
       }}
     >
       <CardActionArea>

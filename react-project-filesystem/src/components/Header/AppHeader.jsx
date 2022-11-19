@@ -22,10 +22,10 @@ import {
 
 const navigationLinks = [
   { name: "Home", href: "" },
-  { name: "Who we are", href: "" },
-  { name: "Where we are", href: "" },
-  { name: "Our fleet", href: "" },
-  { name: "Our reviews", href: "" },
+  { name: "About", href: "aboutus" },
+  { name: "Apply", href: "apply" },
+  { name: "Finances", href: "" },
+  { name: "Q&A", href: "/q&a" },
   { name: "Contact", href: "" },
 ];
 
