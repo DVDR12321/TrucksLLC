@@ -1,14 +1,16 @@
 import React from "react";
+import Svg from "./SvgImage";
+import { DivBody, HeadDiv, H1 } from "./StyledComponents";
 
 const AboutUsPage = () => {
   return (
-    <div>
-      <li>Map to the facility</li>
-      <li>Contact information</li>
-      <li>$$$ ???Charging parking</li>
-      <li>Popravke na yardi</li>
-      <li>Neki hvalospevi - mapa kao na superego u about us </li>
-    </div>
+    <DivBody>
+      <HeadDiv><H1> About Us </H1></HeadDiv>
+      <Svg>
+      </Svg>
+      {/*
+      <li>Neki hvalospevi - mapa kao na superego u about us </li> */}
+    </DivBody>
   );
 };
 export default AboutUsPage;
