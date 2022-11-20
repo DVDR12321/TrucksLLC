@@ -12,7 +12,7 @@ const AboutUsPage = () => {
   return (
     <DivBody>
       <HeadDiv><H1> "Transportation done right" </H1></HeadDiv>
-      <Grid container spacing={2} flex={1}>
+      <Grid container spacing={2} flex={1} sx={{marginTop:'20px'}}>
         <Grid container>
           <Grid item xs={0} sm={6}>
           <div className='aboutus__Image'>
@@ -21,9 +21,12 @@ const AboutUsPage = () => {
           </Grid>
           <Grid item xs={12} sm={6} >
             <div><h3 style={{textAlign: 'center', fontSize:'5vh', color:'white'}}>About Us</h3></div>
-            <Pstyled>We provide safe and reliable transportation services to a diverse group of customers throughout the continental United States, Canada and Mexico. Utilizing an integrated, multimodal approach, we provide capacity-oriented solutions centered on delivering customer value and industry-leading service. </Pstyled>
-            <Pstyled>We also provide customized freight movement and systems services that are tailored to meet individual customers’ requirements and typically involve long-term contracts. Our customer base is extremely diverse and includes some of Fortune 500 companies.</Pstyled>
-            <Pstyled>Our ability to offer multiple services, utilizing our four business segments and a full complement of logistics services through third parties, represents a competitive advantage. We believe this unique operating strategy can add value to customers and increase our profits and returns to stockholders.</Pstyled>
+            <Pstyled>We provide safe and reliable transportation services to a diverse group of customers throughout the continental
+                     United States, Canada and Mexico. Utilizing an integrated, multimodal approach, we provide capacity-oriented solutions centered on delivering customer value and industry-leading service. </Pstyled>
+            <Pstyled>We also provide customized freight movement and systems services that are tailored to meet individual customers’
+              requirements and typically involve long-term contracts. Our customer base is extremely diverse and includes some of Fortune 500 companies.</Pstyled>
+            <Pstyled>Our ability to offer multiple services, utilizing our four business segments and a full complement of logistics
+              services through third parties, represents a competitive advantage. We believe this unique operating strategy can add value to customers and increase our profits and returns to stockholders.</Pstyled>
           </Grid>
         </Grid>
         <Grid container>
