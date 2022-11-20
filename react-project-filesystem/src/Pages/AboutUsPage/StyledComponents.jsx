@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Image from '../../assets/headerimage.jpg';
 
-export const DivBody = styled('div')`
+export const StyledContainer = styled('div')`
     padding-top:90px;
     height: 400vh;
     
@@ -9,7 +9,7 @@ export const DivBody = styled('div')`
     background: -webkit-linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
-export const HeadDiv = styled('div')`
+export const StyledHeaderImage = styled('div')`
     display:flex;
     height:40vh;
     place-content:center;
@@ -17,12 +17,12 @@ export const HeadDiv = styled('div')`
     color:white;
     padding-bottom:10px;
 `;
-export const H1 = styled('h1')`
+export const StyledCaption = styled('h1')`
     align-self:center;
     font-size:10vh;
 `;
 
-export const Pstyled = styled('p')`
+export const StyledText = styled('p')`
     text-align: center;
     width:100%; 
     overflow:hidden;
