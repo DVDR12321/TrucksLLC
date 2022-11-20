@@ -19,7 +19,7 @@ export default function MainGrid() {
         <Grid item>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <References id ="#references"></References>
+              <References id="#references"></References>
             </Grid>
             <Grid item xs={6}>
               <Offers />

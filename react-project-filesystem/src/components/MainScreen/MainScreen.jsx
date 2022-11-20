@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
-import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkScroll } from "react-scroll";
 
 import {
   StyledMainGrid,
@@ -29,31 +29,29 @@ const MainScreen = () => {
     >
       <Grid item>
         <Grid container spacing={1}>
-          <Grid item xs={6}>
+          <Grid item xs={12}>
             <StyledMainGrid>
-              <StyledMainHeading>Transporation</StyledMainHeading>
-              <StyledSubHeading>Done</StyledSubHeading>
-              <StyledMainRedHeading>Right</StyledMainRedHeading>
+              <div></div>
+              <div>
+                <Button
+                  sx={{
+                    position: "relative",
+                    top: "39vb",
+                    left: "1vb",
+                    backgroundColor: "#ba000d",
+                    fontFamily: "helvetica",
+                    fontWeight: "bold",
+                    fontSize: "5vb",
+                    height: "7vb",
+                    width: "30vb",
+                  }}
+                  variant="contained"
+                  color="error"
+                >
+                  Join us
+                </Button>
+              </div>
             </StyledMainGrid>
-          </Grid>
-          <Grid item xs={6}>
-            <Button
-              sx={{
-                position: "relative",
-                top: "39vb",
-                left: "1vb",
-                backgroundColor: "#ba000d",
-                fontFamily: "helvetica",
-                fontWeight: "bold",
-                fontSize: "5vb",
-                height: "7vb",
-                width: "30vb",
-              }}
-              variant="contained"
-              color="error"
-            >
-              Join us
-            </Button>
           </Grid>
           <Grid
             container
@@ -90,11 +88,8 @@ const MainScreen = () => {
               </Link>
             </Grid>
             <Grid item xs={3}>
-            <LinkScroll to="/#references">
-                <BrokerCard
-                  imagep={img6}
-                  headerp="References"
-                />
+              <LinkScroll to="/#references">
+                <BrokerCard imagep={img6} headerp="References" />
               </LinkScroll>
             </Grid>
           </Grid>
