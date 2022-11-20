@@ -26,7 +26,7 @@ const navigationLinks = [
   { name: "Apply", href: "apply" },
   { name: "Finances", href: "" },
   { name: "Q&A", href: "/q&a" },
-  { name: "Contact", href: "" },
+  { name: "Contact", href: "contact" },
 ];
 
 export default function AppHeader() {
