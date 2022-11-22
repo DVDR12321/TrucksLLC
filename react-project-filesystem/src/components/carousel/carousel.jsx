@@ -50,7 +50,8 @@ function Carousel() {
         sx={{
           position: "relative",
           display: "flex",
-          alignItems: "center",
+          alignItems: "end",
+          justifyContent: "end",
           height: 50,
           pl: 2,
           bgcolor: "black",

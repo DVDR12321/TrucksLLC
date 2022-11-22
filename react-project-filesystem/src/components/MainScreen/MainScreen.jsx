@@ -8,14 +8,10 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
-import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkScroll } from "react-scroll";
+import { MainHeader } from "./MainHeader";
 
-import {
-  StyledMainGrid,
-  StyledMainHeading,
-  StyledMainRedHeading,
-  StyledSubHeading,
-} from "./StyledComponents";
+import { StyledMainGrid } from "./StyledComponents";
 
 const MainScreen = () => {
   return (
@@ -29,38 +25,41 @@ const MainScreen = () => {
     >
       <Grid item>
         <Grid container spacing={1}>
-          <Grid item xs={6}>
+          <Grid item xs={9} md={6}>
             <StyledMainGrid>
-              <StyledMainHeading>Transporation</StyledMainHeading>
-              <StyledSubHeading>Done</StyledSubHeading>
-              <StyledMainRedHeading>Right</StyledMainRedHeading>
+              <MainHeader></MainHeader>
             </StyledMainGrid>
           </Grid>
-          <Grid item xs={6}>
-            <Button
-              sx={{
-                position: "relative",
-                top: "39vb",
-                left: "1vb",
-                backgroundColor: "#ba000d",
-                fontFamily: "helvetica",
-                fontWeight: "bold",
-                fontSize: "5vb",
-                height: "7vb",
-                width: "30vb",
-              }}
-              variant="contained"
-              color="error"
-            >
-              Join us
-            </Button>
+          <Grid item xs={3} md={6}>
+            <Link to="apply">
+              <Button
+                sx={{
+                  position: "relative",
+                  top: "39vb",
+                  left: "1vb",
+                  backgroundColor: "#ba000d",
+                  fontWeight: "bold",
+                  fontSize: "5vb",
+                  height: "7vb",
+                  width: "30vb",
+                }}
+                variant="contained"
+                color="error"
+              >
+                Join us
+              </Button>
+            </Link>
           </Grid>
           <Grid
             container
             spacing={1}
             item
-            xs={12}
-            style={{ height: "40vh", justifyContent: "center" }}
+            sx={{
+              height: "50vh",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              marginLeft: "2%",
+            }}
           >
             <Grid item xs={3}>
               <Link to="">
@@ -75,7 +74,7 @@ const MainScreen = () => {
               <Link to="">
                 <BrokerCard
                   imagep={img3}
-                  headerp="Finances&benefits"
+                  headerp="Finances"
                   // textp="Find out how to reach us"
                 />
               </Link>
@@ -90,11 +89,8 @@ const MainScreen = () => {
               </Link>
             </Grid>
             <Grid item xs={3}>
-            <LinkScroll to="/#references">
-                <BrokerCard
-                  imagep={img6}
-                  headerp="References"
-                />
+              <LinkScroll to="/#references">
+                <BrokerCard imagep={img6} headerp="References" />
               </LinkScroll>
             </Grid>
           </Grid>

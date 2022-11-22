@@ -10,35 +10,32 @@ const BrokerCard = (props) => {
   return (
     <Card
       sx={{
-        backgroundColor: "transparent",
-        height: "95%",
+        height: "100%",
+        width: "85%",
         outlineStyle: "solid",
-        outlineWidth: "2px",
-        outlineColor: "#ff0000",
-        backdropFilter: "blur(4px) sepia(50%)",
+        outlineWidth: "3px",
+        outlineColor: "rgba(255, 0, 0, 0.7)",
+        backgroundColor: "transparent",
+        backdropFilter: "blur(2px) sepia(50%)",
       }}
     >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="170"
+          height="140"
           image={imagep}
           alt=""
-          sx={{ objectFit: "scale-down" }}
+          sx={{ objectFit: "contain" }}
         />
-        <CardContent>
+        <CardContent sx={{ padding: "5px" }}>
           <Typography
             gutterBottom
-            variant="h4"
             color="white"
             component="div"
-            sx={{ textAlign: "center" }}
+            sx={{ textAlign: "center", fontSize: "120%" }}
           >
             {headerp}
           </Typography>
-          {/* <Typography variant="body1" color="white" sx={{textAlign:'center'}} >
-                {textp}
-              </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
