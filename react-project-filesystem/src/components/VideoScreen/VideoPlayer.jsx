@@ -8,7 +8,7 @@ const VideoPlayer = () => {
   return (
     <// @ts-ignore
     Video
-      autoPlay
+      //autoPlay
       loop
       muted
       controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}

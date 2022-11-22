@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 
 export const StyledGrid = styled(Grid)`
-  algin-items:start;
-  justify-content:start;
+  algin-items: start;
+  justify-content: start;
   height: 100vh;
 `;
 

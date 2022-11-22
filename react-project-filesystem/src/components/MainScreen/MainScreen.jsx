@@ -8,12 +8,10 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
-import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkScroll } from "react-scroll";
 import { MainHeader } from "./MainHeader";
 
-import {
-  StyledMainGrid,
-} from "./StyledComponents";
+import { StyledMainGrid } from "./StyledComponents";
 
 const MainScreen = () => {
   return (
@@ -27,12 +25,12 @@ const MainScreen = () => {
     >
       <Grid item>
         <Grid container spacing={1}>
-          <Grid item xs={9} md ={6}>
+          <Grid item xs={9} md={6}>
             <StyledMainGrid>
               <MainHeader></MainHeader>
             </StyledMainGrid>
           </Grid>
-          <Grid item xs={3} md= {6}>
+          <Grid item xs={3} md={6}>
             <Link to="apply">
               <Button
                 sx={{
@@ -50,13 +48,18 @@ const MainScreen = () => {
               >
                 Join us
               </Button>
-            </Link>  
+            </Link>
           </Grid>
           <Grid
             container
             spacing={1}
             item
-            sx={{ height: "50vh", justifyContent: "center", alignItems:'flex-end', marginLeft:"2%"}}
+            sx={{
+              height: "50vh",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              marginLeft: "2%",
+            }}
           >
             <Grid item xs={3}>
               <Link to="">
@@ -86,11 +89,8 @@ const MainScreen = () => {
               </Link>
             </Grid>
             <Grid item xs={3}>
-            <LinkScroll to="/#references">
-                <BrokerCard
-                  imagep={img6}
-                  headerp="References"
-                />
+              <LinkScroll to="/#references">
+                <BrokerCard imagep={img6} headerp="References" />
               </LinkScroll>
             </Grid>
           </Grid>

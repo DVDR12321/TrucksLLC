@@ -5,13 +5,17 @@ import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
 import References from "../References/References";
 import Offers from "../Offers/Offers";
+import { AboutSection } from "../AboutUsSection/AboutUsSection";
 
 export default function MainGrid() {
   return (
     <Box sx={{ flexGrow: 2 }}>
-      <Grid container spacing={1}>
+      <Grid container spacing={0}>
         <Grid item xs={12}>
           <MainScreen></MainScreen>
+        </Grid>
+        <Grid item xs={12} sx={{ marginTop: "10px" }}>
+          <AboutSection></AboutSection>
         </Grid>
         <Grid item xs={12}>
           <VideoPlayer></VideoPlayer>

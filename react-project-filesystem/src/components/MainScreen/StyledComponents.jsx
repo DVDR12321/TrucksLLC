@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const StyledMainGrid = styled("div")`
-  font-family: Roboto, Helvetica, Arial ,sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 `;
 
 export const StyledMainTitle = styled("h1")`
@@ -13,4 +13,3 @@ export const StyledMainTitle = styled("h1")`
   color: #f7ecec;
   border-bottom: 10px solid red;
 `;
-

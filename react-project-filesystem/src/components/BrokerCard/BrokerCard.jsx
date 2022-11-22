@@ -27,12 +27,12 @@ const BrokerCard = (props) => {
           alt=""
           sx={{ objectFit: "contain" }}
         />
-        <CardContent sx={{padding:"5px"}}>
+        <CardContent sx={{ padding: "5px" }}>
           <Typography
             gutterBottom
             color="white"
             component="div"
-            sx={{ textAlign: "center", fontSize:'120%'}}
+            sx={{ textAlign: "center", fontSize: "120%" }}
           >
             {headerp}
           </Typography>

@@ -24,7 +24,7 @@ const navigationLinks = [
   { name: "Home", href: "" },
   { name: "About", href: "aboutus" },
   { name: "Apply", href: "apply" },
-  { name: "Finances", href: "" },
+  { name: "Finances", href: "/finances" },
   { name: "Q&A", href: "/q&a" },
   { name: "Contact", href: "" },
 ];
