@@ -2,16 +2,17 @@ import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 
 export const StyledGrid = styled(Grid)`
-  background-color: #1f1818;
+  algin-items:start;
+  justify-content:start;
   height: 100vh;
 `;
 
 export const StyledContainer = styled("div")`
-  align-items: center;
+  align-items: left;
+  justify-content: center;
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   height: 90vb;
   width: 80%;
   background-color: #141010;
