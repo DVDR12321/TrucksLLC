@@ -9,6 +9,7 @@ import {
   StyledImage,
   StyledSectionCaption,
   StyledGridRow,
+  StyledMainGrid,
 } from "./StyledComponents";
 import Img1 from "../../assets/company.png";
 import Img2 from "../../assets/fleet.jpg";
@@ -23,7 +24,13 @@ const AboutUsPage = () => {
         display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
       >
         {" "}
-        <Grid container direction="row" spacing={2} padding={3}>
+        <Grid
+          container
+          direction="row"
+          spacing={2}
+          padding={3}
+          alignItems="center"
+        >
           <Grid item xs={6}>
             {" "}
             <StyledCaption>Transportation done right!</StyledCaption>{" "}
@@ -39,12 +46,11 @@ const AboutUsPage = () => {
           </Grid>
         </Grid>
       </StyledHeaderBox>
-      <Grid
+      <StyledMainGrid
         container
         spacing={2}
-        flex={1}
-        paddingLeft={30}
-        paddingRight={30}
+        paddingLeft={15}
+        paddingRight={15}
         sx={{ marginTop: "50px" }}
       >
         <StyledGridRow container>
@@ -107,7 +113,7 @@ const AboutUsPage = () => {
             </StyledText>
           </Grid>
         </StyledGridRow>
-      </Grid>
+      </StyledMainGrid>
     </StyledContainer>
   );
 };

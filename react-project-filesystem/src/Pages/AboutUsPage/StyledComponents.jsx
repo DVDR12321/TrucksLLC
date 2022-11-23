@@ -22,7 +22,7 @@ export const StyledContainer = styled("div")`
 `;
 export const StyledHeaderImage = styled("div")`
   display: flex;
-  height: 40vh;
+  height: 65vh;
   background: url(${Image});
   color: white;
   padding-bottom: 10px;
@@ -30,7 +30,7 @@ export const StyledHeaderImage = styled("div")`
 
 export const StyledHeaderBox = styled(Box)`
   background: #da1e2c;
-  height: 30vh;
+  height: 35vh;
   margin-left: 200px;
   margin-right: 200px;
   margin-top: -100px;
@@ -49,7 +49,6 @@ export const StyledCaption = styled(Typography)`
 `;
 
 export const StyledHeaderText = styled(Typography)`
-  align-items: center;
   color: white;
   float: right;
   line-height: 28px;
@@ -71,7 +70,7 @@ export const StyledImage = styled("img")`
 `;
 
 export const StyledSectionCaption = styled(Typography)`
-  color: #424242;
+  color: #da1e2c;
   font-size: 30px;
   line-height: 40px;
   letter-spacing: 1px;
@@ -82,3 +81,5 @@ export const StyledSectionCaption = styled(Typography)`
 export const StyledGridRow = styled(Grid)`
   margin-bottom: 30px;
 `;
+
+export const StyledMainGrid = styled(Grid)``;
