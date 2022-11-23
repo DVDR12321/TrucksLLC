@@ -1,4 +1,16 @@
 import styled from "@emotion/styled";
+import { Button } from "@mui/material";
+
+export const StyledButton = styled(Button)`
+  position: relative;
+  top: 31vb;
+  left: 1vb;
+  background-color: #ba000d;
+  font-weight: bold;
+  font-size: 5vb;
+  height: 7vb;
+  width: 30vb;
+`;
 
 export const StyledMainGrid = styled("div")`
   font-family: Roboto, Helvetica, Arial, sans-serif;
