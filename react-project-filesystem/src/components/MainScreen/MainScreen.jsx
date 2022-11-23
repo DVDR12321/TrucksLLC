@@ -3,15 +3,15 @@ import img2 from "../../assets/chicago.jpg";
 import img3 from "../../assets/usa.webp";
 import img4 from "../../assets/logo.gif";
 import img5 from "../../assets/truckgif.gif";
-import img6 from "../../assets/piechart.webp";
-import Button from "@mui/material/Button";
+import img6 from "../../assets/Card Pie Chart.gif";
+//import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
 import { Link as LinkScroll } from "react-scroll";
 import { MainHeader } from "./MainHeader";
 
-import { StyledMainGrid } from "./StyledComponents";
+import { StyledButton, StyledMainGrid } from "./StyledComponents";
 
 const MainScreen = () => {
   return (
@@ -32,22 +32,9 @@ const MainScreen = () => {
           </Grid>
           <Grid item xs={3} md={6}>
             <Link to="apply">
-              <Button
-                sx={{
-                  position: "relative",
-                  top: "40vb",
-                  left: "1vb",
-                  backgroundColor: "#ba000d",
-                  fontWeight: "bold",
-                  fontSize: "5vb",
-                  height: "7vb",
-                  width: "30vb",
-                }}
-                variant="contained"
-                color="error"
-              >
+              <StyledButton variant="contained" color="error">
                 Join us
-              </Button>
+              </StyledButton>
             </Link>
           </Grid>
           <Grid
@@ -55,7 +42,7 @@ const MainScreen = () => {
             spacing={1}
             item
             sx={{
-              height: "50vh",
+              height: "60vh",
               justifyContent: "center",
               alignItems: "flex-end",
               marginLeft: "2%",

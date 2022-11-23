@@ -20,7 +20,7 @@ export const StyledImage = styled("img")`
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.05;
+  opacity: 0.06;
   object-fit: cover;
 `;
 export const AboutusDrivers = styled("div")`
@@ -44,10 +44,12 @@ export const StyledAboutHeader = styled("h1")`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding:5%;
 `;
 export const StyledText = styled("p")`
   color: white;
   font-family: "Roboto", sans-serif;
+  padding:5%;
 `;
 // -----------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------
@@ -60,6 +62,7 @@ export const AboutusCustomers = styled("div")`
   padding: 10px;
 `;
 export const StyledCustomersHeader = styled("h1")`
+  padding:5%;
   color: white;
   font-family: "Roboto Serif", serif;
   font-size: 5rem;

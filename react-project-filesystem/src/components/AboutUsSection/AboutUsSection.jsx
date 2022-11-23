@@ -34,7 +34,7 @@ export const AboutSection = () => {
             your job as easy as possible. You drive - we pay!
           </StyledText>
           <Link to="/finances">
-            <Button sx={{ color: "red" }} variant="See More">
+            <Button color="error" variant="outlined" sx = {{margin:"5%"}}>
               See More
             </Button>
           </Link>
@@ -49,10 +49,10 @@ export const AboutSection = () => {
             and such and such and such imclude such and such and such and such
             and such and such and such and such and such and such imclude such
             and such and such and such and such and such and such and such and
-            such and such
+            
           </StyledText>
           <Link to="/aboutus">
-            <Button sx={{ color: "red" }} variant="See More">
+            <Button color = "error" variant="outlined" sx = {{margin:"5%"}}>
               See More
             </Button>
           </Link>

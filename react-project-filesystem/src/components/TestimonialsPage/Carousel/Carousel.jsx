@@ -48,11 +48,8 @@ function Carousel() {
         square
         elevation={0}
         sx={{
-          position: "relative",
-          display: "flex",
-          alignItems: "end",
-          justifyContent: "end",
-          height: 50,
+          // justifyContent: "center",
+          height: 40,
           pl: 2,
           bgcolor: "black",
           color: "white",
