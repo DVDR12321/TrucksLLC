@@ -2,7 +2,7 @@ import React from "react";
 import SimpleContainer from "../References/SimpleContainer";
 import { StyledParagraph } from "./StyledComponents";
 
-const Offers = () => {
+const Quotes = () => {
   return (
     <SimpleContainer
       Header="What we offer"
@@ -18,4 +18,4 @@ const Offers = () => {
     ></SimpleContainer>
   );
 };
-export default Offers;
+export default Quotes;

@@ -2,13 +2,13 @@ import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
 
 export const StyledGrid = styled(Grid)`
-  algin-items: start;
-  justify-content: start;
+  algin-items: center;
+  justify-content: center;
   height: 100vh;
 `;
 
 export const StyledContainer = styled("div")`
-  align-items: left;
+  align-items: center;
   justify-content: center;
   text-align: center;
   display: flex;

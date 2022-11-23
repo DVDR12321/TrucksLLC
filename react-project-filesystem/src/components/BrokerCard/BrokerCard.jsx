@@ -5,10 +5,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
+
+
 const BrokerCard = (props) => {
   const { imagep, headerp } = props;
   return (
-    <Card
+    <Card className='root' 
       sx={{
         height: "100%",
         width: "85%",

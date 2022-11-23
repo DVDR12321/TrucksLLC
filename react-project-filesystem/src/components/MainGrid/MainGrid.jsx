@@ -3,8 +3,8 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
-import References from "../References/References";
-import Offers from "../Offers/Offers";
+import References from "../TestimonialsPage/References/References";
+import Quotes from "../TestimonialsPage/Quotes/Quotes";
 import { AboutSection } from "../AboutUsSection/AboutUsSection";
 
 export default function MainGrid() {
@@ -26,7 +26,7 @@ export default function MainGrid() {
               <References id="#references"></References>
             </Grid>
             <Grid item xs={6}>
-              <Offers />
+              <Quotes />
             </Grid>
           </Grid>
         </Grid>

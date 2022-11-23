@@ -9,9 +9,6 @@ const QuestionsPage = () => {
   return (
     <Grid container spacing={1}>
       <Grid item xs={12}>
-        <h1>Header</h1>
-      </Grid>
-      <Grid item xs={12}>
         <StyledImg src={image} alt="" />
       </Grid>
       <Grid item xs={12}>

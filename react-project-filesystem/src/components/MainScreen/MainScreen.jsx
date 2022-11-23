@@ -35,7 +35,7 @@ const MainScreen = () => {
               <Button
                 sx={{
                   position: "relative",
-                  top: "39vb",
+                  top: "40vb",
                   left: "1vb",
                   backgroundColor: "#ba000d",
                   fontWeight: "bold",
