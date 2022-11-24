@@ -5,7 +5,7 @@ import Carousel from "../Carousel/Carousel.jsx";
 const Quotes = () => {
   return (
     <SimpleContainer
-      Header="Our customers and personel had to say:"
+      Header="Our colaboratos had to say:"
       Body={<Carousel></Carousel>}
     ></SimpleContainer>
   );

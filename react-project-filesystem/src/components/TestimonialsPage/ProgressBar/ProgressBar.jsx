@@ -4,13 +4,13 @@ import "./ProgressBar.css";
 export const ProgressBar = ({ color1, color2, number }) => {
   return (
     <div className="skill">
-      <div className="outer">
-        <div className="inner">
+      <div className="circle__outer">
+        <div className="circle__inner">
           <div id="number">{number}</div>
         </div>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
+      <svg className = "circle__svg"
+        //xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         width="160px"
         height="160px"

@@ -16,7 +16,7 @@
   /* background: cornflowerblue; */
   position: relative;
 }
-.outer {
+.circle__outer {
   height: 40px;
   width: 40px;
   padding: 5px;
@@ -24,7 +24,7 @@
   box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.15),
     -2px -2px 3px -1px rgba(255, 255, 255, 0.7);
 }
-.inner {
+.circle__inner {
   height: 30px;
   width: 30px;
   display: flex;
@@ -48,7 +48,7 @@ circle {
   stroke-dashoffset: 472;
   animation: anim 2s linear forwards;
 }
-svg {
+.circle__svg {
   position: absolute;
   top: 0;
   left: 0;
