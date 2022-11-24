@@ -49,6 +49,7 @@ export const AboutSection = () => {
             and such and such and such imclude such and such and such and such
             and such and such and such and such and such and such imclude such
             and such and such and such and such and such and such and such and
+            and suchand such
             
           </StyledText>
           <Link to="/aboutus">

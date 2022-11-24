@@ -26,7 +26,7 @@ export const StyledImage = styled("img")`
 export const AboutusDrivers = styled("div")`
   position: relative;
   z-index: 2;
-  width: 35%;
+  width: 45%;
   text-align: end;
   padding: 10px;
   border-right: 7px outset red;
@@ -57,7 +57,7 @@ export const StyledText = styled("p")`
 export const AboutusCustomers = styled("div")`
   position: relative;
   z-index: 2;
-  width: 35%;
+  width: 45%;
   text-align: start;
   padding: 10px;
 `;

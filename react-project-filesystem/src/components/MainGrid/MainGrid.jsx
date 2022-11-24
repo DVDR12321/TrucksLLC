@@ -31,7 +31,6 @@ export default function MainGrid() {
           <div style={{ textAlign: "center" }}>
             <h1>? $ Payments $ ?</h1>
             <h1> Find us </h1>
-            <h1> Newsletter </h1>
           </div>
         </Grid>
       </Grid>

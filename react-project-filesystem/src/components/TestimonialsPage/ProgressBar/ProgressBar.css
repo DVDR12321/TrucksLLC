@@ -55,6 +55,6 @@ circle {
 }
 @keyframes anim {
   100% {
-    stroke-dashoffset: 378;
+    stroke-dashoffset: 390;
   }
 }
