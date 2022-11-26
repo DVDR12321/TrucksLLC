@@ -37,7 +37,7 @@ export const ProgressBar = ({ color1, color2, number }) => {
             <stop offset="100%" stop-color={color2} />
           </linearGradient>
         </defs>
-        <circle cx="20" cy="20" r="17.5" stroke-linecap="round" />
+        <circle cx="30" cy="30" r="26.5" stroke-linecap="round" />
       </svg>
     </div>
   );

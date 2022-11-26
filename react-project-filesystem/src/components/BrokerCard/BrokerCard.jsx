@@ -8,7 +8,7 @@ import { StyledCard } from "./StyledComponents";
 const BrokerCard = (props) => {
   const { imagep, headerp } = props;
   return (
-    <StyledCard className="root">
+    <StyledCard /*className="root"*/>
       <CardActionArea>
         <CardMedia
           component="img"

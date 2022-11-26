@@ -1,13 +1,11 @@
 import React from "react";
-import VideoPlayer from "./VideoPlayer";
-import { ContainingDiv, BackgroundDiv } from "./StyledComponents";
+import { StyledPlayer } from "./StyledComponents";
+import { ContainingDiv } from "../AboutUsSection/StyledComponents";
 
 const VideoScreen = () => {
   return (
     <ContainingDiv>
-      <BackgroundDiv>
-        <VideoPlayer></VideoPlayer>;
-      </BackgroundDiv>
+      <StyledPlayer></StyledPlayer>;
     </ContainingDiv>
   );
 };

@@ -6,7 +6,11 @@ export const StyledCard = styled(Card)`
   width: 80%;
   outline-style: solid;
   outline-width: 2px;
-  outline-color: rgba(0, 0, 0, 0.7);
+  outline-color: rgba(255, 255, 255, 0.5);
   background-color: transparent;
-  color: white;
+  color: rgba(255, 255, 255, 0.5);
+  :hover {
+    outline-color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
+  }
 `;

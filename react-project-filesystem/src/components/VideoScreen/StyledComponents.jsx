@@ -1,12 +1,4 @@
 import styled from "@emotion/styled";
+import VideoPlayer from "./VideoPlayer";
 
-export const BackgroundDiv = styled("div")`
-  position: absolute;
-  background-color: "grey";
-`;
-export const ContainingDiv = styled("div")`
-  position: relative;
-  justify-content: center;
-  padding: 10px;
-  width: 90%;
-`;
+export const StyledPlayer = styled(VideoPlayer)``;

@@ -30,7 +30,7 @@ export const StyledHeaderGrid = styled(Grid)`
 
 export const StyledCardsGrid = styled(Grid)`
   padding: 20px;
-  backdrop-filter: blur(5px) sepia(30%);
+  backdrop-filter: blur(7px) sepia(20%);
   height: 30vh;
   width: 80%;
   justify-content: center;
