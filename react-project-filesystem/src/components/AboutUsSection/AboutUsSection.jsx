@@ -1,12 +1,12 @@
 import React from "react";
-// import Logo from "../../assets/LogoWhiteBlack.png";
+import Background  from "../../assets/app__background.png";
 import {
   ContainingDiv,
   SectionOverlay,
   AboutusDrivers,
   StyledAboutHeader,
   StyledText,
-  // StyledImage,
+  StyledImage,
   AboutusCustomers,
   StyledSpan,
   StyledCustomersHeader,
@@ -19,9 +19,9 @@ export const AboutSection = () => {
   return (
     <ContainingDiv>
       <SectionOverlay>
-        {/* <StyledImage src={Logo} alt="img"></StyledImage> */}
+        <StyledImage src={Background} alt="img"></StyledImage>
         <AboutusDrivers>
-          <StyledAboutHeader>Drivers</StyledAboutHeader>
+          <StyledAboutHeader>About us</StyledAboutHeader>
           <StyledText>
             {" "}
             Benefits for our drivers include no - force{" "}
@@ -34,14 +34,14 @@ export const AboutSection = () => {
             your job as easy as possible. You drive - we pay!
           </StyledText>
           <Link to="/finances">
-            <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
-              See More
+            <Button color='red' variant="outlined" sx={{ margin: "5%" }}>
+              Learn More
             </Button>
           </Link>
         </AboutusDrivers>
         <SeparatorDiv></SeparatorDiv>
         <AboutusCustomers>
-          <StyledCustomersHeader>Customers</StyledCustomersHeader>
+          <StyledCustomersHeader>Our Services</StyledCustomersHeader>
           <StyledText>
             Benefints for our customers imclude such and such and such and such
             and such and such and such and such and Benefints for our customers
@@ -53,7 +53,7 @@ export const AboutSection = () => {
           </StyledText>
           <Link to="/aboutus">
             <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
-              See More
+              Learn More
             </Button>
           </Link>
         </AboutusCustomers>
