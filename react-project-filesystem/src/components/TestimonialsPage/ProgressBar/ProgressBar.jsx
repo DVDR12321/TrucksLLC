@@ -2,22 +2,20 @@ import { useRef } from "react";
 import "./ProgressBar.css";
 //import { useEffect } from 'react';
 
-
-
 export const ProgressBar = ({ color1, color2, number }) => {
   let ref = useRef(95);
-  let MyNumber = Number(number); 
+  let MyNumber = Number(number);
   // console.log(MyNumber);
   // console.log(ref.current);
-  //useEffect(() => {   
-    if (Number(ref.current) === MyNumber) {
-      console.log('done');
-    } else {
-      // ref.current += 1;
-      // console.log(ref.current);
-      console.log('not done');
-    }
-    
+  //useEffect(() => {
+  if (Number(ref.current) === MyNumber) {
+    console.log("done");
+  } else {
+    // ref.current += 1;
+    // console.log(ref.current);
+    console.log("not done");
+  }
+
   //});
   return (
     <div className="skill">
@@ -26,7 +24,8 @@ export const ProgressBar = ({ color1, color2, number }) => {
           <div id="number"> {number} </div>
         </div>
       </div>
-      <svg className = "circle__svg"
+      <svg
+        className="circle__svg"
         //xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         width="160px"
@@ -38,7 +37,7 @@ export const ProgressBar = ({ color1, color2, number }) => {
             <stop offset="100%" stop-color={color2} />
           </linearGradient>
         </defs>
-        <circle cx="20" cy="20" r="17.5" stroke-linecap="round"  />
+        <circle cx="20" cy="20" r="17.5" stroke-linecap="round" />
       </svg>
     </div>
   );

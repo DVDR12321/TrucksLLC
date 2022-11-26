@@ -12,11 +12,11 @@ import {
 import React, { useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "../../assets/logo.png";
+//import logo from "../../assets/logo.png";
 import {
   StyledAppBar,
   StyledAppHeaderItems,
-  StyledLogo,
+  //StyledLogo,
   StyledText,
 } from "./StyledComponents";
 
@@ -35,7 +35,7 @@ export default function AppHeader() {
     <StyledAppBar position="sticky" color="default">
       <Container>
         <Toolbar disableGutters>
-          <StyledLogo src={logo} alt="logo" />
+          {/* <StyledLogo src={logo} alt="logo" /> */}
           <Hidden smDown>
             <StyledAppHeaderItems>
               {navigationLinks.map((item) => (

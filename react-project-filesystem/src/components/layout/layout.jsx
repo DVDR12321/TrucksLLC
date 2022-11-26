@@ -1,15 +1,16 @@
 import * as React from "react";
-import Footer from "../Footer/Footer";
-import AppHeader from "../Header/AppHeader";
-import MainGrid from "../MainGrid/MainGrid";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../../Palette";
+// import Header from "../Header/AppHeader";
+// import Footer from "../Footer/Footer";
 
 const Layout = (props) => {
   return (
-    <>
-      <AppHeader></AppHeader>
-      {props.children}
-      <Footer></Footer>
-    </>
+    <ThemeProvider theme={theme}>
+      {/* <Header /> */}
+      <>{props.children}</>
+      {/* <Footer /> */}
+    </ThemeProvider>
   );
 };
 

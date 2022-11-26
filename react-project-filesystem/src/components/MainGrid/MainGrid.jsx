@@ -17,11 +17,15 @@ export default function MainGrid() {
         <Grid item xs={12} sx={{ paddingTop: "30px" }}>
           <AboutSection></AboutSection>
         </Grid>
-        <StyledGridContainer container columns={10} > 
-          <StyledGridContainer item xs={10} sx={{ display:'flex',justifyContent:"center"}}>
-          <Grid item xs={9}>
-            <VideoPlayer></VideoPlayer>
-          </Grid>
+        <StyledGridContainer container columns={10}>
+          <StyledGridContainer
+            item
+            xs={10}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <Grid item xs={9}>
+              <VideoPlayer></VideoPlayer>
+            </Grid>
           </StyledGridContainer>
         </StyledGridContainer>
         <Grid item xs={12}>

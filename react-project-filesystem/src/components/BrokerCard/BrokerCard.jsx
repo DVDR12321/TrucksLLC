@@ -22,7 +22,7 @@ const BrokerCard = (props) => {
             gutterBottom
             color="white"
             component="div"
-            sx={{ textAlign: "center", fontSize: "5vb" }}
+            sx={{ textAlign: "center", fontSize: "4vmin" }}
           >
             {headerp}
           </Typography>
