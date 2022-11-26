@@ -25,16 +25,16 @@ export const SectionOverlay = styled("div")`
     #f0f4f5
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
-export const StyledImage = styled("img")`
-  border-radius: 4% 4% 0 0;
-  position: absolute;
-  instet: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.3;
-  object-fit: cover;
-`;
+// export const StyledImage = styled("img")`
+//   border-radius: 4% 4% 0 0;
+//   position: absolute;
+//   instet: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 0;
+//   opacity: 0.3;
+//   object-fit: cover;
+// `;
 export const AboutusDrivers = styled("div")`
   position: relative;
   z-index: 2;
@@ -50,9 +50,9 @@ export const StyledAboutHeader = styled("h1")`
   font-size: 5rem;
   background: linear-gradient(
     139deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 240, 240, 0.7455181901862307) 64%,
-    rgba(129, 16, 16, 1) 100%
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 10, 10, 0.9) 64%,
+    rgba(255, 150, 150, 1) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -98,4 +98,4 @@ export const SeparatorDiv = styled("div")`
   width: 5px;
   background-color: "red";
 `;
-////////////////////// // SIMPLE CONTAINER
+

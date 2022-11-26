@@ -1,12 +1,12 @@
 import React from "react";
-import Logo from "../../assets/LogoWhiteBlack.png";
+// import Logo from "../../assets/LogoWhiteBlack.png";
 import {
   ContainingDiv,
   SectionOverlay,
   AboutusDrivers,
   StyledAboutHeader,
   StyledText,
-  StyledImage,
+  // StyledImage,
   AboutusCustomers,
   StyledSpan,
   StyledCustomersHeader,
@@ -19,7 +19,7 @@ export const AboutSection = () => {
   return (
     <ContainingDiv>
       <SectionOverlay>
-        <StyledImage src={Logo} alt="img"></StyledImage>
+        {/* <StyledImage src={Logo} alt="img"></StyledImage> */}
         <AboutusDrivers>
           <StyledAboutHeader>Drivers</StyledAboutHeader>
           <StyledText>
