@@ -1,37 +1,23 @@
 import React from "react";
-import Quotes from "./Recognitions/Quotes";
-import { References } from "./Laurels/References";
+//import Quotes from "./Recognitions/Quotes";
+//import { References } from "./Laurels/References";
 //import Logo from "../../assets/LogoWhiteBlack.png";
-import {
-  ContainingGrid,
-  SectionOverlayGrid,
-  Recognitions,
-  StyledRecognitionsHeader,
-  StyledText,
-  //StyledImage,
-  Laurels,
-  StyledLaurelsHeader,
-  SeparatorDiv,
-} from "./StyledComponents";
+import { SectionOverlayGrid } from "./StyledComponents";
+import { Card } from "./Card/Card";
+import Image1 from '../../assets/quotemark.png';
+import Image2 from '../../assets/quotemark2.png';
+
+
 export const Testimonials = () => {
   return (
-    <ContainingGrid container>
-      <SectionOverlayGrid container>
-        {/* <StyledImage src={Logo} alt="img"></StyledImage> */}
-        <Recognitions item sx = {{backgroundColor:'#000000'}}>
-          <StyledRecognitionsHeader>Recognitions</StyledRecognitionsHeader>
-          <StyledText>
-            <Quotes></Quotes>
-          </StyledText>
-        </Recognitions>
-        <SeparatorDiv></SeparatorDiv>
-        <Laurels item sx = {{backgroundColor:'#000000'}} >
-          <StyledLaurelsHeader>Laurels</StyledLaurelsHeader>
-          <StyledText>
-            <References></References>
-          </StyledText>
-        </Laurels>
-      </SectionOverlayGrid>
-    </ContainingGrid>
+    <SectionOverlayGrid container spacing={2}>
+      <Card img1={Image1} img2={Image2}>
+
+      </Card>
+      <Card>
+
+      </Card>
+    </SectionOverlayGrid>
   );
+  
 };
