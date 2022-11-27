@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 export const ReviewsContainingDiv = styled("div")`
   display: flex;
-  padding: 30px;
+  padding: 20px;
 `;
 export const StyledHeader = styled("h1")`
   font-size: 4vmin;

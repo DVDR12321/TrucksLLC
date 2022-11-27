@@ -24,12 +24,7 @@ const awards = [
     subtitle: "Platinum tier XPO carrier",
     progress: <ProgressBar color1="#1be44c" color2="#139b34" number="90%" />,
   },
-  {
-    id: "4",
-    title: "Echo Global Logistics",
-    subtitle: "Core carrier member",
-    progress: <ProgressBar color1="#1be44c" color2="#139b34" number="99%" />,
-  },
+ 
 ];
 
 export const References = () => {

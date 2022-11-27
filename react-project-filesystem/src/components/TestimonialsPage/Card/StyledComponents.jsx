@@ -7,9 +7,9 @@ export const CardContainer = styled('div')`
     justify-content:center;
     align-items:center;
     margin:5%;
-    border-radius:10%;
-    height: 70vh;
-    width: 50vh;
+    //border-radius:10%;
+    height: 80vh;
+    width: 60vh;
     background-color:transparent;
 `;
 
@@ -18,7 +18,7 @@ export const CardTop = styled('div')`
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    border-radius:10% 10% 0 0;
+   // border-radius:10% 10% 0 0;
     height: 20%;
     width:100%;
     background-color:#7f0000;
@@ -39,7 +39,7 @@ export const CardBottom = styled('div')`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    border-radius:0 0 10% 10%;
+    //border-radius:0 0 10% 10%;
     align-items:center;
     height: 20%;
     width:100%;

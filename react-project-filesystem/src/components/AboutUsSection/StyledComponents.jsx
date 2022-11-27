@@ -47,7 +47,7 @@ export const AboutusDrivers = styled("div")`
 export const StyledAboutHeader = styled("h1")`
   color: white;
   font-family: "Roboto Serif", serif;
-  font-size: 5rem;
+  font-size: 4rem;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     120deg,
@@ -78,7 +78,7 @@ export const StyledCustomersHeader = styled("h1")`
   padding: 5%;
   color: white;
   font-family: "Roboto Serif", serif;
-  font-size: 5rem;
+  font-size: 4rem;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     210deg,

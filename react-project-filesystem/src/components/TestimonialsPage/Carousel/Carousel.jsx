@@ -3,8 +3,8 @@ import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
+// import Paper from "@mui/material/Paper";
+// import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
@@ -16,12 +16,17 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     label: "CH Robinson",
-    imgPath: "https://i.stack.imgur.com/Xg9VU.jpg",
+    imgPath: "https://i.ibb.co/sqPdKqZ/CH-quote.png",
+  },
+  {
+    label: "Echo Global Logistics",
+    imgPath:
+      "https://i.ibb.co/bPZL1R0/echo-quote.png",
   },
   {
     label: "XPO Logistics",
     imgPath:
-      "https://www.ti-insight.com/wp-content/uploads/2019/05/xpo_logistics.5bfeaf3b4797b-285x231.jpg",
+      "https://i.ibb.co/XzqSxnN/xpo-quote.png",
   },
 ];
 
@@ -43,21 +48,20 @@ function Carousel() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
+    <Box sx={{ maxWidth: 400, flexGrow: 1,  }}>
+      {/* <Paper
         square
         elevation={0}
         sx={{
-          // justifyContent: "center",
-          height: 40,
+          height: 20,
           pl: 2,
-          bgcolor: "black",
+          bgcolor: "grey",
           color: "white",
           textAlign: "center",
         }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
+      > */}
+         {/* <Typography>{images[activeStep].label}</Typography> */}
+      {/* </Paper> */}
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -72,7 +76,7 @@ function Carousel() {
                 sx={{
                   height: 255,
                   display: "block",
-                  maxWidth: 400,
+                  // maxWidth: 400,
                   overflow: "hidden",
                   width: "100%",
                 }}
@@ -84,6 +88,9 @@ function Carousel() {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
+        sx={{
+          bgcolor:"#656264"
+        }}
         steps={maxSteps}
         position="static"
         activeStep={activeStep}

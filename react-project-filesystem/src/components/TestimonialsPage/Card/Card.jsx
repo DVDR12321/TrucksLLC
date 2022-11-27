@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
+
 import {
   CardContainer,
   CardTop,
@@ -15,7 +15,7 @@ export const Card = ({ img1, img2, content }) => {
       <CardTop>
         <TopImg src={img1} alt=" "></TopImg>
       </CardTop>
-      <CardMiddle>{<Carousel></Carousel>}</CardMiddle>
+      <CardMiddle>{content}</CardMiddle>
       
       <CardBottom><BotImg src={img2} alt=" "></BotImg></CardBottom>
     </CardContainer>
