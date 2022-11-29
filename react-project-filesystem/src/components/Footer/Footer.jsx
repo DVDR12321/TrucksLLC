@@ -9,9 +9,11 @@ import {
   StlyedFacebookIcon,
   StlyedInstagramIcon,
   StlyedYoutubeIcon,
+  StyledBottomText,
   StyledBox,
   StyledCaption,
   StyledLink,
+  StyledText,
 } from "./StyledComponents";
 
 const Footer = () => (
@@ -32,29 +34,28 @@ const Footer = () => (
               {" "}
               <StyledCaption> Our mission </StyledCaption>
             </StyledBox>
-            <Box>
+            <StyledText>
               {" "}
               We forge long-term relationships with key customers that include
               supply chain management as an integral part of their strategy.
               Working in concert, we drive out cost, add value and function as
               an extension of their enterprise.{" "}
-            </Box>
+            </StyledText>
           </Grid>
           <Grid item xs={12} sm={4}>
             <StyledBox>
               {" "}
               <StyledCaption>Contact Info</StyledCaption>{" "}
             </StyledBox>
-            <Box>
+            <StyledText>
               {" "}
               <PhoneIcon fontSize="small"></PhoneIcon> +1 312 466 11 01{" "}
-            </Box>
-            <Box>
+            </StyledText>
+            <StyledText>
               {" "}
               <EmailIcon fontSize="small" /> info@trucksllc.com{" "}
-            </Box>
+            </StyledText>
           </Grid>
-          <i className="fa fa-facebook" color="white"></i>
         </Grid>
         <Box textAlign="center" pt={{ xs: 1, sm: 2 }} pb={{ xs: 5, sm: 0 }}>
           <StyledLink
@@ -74,7 +75,10 @@ const Footer = () => (
           </StyledLink>
         </Box>
         <hr></hr>
-        Trucks LLC | &reg; {new Date().getFullYear()}
+        <StyledBottomText>
+          {" "}
+          Trucks LLC | &reg; {new Date().getFullYear()}
+        </StyledBottomText>
       </Container>
     </Box>
   </footer>

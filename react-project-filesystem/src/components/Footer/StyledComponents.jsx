@@ -13,6 +13,11 @@ export const StyledCaption = styled(Typography)`
   font-weight: 700;
   font-family: Montserrat;
   text-align: justify;
+  color: white;
+`;
+
+export const StyledText = styled(Typography)`
+  color: white;
 `;
 
 export const StyledLink = styled("a")`
@@ -20,8 +25,13 @@ export const StyledLink = styled("a")`
   text-decoration: none;
 `;
 
+export const StyledBottomText = styled(Typography)`
+  color: white;
+  padding-top: 15px;
+`;
+
 export const StlyedFacebookIcon = styled(FacebookIcon)`
-  padding: 5px 7px;
+  padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -34,7 +44,7 @@ export const StlyedFacebookIcon = styled(FacebookIcon)`
 `;
 
 export const StlyedInstagramIcon = styled(Instagram)`
-  padding: 5px 7px;
+  padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -47,7 +57,7 @@ export const StlyedInstagramIcon = styled(Instagram)`
 `;
 
 export const StlyedYoutubeIcon = styled(YouTubeIcon)`
-  padding: 5px 7px;
+  padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
