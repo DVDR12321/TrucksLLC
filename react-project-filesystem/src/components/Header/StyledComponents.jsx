@@ -12,6 +12,7 @@ export const StyledAppBar = styled(AppBar)`
 
 export const StyledAppHeaderItems = styled(Grid)`
   margin: auto;
+  margin-right: 5px;
 `;
 export const StyledLogo = styled("img")`
   padding-top: 10px;
@@ -22,4 +23,7 @@ export const StyledLogo = styled("img")`
 export const StyledText = styled("span")`
   text-transform: none;
   font-family: Arial;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 1px;
 `;

@@ -9,19 +9,19 @@ import {
   SwipeableDrawer,
   Toolbar,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
-//import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.png";
 import {
   StyledAppBar,
   StyledAppHeaderItems,
-  //StyledLogo,
+  StyledLogo,
   StyledText,
 } from "./StyledComponents";
 
 const navigationLinks = [
-  { name: "Home", href: "" },
+  { name: "Home", href: "/" },
   { name: "About", href: "aboutus" },
   { name: "Apply", href: "apply" },
   { name: "Finances", href: "/finances" },
@@ -31,17 +31,40 @@ const navigationLinks = [
 
 export default function AppHeader() {
   const [open, setOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 80) {
+      setShowHeader(true);
+    } else {
+      setShowHeader(false);
+    }
+  };
+
   return (
-    <StyledAppBar position="sticky" color="default">
+    <StyledAppBar
+      position="sticky"
+      color="default"
+      style={{
+        display: showHeader ? "block" : "none",
+      }}
+    >
       <Container>
         <Toolbar disableGutters>
-          {/* <StyledLogo src={logo} alt="logo" /> */}
+          <StyledLogo src={logo} alt="logo" />
           <Hidden smDown>
             <StyledAppHeaderItems>
               {navigationLinks.map((item) => (
                 <Link
                   style={{
-                    marginRight: 20,
+                    marginRight: 35,
                   }}
                   color="textPrimary"
                   variant="button"
