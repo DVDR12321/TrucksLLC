@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import ExpandMore from "@mui/icons-material/ArrowForwardIosSharp";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
@@ -21,7 +21,7 @@ const Accordion = styled((props) => (
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
     expandIcon={
-      <ArrowForwardIosSharpIcon sx={{ fontSize: "1.5rem", color: "red" }} />
+      <ExpandMore color='red' sx={{ fontSize: "1.5rem"}} />
     }
     {...props}
   />
@@ -30,7 +30,7 @@ const AccordionSummary = styled((props) => (
     theme.palette.mode === "dark"
       ? "rgba(255, 255, 255, .05)"
       : "rgba(0, 0, 0, .03)",
-  flexDirection: "row-reverse",
+  flexDirection: "row",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
   },
@@ -45,7 +45,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export default function Questionform() {
-  const [expanded, setExpanded] = React.useState("panel1");
+  const [expanded, setExpanded] = React.useState("panel0");
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);

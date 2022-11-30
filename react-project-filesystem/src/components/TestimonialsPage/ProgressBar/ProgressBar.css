@@ -34,7 +34,7 @@ circle {
   stroke-width: 5px;
   stroke-dasharray: 472;
   stroke-dashoffset: 472;
-  animation: anim 2s linear forwards;
+  animation: anim 1s linear forwards;
 }
 .circle__svg {
   position: absolute;

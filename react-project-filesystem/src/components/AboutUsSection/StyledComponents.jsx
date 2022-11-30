@@ -98,8 +98,13 @@ export const SeparatorDiv = styled("div")`
   height: 90%;
   z-index: 2;
   width: 5px;
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(32,9,9,1) 50%, rgba(213,0,0,1) 100%); 
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(32, 9, 9, 1) 50%,
+    rgba(213, 0, 0, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 `;

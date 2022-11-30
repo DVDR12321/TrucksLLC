@@ -20,13 +20,11 @@ const images = [
   },
   {
     label: "Echo Global Logistics",
-    imgPath:
-      "https://i.ibb.co/bPZL1R0/echo-quote.png",
+    imgPath: "https://i.ibb.co/bPZL1R0/echo-quote.png",
   },
   {
     label: "XPO Logistics",
-    imgPath:
-      "https://i.ibb.co/XzqSxnN/xpo-quote.png",
+    imgPath: "https://i.ibb.co/XzqSxnN/xpo-quote.png",
   },
 ];
 
@@ -48,7 +46,7 @@ function Carousel() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1,  }}>
+    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
       {/* <Paper
         square
         elevation={0}
@@ -60,7 +58,7 @@ function Carousel() {
           textAlign: "center",
         }}
       > */}
-         {/* <Typography>{images[activeStep].label}</Typography> */}
+      {/* <Typography>{images[activeStep].label}</Typography> */}
       {/* </Paper> */}
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -89,7 +87,7 @@ function Carousel() {
       </AutoPlaySwipeableViews>
       <MobileStepper
         sx={{
-          bgcolor:"#656264"
+          bgcolor: "#656264",
         }}
         steps={maxSteps}
         position="static"

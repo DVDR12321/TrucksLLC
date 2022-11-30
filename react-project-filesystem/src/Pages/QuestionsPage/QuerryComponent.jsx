@@ -1,57 +1,116 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import DefaultButton from "./Button";
+import {
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  TextField,
+  Typography,
+  InputAdornment,
+} from "@mui/material";
+import React from "react";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import MessageIcon from "@mui/icons-material/Message";
 
-const InputFields = [
-  {
-    id: 1,
-    string: "",
-    label: "example@domain.com",
-    variant: "outlined",
-    required: true,
-    focused: false,
-    helperText: "Please, enter your email",
-  },
-  {
-    id: 2,
-    string: "",
-    label: "?",
-    variant: "outlined",
-    required: true,
-    focused: false,
-    helperText: "Please, enter your quesion",
-  },
-];
-
-export default function QuerryField() {
+function QuerryField() {
   return (
-    <Box
-      alignItems="center"
-      component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" },
-        alignItems: "center",
-        borderBottom: "3px solid red",
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <h2>Ask us a question!</h2>
-      {InputFields.map(
-        ({ id, string, label, variant, required, focused, helperText }) => (
-          <TextField
-            id={id}
-            string={string}
-            label={label}
-            variant={variant}
-            required={required}
-            focused={focused}
-            helperText={helperText}
-          />
-        )
-      )}
-      <DefaultButton />
-    </Box>
+    <form>
+      <Card
+        sx={{ maxWidth: "450px", margin: "0 auto", padding: "2vmax 2vmin" }}
+      >
+        <CardContent>
+          <Typography variant="h5" color="red">
+            Ask us a question:
+          </Typography>
+          <Typography color="textSecondary" variant="body2" component="p">
+            Fill the form and our team will get back at you within 24 hours!
+          </Typography>
+          <Grid container spacing={1}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                color="red"
+                label="Name"
+                placeholder=""
+                variant="outlined"
+                fullWidth
+                required
+              ></TextField>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                color="red"
+                label="Last name"
+                placeholder=""
+                variant="outlined"
+                fullWidth
+                required
+              ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                color="red"
+                type="email"
+                label="e-mail"
+                placeholder="@"
+                variant="outlined"
+                fullWidth
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                color="red"
+                // type="number"
+                label="Phone Number"
+                placeholder="+1"
+                variant="outlined"
+                fullWidth
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <PhoneIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                color="red"
+                type="Message"
+                multiline
+                rows={3}
+                label="Your question:"
+                placeholder=""
+                variant="filled"
+                fullWidth
+                required
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <MessageIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              ></TextField>
+            </Grid>
+            <Grid item xs={12}>
+              <Button type="submit" variant="outlined" color="red" fullWidth>
+                Submit
+              </Button>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+    </form>
   );
 }
+export default QuerryField;

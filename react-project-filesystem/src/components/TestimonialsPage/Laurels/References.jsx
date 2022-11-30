@@ -24,7 +24,6 @@ const awards = [
     subtitle: "Platinum tier XPO carrier",
     progress: <ProgressBar color1="#1be44c" color2="#139b34" number="90%" />,
   },
- 
 ];
 
 export const References = () => {
