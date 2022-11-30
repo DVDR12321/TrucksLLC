@@ -15,10 +15,10 @@ function Drivers() {
   return (
     <Grid container spacing={3} sx={{ justifyContent: "center" }}>
       <StyledGrd container sx={12}>
-        <Stack>
+      <Stack>
           <StyledHeaderText> Drive With Us - <StyledSpan>Today!</StyledSpan> </StyledHeaderText>
           <StyledParagraph>
-            Wether you prefer to be a company driver or an owner-oprator, we
+            Whether you prefer to be a company driver or an owner-oprator, we
             have the best solutions for on the market for you.
           </StyledParagraph>
         </Stack>
