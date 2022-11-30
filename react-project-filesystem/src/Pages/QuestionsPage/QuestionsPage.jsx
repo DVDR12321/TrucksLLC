@@ -11,9 +11,7 @@ const QuestionsPage = () => {
       <Grid item xs={12}>
         <StyledImg src={image} alt="" />
       </Grid>
-      <Grid item xs={12}>
-        <QuerryField></QuerryField>
-      </Grid>
+      
       <Grid item xs={10} >
         <h1 style={{ textColor: "red" }}> About our firm</h1>
         <Questionform></Questionform>
@@ -21,6 +19,9 @@ const QuestionsPage = () => {
       <Grid item xs={10}>
         <h1 style={{ textColor: "red"}}> About our fleet</h1>
         <Questionform></Questionform>
+      </Grid>
+      <Grid item xs={12}>
+        <QuerryField></QuerryField>
       </Grid>
     </Grid>
   );

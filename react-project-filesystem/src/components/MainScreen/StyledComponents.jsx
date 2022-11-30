@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, Grid } from "@mui/material";
-import img from "../../assets/main__trucks__gray.jpg";
+import img from "../../assets/main_background_colored_cropped.png";
 
 // Grids ------------------------------------------------------------------
 export const StyledGrid = styled(Grid)`
@@ -38,12 +38,13 @@ export const StyledCardsGrid = styled(Grid)`
   margin: 0%;
 `;
 
-// Items ------------------------------------------------------------------
+// Items --------------------------------------------------------------------------------------------------------------------------------------------------
 
 export const StyledMainTitle = styled("h1")`
-  border-bottom: 5px solid red;
+  border-bottom: 4px outset red;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 12vmin;
-  color: black;
+  color: white;
 `;
 export const StyledButton = styled(Button)`
   font-weight: bold;

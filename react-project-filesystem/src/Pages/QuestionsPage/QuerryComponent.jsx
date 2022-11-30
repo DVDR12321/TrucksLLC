@@ -16,7 +16,7 @@ function QuerryField() {
   return (
     <form>
       <Card
-        sx={{ maxWidth: "450px", margin: "0 auto", padding: "2vmax 2vmin" }}
+        sx={{ maxWidth: "450px", margin: "0 auto", padding: "2vmax 2vmin", borderRadius:'5%' }}
       >
         <CardContent>
           <Typography variant="h5" color="red">
@@ -104,7 +104,7 @@ function QuerryField() {
             </Grid>
             <Grid item xs={12}>
               <Button type="submit" variant="outlined" color="red" fullWidth>
-                Submit
+                Submit question
               </Button>
             </Grid>
           </Grid>
