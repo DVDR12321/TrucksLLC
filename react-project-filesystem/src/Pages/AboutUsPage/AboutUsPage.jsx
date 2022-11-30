@@ -10,11 +10,16 @@ import {
   StyledSectionCaption,
   StyledGridRow,
   StyledMainGrid,
+  StyledCardBox,
+  StyledCardWrapper,
 } from "./StyledComponents";
 import Img1 from "../../assets/company.png";
 import Img2 from "../../assets/fleet.jpg";
 import Img3 from "../../assets/offer.jpg";
 import Grid from "@mui/material/Grid";
+import { Divider } from "@mui/material";
+import FlipCard from "../../components/FlipCard/FlipCard";
+import OurBenefits from "./OurBenefits";
 
 const AboutUsPage = () => {
   return (
@@ -95,25 +100,9 @@ const AboutUsPage = () => {
             <StyledImage src={Img2} alt=""></StyledImage>
           </Grid>
         </StyledGridRow>
-        <StyledGridRow container>
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <StyledImage src={Img3} alt=""></StyledImage>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <StyledSectionCaption>Our benefits for You</StyledSectionCaption>
-            <StyledText>
-              {" "}
-              24 hours Dispatch Fleet Monitoring Systems Know where your load is
-              any given time Well maintained fleet Responsible drivers{" "}
-            </StyledText>
-            <StyledText>
-              Inter-State serving all 51 We specialize in dry van freightWe
-              transport all commodities Storage and cross dock serviceWe do not
-              hire inexperienced driver
-            </StyledText>
-          </Grid>
-        </StyledGridRow>
       </StyledMainGrid>
+
+      <OurBenefits></OurBenefits>
     </StyledContainer>
   );
 };

@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
-import { Grid, Typography } from "@mui/material";
+import { Card, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "../../assets/headerimage.jpg";
+
+import CardImage from "../../assets/card.png";
+import BeneftisImage from "../../assets/app__background2.png";
 
 export const StyledContainer = styled("div")`
   background: #ada996; /* fallback for old browsers */
@@ -83,3 +86,68 @@ export const StyledGridRow = styled(Grid)`
 `;
 
 export const StyledMainGrid = styled(Grid)``;
+
+export const StyledCardBox = styled(Box)`
+  height: 200px;
+  background: red;
+`;
+
+export const StyledCardWrapper = styled(Grid)`
+  height: 60vh;
+  padding-bottom: 10vh;
+  // background: url(${BeneftisImage});
+`;
+
+export const StyledFlipContainer = styled(Grid)`
+  height: 100vh;
+`;
+
+export const StyledFlipCardOuter = styled(Grid)`
+width: 300px;
+height: 400px;
+margin: 25px 0;
+
+&.focus-trigger:focus {
+  outline: 5px solid greenyellow;
+  outline-offset: 5px;
+
+`;
+
+export const StyledFlipCardInner = styled(Grid)`
+  transform-style: preserve-3d;
+  transition: 0.5s linear 0.1s;
+  position: relative;
+  width: inherit;
+  height: inherit;
+
+  &.hover-trigger:hover {
+    transform: rotateY(180deg);
+  }
+
+  &.showBack {
+    transform: rotateY(180deg);
+  }
+`;
+
+export const StyledCard = styled(Grid)`
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  &.front {
+    transform: rotateY(0);
+    background-color: #2d2d2d;
+    color: #fff;
+  }
+  &.back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+    color: #2d2d2d;
+  }
+`;
+
+export const StyledFrontCard = styled("div")`
+  background: url(${CardImage});
+`;
