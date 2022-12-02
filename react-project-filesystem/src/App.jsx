@@ -23,7 +23,7 @@ class App extends Component {
             <Route path="/fleet" element={<FleetPage />} />
             <Route path="/q&a" element={<QuestionsPage />} />
             <Route path="/" element={<MainGrid />} />
-            {/* <Route path="*" element={<ErrorPage />} /> */}
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>
       </Layout>

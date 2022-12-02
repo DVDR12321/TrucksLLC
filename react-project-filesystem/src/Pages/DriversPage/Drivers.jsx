@@ -7,7 +7,7 @@ import Image2 from "../../assets/CompanyDriver.webp";
 import {
   StyledGrd,
   StyledHeaderText,
-  StyledParagraph,
+  //StyledParagraph,
   StyledSpan,
 } from "./StyledComponents";
 

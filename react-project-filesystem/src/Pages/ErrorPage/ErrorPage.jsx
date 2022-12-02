@@ -1,10 +1,11 @@
 import React from "react";
+import Image from '../../assets/errorpage.png';
+import {StyledImg} from "./StyledComponents";
 
 const ErrorPage = () => {
   return (
     <div>
-      <h1>404 error</h1>
-      <h2>page not found</h2>
+      <StyledImg src={Image} alt=' '></StyledImg>
     </div>
   );
 };
