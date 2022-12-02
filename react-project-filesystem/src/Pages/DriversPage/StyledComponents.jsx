@@ -27,8 +27,9 @@ export const StyledHeaderText = styled('h1')`
 `;
 export const StyledParagraph = styled('p')`
     font-size:20px;
-    color:rgba(255,255,255,0.9);
+    color:rgba(255,50,0,0.9);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   
 `;
 export const StyledSpan = styled('span')`
     color:red;

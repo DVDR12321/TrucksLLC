@@ -17,10 +17,10 @@ function Drivers() {
       <StyledGrd container sx={12}>
       <Stack>
           <StyledHeaderText> Drive With Us - <StyledSpan>Today!</StyledSpan> </StyledHeaderText>
-          <StyledParagraph>
+          {/* <StyledParagraph>
             Whether you prefer to be a company driver or an owner-oprator, we
             have the best solutions for on the market for you.
-          </StyledParagraph>
+          </StyledParagraph> */}
         </Stack>
       </StyledGrd>
       <Grid item xs={12} spacing={0} sx={{margin:'10px'}}>
