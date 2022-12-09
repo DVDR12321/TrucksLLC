@@ -22,7 +22,6 @@ export const Apply = () => {
       {state === false && <Screen2 />}
       <Back addTrip={() => setState(true)} />  
       <Next addTrip={() => setState(false)} /> 
-      
     </Card>
   );
 };
