@@ -67,7 +67,6 @@ function QuerryField() {
             <Grid item xs={12}>
               <TextField
                 color="red"
-                // type="number"
                 label="Phone Number"
                 placeholder="+1"
                 variant="outlined"
