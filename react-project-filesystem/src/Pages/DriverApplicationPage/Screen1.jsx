@@ -134,7 +134,7 @@ export const Screen1 = () => {
                         ></TextField>
                     </Grid>
                 </Grid>
-                {Compare === false && <Button type='submit'> Submit your application </Button>}
+                {Compare === false && <Button type='submit' fullWidth> Submit your application </Button>}
                 {Compare === true && <Button disabled> Entered data not matching </Button> }
             </CardContent>
         </form>
