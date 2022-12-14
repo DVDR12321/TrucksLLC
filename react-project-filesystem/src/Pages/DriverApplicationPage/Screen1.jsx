@@ -1,6 +1,7 @@
 import { TextField, Grid, Typography, CardContent, Button } from "@mui/material";
-import { useState } from "react";
 import emailjs from '@emailjs/browser';
+
+
 
 function sleep(milliseconds) {
     var start = new Date().getTime();
@@ -11,32 +12,39 @@ function sleep(milliseconds) {
     }
 };
 
-export const Screen1 = () => {
-    const [FirstName, setFirstName] = useState("");
-    const [LastName, setLastName] = useState("");
-    const [Email, setEmail] = useState("");
-    const [PhoneNumer, setPhoneNumber] = useState("");
-    const [EmailCheck, setEmailCheck] = useState("");
-    const [PhoneNumberCheck, setPhoneNumberCheck] = useState("");
-    const [Compare, setCompare] = useState(false);
+export const Screen1 = (props) => { 
+    const{ state, setState } = props;
+    window.onload = () => {
+        const eInput = document.getElementById('echeck');
+        const tInput = document.getElementById('tcheck');
+        eInput.onpaste = e => e.preventDefault();
+        tInput.onpaste = e => e.preventDefault();
+    };
 
-    console.log(FirstName, LastName);
     function SubmitHandler(event) {
         event.preventDefault();
-        if (PhoneNumer === PhoneNumberCheck && Email === EmailCheck) {
+        if (state.PhoneNumber === state.PhoneNumberCheck && state.Email === state.EmailCheck) {
             emailjs.sendForm('default_service', 'template_5muable', event.target, 'Bt5FJk_8UapAuvKNi')
                 .then((result) => {
                     console.log(result.text);
                 }, (error) => {
                     console.log(error.text);
                 });
-            event.target.reset();
+                event.target.reset();
         } else {
-            setCompare(true);
+            setState(state => ({ ...state, Compare: true }));
+            console.log(state);
             sleep(3000);
-            setCompare(false);
+            setState(state => ({ ...state, Compare: false }));
+            console.log(state);
         }
-    }    
+    } 
+    const HandleNameChange = (e) => {
+        const { name, value } = e.target;
+        setState(state=>({...state, [name]: value}));
+        console.log(state);
+    };
+
     return (
         <form onSubmit={SubmitHandler}>
             <CardContent>
@@ -58,84 +66,91 @@ export const Screen1 = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
                         <TextField
-                            name="form_FirstName"
+                            name="FirstName"
                             color="red"
                             label="First Name"
                             placeholder=""
                             variant="outlined"
                             fullWidth
                             required
-                            // value={name}
-                            onChange={e => setFirstName(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.FirstName}
                         ></TextField>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <TextField
-                            name="form_LastName"
+                            name="LastName"
                             color="red"
                             label="Last Name"
                             placeholder=""
                             variant="outlined"
                             fullWidth
                             required
-                            onChange={e => setLastName(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.LastName}
                         ></TextField>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <TextField
                             type='email'
-                            name="form_Email"
+                            name="Email"
                             color="red"
                             label="Email"
                             placeholder="@"
                             variant="outlined"
                             fullWidth
                             required
-                            onChange={e => setEmail(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.Email}
                         ></TextField>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <TextField
+                            id='echeck'
                             type='email'
-                            name="form_Email2"
+                            name="EmailCheck"
                             color="red"
                             label="Enter your email again for validation"
                             placeholder="@"
                             variant="outlined"
                             fullWidth
                             required
-                            onChange={e => setEmailCheck(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.EmailCheck}
                         ></TextField>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <TextField
+                        <TextField  
                             type='tel'
-                            name="form_Tel"
+                            name="PhoneNumber"
                             color="red"
                             label="Phone Number"
                             placeholder="+1"
                             variant="outlined"
                             fullWidth
                             required
-                            onChange={e => setPhoneNumber(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.PhoneNumber}
                         ></TextField>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <TextField
+                            id='tcheck'
                             type='tel'
-                            name="form_Tel2"
+                            name="PhoneNumberCheck"
                             color="red"
                             label="Enter your number again for validation"
                             placeholder="+1"
                             variant="outlined"
                             fullWidth
                             required
-                            onChange={ e => setPhoneNumberCheck(e.target.value)}
+                            onChange={e => HandleNameChange(e)}
+                            value={state.PhoneNumberCheck}
                         ></TextField>
                     </Grid>
                 </Grid>
-                {Compare === false && <Button type='submit' fullWidth> Submit your application </Button>}
-                {Compare === true && <Button disabled> Entered data not matching </Button> }
+                {state.Compare === false && <Button type='submit' fullWidth color='red'> Submit your application </Button>}
+                {state.Compare === true && <Button disabled color='red'> Entered data not matching </Button> }
             </CardContent>
         </form>
     );

@@ -16,14 +16,27 @@ const Back = (props) => {
 };
 
 export const Apply = () => {
-  const [state, setState] = useState(true);
+  
+  const data = {
+    
+    FirstName: '',
+    LastName: '',
+    Email: '',
+    PhoneNumber: '',
+    EmailCheck: '',
+    PhoneNumberCheck: '',
+    Compare: false
+  };
+  const [Trip, setTrip] = useState(true);
+  const [state, setState] = useState(data);
+  
   return (
    <Grid container sx={{justifyContent:'center'}}>
-    <Card sx={{maxWidth:'70vw'}} >
-      {state === true && <Screen1/>}
-      {state === false && <Screen2 />}
-      <Back addTrip={() => setState(true)} />  
-      <Next addTrip={() => setState(false)} /> 
+      <Card sx={{ maxWidth: '70vw' }} >
+        {Trip === true && <Screen1 setState={setState} state={state} />}
+        {Trip === false && <Screen2/>}
+        <Back addTrip={() => setTrip( true )} />  
+        <Next addTrip={() => setTrip( false )} /> 
       </Card>
     </Grid> 
   );
