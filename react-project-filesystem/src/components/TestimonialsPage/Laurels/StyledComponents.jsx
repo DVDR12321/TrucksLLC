@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 
-// REVIEWS CONTAINER
-
 export const ReviewsContainingDiv = styled("div")`
   display: flex;
   padding: 20px;

@@ -20,9 +20,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={
-      <ExpandMore color='red' sx={{ fontSize: "1.5rem"}} />
-    }
+    expandIcon={<ExpandMore color="error" sx={{ fontSize: "1.5rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -44,7 +42,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-export default function Questionform() {
+const QuestionForm = () => {
   const [expanded, setExpanded] = React.useState("panel0");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -108,4 +106,6 @@ export default function Questionform() {
       </Accordion>
     </div>
   );
-}
+};
+
+export default QuestionForm;

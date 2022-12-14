@@ -1,17 +1,7 @@
 import React from "react";
 import "./StyledComponents";
 
-const Svg = () => {
-  // let path = document.querySelector('path');
-  // let PathLenght = document.getTotalLength();
-  // path.style.strokeDasharray = PathLenght + ' ' + PathLenght;
-  // path.style.strokeDashoffset = PathLenght;
-  // window.addEventListener('scroll', () => {
-  //     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElementclientHeight);
-  //     var drawLength = PathLenght * scrollPercentage;
-  //     path.style.strokeDashoffset = PathLenght - drawLength;
-
-  // });
+const SvgImage = () => {
   return (
     <svg
       viewBox="0 0 1440 2100"
@@ -27,12 +17,4 @@ const Svg = () => {
   );
 };
 
-export default Svg;
-
-// {/* <section class = "one">
-//     <h1 classs="scroll" data-rate = ".4" data-direction = "vertical"></h1>
-
-// </section>
-// <section class = "one">
-//     <h1 classs="scroll" data-rate = ".2" data-direction = "vertical"></h1>
-// </section>  */}
+export default SvgImage;

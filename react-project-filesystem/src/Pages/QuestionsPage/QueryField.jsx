@@ -12,11 +12,16 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
 
-function QuerryField() {
+const QueryField = () => {
   return (
     <form>
       <Card
-        sx={{ maxWidth: "450px", margin: "0 auto", padding: "2vmax 2vmin", borderRadius:'5%' }}
+        sx={{
+          maxWidth: "450px",
+          margin: "0 auto",
+          padding: "2vmax 2vmin",
+          borderRadius: "5%",
+        }}
       >
         <CardContent>
           <Typography variant="h5" color="red">
@@ -28,7 +33,7 @@ function QuerryField() {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <TextField
-                color="red"
+                color="error"
                 label="Name"
                 placeholder=""
                 variant="outlined"
@@ -38,7 +43,7 @@ function QuerryField() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                color="red"
+                color="error"
                 label="Last name"
                 placeholder=""
                 variant="outlined"
@@ -48,7 +53,7 @@ function QuerryField() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="red"
+                color="error"
                 type="email"
                 label="e-mail"
                 placeholder="@"
@@ -66,8 +71,7 @@ function QuerryField() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="red"
-                // type="number"
+                color="error"
                 label="Phone Number"
                 placeholder="+1"
                 variant="outlined"
@@ -84,7 +88,7 @@ function QuerryField() {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="red"
+                color="error"
                 type="Message"
                 multiline
                 rows={3}
@@ -103,7 +107,7 @@ function QuerryField() {
               ></TextField>
             </Grid>
             <Grid item xs={12}>
-              <Button type="submit" variant="outlined" color="red" fullWidth>
+              <Button type="submit" variant="outlined" color="error" fullWidth>
                 Submit question
               </Button>
             </Grid>
@@ -112,5 +116,6 @@ function QuerryField() {
       </Card>
     </form>
   );
-}
-export default QuerryField;
+};
+
+export default QueryField;

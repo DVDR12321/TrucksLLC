@@ -2,7 +2,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
-import { AboutSection } from "../AboutUsSection/AboutUsSection";
+import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import { Testimonials } from "../TestimonialsPage/Testimonials";
 import {
   StyledGridContainer,
@@ -12,7 +12,7 @@ import {
   StyledVideoGrid,
 } from "./StyledComponents";
 
-export default function MainGrid() {
+const MainGrid = () => {
   return (
     <StyledBox sx={{ flexGrow: 2 }}>
       <Grid container spacing={0}>
@@ -20,7 +20,7 @@ export default function MainGrid() {
           <MainScreen></MainScreen>
         </Grid>
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>
-          <AboutSection></AboutSection>
+          <AboutUsSection></AboutUsSection>
         </StyledAboutGrid>
         <StyledVideoGrid container columns={10}>
           <StyledGridContainer item xs={9}>
@@ -41,4 +41,6 @@ export default function MainGrid() {
       </Grid>
     </StyledBox>
   );
-}
+};
+
+export default MainGrid;

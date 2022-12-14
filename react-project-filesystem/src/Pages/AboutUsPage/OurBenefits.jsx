@@ -24,17 +24,15 @@ const OurBenefits = () => {
   return (
     <StyledCardWrapper
       container
-      direction="column"
+      direction="row"
       justifyContent="center"
       alignItems="center"
       spacing={3}
     >
       <Grid item justifyContent="center">
-        {" "}
         <StyledSectionCaption> Our services for you </StyledSectionCaption>
       </Grid>
       <Grid item>
-        {" "}
         <Divider></Divider>
       </Grid>
       <Grid item>

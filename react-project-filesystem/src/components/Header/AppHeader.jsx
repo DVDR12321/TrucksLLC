@@ -29,7 +29,7 @@ const navigationLinks = [
   { name: "Contact", href: "" },
 ];
 
-export default function AppHeader() {
+const AppHeader = () => {
   const [open, setOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -123,4 +123,6 @@ export default function AppHeader() {
       </SwipeableDrawer>
     </StyledAppBar>
   );
-}
+};
+
+export default AppHeader;

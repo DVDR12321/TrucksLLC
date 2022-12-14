@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import CardImage from "../../assets/card.png";
 
 export const StyledFlipCard = styled("div")`
   background-color: transparent;
