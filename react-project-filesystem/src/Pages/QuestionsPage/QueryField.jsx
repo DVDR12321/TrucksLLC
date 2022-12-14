@@ -12,7 +12,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
 
-function QuerryField() {
+const QueryField = () => {
   return (
     <form>
       <Card
@@ -116,5 +116,6 @@ function QuerryField() {
       </Card>
     </form>
   );
-}
-export default QuerryField;
+};
+
+export default QueryField;

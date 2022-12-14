@@ -12,7 +12,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import MessageIcon from "@mui/icons-material/Message";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
-function Referral() {
+const RefferalForm = () => {
   return (
     <form>
       <Card
@@ -121,5 +121,5 @@ function Referral() {
       </Card>
     </form>
   );
-}
-export default Referral;
+};
+export default RefferalForm;

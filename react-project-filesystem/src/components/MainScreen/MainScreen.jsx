@@ -15,6 +15,7 @@ import {
   StyledButtonGrid,
   StyledCardsGrid,
   StyledHeaderGrid,
+  StyledLink,
 } from "./StyledComponents";
 
 const MainScreen = () => {
@@ -27,40 +28,28 @@ const MainScreen = () => {
           </StyledMainTitle>
         </StyledHeaderGrid>
         <StyledButtonGrid item xs={3} md={6}>
-          <Link to="apply">
+          <StyledLink to="apply">
             <StyledButton variant="outlined" color="error">
               Join us
             </StyledButton>
-          </Link>
+          </StyledLink>
         </StyledButtonGrid>
       </Grid>
       <StyledCardsGrid container spacing={0}>
         <Grid item xs={3}>
-          <Link to="">
-            <BrokerCard
-              imagep={img4}
-              headerp="About Us"
-              // textp="Clic to ind out about us and our mission"
-            />
-          </Link>
+          <StyledLink to="">
+            <BrokerCard imagep={img4} headerp="About Us" />
+          </StyledLink>
         </Grid>
         <Grid item xs={3}>
-          <Link to="">
-            <BrokerCard
-              imagep={img3}
-              headerp="Driver benefits"
-              // textp="Find out how to reach us"
-            />
-          </Link>
+          <StyledLink to="">
+            <BrokerCard imagep={img3} headerp="Driver benefits" />
+          </StyledLink>
         </Grid>
         <Grid item xs={3}>
-          <Link to="">
-            <BrokerCard
-              imagep={img5}
-              headerp="Our fleet"
-              // textp="Find out about our available assets"
-            />
-          </Link>
+          <StyledLink to="">
+            <BrokerCard imagep={img5} headerp="Our fleet" />
+          </StyledLink>
         </Grid>
         <Grid item xs={3}>
           <LinkScroll to="/#references">

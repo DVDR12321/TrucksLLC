@@ -27,7 +27,7 @@ const awards = [
   },
 ];
 
-export const References = () => {
+const References = () => {
   return (
     <>
       {awards.map(({ title, subtitle, progress }, index) => (
@@ -44,3 +44,5 @@ export const References = () => {
     </>
   );
 };
+
+export default References;

@@ -42,7 +42,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-export default function Questionform() {
+const QuestionForm = () => {
   const [expanded, setExpanded] = React.useState("panel0");
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -106,4 +106,6 @@ export default function Questionform() {
       </Accordion>
     </div>
   );
-}
+};
+
+export default QuestionForm;

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 import img from "../../assets/main_background_colored_cropped.png";
 
 // Grids ------------------------------------------------------------------
@@ -51,4 +52,8 @@ export const StyledButton = styled(Button)`
   font-size: 6vmin;
   height: 7vmin;
   width: 20vmax;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

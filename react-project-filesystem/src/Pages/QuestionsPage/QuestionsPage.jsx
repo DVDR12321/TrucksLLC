@@ -2,8 +2,8 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import image from "../../assets/GrayLogo.jpg";
 import { StyledImg } from "./StyledComponents";
-import QuerryField from "./QuerryComponent";
-import Questionform from "./QuestionsComponent";
+import QueryField from "./QueryField";
+import QuestionForm from "./QuestionForm";
 
 const QuestionsPage = () => {
   return (
@@ -18,14 +18,14 @@ const QuestionsPage = () => {
 
       <Grid item xs={10}>
         <h1 style={{ color: "red" }}> About our firm</h1>
-        <Questionform></Questionform>
+        <QuestionForm></QuestionForm>
       </Grid>
       <Grid item xs={10}>
         <h1 style={{ color: "red" }}> About our fleet</h1>
-        <Questionform></Questionform>
+        <QuestionForm></QuestionForm>
       </Grid>
       <Grid item xs={12}>
-        <QuerryField></QuerryField>
+        <QueryField></QueryField>
       </Grid>
     </Grid>
   );

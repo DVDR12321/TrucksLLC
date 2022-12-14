@@ -1,6 +1,6 @@
 import { Grid, Stack, Divider } from "@mui/material";
 import React from "react";
-import DriverCard from "./DriversCard";
+import DriverCard from "./DriverCard";
 import Referral from "./RefferalForm";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";

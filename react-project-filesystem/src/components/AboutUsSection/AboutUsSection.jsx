@@ -13,9 +13,9 @@ import {
   SeparatorDiv,
 } from "./StyledComponents";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { StyledLink } from "../MainScreen/StyledComponents";
 
-export const AboutSection = () => {
+const AboutUsSection = () => {
   return (
     <ContainingDiv>
       <SectionOverlay>
@@ -33,11 +33,11 @@ export const AboutSection = () => {
             most convenient practices, tailored to suit your every need and make
             your job as easy as possible. You drive - we pay!
           </StyledText>
-          <Link to="/finances">
+          <StyledLink to="/finances">
             <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
               Learn More
             </Button>
-          </Link>
+          </StyledLink>
         </AboutusDrivers>
         <SeparatorDiv></SeparatorDiv>
         <AboutusCustomers>
@@ -51,13 +51,15 @@ export const AboutSection = () => {
             and such and such and such and such and such and such and such and
             and suchand such
           </StyledText>
-          <Link to="/aboutus">
+          <StyledLink to="/aboutus">
             <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
               Learn More
             </Button>
-          </Link>
+          </StyledLink>
         </AboutusCustomers>
       </SectionOverlay>
     </ContainingDiv>
   );
 };
+
+export default AboutUsSection;

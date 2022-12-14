@@ -35,7 +35,6 @@ export const CardBottom = styled("div")`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //border-radius:0 0 10% 10%;
   align-items: center;
   height: 20%;
   width: 100%;

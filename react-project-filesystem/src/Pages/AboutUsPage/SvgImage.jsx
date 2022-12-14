@@ -1,7 +1,7 @@
 import React from "react";
 import "./StyledComponents";
 
-const Svg = () => {
+const SvgImage = () => {
   return (
     <svg
       viewBox="0 0 1440 2100"
@@ -17,4 +17,4 @@ const Svg = () => {
   );
 };
 
-export default Svg;
+export default SvgImage;

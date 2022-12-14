@@ -8,7 +8,7 @@ import { StyledButton } from "./StyledComponents";
 
 export default function DriverCard({ img1, text, header, button1, button2 }) {
   return (
-    <Card sx={{ maxWidth: 450, borderRadius: "5%" }}>
+    <Card sx={{ width: 450, borderRadius: "5%" }}>
       <CardMedia component="img" height="60%" image={img1} alt=" " />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
