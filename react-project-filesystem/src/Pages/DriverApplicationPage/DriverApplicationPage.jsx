@@ -2,6 +2,7 @@ import React from "react";
 import {
   Card,
   Button,
+  Grid,
 } from "@mui/material";
 import { useState } from "react";
 import { Screen1 } from "./Screen1";
@@ -17,12 +18,14 @@ const Back = (props) => {
 export const Apply = () => {
   const [state, setState] = useState(true);
   return (
-    <Card>
+   <Grid container sx={{justifyContent:'center'}}>
+    <Card sx={{maxWidth:'70vw'}} >
       {state === true && <Screen1/>}
       {state === false && <Screen2 />}
       <Back addTrip={() => setState(true)} />  
       <Next addTrip={() => setState(false)} /> 
-    </Card>
+      </Card>
+    </Grid> 
   );
 };
 

@@ -16,7 +16,7 @@ export const Screen2 = () => {
 
   function AddHandle(e) { 
     setNewAdress([...NewAdress, {Adress:''}]);
-    //console.log(NewAdress);
+    console.log(NewAdress);
   }
   
   function RemoveHandle(index) {
@@ -28,7 +28,7 @@ export const Screen2 = () => {
   function ChangeHandle(e, index) {
     const { name, value } = e.target;
     const list = [...NewAdress];
-    console.log(index);
+    //console.log(index);
     list[index][name] = value;
     //console.log(list);
     setNewAdress(list);
@@ -41,42 +41,45 @@ export const Screen2 = () => {
   return (
     <form onSubmit={SubmitHandler}>
       <CardContent>
-        <Grid item xs={12}>
+       <Grid container spacing={2}>
+        <Grid  item xs={12}>
           <Typography variant="h3" textAlign="center" color="rgb(255, 0, 0)">
             {" "}
             Drive for us
           </Typography>
           <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
             {" "}
-            Fill out the form, and our recuriting team will get back at you
-            within a day!{" "}
+            Send us aditional information so that we may expedite recruitment process for you !{" "}
           </Typography>
           <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
             {" "}
             * Symbol marks a required field{" "}
           </Typography>
         </Grid>
-        <Grid container spacing={2}> 
+        <Grid item spacing={2} xs={12}> 
           {NewAdress.map((Adress, index) => {
             return (
-              <Grid  item xs={12} md={12}> 
+              <Grid container  > 
+                <Grid item xs={10} md={10}>
                 <TextField
                   key={Adress}
                   name="Adress"
                   color="red"
-                  label="First Name"
-                  placeholder=""
+                  label="Adress"
+                  placeholder="476 Alderwood Rd.
+                  Seymour, IN 47274"
                   variant="outlined"
                   fullWidth
                   required
                   onChange = {(e) => ChangeHandle(e, index)}
                 ></TextField>
-                
-                <IconButton aria-label="add" color='red' onClick={ RemoveHandle }>
+                </Grid>
+                <Grid item xs={2} md={2}>
+                  <IconButton aria-label="remove" color='red' onClick={ RemoveHandle }>
                     <RemoveIcon/>
-                </IconButton>
+                  </IconButton>
+                </Grid>
               </Grid>
-
             );
           })
           }
@@ -84,6 +87,34 @@ export const Screen2 = () => {
             <AddIcon/>
           </IconButton>
         </Grid>
+        <Grid item xs={12}>
+          <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
+            {" "}
+            Were you in any Accidents in the past? If so please list the date with a brief description:
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <TextField
+          name="Date"
+          type='date'
+          variant="outlined"
+          fullWidth
+          required
+          >
+          </TextField>
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <TextField
+          name="Description"
+          type='Message'
+          label="Description"  
+          variant="outlined"
+          fullWidth
+          required
+          >
+          </TextField>
+          </Grid>
+          </Grid>   
       </CardContent>
     </form>
   );
