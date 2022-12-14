@@ -1,3 +1,4 @@
+import React from "react";
 import { ProgressBar } from "../ProgressBar/ProgressBar";
 import {
   ReviewsContainingDiv,
@@ -28,13 +29,10 @@ const awards = [
 
 export const References = () => {
   return (
-    <div>
-      {awards.map(({ title, subtitle, progress }) => (
-        <ReviewsContainingDiv>
-          <div
-            key={awards.id}
-            style={{ display: "flex", alignItems: "center" }}
-          >
+    <>
+      {awards.map(({ title, subtitle, progress }, index) => (
+        <ReviewsContainingDiv key={index}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {progress}
           </div>
           <div>
@@ -43,8 +41,6 @@ export const References = () => {
           </div>
         </ReviewsContainingDiv>
       ))}
-    </div>
-
-    //  ovo treba lepse da se napise sve... ima previse divova.
+    </>
   );
 };

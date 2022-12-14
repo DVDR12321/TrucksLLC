@@ -34,7 +34,7 @@ export const AboutSection = () => {
             your job as easy as possible. You drive - we pay!
           </StyledText>
           <Link to="/finances">
-            <Button color="red" variant="outlined" sx={{ margin: "5%" }}>
+            <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
               Learn More
             </Button>
           </Link>

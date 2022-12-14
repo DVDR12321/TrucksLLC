@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-//import VideoPlayer from "./VideoPlayer";
 import Background from "../../assets/app__background2.png";
 
 export const ContainingDiv = styled("div")`

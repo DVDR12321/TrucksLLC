@@ -10,15 +10,10 @@ import {
   StyledSectionCaption,
   StyledGridRow,
   StyledMainGrid,
-  StyledCardBox,
-  StyledCardWrapper,
 } from "./StyledComponents";
 import Img1 from "../../assets/company.png";
 import Img2 from "../../assets/fleet.jpg";
-import Img3 from "../../assets/offer.jpg";
 import Grid from "@mui/material/Grid";
-import { Divider } from "@mui/material";
-import FlipCard from "../../components/FlipCard/FlipCard";
 import OurBenefits from "./OurBenefits";
 
 const AboutUsPage = () => {

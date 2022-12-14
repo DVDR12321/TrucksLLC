@@ -7,17 +7,21 @@ import Questionform from "./QuestionsComponent";
 
 const QuestionsPage = () => {
   return (
-    <Grid container spacing={5} sx={{ justifyContent:'center', textAlign:'center'}}>
+    <Grid
+      container
+      spacing={5}
+      sx={{ justifyContent: "center", textAlign: "center" }}
+    >
       <Grid item xs={12}>
         <StyledImg src={image} alt="" />
       </Grid>
-      
-      <Grid item xs={10} >
-        <h1 style={{ textColor: "red" }}> About our firm</h1>
+
+      <Grid item xs={10}>
+        <h1 style={{ color: "red" }}> About our firm</h1>
         <Questionform></Questionform>
       </Grid>
       <Grid item xs={10}>
-        <h1 style={{ textColor: "red"}}> About our fleet</h1>
+        <h1 style={{ color: "red" }}> About our fleet</h1>
         <Questionform></Questionform>
       </Grid>
       <Grid item xs={12}>

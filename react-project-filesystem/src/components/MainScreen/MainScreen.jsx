@@ -28,7 +28,7 @@ const MainScreen = () => {
         </StyledHeaderGrid>
         <StyledButtonGrid item xs={3} md={6}>
           <Link to="apply">
-            <StyledButton variant="outlined" color="red">
+            <StyledButton variant="outlined" color="error">
               Join us
             </StyledButton>
           </Link>

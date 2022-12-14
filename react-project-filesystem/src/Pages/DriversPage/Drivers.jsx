@@ -4,26 +4,20 @@ import DriverCard from "./DriversCard";
 import Referral from "./RefferalForm";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";
-import {
-  StyledGrd,
-  StyledHeaderText,
-  //StyledParagraph,
-  StyledSpan,
-} from "./StyledComponents";
+import { StyledGrid, StyledHeaderText, StyledSpan } from "./StyledComponents";
 
 function Drivers() {
   return (
     <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-      <StyledGrd container sx={12}>
-      <Stack>
-          <StyledHeaderText> Drive With Us - <StyledSpan>Today!</StyledSpan> </StyledHeaderText>
-          {/* <StyledParagraph>
-            Whether you prefer to be a company driver or an owner-oprator, we
-            have the best solutions for on the market for you.
-          </StyledParagraph> */}
+      <StyledGrid container>
+        <Stack>
+          <StyledHeaderText>
+            {" "}
+            Drive With Us - <StyledSpan>Today!</StyledSpan>{" "}
+          </StyledHeaderText>
         </Stack>
-      </StyledGrd>
-      <Grid item xs={12} spacing={0} sx={{margin:'10px'}}>
+      </StyledGrid>
+      <Grid item xs={12} sx={{ margin: "10px" }}>
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={{ xs: 1, sm: 2, md: 8 }}

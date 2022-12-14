@@ -20,9 +20,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={
-      <ExpandMore color='red' sx={{ fontSize: "1.5rem"}} />
-    }
+    expandIcon={<ExpandMore color="error" sx={{ fontSize: "1.5rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
