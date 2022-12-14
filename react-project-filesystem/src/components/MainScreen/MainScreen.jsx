@@ -4,7 +4,6 @@ import img4 from "../../assets/logo.gif";
 import img5 from "../../assets/truckgif.gif";
 import img6 from "../../assets/Card Pie Chart.gif";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
 import BrokerCard from "../BrokerCard/BrokerCard";
 import { Link as LinkScroll } from "react-scroll";
 
