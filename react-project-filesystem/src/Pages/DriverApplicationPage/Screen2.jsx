@@ -18,7 +18,6 @@ export const Screen2 = () => {
   // ADRESS FIELD ******************************************
   function AddAdress() { 
     setNewAdress([...NewAdress, {Adress:''}]);
-    //console.log(NewAdress);
   }
   
   function RemoveAdress(index1) {
@@ -30,11 +29,8 @@ export const Screen2 = () => {
   function AdressChange(e, index1) {
     const { name, value } = e.target;
     const list1 = [...NewAdress];
-    //console.log(index1);
     list1[index1][name] = value;
-    //console.log(list1);
     setNewAdress(list1);
-    //console.log(NewAdress);
    }
 // ACCIDENTS AND CITATIONS FIELD ******************************************
    function AddAccident() {
