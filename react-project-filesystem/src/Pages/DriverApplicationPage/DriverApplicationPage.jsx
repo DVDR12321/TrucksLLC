@@ -3,7 +3,6 @@ import { Card, Button, Grid } from "@mui/material";
 import { useState } from "react";
 import { Screen1 } from "./Screen1";
 import { Screen2 } from "./Screen2";
-import PreviousEmployments from "./PreviousEmployments";
 
 const Next = (props) => {
   return <Button onClick={props.addTrip}>Next</Button>;
@@ -28,11 +27,10 @@ export const Apply = () => {
   return (
     <Grid container sx={{ justifyContent: "center" }}>
       <Card sx={{ maxWidth: "70vw" }}>
-        {Trip === true && <Screen1 setState={setState} state={state} />}
-        {Trip === false && <Screen2 />}
+        {Trip === false && <Screen1 setState={setState} state={state} />}
+        {Trip === true && <Screen2 />}
         <Back addTrip={() => setTrip(true)} />
         <Next addTrip={() => setTrip(false)} />
-        <PreviousEmployments></PreviousEmployments>
       </Card>
     </Grid>
   );
