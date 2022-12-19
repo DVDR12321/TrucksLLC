@@ -12,7 +12,7 @@ export const Testimonials = () => {
     <SectionOverlayGrid container spacing={2}>
       <Card img1={Image1} img2={Image2} content={<Carousel></Carousel>}></Card>
       <Card
-        img1={Image3}
+        img1={Image1}
         img2={Image2}
         content={<References></References>}
       ></Card>

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import Background from "../../assets/app__background2.png";
 
 export const ContainingDiv = styled("div")`

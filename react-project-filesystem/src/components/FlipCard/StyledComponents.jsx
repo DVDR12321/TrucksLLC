@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import { grey } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
 
 export const StyledFlipCard = styled("div")`
   background-color: transparent;
@@ -26,21 +27,23 @@ export const StyledFrontCard = styled("div")`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: #bbb;
+  background-color: ${grey[400]};
   color: black;
   z-index: 2;
   border-radius: 5px;
   padding: 5px;
 `;
 
-export const StyledBackCard = styled("div")`
+export const StyledBackCard = styled("div")(
+  ({ theme }) => `
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: #da1e2c;
-  color: white;
+  background-color: ${theme.palette.primary.light};
+  color: ${theme.palette.common.white};
   transform: rotateY(180deg);
   z-index: 1;
   border-radius: 5px;
-`;
+`
+);

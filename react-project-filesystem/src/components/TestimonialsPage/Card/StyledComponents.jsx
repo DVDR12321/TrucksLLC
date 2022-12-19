@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import { grey } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
 
 export const CardContainer = styled("div")`
   display: flex;
@@ -11,35 +12,41 @@ export const CardContainer = styled("div")`
   background-color: transparent;
 `;
 
-export const CardTop = styled("div")`
+export const CardTop = styled("div")(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 20%;
   width: 100%;
-  background-color: #7f0000;
-`;
+  background-color: ${grey[900]};
+`
+);
 
-export const CardMiddle = styled("div")`
+export const CardMiddle = styled("div")(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60%;
   width: 100%;
-  background-color: black;
-`;
+  background-color: ${grey[600]};
+`
+);
 
-export const CardBottom = styled("div")`
+export const CardBottom = styled("div")(
+  ({ theme }) => `
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 20%;
   width: 100%;
-  background-color: #7f0000;
-`;
+  background-color: ${grey[900]};
+`
+);
 
 export const TopImg = styled("img")`
   height: 50%;
