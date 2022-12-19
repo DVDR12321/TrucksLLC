@@ -229,10 +229,9 @@ export const Screen1 = (props) => {
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
-                      You can submit your application with data you entered so
-                      far, or fill pages 2 and 3 (optional). Providing us with
-                      more information means our team will be prioritizing your
-                      application over others.
+                      You can provide aditional data on pages 2 and 3. Providing
+                      us with more information means our team will be
+                      prioritizing your application over the others.
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
