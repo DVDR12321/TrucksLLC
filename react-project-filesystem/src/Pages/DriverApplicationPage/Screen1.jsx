@@ -19,6 +19,7 @@ import emailjs from "@emailjs/browser";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
+import { useRef } from "react";
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -36,6 +37,7 @@ export const Screen1 = (props) => {
   const { state, setState } = props;
   const [position, setPosition] = useState("");
   const [open, setOpen] = useState(false);
+  const formRef = useRef(null);
 
   window.onload = () => {
     const eInput = document.getElementById("echeck");
@@ -49,7 +51,41 @@ export const Screen1 = (props) => {
   };
 
   const handleClickOpen = () => {
-    setOpen(true);
+    if (formRef.current.checkValidity()) {
+      setOpen(true);
+      //formRef.current.submit();
+    } else {
+      // Form is invalid, display errors
+      formRef.current.reportValidity();
+    }
+  };
+  const handleClick1 = async () => {
+    if (
+      state.PhoneNumber === state.PhoneNumberCheck &&
+      state.Email === state.EmailCheck
+    ) {
+      emailjs
+        .sendForm(
+          "default_service",
+          "template_5muable",
+          formRef.current,
+          "Bt5FJk_8UapAuvKNi"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    } else {
+      setState((state) => ({ ...state, Compare: true }));
+      sleep(3000);
+      setState((state) => ({ ...state, Compare: false }));
+    }
+    setOpen(false);
+    formRef.current.reset();
   };
 
   const handleClose = () => {
@@ -61,37 +97,8 @@ export const Screen1 = (props) => {
     setState((state) => ({ ...state, [name]: value }));
   };
 
-  const SubmitHandler = (event) => {
-    event.preventDefault();
-    if (
-      state.PhoneNumber === state.PhoneNumberCheck &&
-      state.Email === state.EmailCheck
-    ) {
-      emailjs
-        .sendForm(
-          "default_service",
-          "template_5muable",
-          event.target,
-          "Bt5FJk_8UapAuvKNi"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-      event.target.reset();
-    } else {
-      setState((state) => ({ ...state, Compare: true }));
-      sleep(3000);
-      setState((state) => ({ ...state, Compare: false }));
-    }
-  };
-
   return (
-    <form onSubmit={SubmitHandler}>
+    <form ref={formRef}>
       <CardContent>
         <Grid item xs={12}>
           <Typography variant="h3" textAlign="center" color="rgb(255, 0, 0)">
@@ -236,7 +243,7 @@ export const Screen1 = (props) => {
                   </DialogContent>
                   <DialogActions>
                     <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={SubmitHandler}>Submit</Button>
+                    <Button onClick={handleClick1}>Submit</Button>
                   </DialogActions>
                 </Dialog>
               </div>

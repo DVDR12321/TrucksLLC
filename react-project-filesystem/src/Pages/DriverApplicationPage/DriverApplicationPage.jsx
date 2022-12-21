@@ -20,6 +20,9 @@ export const Apply = () => {
     EmailCheck: "",
     PhoneNumberCheck: "",
     Compare: false,
+    Adress: [""],
+    Accident: [{ Date: "", Description: "" }],
+    Employment: [{ Name: "", DateFrom: "", DateTo: "" }],
   };
   const [Trip, setTrip] = useState(true);
   const [state, setState] = useState(data);
@@ -27,8 +30,8 @@ export const Apply = () => {
   return (
     <Grid container sx={{ justifyContent: "center" }}>
       <Card sx={{ maxWidth: "70vw" }}>
-        {Trip === false && <Screen1 setState={setState} state={state} />}
-        {Trip === true && <Screen2 />}
+        {Trip === true && <Screen1 setState={setState} state={state} />}
+        {Trip === false && <Screen2 setState={setState} state={state} />}
         <Back addTrip={() => setTrip(true)} />
         <Next addTrip={() => setTrip(false)} />
       </Card>

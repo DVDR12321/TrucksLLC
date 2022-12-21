@@ -5,10 +5,9 @@ import { useEffect } from "react";
 // WebKey : 85a1a1c4c94d781917fdf0ddb5bc09d49092c384
 
 const PreviousEmployments = () => {
-  const [name, setName] = useState([""]);
+  const [name, setName] = useState("");
   const [CarrierData, setCarrierData] = useState({});
   const [result, setResult] = useState([""]);
-  const a = ["123"];
   let r = [];
 
   const HandleChange = (e) => {
@@ -17,7 +16,7 @@ const PreviousEmployments = () => {
 
   useEffect(() => {
     fetch(
-      `https://mobile.fmcsa.dot.gov/qc/services/carriers/name/${name.toString()}?webKey=85a1a1c4c94d781917fdf0ddb5bc09d49092c384`
+      `https://mobile.fmcsa.dot.gov/qc/services/carriers/name/${name}?webKey=85a1a1c4c94d781917fdf0ddb5bc09d49092c384`
     )
       .then((response) => {
         return response.json();

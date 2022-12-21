@@ -8,57 +8,72 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useState } from "react";
 import PreviousEmployments from "./PreviousEmployments";
 
-export const Screen2 = () => {
-  const [NewAdress, setNewAdress] = useState([{ Adress: "" }]);
-  const [NewAccident, setNewAccident] = useState([
-    { Date: "", Description: "" },
-  ]);
+export const Screen2 = (props) => {
+  const { state, setState } = props;
 
   // ADRESS FIELD ******************************************
   function AddAdress() {
-    setNewAdress([...NewAdress, { Adress: "" }]);
+    setState((state) => ({
+      ...state,
+      Adress: [...state.Adress, ""],
+    }));
   }
 
   function RemoveAdress(index1) {
-    const list1 = [...NewAdress];
-    list1.splice(index1, 1);
-    setNewAdress(list1);
+    let list = [...state.Adress];
+    console.log(list);
+    list.splice(-1);
+    setState((state) => ({
+      ...state,
+      Adress: list,
+    }));
   }
 
   function AdressChange(e, index1) {
-    const { name, value } = e.target;
-    const list1 = [...NewAdress];
-    list1[index1][name] = value;
-    setNewAdress(list1);
+    const { value } = e.target;
+    let list = [...state.Adress];
+    list[index1] = value;
+    setState((state) => ({
+      ...state,
+      Adress: list,
+    }));
   }
+
   // ACCIDENTS AND CITATIONS FIELD ******************************************
+
   function AddAccident() {
-    setNewAccident([...NewAccident, { Date: "", Description: "" }]);
-    console.log("state update on  add", NewAccident);
+    setState((state) => ({
+      ...state,
+      Accident: [...state.Accident, { Date: "", Time: "" }],
+    }));
   }
 
   function RemoveAccident(index) {
-    const list = [...NewAccident];
-    list.splice(index, 1);
-    setNewAccident(list);
-    console.log("state update on remove", NewAccident);
+    let list = [...state.Accident];
+    list.splice(-1);
+    setState((state) => ({
+      ...state,
+      Accident: list,
+    }));
   }
 
   function AccidentChange(e, index) {
     const { name, value } = e.target;
-    let list = [...NewAccident];
-    console.log("list update", list);
+    let list = [...state.Accident];
+    //console.log("list update", list);
     list[index][name] = value;
-    setNewAccident(list);
-    console.log("stapte update on chage", NewAccident);
+    setState((state) => ({
+      ...state,
+      Accident: list,
+    }));
   }
   function SubmitHandler(event) {
     event.preventDefault();
   }
 
+  //Main render..................................................................
   return (
     <form onSubmit={SubmitHandler}>
       <CardContent>
@@ -80,7 +95,7 @@ export const Screen2 = () => {
             <br></br>
           </Grid>
           <Grid item xs={12}>
-            {NewAdress.map((Adress, index1) => {
+            {state.Adress.map((Adress, index1) => {
               return (
                 <Grid container key={index1}>
                   <Typography
@@ -91,7 +106,7 @@ export const Screen2 = () => {
                     {" "}
                     Add current and previous adresses of residence:{" "}
                   </Typography>
-                  <Grid item xs={10} md={10}>
+                  <Grid item xs={12} md={12}>
                     <TextField
                       name="Adress"
                       color="red"
@@ -104,15 +119,7 @@ export const Screen2 = () => {
                       onChange={(e) => AdressChange(e, index1)}
                     ></TextField>
                   </Grid>
-                  <Grid item xs={2} md={2}>
-                    <IconButton
-                      aria-label="remove"
-                      color="red"
-                      onClick={RemoveAdress}
-                    >
-                      <RemoveIcon />
-                    </IconButton>
-                  </Grid>
+                  <Grid item xs={2} md={2}></Grid>
                 </Grid>
               );
             })}
@@ -123,6 +130,9 @@ export const Screen2 = () => {
             >
               <AddIcon />
             </IconButton>
+            <IconButton aria-label="remove" color="red" onClick={RemoveAdress}>
+              <RemoveIcon />
+            </IconButton>
           </Grid>
           <Grid item xs={12}>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
@@ -131,7 +141,7 @@ export const Screen2 = () => {
               date with a brief description:
             </Typography>
           </Grid>
-          {NewAccident.map((x, index) => {
+          {state.Accident.map((x, index) => {
             return (
               <Grid container key={index}>
                 <Grid item xs={12} md={3}>
@@ -155,13 +165,6 @@ export const Screen2 = () => {
                     onChange={(e) => AccidentChange(e, index)}
                   ></TextField>
                 </Grid>
-                <IconButton
-                  aria-label="remove"
-                  color="red"
-                  onClick={RemoveAccident}
-                >
-                  <RemoveIcon />
-                </IconButton>
               </Grid>
             );
           })}
@@ -171,6 +174,9 @@ export const Screen2 = () => {
             onClick={() => AddAccident()}
           >
             <AddIcon />
+          </IconButton>
+          <IconButton aria-label="remove" color="red" onClick={RemoveAccident}>
+            <RemoveIcon />
           </IconButton>
           <Grid item xs={12}>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
