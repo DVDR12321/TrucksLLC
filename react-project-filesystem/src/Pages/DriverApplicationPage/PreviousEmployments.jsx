@@ -2,17 +2,18 @@ import { Autocomplete, TextField } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { debounce } from "lodash";
+import { useMemo } from "react";
 // WebKey : 85a1a1c4c94d781917fdf0ddb5bc09d49092c384
 
 const PreviousEmployments = () => {
   const [name, setName] = useState("");
-  const [CarrierData, setCarrierData] = useState({});
   const [result, setResult] = useState([""]);
-  let r = [];
 
   const HandleChange = (e) => {
-    return setName(e.target.value);
+    setName(e.target.value);
   };
+  const DebounceHandleChange = useMemo(() => debounce(HandleChange, 2000), []);
 
   useEffect(() => {
     fetch(
@@ -21,26 +22,15 @@ const PreviousEmployments = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data) => setCarrierData(data))
-      .then(console.log(CarrierData))
-      .then(getEachItem(CarrierData));
+      .then((data) => {
+        setPreviousEmployers(data.content);
+        console.log(result);
+      });
   }, [name]);
 
-  const getEachItem = (MyObject) => {
-    Object.entries(MyObject).forEach(([key, value]) => {
-      searchItem(key, value);
-      setResult(r);
-      console.log(result);
-    });
-  };
-
-  const searchItem = (id, item) => {
-    Object.entries(item).forEach(([id, item]) => {
-      if (typeof item === "object" && id !== "legalName" && item !== null) {
-        searchItem(id, item);
-      } else if (id === "legalName") {
-        r.push(item);
-      }
+  const setPreviousEmployers = (data) => {
+    data.forEach((element) => {
+      setResult((oldResult) => [...oldResult, element.carrier.legalName]);
     });
   };
 
@@ -52,7 +42,7 @@ const PreviousEmployments = () => {
           <TextField
             {...params}
             onChange={(e) => {
-              HandleChange(e);
+              DebounceHandleChange(e);
             }}
             fullWidth
           ></TextField>

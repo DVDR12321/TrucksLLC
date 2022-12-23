@@ -69,13 +69,37 @@ export const Screen2 = (props) => {
       Accident: list,
     }));
   }
-  function SubmitHandler(event) {
-    event.preventDefault();
+  // TICKETS ******************************************
+
+  function AddLicence() {
+    setState((state) => ({
+      ...state,
+      Licence: [...state.Licence, { Date: "", Time: "" }],
+    }));
   }
 
+  function RemoveLience(Licence) {
+    let list = [...state.Licence];
+    list.splice(-1);
+    setState((state) => ({
+      ...state,
+      Licence: list,
+    }));
+  }
+
+  function LicenceChange(e, index) {
+    const { name, value } = e.target;
+    let list = [...state.Licence];
+    //console.log("list update", list);
+    list[index][name] = value;
+    setState((state) => ({
+      ...state,
+      Licence: list,
+    }));
+  }
   //Main render..................................................................
   return (
-    <form onSubmit={SubmitHandler}>
+    <form>
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -95,17 +119,13 @@ export const Screen2 = (props) => {
             <br></br>
           </Grid>
           <Grid item xs={12}>
+            <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
+              {" "}
+              Add current and previous adresses of residence:{" "}
+            </Typography>
             {state.Adress.map((Adress, index1) => {
               return (
                 <Grid container key={index1}>
-                  <Typography
-                    variant="body3"
-                    component="p"
-                    sx={{ margin: "1ch" }}
-                  >
-                    {" "}
-                    Add current and previous adresses of residence:{" "}
-                  </Typography>
                   <Grid item xs={12} md={12}>
                     <TextField
                       name="Adress"
@@ -119,7 +139,6 @@ export const Screen2 = (props) => {
                       onChange={(e) => AdressChange(e, index1)}
                     ></TextField>
                   </Grid>
-                  <Grid item xs={2} md={2}></Grid>
                 </Grid>
               );
             })}
@@ -137,76 +156,99 @@ export const Screen2 = (props) => {
           <Grid item xs={12}>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
               {" "}
-              Were you in any major Accidents in the past? If so please list the
-              date with a brief description:
+              Were you in any major motor vheicle related Accidents in the past,
+              and/or did you receive any trafic tickets? If so please list the
+              date with a brief description of the event:
             </Typography>
+
+            {state.Accident.map((x, index) => {
+              return (
+                <Grid container key={index}>
+                  <Grid item xs={12} md={3}>
+                    <TextField
+                      name="Date"
+                      type="date"
+                      variant="outlined"
+                      fullWidth
+                      required
+                      onChange={(e) => AccidentChange(e, index)}
+                    ></TextField>
+                  </Grid>
+                  <Grid item xs={12} md={8}>
+                    <TextField
+                      name="Description"
+                      type="Message"
+                      label="Description"
+                      variant="outlined"
+                      fullWidth
+                      required
+                      onChange={(e) => AccidentChange(e, index)}
+                    ></TextField>
+                  </Grid>
+                </Grid>
+              );
+            })}
+            <IconButton
+              aria-label="add"
+              color="red"
+              onClick={() => AddAccident()}
+            >
+              <AddIcon />
+            </IconButton>
+            <IconButton
+              aria-label="remove"
+              color="red"
+              onClick={RemoveAccident}
+            >
+              <RemoveIcon />
+            </IconButton>
           </Grid>
-          {state.Accident.map((x, index) => {
-            return (
-              <Grid container key={index}>
-                <Grid item xs={12} md={3}>
-                  <TextField
-                    name="Date"
-                    type="date"
-                    variant="outlined"
-                    fullWidth
-                    required
-                    onChange={(e) => AccidentChange(e, index)}
-                  ></TextField>
-                </Grid>
-                <Grid item xs={12} md={8}>
-                  <TextField
-                    name="Description"
-                    type="Message"
-                    label="Description"
-                    variant="outlined"
-                    fullWidth
-                    required
-                    onChange={(e) => AccidentChange(e, index)}
-                  ></TextField>
-                </Grid>
-              </Grid>
-            );
-          })}
-          <IconButton
-            aria-label="add"
-            color="red"
-            onClick={() => AddAccident()}
-          >
-            <AddIcon />
-          </IconButton>
-          <IconButton aria-label="remove" color="red" onClick={RemoveAccident}>
-            <RemoveIcon />
-          </IconButton>
           <Grid item xs={12}>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
               {" "}
-              Please list any tickets you may have received in the past:
+              Please add your driving licences for the past 3 years along with
+              their expiration dates:
             </Typography>
-          </Grid>
-          <Grid container>
-            <Grid item xs={12} md={3}>
-              <TextField
-                name="Date"
-                type="date"
-                variant="outlined"
-                fullWidth
-                required
-              ></TextField>
-            </Grid>
-            <Grid item xs={12} md={8}>
-              <TextField
-                name="Description"
-                type="Message"
-                label="Description"
-                variant="outlined"
-                fullWidth
-                required
-              ></TextField>
-            </Grid>
-            <IconButton aria-label="remove" color="red">
+            {state.Licence.map((x, index) => {
+              return (
+                <Grid container key={index}>
+                  <Grid item xs={12} md={3}>
+                    <TextField
+                      name="LicenceDate"
+                      type="date"
+                      variant="outlined"
+                      fullWidth
+                      required
+                      onChange={(e) => LicenceChange(e, index)}
+                    ></TextField>
+                  </Grid>
+                  <Grid item xs={12} md={8}>
+                    <TextField
+                      name="LicenceDescription"
+                      type="Message"
+                      label="State / Licence# / Type"
+                      variant="outlined"
+                      fullWidth
+                      required
+                      onChange={(e) => LicenceChange(e, index)}
+                      placeholder="State / Licence# / Type"
+                    ></TextField>
+                  </Grid>
+                </Grid>
+              );
+            })}
+            <IconButton
+              aria-label="add"
+              color="red"
+              onClick={() => AddLicence()}
+            >
+              <AddIcon />
+            </IconButton>
+            <IconButton aria-label="remove" color="red" onClick={RemoveLience}>
               <RemoveIcon />
             </IconButton>
+          </Grid>
+          <Grid container>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12}>
                 <Typography
@@ -214,14 +256,22 @@ export const Screen2 = (props) => {
                   component="p"
                   sx={{ margin: "1ch" }}
                 >
-                  Please enter the names of your previous employers in the
-                  trucking business, and when you worked for them.
+                  Please enter the names of your previous employers, why you
+                  left, and priod of time when you worked for them.
                 </Typography>
               </Grid>
-              <Grid item xs={6} md={6}>
+              <Grid item xs={12} md={4}>
                 <PreviousEmployments> </PreviousEmployments>
               </Grid>
-              <Grid item xs={6} md={3}>
+              <Grid item xs={12} md={4}>
+                <TextField
+                  name="reason"
+                  fullWidth
+                  variant="outlined"
+                  label="reason for leaving"
+                ></TextField>
+              </Grid>
+              <Grid item xs={6} md={2}>
                 <TextField
                   name="Date"
                   type="date"
@@ -230,7 +280,7 @@ export const Screen2 = (props) => {
                   required
                 ></TextField>
               </Grid>
-              <Grid item xs={6} md={3}>
+              <Grid item xs={6} md={2}>
                 <TextField
                   name="Date"
                   type="date"

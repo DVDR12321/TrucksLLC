@@ -1,3 +1,4 @@
+import React from "react";
 import {
   TextField,
   Grid,
@@ -19,25 +20,19 @@ import emailjs from "@emailjs/browser";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if (new Date().getTime() - start > milliseconds) {
-      break;
-    }
-  }
-}
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export const Screen1 = (props) => {
   const { state, setState } = props;
-  const [position, setPosition] = useState("");
+
   const [open, setOpen] = useState(false);
   const formRef = useRef(null);
+  const emailRef = useRef(null);
+  const phoneNumberRef = useRef(null);
 
   window.onload = () => {
     const eInput = document.getElementById("echeck");
@@ -46,50 +41,74 @@ export const Screen1 = (props) => {
     tInput.onpaste = (e) => e.preventDefault();
   };
 
-  const handleChange = (event) => {
-    setPosition(event.target.value);
+  const handlePositionChange = (event) => {
+    setState((state) => ({ ...state, Position: event.target.value }));
   };
 
-  const handleClickOpen = () => {
+  useEffect(() => {
+    // Clear the custom error message for the email field if it matches the email check field
+    if (state.Email === state.EmailCheck) {
+      emailRef.current.setCustomValidity("");
+      emailRef.current.reportValidity();
+    }
+  }, [state.Email, state.EmailCheck]);
+
+  useEffect(() => {
+    // Clear the custom error message for the phone number field if it matches the phone number check field
+    if (state.PhoneNumber === state.PhoneNumberCheck) {
+      phoneNumberRef.current.setCustomValidity("");
+      phoneNumberRef.current.reportValidity();
+    }
+  }, [state.PhoneNumber, state.PhoneNumberCheck]);
+
+  const handleOpenDialog = () => {
     if (formRef.current.checkValidity()) {
+      // Form is valid, check email and phone number fields
+      if (state.Email !== state.EmailCheck) {
+        emailRef.current.setCustomValidity(
+          "Entered e-mail adresses are not matching"
+        );
+        emailRef.current.reportValidity();
+        return;
+      }
+      if (state.PhoneNumber !== state.PhoneNumberCheck) {
+        phoneNumberRef.current.setCustomValidity(
+          "Entered phone numbers are not matching"
+        );
+        phoneNumberRef.current.reportValidity();
+        return;
+      }
+      // Both email and phone number fields are valid
       setOpen(true);
-      //formRef.current.submit();
     } else {
       // Form is invalid, display errors
       formRef.current.reportValidity();
     }
   };
-  const handleClick1 = async () => {
-    if (
-      state.PhoneNumber === state.PhoneNumberCheck &&
-      state.Email === state.EmailCheck
-    ) {
-      emailjs
-        .sendForm(
-          "default_service",
-          "template_5muable",
-          formRef.current,
-          "Bt5FJk_8UapAuvKNi"
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    } else {
-      setState((state) => ({ ...state, Compare: true }));
-      sleep(3000);
-      setState((state) => ({ ...state, Compare: false }));
-    }
+
+  const handleCloseDialog = () => {
     setOpen(false);
-    formRef.current.reset();
   };
 
-  const handleClose = () => {
+  const handleClickSubmit = () => {
+    emailjs
+      .sendForm(
+        "default_service",
+        "template_5muable",
+        formRef.current,
+        "Bt5FJk_8UapAuvKNi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
     setOpen(false);
+    formRef.current.reset();
   };
 
   const HandleInputChange = (e) => {
@@ -158,6 +177,7 @@ export const Screen1 = (props) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
+              inputRef={emailRef}
               id="echeck"
               type="email"
               name="EmailCheck"
@@ -187,6 +207,7 @@ export const Screen1 = (props) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
+              inputRef={phoneNumberRef}
               id="tcheck"
               type="tel"
               name="PhoneNumberCheck"
@@ -205,11 +226,12 @@ export const Screen1 = (props) => {
               <FormControl fullWidth>
                 <InputLabel id="select-label">Position</InputLabel>
                 <Select
+                  name="Position"
                   labelId="select-label"
                   id="select"
-                  value={position}
+                  value={state.Position}
                   label="I am applying for the position of:"
-                  onChange={handleChange}
+                  onChange={handlePositionChange}
                 >
                   <MenuItem value={"Owner Operator"}>Owner Operator</MenuItem>
                   <MenuItem value={"Company driver"}>Company driver</MenuItem>
@@ -221,14 +243,14 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             {state.Compare === false && (
               <div>
-                <Button variant="outlined" onClick={handleClickOpen} fullWidth>
+                <Button variant="outlined" onClick={handleOpenDialog} fullWidth>
                   Submit Application
                 </Button>
                 <Dialog
                   open={open}
                   TransitionComponent={Transition}
                   keepMounted
-                  onClose={handleClose}
+                  onClose={handleCloseDialog}
                   aria-describedby="alert-dialog-slide-description"
                 >
                   <DialogTitle>
@@ -242,17 +264,11 @@ export const Screen1 = (props) => {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClick1}>Submit</Button>
+                    <Button onClick={handleCloseDialog}>Cancel</Button>
+                    <Button onClick={handleClickSubmit}>Submit</Button>
                   </DialogActions>
                 </Dialog>
               </div>
-            )}
-            {state.Compare === true && (
-              <Button disabled color="red">
-                {" "}
-                Entered data not matching{" "}
-              </Button>
             )}
           </Grid>
         </Grid>
