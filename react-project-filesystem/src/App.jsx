@@ -7,7 +7,7 @@ import AboutUsPage from "./Pages/AboutUsPage/AboutUsPage";
 import FleetPage from "./Pages/FleetPage/FleetPage";
 import QuestionsPage from "./Pages/QuestionsPage/QuestionsPage";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
-import DriverApplicationPage from "./Pages/DriverApplicationPage/DriverApplicationPage";
+import {Apply} from "./Pages/DriverApplicationPage/DriverApplicationPage";
 import MainGrid from "./components/MainGrid/MainGrid";
 import Drivers from "./Pages/DriversPage/Drivers";
 
@@ -18,7 +18,7 @@ class App extends Component {
         <Router>
           <Routes>
             <Route path="/aboutus" element={<AboutUsPage />} />
-            <Route path="/apply" element={<DriverApplicationPage />} />
+            <Route path="/apply" element={<Apply />} />
             <Route path="/drivers" element={<Drivers />} />
             <Route path="/fleet" element={<FleetPage />} />
             <Route path="/q&a" element={<QuestionsPage />} />
