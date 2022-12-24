@@ -1,18 +1,45 @@
-import React from "react";
-import { Card, Button, Grid } from "@mui/material";
+import { Card, Button, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 import { Screen1 } from "./Screen1";
 import { Screen2 } from "./Screen2";
 import Screen3 from "./Screen3";
+import img from "./LogoForm.png";
 
-const SecondPage = (props) => {
-  return <Button onClick={props.addTrip}>Second Page</Button>;
+const FirstPageButton = (props) => {
+  return (
+    <Button
+      variant={props.variant}
+      fullWidth
+      onClick={props.addTrip}
+      color="red"
+    >
+      First Page
+    </Button>
+  );
 };
-const FirstPage = (props) => {
-  return <Button onClick={props.addTrip}>First Page</Button>;
+const SecondPageButton = (props) => {
+  return (
+    <Button
+      variant={props.variant}
+      fullWidth
+      onClick={props.addTrip}
+      color="red"
+    >
+      Second Page
+    </Button>
+  );
 };
-const ThirdPage = (props) => {
-  return <Button onClick={props.addTrip}>Third Page</Button>;
+const ThirdPageButton = (props) => {
+  return (
+    <Button
+      variant={props.variant}
+      fullWidth
+      onClick={props.addTrip}
+      color="red"
+    >
+      Third Page
+    </Button>
+  );
 };
 
 export const Apply = () => {
@@ -30,63 +57,113 @@ export const Apply = () => {
     Employment: [{ Name: "", DateFrom: "", DateTo: "" }],
     Position: "",
   };
-
   const [Trip, setTrip] = useState({
     First: true,
     Second: false,
     Third: false,
+    VariantFirst: "",
+    VariantSecond: "contained",
+    VariantThird: "contained",
   });
 
   const [state, setState] = useState(data);
 
   return (
-    <Grid container sx={{ justifyContent: "center" }}>
-      <Card sx={{ maxWidth: "70vw", height: "100%" }}>
-        {Trip.First === true && <Screen1 setState={setState} state={state} />}
-        {Trip.Second === true && <Screen2 setState={setState} state={state} />}
-        {Trip.Third === true && (
-          <Screen3 setState={setState} state={state}></Screen3>
-        )}
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Card
+        sx={{ maxWidth: "70vw", height: "100%", margin: "20px 10px 20px 10px" }}
+      >
+        <Grid
+          container
+          xs={12}
+          sx={{
+            padding: "30px",
+            borderBottom: "3px inset black",
+          }}
+        >
+          <Grid item xs={12} md={5}>
+            <img
+              src={img}
+              alt="Trucks LLC logo"
+              style={{ height: "100%", width: "100%", opacity: "0.5" }}
+            ></img>
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Typography
+              variant="h2"
+              textAlign="center"
+              color="rgba(0, 0, 0, 0.3)"
+            >
+              {" "}
+              Job Application Form
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid container xs={12}>
+          <Grid item xs={12}>
+            {Trip.First === true && (
+              <Screen1 setState={setState} state={state} />
+            )}
+            {Trip.Second === true && (
+              <Screen2 setState={setState} state={state} />
+            )}
+            {Trip.Third === true && (
+              <Screen3 setState={setState} state={state}></Screen3>
+            )}
+          </Grid>
+
+          <Grid item xs={12} md={4}>
+            <FirstPageButton
+              variant={Trip.VariantFirst}
+              fullWidth
+              addTrip={() =>
+                setTrip((Trip) => ({
+                  ...Trip,
+                  First: true,
+                  Second: false,
+                  Third: false,
+                  VariantFirst: "",
+                  VariantSecond: "contained",
+                  VariantThird: "contained",
+                }))
+              }
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <SecondPageButton
+              variant={Trip.VariantSecond}
+              fullWidth
+              addTrip={() =>
+                setTrip((Trip) => ({
+                  ...Trip,
+                  First: false,
+                  Second: true,
+                  Third: false,
+                  VariantFirst: "contained",
+                  VariantSecond: "",
+                  VariantThird: "contained",
+                }))
+              }
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <ThirdPageButton
+              variant={Trip.VariantThird}
+              addTrip={() =>
+                setTrip((Trip) => ({
+                  ...Trip,
+                  First: false,
+                  Second: false,
+                  Third: true,
+                  VariantFirst: "contained",
+                  VariantSecond: "contained",
+                  VariantThird: "",
+                }))
+              }
+            />
+          </Grid>
+        </Grid>
       </Card>
-      <Grid item xs={4}>
-        <FirstPage
-          fullWidth
-          addTrip={() =>
-            setTrip((Trip) => ({
-              ...Trip,
-              First: true,
-              Second: false,
-              Third: false,
-            }))
-          }
-        />
-      </Grid>
-      <Grid item xs={4}>
-        <SecondPage
-          fullWidth
-          addTrip={() =>
-            setTrip((Trip) => ({
-              ...Trip,
-              First: false,
-              Second: true,
-              Third: false,
-            }))
-          }
-        />
-      </Grid>
-      <Grid item xs={4}>
-        <ThirdPage
-          fullWidth
-          addTrip={() =>
-            setTrip((Trip) => ({
-              ...Trip,
-              First: false,
-              Second: false,
-              Third: true,
-            }))
-          }
-        />
-      </Grid>
-    </Grid>
+    </div>
   );
 };

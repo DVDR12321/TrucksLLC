@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TextField } from "@mui/material";
 import SignaturePad from "react-signature-pad";
 
 export const StyledHeader1 = styled("h1")`
@@ -28,6 +29,7 @@ export const Styledp1 = styled("p")`
 
 export const StyledSpan = styled("span")`
   font-weight: bold;
+  padding-left: 0.3ch;
 `;
 
 export const StyledSignature = styled(SignaturePad)`
@@ -38,4 +40,8 @@ export const StyledSignature = styled(SignaturePad)`
       }
     }
   }
+`;
+
+export const StyledInput = styled(TextField)`
+  border-radius: 10% 30% 50% 70%;
 `;

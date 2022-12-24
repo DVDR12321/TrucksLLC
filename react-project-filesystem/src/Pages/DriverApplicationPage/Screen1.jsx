@@ -21,6 +21,7 @@ import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
+import { StyledInput, StyledSpan } from "./StyledComponents";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -120,23 +121,20 @@ export const Screen1 = (props) => {
     <form ref={formRef}>
       <CardContent>
         <Grid item xs={12}>
-          <Typography variant="h3" textAlign="center" color="rgb(255, 0, 0)">
-            {" "}
-            Drive for us
-          </Typography>
           <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
             {" "}
-            Fill out the form, and our recuriting team will get back at you
-            within a day!{" "}
+            Fill out the form, and our recuriting team will get back at you as
+            soon as posible!{" "}
           </Typography>
           <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
             {" "}
-            * Symbol marks a required field{" "}
+            * Symbol marks a{" "}
+            <span style={{ color: "rgb(255, 0, 0)" }}>required</span> field{" "}
           </Typography>
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledInput
               name="FirstName"
               color="red"
               label="First Name"
@@ -146,7 +144,7 @@ export const Screen1 = (props) => {
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.FirstName}
-            ></TextField>
+            ></StyledInput>
           </Grid>
           <Grid item xs={12} md={6}>
             <TextField
@@ -243,7 +241,12 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             {state.Compare === false && (
               <div>
-                <Button variant="outlined" onClick={handleOpenDialog} fullWidth>
+                <Button
+                  variant="outlined"
+                  onClick={handleOpenDialog}
+                  fullWidth
+                  maxHeight
+                >
                   Submit Application
                 </Button>
                 <Dialog
@@ -253,14 +256,17 @@ export const Screen1 = (props) => {
                   onClose={handleCloseDialog}
                   aria-describedby="alert-dialog-slide-description"
                 >
-                  <DialogTitle>
+                  <DialogTitle sx={{ textAlign: "center" }}>
                     {"Are you sure you want to submit?"}
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
                       You can provide aditional data on pages 2 and 3. Providing
                       us with more information means our team will be
-                      prioritizing your application over the others.
+                      <StyledSpan>
+                        prioritizing your application
+                      </StyledSpan>{" "}
+                      over the others.
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
