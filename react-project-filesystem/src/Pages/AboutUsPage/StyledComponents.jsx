@@ -52,7 +52,7 @@ export const StyledCaption = styled(Typography)(
   color: ${theme.palette.common.white};
   float: left;
   padding-left: 20px;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 40px;
   letter-spacing: 1px;
   font-weight: 300;
@@ -63,8 +63,8 @@ export const StyledHeaderText = styled(Typography)(
   ({ theme }) => `
   color: ${theme.palette.common.white};
   float: right;
-  line-height: 20px;
-  font-size: 16px;
+  line-height: 28px;
+  font-size: 18px;
   letter-spacing: 1px;
   font-style: italic;
 `

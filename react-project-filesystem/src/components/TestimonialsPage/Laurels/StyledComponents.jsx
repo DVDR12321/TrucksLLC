@@ -1,6 +1,16 @@
+import { Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const ReviewsContainingDiv = styled("div")`
+export const StyledReviewsGrid = styled(Grid)`
+  align-items: baseline;
+`;
+
+export const StyledProgressGrid = styled(Grid)`
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledReviewsItem = styled(Grid)`
   display: flex;
   padding: 20px;
 `;
@@ -14,7 +24,7 @@ export const StyledHeader = styled("h1")(
 `
 );
 
-export const StyledP = styled("p")(
+export const StyledParagaph = styled(Typography)(
   ({ theme }) => `
   font-size: 2vmin;
   color: ${theme.palette.common.white};
