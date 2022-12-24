@@ -56,7 +56,6 @@ const Carousel = () => {
               <Box
                 component="img"
                 sx={{
-                  height: 255,
                   display: "block",
                   overflow: "hidden",
                   width: "100%",

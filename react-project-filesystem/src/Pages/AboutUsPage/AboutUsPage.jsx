@@ -32,11 +32,9 @@ const AboutUsPage = () => {
           alignItems="center"
         >
           <Grid item xs={6}>
-            {" "}
-            <StyledCaption>Transportation done right!</StyledCaption>{" "}
+            <StyledCaption>Transportation done right!</StyledCaption>
           </Grid>
           <Grid item xs={6}>
-            {" "}
             <StyledHeaderText>
               We forge long-term relationships with key customers that include
               supply chain management as an integral part of their strategy.

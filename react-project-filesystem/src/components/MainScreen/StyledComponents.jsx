@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import img from "../../assets/main_background_colored_cropped.png";
@@ -41,12 +41,15 @@ export const StyledCardsGrid = styled(Grid)`
 
 // Items --------------------------------------------------------------------------------------------------------------------------------------------------
 
-export const StyledMainTitle = styled("h1")`
-  border-bottom: 4px outset red;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+export const StyledMainTitle = styled("h1")(
+  ({ theme }) => `
+  border-bottom: 4px outset ${theme.palette.primary.main};
+  text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   font-size: 12vmin;
   color: white;
-`;
+`
+);
+
 export const StyledButton = styled(Button)`
   font-weight: bold;
   font-size: 6vmin;

@@ -1,70 +1,88 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { Instagram } from "@mui/icons-material";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import { grey, indigo, pink, red } from "@mui/material/colors";
 
 export const StyledBox = styled(Box)`
   border-bottom: 1px;
   padding-bottom: 20px;
 `;
 
-export const StyledCaption = styled(Typography)`
+export const StyledCaption = styled(Typography)(
+  ({ theme }) => `
   font-weight: 700;
   font-family: Montserrat;
   text-align: justify;
-  color: white;
-`;
+  color: ${theme.palette.common.white};
+`
+);
 
-export const StyledText = styled(Typography)`
-  color: white;
-`;
+export const StyledText = styled(Typography)(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
+`
+);
 
-export const StyledLink = styled("a")`
-  color: white;
+export const StyledLink = styled("a")(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
   text-decoration: none;
-`;
+`
+);
 
-export const StyledBottomText = styled(Typography)`
-  color: white;
+export const StyledBottomText = styled(Typography)(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
   padding-top: 15px;
-`;
+`
+);
 
-export const StlyedFacebookIcon = styled(FacebookIcon)`
+export const StlyedFacebookIcon = styled(FacebookIcon)(
+  ({ theme }) => `
   padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #322f30;
+  color: ${theme.palette.common.white};
+  background-color: ${grey[800]};
   &:hover {
-    background-color: #3d5b99;
+    background-color: ${indigo[500]};
   }
-`;
+`
+);
 
-export const StlyedInstagramIcon = styled(Instagram)`
+export const StlyedInstagramIcon = styled(Instagram)(
+  ({ theme }) => `
   padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #322f30;
+  color: ${theme.palette.common.white};
+  background-color: ${grey[800]};
   &:hover {
-    background-color: #e1306c;
+    background-color: ${pink[500]};
   }
-`;
+`
+);
 
-export const StlyedYoutubeIcon = styled(YouTubeIcon)`
+export const StlyedYoutubeIcon = styled(YouTubeIcon)(
+  ({ theme }) => `
   padding: 2px 3px;
   -o-transition: 0.5s;
   -ms-transition: 0.5s;
   -moz-transition: 0.5s;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  background-color: #322f30;
+  color: ${theme.palette.common.white};
+  background-color: ${grey[800]};
   &:hover {
-    background-color: #e64a41;
+    background-color: ${red[500]};
   }
-`;
+`
+);

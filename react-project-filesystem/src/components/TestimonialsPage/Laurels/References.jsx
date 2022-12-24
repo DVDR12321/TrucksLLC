@@ -1,9 +1,12 @@
+import { Grid } from "@mui/material";
 import React from "react";
 import { ProgressBar } from "../ProgressBar/ProgressBar";
 import {
-  ReviewsContainingDiv,
+  StyledReviewsItem,
   StyledHeader,
-  StyledP,
+  StyledParagaph,
+  StyledReviewsGrid,
+  StyledProgressGrid,
 } from "./StyledComponents.jsx";
 
 const awards = [
@@ -29,19 +32,17 @@ const awards = [
 
 const References = () => {
   return (
-    <>
+    <StyledReviewsGrid>
       {awards.map(({ title, subtitle, progress }, index) => (
-        <ReviewsContainingDiv key={index}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            {progress}
-          </div>
-          <div>
+        <StyledReviewsItem key={index}>
+          <StyledProgressGrid>{progress}</StyledProgressGrid>
+          <Grid>
             <StyledHeader>{title}</StyledHeader>
-            <StyledP>{subtitle}</StyledP>
-          </div>
-        </ReviewsContainingDiv>
+            <StyledParagaph>{subtitle}</StyledParagaph>
+          </Grid>
+        </StyledReviewsItem>
       ))}
-    </>
+    </StyledReviewsGrid>
   );
 };
 
