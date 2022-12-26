@@ -1,19 +1,23 @@
 import React from "react";
 import {
-  TextField,
   Grid,
   Typography,
   CardContent,
   IconButton,
+  Button,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
+import emailjs from "@emailjs/browser";
+import { StyledTextField } from "./StyledComponents";
+import { useRef } from "react";
 
 export const Screen2 = (props) => {
   const { state, setState } = props;
+  let formRef2 = useRef(null);
+  // ADRESS FIELD ******************************************************
 
-  // ADRESS FIELD ******************************************
   function AddAdress() {
     setState((state) => ({
       ...state,
@@ -98,15 +102,30 @@ export const Screen2 = (props) => {
     }));
   }
   //Main render..................................................................
+  const handleSubmit = () => {
+    emailjs
+      .sendForm(
+        "default_service",
+        "template_5muable",
+        formRef2.current,
+        "Bt5FJk_8UapAuvKNi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    formRef2.current.reset();
+  };
+
   return (
-    <form>
+    <form ref={formRef2} onSubmit={handleSubmit}>
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography variant="h3" textAlign="center" color="rgb(255, 0, 0)">
-              {" "}
-              Drive for us
-            </Typography>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
               {" "}
               Send us aditional information so that we may expedite recruitment
@@ -114,10 +133,14 @@ export const Screen2 = (props) => {
             </Typography>
             <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
               {" "}
-              * Symbol marks a required field{" "}
+              * Symbol marks a{" "}
+              <span style={{ color: "rgb(255, 0, 0)" }}>
+                required
+              </span> field{" "}
             </Typography>
             <br></br>
           </Grid>
+
           <Grid item xs={12}>
             <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
               {" "}
@@ -127,17 +150,18 @@ export const Screen2 = (props) => {
               return (
                 <Grid container key={index1}>
                   <Grid item xs={12} md={12}>
-                    <TextField
+                    <StyledTextField
                       name="Adress"
                       color="red"
-                      label={"Adress " + index1.toString()}
+                      label={"Adress " + (index1 += 1).toString()}
                       placeholder="476 Alderwood Rd.
                   Seymour, IN 47274"
                       variant="outlined"
                       fullWidth
                       required
                       onChange={(e) => AdressChange(e, index1)}
-                    ></TextField>
+                      shape="filled"
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -153,37 +177,39 @@ export const Screen2 = (props) => {
               <RemoveIcon />
             </IconButton>
           </Grid>
+
           <Grid item xs={12}>
             <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
               {" "}
-              Were you in any major motor vheicle related Accidents in the past,
-              and/or did you receive any trafic tickets? If so please list the
-              date with a brief description of the event:
+              Were you in any major motor vehicle - related accidents in the
+              past, and/or did you receive any trafic tickets? If so please list
+              the date with a brief description of the event:
             </Typography>
 
             {state.Accident.map((x, index) => {
               return (
-                <Grid container key={index}>
+                <Grid container key={index} spacing={2}>
                   <Grid item xs={12} md={3}>
-                    <TextField
+                    <StyledTextField
                       name="Date"
                       type="date"
                       variant="outlined"
                       fullWidth
                       required
                       onChange={(e) => AccidentChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
-                  <Grid item xs={12} md={8}>
-                    <TextField
+                  <Grid item xs={12} md={9}>
+                    <StyledTextField
                       name="Description"
                       type="Message"
                       label="Description"
                       variant="outlined"
                       fullWidth
                       required
+                      multiline
                       onChange={(e) => AccidentChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -211,28 +237,29 @@ export const Screen2 = (props) => {
             </Typography>
             {state.Licence.map((x, index) => {
               return (
-                <Grid container key={index}>
+                <Grid container key={index} spacing={2}>
                   <Grid item xs={12} md={3}>
-                    <TextField
+                    <StyledTextField
                       name="LicenceDate"
                       type="date"
                       variant="outlined"
                       fullWidth
                       required
                       onChange={(e) => LicenceChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
-                  <Grid item xs={12} md={8}>
-                    <TextField
+                  <Grid item xs={12} md={9}>
+                    <StyledTextField
                       name="LicenceDescription"
                       type="Message"
                       label="State / Licence# / Type"
                       variant="outlined"
                       fullWidth
                       required
+                      multiline
                       onChange={(e) => LicenceChange(e, index)}
                       placeholder="State / Licence# / Type"
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -248,48 +275,53 @@ export const Screen2 = (props) => {
               <RemoveIcon />
             </IconButton>
           </Grid>
-          <Grid container>
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={12}>
-                <Typography
-                  variant="body1"
-                  component="p"
-                  sx={{ margin: "1ch" }}
-                >
-                  Please enter the names of your previous employers, why you
-                  left, and priod of time when you worked for them.
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <PreviousEmployments> </PreviousEmployments>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <TextField
-                  name="reason"
-                  fullWidth
-                  variant="outlined"
-                  label="reason for leaving"
-                ></TextField>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <TextField
-                  name="Date"
-                  type="date"
-                  variant="outlined"
-                  fullWidth
-                  required
-                ></TextField>
-              </Grid>
-              <Grid item xs={6} md={2}>
-                <TextField
-                  name="Date"
-                  type="date"
-                  variant="outlined"
-                  fullWidth
-                  required
-                ></TextField>
-              </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={12}>
+              <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
+                Please{" "}
+                <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
+                  search
+                </span>{" "}
+                the names of your previous employers. Describe why you left and
+                enter the priod of time when you worked for them.
+              </Typography>
             </Grid>
+            <Grid item xs={12} md={4}>
+              <PreviousEmployments> </PreviousEmployments>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <StyledTextField
+                name="reason"
+                fullWidth
+                variant="outlined"
+                label="reason for leaving"
+                multiline
+              ></StyledTextField>
+            </Grid>
+            <Grid item xs={6} md={2}>
+              <StyledTextField
+                name="Date"
+                type="date"
+                variant="outlined"
+                fullWidth
+                required
+              ></StyledTextField>
+            </Grid>
+            <Grid item xs={6} md={2}>
+              <StyledTextField
+                name="Date"
+                type="date"
+                variant="outlined"
+                fullWidth
+                required
+              ></StyledTextField>
+            </Grid>
+          </Grid>
+          <Grid item xs={0} md={8}></Grid>
+          <Grid item xs={12} md={4}>
+            <Button variant="outlined" fullWidth onClick={handleSubmit}>
+              Submit Application
+            </Button>
           </Grid>
         </Grid>
       </CardContent>

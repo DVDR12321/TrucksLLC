@@ -1,11 +1,14 @@
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import SaveAltOutlinedIcon from "@mui/icons-material/SaveAltOutlined";
+import UndoOutlinedIcon from "@mui/icons-material/UndoOutlined";
 import SignaturePad from "react-signature-pad";
 import {
+  StyledDiv,
   StyledHeader1,
   StyledHeader2,
   StyledHeader3,
   Styledp1,
-  StyledSignature,
   StyledSpan,
 } from "./StyledComponents";
 import React from "react";
@@ -137,7 +140,7 @@ const Screen3 = () => {
             and/or affiliates to obtain the information authorized above.
           </Styledp1>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={0}>
           <Grid item xs={0} md={6}></Grid>
           <Grid item xs={12} md={3}>
             {" "}
@@ -153,17 +156,50 @@ const Screen3 = () => {
             {" "}
             <TextField fullWidth type="date" required></TextField>
           </Grid>
-          <Grid xs={0} md={8}></Grid>
-          <Grid xs={12} md={4}>
-            <Button onClick={clear}>Clear</Button>
-            <Button onClick={save}>Save</Button>
-            <Button onClick={show}>Show</Button>
-            <SignaturePad
-              style={{ boxShadow: "0 0 10px #ccc" }}
-              ref={SigPad}
-              penColor="red"
-              canvasProps={{ style: { border: "5px solid red" } }}
-            ></SignaturePad>
+
+          <Grid item xs={0} md={9}></Grid>
+          <Grid item xs={12} md={3}>
+            <Typography gutterBottom sx={{ textAlign: "center" }} variant="h5">
+              Your written signature:
+            </Typography>
+          </Grid>
+          <Grid item xs={0} md={9}></Grid>
+          <Grid item xs={12} md={3}>
+            <StyledDiv>
+              <SignaturePad ref={SigPad} penColor="red"></SignaturePad>
+            </StyledDiv>
+          </Grid>
+          <Grid item xs={0} md={9}></Grid>
+          <Grid item xs={12} md={1}>
+            <Button
+              fullWidth
+              onClick={clear}
+              variant="outlined"
+              color="red"
+              endIcon={<DeleteOutlineOutlinedIcon />}
+            >
+              Clear
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={1}>
+            <Button
+              fullWidth
+              onClick={save}
+              variant="outlined"
+              endIcon={<SaveAltOutlinedIcon />}
+            >
+              Save
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={1}>
+            <Button
+              fullWidth
+              onClick={show}
+              variant="outlined"
+              endIcon={<UndoOutlinedIcon />}
+            >
+              Show
+            </Button>
           </Grid>
         </Grid>
         <Grid item xs={12}>

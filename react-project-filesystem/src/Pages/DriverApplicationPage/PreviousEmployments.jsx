@@ -23,8 +23,9 @@ const PreviousEmployments = () => {
         return response.json();
       })
       .then((data) => {
+        setResult([""]);
         setPreviousEmployers(data.content);
-        console.log(result);
+        console.log(data);
       });
   }, [name]);
 
