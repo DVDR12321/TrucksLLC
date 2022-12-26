@@ -75,7 +75,6 @@ export const Apply = () => {
       >
         <Grid
           container
-          xs={12}
           sx={{
             padding: "30px",
             borderBottom: "3px inset black",
@@ -99,7 +98,7 @@ export const Apply = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container xs={12}>
+        <Grid container>
           <Grid item xs={12}>
             {Trip.First === true && (
               <Screen1 setState={setState} state={state} />

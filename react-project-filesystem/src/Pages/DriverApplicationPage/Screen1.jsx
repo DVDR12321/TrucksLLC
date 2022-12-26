@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  TextField,
   Grid,
   Typography,
   CardContent,
@@ -21,7 +20,7 @@ import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
-import { StyledInput, StyledSpan } from "./StyledComponents";
+import { StyledSpan, StyledTextField } from "./StyledComponents";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -134,7 +133,7 @@ export const Screen1 = (props) => {
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <StyledInput
+            <StyledTextField
               name="FirstName"
               color="red"
               label="First Name"
@@ -144,10 +143,11 @@ export const Screen1 = (props) => {
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.FirstName}
-            ></StyledInput>
+              shape="outlined"
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledTextField
               name="LastName"
               color="red"
               label="Last Name"
@@ -157,10 +157,10 @@ export const Screen1 = (props) => {
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.LastName}
-            ></TextField>
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledTextField
               type="email"
               name="Email"
               color="red"
@@ -171,26 +171,26 @@ export const Screen1 = (props) => {
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.Email}
-            ></TextField>
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledTextField
               inputRef={emailRef}
               id="echeck"
               type="email"
               name="EmailCheck"
               color="red"
-              label="Enter your email again for validation"
+              label="Enter your email again "
               placeholder="@"
               variant="outlined"
               fullWidth
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.EmailCheck}
-            ></TextField>
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledTextField
               type="tel"
               name="PhoneNumber"
               color="red"
@@ -201,23 +201,23 @@ export const Screen1 = (props) => {
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.PhoneNumber}
-            ></TextField>
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
-            <TextField
+            <StyledTextField
               inputRef={phoneNumberRef}
               id="tcheck"
               type="tel"
               name="PhoneNumberCheck"
               color="red"
-              label="Enter your number again for validation"
+              label="Enter your number again "
               placeholder="+1"
               variant="outlined"
               fullWidth
               required
               onChange={(e) => HandleInputChange(e)}
               value={state.PhoneNumberCheck}
-            ></TextField>
+            ></StyledTextField>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ minWidth: 120 }}>
@@ -241,12 +241,7 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             {state.Compare === false && (
               <div>
-                <Button
-                  variant="outlined"
-                  onClick={handleOpenDialog}
-                  fullWidth
-                  maxHeight
-                >
+                <Button variant="outlined" onClick={handleOpenDialog} fullWidth>
                   Submit Application
                 </Button>
                 <Dialog

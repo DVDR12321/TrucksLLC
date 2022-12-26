@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { TextField } from "@mui/material";
 import SignaturePad from "react-signature-pad";
-
+import { withStyles } from "@mui/styles";
 export const StyledHeader1 = styled("h1")`
   font-size: 2vmin;
   text-align: center;
@@ -42,6 +42,19 @@ export const StyledSignature = styled(SignaturePad)`
   }
 `;
 
-export const StyledInput = styled(TextField)`
-  border-radius: 10% 30% 50% 70%;
+export const StyledTextField = withStyles({
+  root: {
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderRadius: `7px`,
+      },
+    },
+  },
+})(TextField);
+
+export const StyledDiv = styled("div")`
+  border-top: 1px groove gray;
+  border-left: 1px groove gray;
+  border-right: 1px groove gray;
+  margin-right: 1px;
 `;

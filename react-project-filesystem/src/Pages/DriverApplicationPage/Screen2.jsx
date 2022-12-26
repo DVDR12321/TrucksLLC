@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  TextField,
   Grid,
   Typography,
   CardContent,
@@ -11,10 +10,12 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
 import emailjs from "@emailjs/browser";
+import { StyledTextField } from "./StyledComponents";
+import { useRef } from "react";
 
 export const Screen2 = (props) => {
   const { state, setState } = props;
-
+  let formRef2 = useRef(null);
   // ADRESS FIELD ******************************************************
 
   function AddAdress() {
@@ -102,12 +103,11 @@ export const Screen2 = (props) => {
   }
   //Main render..................................................................
   const handleSubmit = () => {
-    const form = state.form1Ref.current;
     emailjs
       .sendForm(
         "default_service",
         "template_5muable",
-        form,
+        formRef2.current,
         "Bt5FJk_8UapAuvKNi"
       )
       .then(
@@ -118,10 +118,11 @@ export const Screen2 = (props) => {
           console.log(error.text);
         }
       );
+    formRef2.current.reset();
   };
 
   return (
-    <form>
+    <form ref={formRef2} onSubmit={handleSubmit}>
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -149,7 +150,7 @@ export const Screen2 = (props) => {
               return (
                 <Grid container key={index1}>
                   <Grid item xs={12} md={12}>
-                    <TextField
+                    <StyledTextField
                       name="Adress"
                       color="red"
                       label={"Adress " + (index1 += 1).toString()}
@@ -158,9 +159,9 @@ export const Screen2 = (props) => {
                       variant="outlined"
                       fullWidth
                       required
-                      multiline
                       onChange={(e) => AdressChange(e, index1)}
-                    ></TextField>
+                      shape="filled"
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -189,17 +190,17 @@ export const Screen2 = (props) => {
               return (
                 <Grid container key={index} spacing={2}>
                   <Grid item xs={12} md={3}>
-                    <TextField
+                    <StyledTextField
                       name="Date"
                       type="date"
                       variant="outlined"
                       fullWidth
                       required
                       onChange={(e) => AccidentChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                   <Grid item xs={12} md={9}>
-                    <TextField
+                    <StyledTextField
                       name="Description"
                       type="Message"
                       label="Description"
@@ -208,7 +209,7 @@ export const Screen2 = (props) => {
                       required
                       multiline
                       onChange={(e) => AccidentChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -238,17 +239,17 @@ export const Screen2 = (props) => {
               return (
                 <Grid container key={index} spacing={2}>
                   <Grid item xs={12} md={3}>
-                    <TextField
+                    <StyledTextField
                       name="LicenceDate"
                       type="date"
                       variant="outlined"
                       fullWidth
                       required
                       onChange={(e) => LicenceChange(e, index)}
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                   <Grid item xs={12} md={9}>
-                    <TextField
+                    <StyledTextField
                       name="LicenceDescription"
                       type="Message"
                       label="State / Licence# / Type"
@@ -258,7 +259,7 @@ export const Screen2 = (props) => {
                       multiline
                       onChange={(e) => LicenceChange(e, index)}
                       placeholder="State / Licence# / Type"
-                    ></TextField>
+                    ></StyledTextField>
                   </Grid>
                 </Grid>
               );
@@ -289,31 +290,31 @@ export const Screen2 = (props) => {
               <PreviousEmployments> </PreviousEmployments>
             </Grid>
             <Grid item xs={12} md={4}>
-              <TextField
+              <StyledTextField
                 name="reason"
                 fullWidth
                 variant="outlined"
                 label="reason for leaving"
                 multiline
-              ></TextField>
+              ></StyledTextField>
             </Grid>
             <Grid item xs={6} md={2}>
-              <TextField
+              <StyledTextField
                 name="Date"
                 type="date"
                 variant="outlined"
                 fullWidth
                 required
-              ></TextField>
+              ></StyledTextField>
             </Grid>
             <Grid item xs={6} md={2}>
-              <TextField
+              <StyledTextField
                 name="Date"
                 type="date"
                 variant="outlined"
                 fullWidth
                 required
-              ></TextField>
+              ></StyledTextField>
             </Grid>
           </Grid>
           <Grid item xs={0} md={8}></Grid>
