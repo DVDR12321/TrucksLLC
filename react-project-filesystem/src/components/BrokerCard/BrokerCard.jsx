@@ -17,7 +17,7 @@ const BrokerCard = (props) => {
           alt=""
           sx={{ objectFit: "contain" }}
         />
-        <CardContent sx={{ padding: "3px" }}>
+        <CardContent sx={{ padding: 0 }}>
           <Typography
             gutterBottom
             color="white"

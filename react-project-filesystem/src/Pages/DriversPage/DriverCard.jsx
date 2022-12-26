@@ -19,10 +19,10 @@ export default function DriverCard({ img1, text, header, button1, button2 }) {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
-        <StyledButton variant="contained" color="error">
+        <StyledButton variant="contained" color="secondary">
           {button1}
         </StyledButton>
-        <StyledButton variant="contained" color="error">
+        <StyledButton variant="contained" color="secondary">
           {button2}
         </StyledButton>
       </CardActions>

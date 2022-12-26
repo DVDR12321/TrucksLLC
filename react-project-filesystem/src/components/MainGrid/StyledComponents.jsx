@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Background from "../../assets/app__background2.png";
@@ -13,9 +13,12 @@ export const StyledGridContainer = styled(Grid)`
   opacity: 1;
 `;
 
-export const StyledBox = styled(Box)`
-  background-color: rgba(0, 0, 0, 1);
-`;
+export const StyledBox = styled(Box)(
+  ({ theme }) => `
+  background-color: ${theme.palette.common.black}
+`
+);
+
 export const StyledTestimonialsGrid = styled(Grid)``;
 export const StyledAboutGrid = styled(Grid)``;
 export const StyledVideoGrid = styled(Grid)``;

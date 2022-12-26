@@ -7,7 +7,7 @@ import {
   StyledAboutHeader,
   StyledText,
   StyledImage,
-  AboutusCustomers,
+  AboutUsCustomers,
   StyledSpan,
   StyledCustomersHeader,
   SeparatorDiv,
@@ -40,7 +40,7 @@ const AboutUsSection = () => {
           </StyledLink>
         </AboutusDrivers>
         <SeparatorDiv></SeparatorDiv>
-        <AboutusCustomers>
+        <AboutUsCustomers>
           <StyledCustomersHeader>Our Services</StyledCustomersHeader>
           <StyledText>
             Benefints for our customers imclude such and such and such and such
@@ -56,7 +56,7 @@ const AboutUsSection = () => {
               Learn More
             </Button>
           </StyledLink>
-        </AboutusCustomers>
+        </AboutUsCustomers>
       </SectionOverlay>
     </ContainingDiv>
   );

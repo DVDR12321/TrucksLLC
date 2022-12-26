@@ -1,64 +1,74 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "../../assets/headerimage.jpg";
 
 import CardImage from "../../assets/card.png";
 import BeneftisImage from "../../assets/app__background2.png";
+import { grey } from "@mui/material/colors";
 
 export const StyledContainer = styled("div")`
-  background: #ada996; /* fallback for old browsers */
+  background: #ada996;
   background: -webkit-linear-gradient(
     to top,
-    #ada996,
-    #f2f2f2,
-    #dbdbdb,
-    #eaeaea
-  ); /* Chrome 10-25, Safari 5.1-6 */
+    ${grey[400]},
+    ${grey[100]},
+    ${grey[300]},
+    ${grey[200]}
+  );
   background: linear-gradient(
     to top,
-    #ada996,
-    #f2f2f2,
-    #dbdbdb,
-    #eaeaea
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    ${grey[400]},
+    ${grey[100]},
+    ${grey[300]},
+    ${grey[200]}
+  );
 `;
-export const StyledHeaderImage = styled("div")`
+
+export const StyledHeaderImage = styled("div")(
+  ({ theme }) => `
   display: flex;
   height: 65vh;
   background: url(${Image});
-  color: white;
+  color: ${theme.palette.common.white};
   padding-bottom: 10px;
-`;
+`
+);
 
-export const StyledHeaderBox = styled(Box)`
-  background: #da1e2c;
+export const StyledHeaderBox = styled(Box)(
+  ({ theme }) => `
+  background: ${theme.palette.primary.main};
   height: 35vh;
   margin-left: 200px;
   margin-right: 200px;
   margin-top: -100px;
   border-radius: 50px;
-`;
+`
+);
 
-export const StyledCaption = styled(Typography)`
+export const StyledCaption = styled(Typography)(
+  ({ theme }) => `
   align-items: center;
-  color: white;
+  color: ${theme.palette.common.white};
   float: left;
   padding-left: 20px;
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 1px;
   font-weight: 300;
-`;
+`
+);
 
-export const StyledHeaderText = styled(Typography)`
-  color: white;
+export const StyledHeaderText = styled(Typography)(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
   float: right;
   line-height: 28px;
   font-size: 18px;
   letter-spacing: 1px;
   font-style: italic;
-`;
+`
+);
 
 export const StyledText = styled("p")`
   text-align: center;
@@ -72,14 +82,16 @@ export const StyledImage = styled("img")`
   height: 370px;
 `;
 
-export const StyledSectionCaption = styled(Typography)`
-  color: #da1e2c;
+export const StyledSectionCaption = styled(Typography)(
+  ({ theme }) => `
+  color: ${theme.palette.primary.light};;
   font-size: 30px;
   line-height: 40px;
   letter-spacing: 1px;
   font-weight: 300;
   text-align: center;
-`;
+`
+);
 
 export const StyledGridRow = styled(Grid)`
   margin-bottom: 30px;
@@ -87,10 +99,12 @@ export const StyledGridRow = styled(Grid)`
 
 export const StyledMainGrid = styled(Grid)``;
 
-export const StyledCardBox = styled(Box)`
+export const StyledCardBox = styled(Box)(
+  ({ theme }) => `
   height: 200px;
-  background: red;
-`;
+  background: ${theme.palette.primary.main};
+`
+);
 
 export const StyledCardWrapper = styled(Grid)`
   height: 60vh;
@@ -129,7 +143,8 @@ export const StyledFlipCardInner = styled(Grid)`
   }
 `;
 
-export const StyledCard = styled(Grid)`
+export const StyledCard = styled(Grid)(
+  ({ theme }) => `
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -139,14 +154,15 @@ export const StyledCard = styled(Grid)`
   &.front {
     transform: rotateY(0);
     background-color: #2d2d2d;
-    color: #fff;
+    color: ${theme.palette.common.white};;
   }
   &.back {
     transform: rotateY(180deg);
-    background-color: #fff;
+    background-color: ${theme.palette.common.white};
     color: #2d2d2d;
   }
-`;
+`
+);
 
 export const StyledFrontCard = styled("div")`
   background: url(${CardImage});

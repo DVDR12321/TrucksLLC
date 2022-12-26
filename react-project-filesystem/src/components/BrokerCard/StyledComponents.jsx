@@ -1,16 +1,18 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 
-export const StyledCard = styled(Card)`
-  height: 25vh;
+export const StyledCard = styled(Card)(
+  ({ theme }) => `
+  height: 26vh;
   width: 80%;
   outline-style: solid;
   outline-width: 2px;
-  outline-color: rgba(255, 255, 255, 0.5);
+  outline-color: ${theme.palette.common.white};
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${theme.palette.common.white};
   :hover {
-    outline-color: rgba(255, 255, 255, 1);
-    color: rgba(255, 255, 255, 1);
+    outline-color: ${theme.palette.common.white};
+    color: ${theme.palette.common.white};
   }
-`;
+`
+);
