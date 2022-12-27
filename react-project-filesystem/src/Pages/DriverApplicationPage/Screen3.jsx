@@ -98,7 +98,7 @@ const Screen3 = () => {
           appear, and remain, on a PSP report. The Prospective Employer cannot
           obtain background reports from FMCSA without your authorization.
         </Styledp1>
-        <Grid xs={12}>
+        <Grid item xs={12}>
           <StyledHeader3>AUTHORIZATION</StyledHeader3>
           <Styledp1>
             If you agree that the Prospective Employer may obtain such
@@ -175,7 +175,7 @@ const Screen3 = () => {
               fullWidth
               onClick={clear}
               variant="outlined"
-              color="red"
+              color="primary"
               endIcon={<DeleteOutlineOutlinedIcon />}
             >
               Clear

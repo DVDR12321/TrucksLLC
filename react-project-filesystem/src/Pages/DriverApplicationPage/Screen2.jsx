@@ -152,7 +152,7 @@ export const Screen2 = (props) => {
                   <Grid item xs={12} md={12}>
                     <StyledTextField
                       name="Adress"
-                      color="red"
+                      color="primary"
                       label={"Adress " + (index1 += 1).toString()}
                       placeholder="476 Alderwood Rd.
                   Seymour, IN 47274"
@@ -168,12 +168,16 @@ export const Screen2 = (props) => {
             })}
             <IconButton
               aria-label="add"
-              color="red"
+              color="primary"
               onClick={() => AddAdress()}
             >
               <AddIcon />
             </IconButton>
-            <IconButton aria-label="remove" color="red" onClick={RemoveAdress}>
+            <IconButton
+              aria-label="remove"
+              color="primary"
+              onClick={RemoveAdress}
+            >
               <RemoveIcon />
             </IconButton>
           </Grid>
@@ -216,14 +220,14 @@ export const Screen2 = (props) => {
             })}
             <IconButton
               aria-label="add"
-              color="red"
+              color="primary"
               onClick={() => AddAccident()}
             >
               <AddIcon />
             </IconButton>
             <IconButton
               aria-label="remove"
-              color="red"
+              color="primary"
               onClick={RemoveAccident}
             >
               <RemoveIcon />
@@ -270,12 +274,16 @@ export const Screen2 = (props) => {
             </Grid>
             <IconButton
               aria-label="add"
-              color="red"
+              color="primary"
               onClick={() => AddLicence()}
             >
               <AddIcon />
             </IconButton>
-            <IconButton aria-label="remove" color="red" onClick={RemoveLience}>
+            <IconButton
+              aria-label="remove"
+              color="primary"
+              onClick={RemoveLience}
+            >
               <RemoveIcon />
             </IconButton>
           </Grid>

@@ -135,7 +135,7 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             <StyledTextField
               name="FirstName"
-              color="red"
+              color="primary"
               label="First Name"
               placeholder=""
               variant="outlined"
@@ -149,7 +149,7 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             <StyledTextField
               name="LastName"
-              color="red"
+              color="primary"
               label="Last Name"
               placeholder=""
               variant="outlined"
@@ -163,7 +163,7 @@ export const Screen1 = (props) => {
             <StyledTextField
               type="email"
               name="Email"
-              color="red"
+              color="primary"
               label="Email"
               placeholder="@"
               variant="outlined"
@@ -179,7 +179,7 @@ export const Screen1 = (props) => {
               id="echeck"
               type="email"
               name="EmailCheck"
-              color="red"
+              color="primary"
               label="Enter your email again "
               placeholder="@"
               variant="outlined"
@@ -193,7 +193,7 @@ export const Screen1 = (props) => {
             <StyledTextField
               type="tel"
               name="PhoneNumber"
-              color="red"
+              color="primary"
               label="Phone Number"
               placeholder="+1"
               variant="outlined"
@@ -209,7 +209,7 @@ export const Screen1 = (props) => {
               id="tcheck"
               type="tel"
               name="PhoneNumberCheck"
-              color="red"
+              color="primary"
               label="Enter your number again "
               placeholder="+1"
               variant="outlined"

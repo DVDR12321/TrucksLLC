@@ -11,7 +11,7 @@ const FirstPageButton = (props) => {
       variant={props.variant}
       fullWidth
       onClick={props.addTrip}
-      color="red"
+      color="primary"
     >
       First Page
     </Button>
@@ -23,7 +23,7 @@ const SecondPageButton = (props) => {
       variant={props.variant}
       fullWidth
       onClick={props.addTrip}
-      color="red"
+      color="primary"
     >
       Second Page
     </Button>
@@ -35,7 +35,7 @@ const ThirdPageButton = (props) => {
       variant={props.variant}
       fullWidth
       onClick={props.addTrip}
-      color="red"
+      color="primary"
     >
       Third Page
     </Button>

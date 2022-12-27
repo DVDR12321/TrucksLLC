@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import { TextField } from "@mui/material";
-import SignaturePad from "react-signature-pad";
 import { withStyles } from "@mui/styles";
 
 export const StyledHeader1 = styled("h1")`
@@ -13,7 +12,7 @@ export const StyledHeader1 = styled("h1")`
 export const StyledHeader2 = styled("h1")`
   font-size: 5vmin;
   text-align: center;
-  color: red;
+  color: "rgb(255, 0, 0)";
   padding-bottom: 1ch;
 `;
 
@@ -31,16 +30,6 @@ export const Styledp1 = styled("p")`
 export const StyledSpan = styled("span")`
   font-weight: bold;
   padding-left: 0.3ch;
-`;
-
-export const StyledSignature = styled(SignaturePad)`
-  canvasProps= {
-     {
-      style: {
-        border: "5px solid red";
-      }
-    }
-  }
 `;
 
 export const StyledTextField = withStyles({
