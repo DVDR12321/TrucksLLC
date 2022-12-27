@@ -1,41 +1,29 @@
+import { Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
+import Background from "../../assets/app__background.png";
 
 export const ContainingDiv = styled("div")`
   display: flex;
-  justify-content: center;
-`;
-
-export const SectionOverlay = styled("div")`
-  border-radius: 4% 4% 0 0;
-  display: flex;
-  position: relative;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 90%;
-  background: ${grey[100]};
-  background: -webkit-linear-gradient(to bottom, ${grey[100]}, ${grey[100]});
-  background: linear-gradient(to bottom, ${grey[100]}, ${grey[100]});
+  height: 100%;
+  width: 100vw;
 `;
 
-export const StyledImage = styled("img")`
-  border-radius: 4% 4% 0 0;
-  position: absolute;
-  instet: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.85;
-  object-fit: cover;
+export const SectionOverlay = styled(Grid)`
+  background-image: url(${Background});
+  align-items: center;
+  border-radius: 30px 30px 0 0;
+  border-top: 5px solid ${grey[600]};
+  border-left: 5px solid ${grey[600]};
+  border-right: 5px solid ${grey[600]};
 `;
-export const AboutusDrivers = styled("div")`
-  position: relative;
+
+export const AboutusDrivers = styled(Grid)`
   z-index: 2;
-  width: 45%;
   text-align: end;
   padding: 10px;
-  border-right: 7px outset red;
 `;
 
 export const StyledAboutHeader = styled("h1")(
@@ -64,10 +52,8 @@ export const StyledText = styled("p")(
 `
 );
 
-export const AboutUsCustomers = styled("div")`
-  position: relative;
+export const AboutUsCustomers = styled(Grid)`
   z-index: 2;
-  width: 45%;
   text-align: start;
   padding: 10px;
 `;
@@ -96,10 +82,10 @@ export const StyledSpan = styled("span")(
 `
 );
 
-export const SeparatorDiv = styled("div")(
+export const SeparatorDiv = styled(Grid)(
   ({ theme }) => `
   position: absolute;
-  height: 90%;
+  height: 80%;
   z-index: 2;
   width: 5px;
   background: ${theme.palette.common.black};

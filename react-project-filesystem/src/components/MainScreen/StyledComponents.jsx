@@ -50,12 +50,16 @@ export const StyledMainTitle = styled("h1")(
 `
 );
 
-export const StyledButton = styled(Button)`
-  font-weight: bold;
+export const StyledButton = styled(Button)(
+  ({ theme }) =>
+    `
+  
+  font-weight: 900;
   font-size: 6vmin;
   height: 7vmin;
   width: 20vmax;
-`;
+`
+);
 
 export const StyledLink = styled(Link)`
   text-decoration: none;

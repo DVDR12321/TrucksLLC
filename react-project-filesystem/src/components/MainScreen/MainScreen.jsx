@@ -21,14 +21,14 @@ const MainScreen = () => {
   return (
     <StyledGrid container>
       <Grid container spacing={0}>
-        <StyledHeaderGrid item xs={9} md={6}>
+        <StyledHeaderGrid item xs={12} md={6}>
           <StyledMainTitle color="primary">
             Transporation Done Right
           </StyledMainTitle>
         </StyledHeaderGrid>
-        <StyledButtonGrid item xs={3} md={6}>
+        <StyledButtonGrid item xs={0} md={6}>
           <StyledLink to="apply">
-            <StyledButton variant="outlined" color="error">
+            <StyledButton variant="outlined" color="secondary">
               Join us
             </StyledButton>
           </StyledLink>

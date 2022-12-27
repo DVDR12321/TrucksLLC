@@ -1,9 +1,24 @@
+import { Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 import Background from "../../assets/app__background2.png";
 
 export const ContainingDiv = styled("div")`
   display: flex;
+  align-items: start;
   justify-content: center;
-  background-image: url(${Background});
-  opacity: 0.8;
+  height: 100%;
+  width: 100vw;
+  margin-bottom: 10px;
 `;
+
+export const ContainingGrid = styled(Grid)(
+  ({ theme }) => `
+  background-color: ${theme.palette.common.white};
+  border-radius: 0 0 30px 30px;
+  border-bottom: 5px solid ${grey[600]};
+  border-left: 5px solid ${grey[600]};
+  border-right: 5px solid ${grey[600]};
+  background-image: url(${Background});
+`
+);

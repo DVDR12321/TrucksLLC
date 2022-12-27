@@ -5,7 +5,6 @@ import VideoPlayer from "../VideoScreen/VideoPlayer";
 import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import { Testimonials } from "../TestimonialsPage/Testimonials";
 import {
-  StyledGridContainer,
   StyledAboutGrid,
   StyledBox,
   StyledTestimonialsGrid,
@@ -22,12 +21,8 @@ const MainGrid = () => {
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>
           <AboutUsSection></AboutUsSection>
         </StyledAboutGrid>
-        <StyledVideoGrid container columns={10}>
-          <StyledGridContainer item xs={9}>
-            <Grid item xs={9}>
-              <VideoPlayer></VideoPlayer>
-            </Grid>
-          </StyledGridContainer>
+        <StyledVideoGrid item xs={12}>
+          <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
         <StyledTestimonialsGrid item xs={12}>
           <Testimonials></Testimonials>
