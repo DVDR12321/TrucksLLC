@@ -1,7 +1,8 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { TextField } from "@mui/material";
 import SignaturePad from "react-signature-pad";
 import { withStyles } from "@mui/styles";
+
 export const StyledHeader1 = styled("h1")`
   font-size: 2vmin;
   text-align: center;

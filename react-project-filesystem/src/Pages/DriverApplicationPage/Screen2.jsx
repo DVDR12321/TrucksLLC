@@ -235,35 +235,39 @@ export const Screen2 = (props) => {
               Please add your driving licences for the past 3 years along with
               their expiration dates:
             </Typography>
-            {state.Licence.map((x, index) => {
-              return (
-                <Grid container key={index} spacing={2}>
-                  <Grid item xs={12} md={3}>
-                    <StyledTextField
-                      name="LicenceDate"
-                      type="date"
-                      variant="outlined"
-                      fullWidth
-                      required
-                      onChange={(e) => LicenceChange(e, index)}
-                    ></StyledTextField>
+            <Grid container spacing={2}>
+              {state.Licence.map((x, index) => {
+                return (
+                  <Grid item xs={12}>
+                    <Grid container key={index} spacing={2}>
+                      <Grid item xs={12} md={3}>
+                        <StyledTextField
+                          name="LicenceDate"
+                          type="date"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          onChange={(e) => LicenceChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                      <Grid item xs={12} md={9}>
+                        <StyledTextField
+                          name="LicenceDescription"
+                          type="Message"
+                          label="State / Licence# / Type"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          multiline
+                          onChange={(e) => LicenceChange(e, index)}
+                          placeholder="State / Licence# / Type"
+                        ></StyledTextField>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} md={9}>
-                    <StyledTextField
-                      name="LicenceDescription"
-                      type="Message"
-                      label="State / Licence# / Type"
-                      variant="outlined"
-                      fullWidth
-                      required
-                      multiline
-                      onChange={(e) => LicenceChange(e, index)}
-                      placeholder="State / Licence# / Type"
-                    ></StyledTextField>
-                  </Grid>
-                </Grid>
-              );
-            })}
+                );
+              })}
+            </Grid>
             <IconButton
               aria-label="add"
               color="red"
