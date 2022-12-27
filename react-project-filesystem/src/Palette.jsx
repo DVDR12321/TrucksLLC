@@ -5,7 +5,7 @@ import { red } from "@mui/material/colors";
 const theme = createTheme({
   palette: {
     red: {
-      main: red.A700,
+      main: "rgb(228 , 99, 99)",
     },
     black: {
       // This is green.A700 as hex.
