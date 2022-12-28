@@ -34,7 +34,7 @@ const QueryField = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 color="error"
-                label="Name"
+                label="First Name"
                 placeholder=""
                 variant="outlined"
                 fullWidth

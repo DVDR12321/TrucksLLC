@@ -30,13 +30,9 @@ export const StyledHeaderGrid = styled(Grid)`
 `;
 
 export const StyledCardsGrid = styled(Grid)`
-  padding: 20px;
-  backdrop-filter: blur(7px) sepia(20%);
-  height: 30vh;
-  width: 80%;
-  justify-content: center;
-  align-items: end;
-  margin: 0%;
+  padding: 30px;
+  backdrop-filter: blur(5px) sepia(30%);
+  width: 100%;
 `;
 
 // Items --------------------------------------------------------------------------------------------------------------------------------------------------
@@ -53,7 +49,6 @@ export const StyledMainTitle = styled("h1")(
 export const StyledButton = styled(Button)(
   ({ theme }) =>
     `
-  
   font-weight: 900;
   font-size: 6vmin;
   height: 7vmin;

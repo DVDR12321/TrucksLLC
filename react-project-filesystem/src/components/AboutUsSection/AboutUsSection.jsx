@@ -8,7 +8,7 @@ import {
   AboutUsCustomers,
   StyledSpan,
   StyledCustomersHeader,
-  SeparatorDiv,
+  //SeparatorDiv,
 } from "./StyledComponents";
 import Button from "@mui/material/Button";
 import { StyledLink } from "../MainScreen/StyledComponents";
@@ -39,7 +39,7 @@ const AboutUsSection = () => {
             </StyledLink>
           </Stack>
         </AboutusDrivers>
-        <SeparatorDiv item xs={0} md={0}></SeparatorDiv>
+        {/* <SeparatorDiv item xs={0} md={0}></SeparatorDiv> */}
         <AboutUsCustomers item xs={12} md={6}>
           <Stack>
             <StyledCustomersHeader>Our Services</StyledCustomersHeader>

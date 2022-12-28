@@ -15,7 +15,7 @@ const MainGrid = () => {
   return (
     <StyledBox sx={{ flexGrow: 2 }}>
       <Grid container spacing={0}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ height: "100%" }}>
           <MainScreen></MainScreen>
         </Grid>
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>

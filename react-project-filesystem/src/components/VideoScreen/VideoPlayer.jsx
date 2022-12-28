@@ -16,7 +16,7 @@ const VideoPlayer = () => {
             color="secondary"
             aria-label="youtube link"
             size="Large"
-            sx={{ height: "75px", width: "75px" }}
+            sx={{ height: "75px", width: "60px" }}
             href="https://www.youtube.com/c/VladUrdov/videos?app=desktop"
           >
             <YouTubeIcon sx={{ height: "75px", width: "75px" }} />

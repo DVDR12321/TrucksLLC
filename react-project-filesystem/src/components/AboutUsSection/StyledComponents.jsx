@@ -84,10 +84,10 @@ export const StyledSpan = styled("span")(
 
 export const SeparatorDiv = styled(Grid)(
   ({ theme }) => `
-  position: absolute;
+ 
   height: 80%;
   z-index: 2;
-  width: 5px;
+  width: 50px;
   background: ${theme.palette.common.black};
   background: linear-gradient(
     0deg,
