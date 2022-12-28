@@ -5,7 +5,7 @@ import img from "../../assets/main_background_colored_cropped.png";
 
 // Grids ------------------------------------------------------------------
 export const StyledGrid = styled(Grid)`
-  height: 100vh;
+  height: 100%;
   background-image: url(${img});
   background-size: 100% 100%;
   justify-content: center;
@@ -17,7 +17,6 @@ export const StyledButtonGrid = styled(Grid)`
   font-family: "Roboto", sans-serif;
   padding-bottom: 20vh;
   padding-left: 10vw;
-  height: 70vh;
 `;
 
 export const StyledHeaderGrid = styled(Grid)`

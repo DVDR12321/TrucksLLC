@@ -35,24 +35,24 @@ const MainScreen = () => {
         </StyledButtonGrid>
       </Grid>
       <Grid item xs={0} md={1}></Grid>
-      <StyledCardsGrid item xs={10}>
+      <StyledCardsGrid item xs={12} md={10}>
         <Grid container sx={{ justifyContent: "center" }} spacing={15}>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <StyledLink to="">
               <BrokerCard imagep={img4} headerp="About Us" />
             </StyledLink>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <StyledLink to="">
               <BrokerCard imagep={img3} headerp="Driver benefits" />
             </StyledLink>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <StyledLink to="">
               <BrokerCard imagep={img5} headerp="Our fleet" />
             </StyledLink>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={3}>
             <LinkScroll to="/#references">
               <BrokerCard imagep={img6} headerp="Recognitions" />
             </LinkScroll>
