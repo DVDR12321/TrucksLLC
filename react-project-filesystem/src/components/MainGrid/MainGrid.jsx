@@ -4,14 +4,18 @@ import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
 import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import { Testimonials } from "../TestimonialsPage/Testimonials";
+
 import {
   StyledAboutGrid,
   StyledBox,
   StyledTestimonialsGrid,
   StyledVideoGrid,
 } from "./StyledComponents";
+import BackToTop from "../BackToTop/BackToTop";
+import { useState } from "react";
 
 const MainGrid = () => {
+  const [BackToTopButton, setBackToTopButton] = useState("");
   return (
     <StyledBox sx={{ flexGrow: 2 }}>
       <Grid container spacing={0}>
@@ -34,6 +38,10 @@ const MainGrid = () => {
           </div>
         </Grid>
       </Grid>
+      <BackToTop
+        BackToTopButton={BackToTopButton}
+        setBackToTopButton={setBackToTopButton}
+      ></BackToTop>
     </StyledBox>
   );
 };
