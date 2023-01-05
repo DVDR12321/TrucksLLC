@@ -6,9 +6,9 @@ export const CardContainer = styled("div")`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5%;
+  margin-bottom: 5%;
   height: 80vh;
-  width: 60vh;
+  width: 100%;
   background-color: transparent;
 `;
 

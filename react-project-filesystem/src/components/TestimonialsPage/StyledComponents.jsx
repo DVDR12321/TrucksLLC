@@ -5,7 +5,7 @@ export const SectionOverlayGrid = styled(Grid)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: "transparent";
 `;
