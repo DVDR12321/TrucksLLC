@@ -15,21 +15,32 @@ import BackToTop from "../BackToTop/BackToTop";
 import { useState } from "react";
 
 const MainGrid = () => {
+  const [scrollTo, setScrollTo] = useState({ about: "", laurels: "" });
   const [BackToTopButton, setBackToTopButton] = useState("");
+
   return (
     <StyledBox sx={{ flexGrow: 2 }}>
       <Grid container spacing={0}>
         <Grid item xs={12} sx={{ height: "100%" }}>
-          <MainScreen></MainScreen>
+          <MainScreen
+            scrollTo={scrollTo}
+            setScrollTo={setScrollTo}
+          ></MainScreen>
         </Grid>
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>
-          <AboutUsSection></AboutUsSection>
+          <AboutUsSection
+            scrollTo={scrollTo}
+            setScrollTo={setScrollTo}
+          ></AboutUsSection>
         </StyledAboutGrid>
         <StyledVideoGrid item xs={12}>
           <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
         <StyledTestimonialsGrid item xs={12}>
-          <Testimonials></Testimonials>
+          <Testimonials
+            scrollTo={scrollTo}
+            setScrollTo={setScrollTo}
+          ></Testimonials>
         </StyledTestimonialsGrid>
         <Grid item xs={12}>
           <div style={{ textAlign: "center" }}>

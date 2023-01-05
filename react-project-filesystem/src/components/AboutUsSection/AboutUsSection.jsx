@@ -13,10 +13,22 @@ import {
 import Button from "@mui/material/Button";
 import { StyledLink } from "../MainScreen/StyledComponents";
 import { Stack } from "@mui/system";
+import { useEffect } from "react";
+import { useRef } from "react";
 
-const AboutUsSection = () => {
+const AboutUsSection = (props) => {
+  const { scrollTo, setScrollTo } = props;
+  const aboutRef = useRef();
+
+  useEffect(() => {
+    if (scrollTo.about === "About") {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+      setScrollTo("");
+    }
+  }, [scrollTo]);
+
   return (
-    <ContainingDiv>
+    <ContainingDiv ref={aboutRef}>
       <SectionOverlay container xs={12} md={10}>
         <AboutusDrivers xs={12} md={6}>
           <Stack>

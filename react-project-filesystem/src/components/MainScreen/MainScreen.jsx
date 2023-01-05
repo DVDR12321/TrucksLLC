@@ -1,7 +1,6 @@
-import React from "react";
-import img3 from "../../assets/usa.webp";
+import img3 from "../../assets/CardMoney.png";
 import img4 from "../../assets/logo.gif";
-import img5 from "../../assets/truckgif.gif";
+import img5 from "../../assets/CardTruck.png";
 import img6 from "../../assets/Card Pie Chart.gif";
 import Grid from "@mui/material/Grid";
 import BrokerCard from "../BrokerCard/BrokerCard";
@@ -17,7 +16,24 @@ import {
   StyledLink,
 } from "./StyledComponents";
 
-const MainScreen = () => {
+const MainScreen = (props) => {
+  const { setScrollTo, scrollTo } = props;
+
+  const handleClickAbout = () => {
+    setScrollTo((scrollTo) => ({
+      ...scrollTo,
+      about: "About",
+    }));
+    console.log(scrollTo);
+  };
+  const handleClickLaurels = () => {
+    setScrollTo((scrollTo) => ({
+      ...scrollTo,
+      laurels: "Laurels",
+    }));
+    console.log(scrollTo);
+  };
+
   return (
     <StyledGrid container>
       <Grid container spacing={0}>
@@ -39,22 +55,35 @@ const MainScreen = () => {
         <Grid container sx={{ justifyContent: "center" }} spacing={15}>
           <Grid item xs={12} md={3}>
             <StyledLink to="">
-              <BrokerCard imagep={img4} headerp="About Us" />
+              <BrokerCard
+                sx={{ objectFit: "contain" }}
+                imagep={img4}
+                headerp="About Us"
+                onClickCard={handleClickAbout}
+              />
             </StyledLink>
           </Grid>
           <Grid item xs={12} md={3}>
-            <StyledLink to="">
-              <BrokerCard imagep={img3} headerp="Driver benefits" />
+            <StyledLink to="/drivers">
+              <BrokerCard
+                href="/drivers"
+                imagep={img3}
+                headerp="Driver benefits"
+              />
             </StyledLink>
           </Grid>
           <Grid item xs={12} md={3}>
-            <StyledLink to="">
+            <StyledLink to="/aboutus">
               <BrokerCard imagep={img5} headerp="Our fleet" />
             </StyledLink>
           </Grid>
           <Grid item xs={12} md={3}>
             <LinkScroll to="/#references">
-              <BrokerCard imagep={img6} headerp="Recognitions" />
+              <BrokerCard
+                onClickCard={handleClickLaurels}
+                imagep={img6}
+                headerp="Recognitions"
+              />
             </LinkScroll>
           </Grid>
         </Grid>

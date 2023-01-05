@@ -6,16 +6,16 @@ import Typography from "@mui/material/Typography";
 import { StyledCard } from "./StyledComponents";
 
 const BrokerCard = (props) => {
-  const { imagep, headerp } = props;
+  const { imagep, headerp, onClickCard } = props;
   return (
     <StyledCard>
-      <CardActionArea>
+      <CardActionArea onClick={onClickCard}>
         <CardMedia
           component="img"
           height="120"
           image={imagep}
           alt=""
-          sx={{ objectFit: "cover" }}
+          sx={{ objectFit: "contain" }}
         />
         <CardContent>
           <Typography
