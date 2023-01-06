@@ -6,18 +6,27 @@ import {
   StyledFrontCard,
   StyledSectionCaption,
 } from "./StyledComponents";
+import img1 from "../../assets/support.png";
+import { Stack } from "@mui/system";
 
-const FrontCard = (props) => <StyledFrontCard>{props.name} </StyledFrontCard>;
+const FrontCard = (props) => (
+  <StyledFrontCard>
+    <Stack direction="column">
+      <h3>{props.name} </h3>
+      <img src={props.image} alt=""></img>{" "}
+    </Stack>
+  </StyledFrontCard>
+);
 
-const BackCard = () => <div>Back CARD </div>;
+const BackCard = () => <div> Back CARD </div>;
 
 const cards = [
-  { name: "Truckload" },
-  { name: "LTL" },
-  { name: "Intermodal" },
-  { name: "International Air & Ocean" },
-  { name: "Small Parcel" },
-  { name: "Specialized/Partial" },
+  { name: "Van" },
+  { name: "Box Truck" },
+  { name: "24/7 dispatch", image: img1 },
+  { name: "Live tracking" },
+  { name: "FTL/LTL" },
+  { name: "Yard parking and shop" },
 ];
 
 const OurBenefits = () => {
@@ -36,12 +45,14 @@ const OurBenefits = () => {
         <Divider></Divider>
       </Grid>
       <Grid item>
-        <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={5} justifyContent="center">
           {cards.map((card, index) => {
             return (
               <Grid item key={index}>
                 <FlipCard
-                  FrontCard={() => <FrontCard name={card.name}></FrontCard>}
+                  FrontCard={() => (
+                    <FrontCard name={card.name} image={card.image}></FrontCard>
+                  )}
                   BackCard={BackCard}
                 ></FlipCard>
               </Grid>

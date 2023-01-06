@@ -25,7 +25,7 @@ export const StyledContainer = styled("div")`
   );
 `;
 
-export const StyledHeaderImage = styled("div")(
+export const StyledHeaderImage = styled(Grid)(
   ({ theme }) => `
   display: flex;
   height: 65vh;
@@ -71,15 +71,17 @@ export const StyledHeaderText = styled(Typography)(
 );
 
 export const StyledText = styled("p")`
-  text-align: center;
+  text-align: justify;
   width: 100%;
   overflow: hidden;
+  padding: 5%;
 `;
 
 export const StyledImage = styled("img")`
   border-radius: 15%;
-  width: 500px;
-  height: 370px;
+  height: 80vh;
+  width: 100%;
+  padding: 5%;
 `;
 
 export const StyledSectionCaption = styled(Typography)(
@@ -107,7 +109,7 @@ export const StyledCardBox = styled(Box)(
 );
 
 export const StyledCardWrapper = styled(Grid)`
-  height: 60vh;
+  height: 100%;
   padding-bottom: 10vh;
   // background: url(${BeneftisImage});
 `;

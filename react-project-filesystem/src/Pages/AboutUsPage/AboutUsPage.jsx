@@ -47,8 +47,8 @@ const AboutUsPage = () => {
       <StyledMainGrid
         container
         spacing={2}
-        paddingLeft={15}
-        paddingRight={15}
+        paddingLeft={1}
+        paddingRight={1}
         sx={{ marginTop: "50px" }}
       >
         <StyledGridRow container>
