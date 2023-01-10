@@ -5,6 +5,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import { Grid } from "@mui/material";
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -20,7 +21,7 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => (
   <MuiAccordionSummary
-    expandIcon={<ExpandMore color="error" sx={{ fontSize: "1.5rem" }} />}
+    expandIcon={<ExpandMore color="primary" sx={{ fontSize: "1.5rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -42,21 +43,16 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
-const QuestionForm = () => {
+const QuestionsAccordion = () => {
   const [expanded, setExpanded] = React.useState("panel0");
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
   return (
-    <div
-      style={{
-        margin: "30px",
-        justifyContent: "center",
-        width: "80%",
-      }}
-    >
+    <Grid container spacing={0}>
       <Accordion
+        disableGutters
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
@@ -104,8 +100,8 @@ const QuestionForm = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-    </div>
+    </Grid>
   );
 };
 
-export default QuestionForm;
+export default QuestionsAccordion;

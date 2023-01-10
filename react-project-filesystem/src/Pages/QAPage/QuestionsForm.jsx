@@ -8,56 +8,88 @@ import {
   InputAdornment,
 } from "@mui/material";
 import React from "react";
+import emailjs from "@emailjs/browser";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
+import { useRef } from "react";
 
-const QueryField = () => {
+const QuestionsForm = () => {
+  const formRef = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "default_service",
+        "template_13pemog",
+        formRef.current,
+        "Bt5FJk_8UapAuvKNi"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    formRef.current.reset();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit} ref={formRef}>
       <Card
         sx={{
           maxWidth: "450px",
-          margin: "0 auto",
+          margin: "10px auto",
           padding: "2vmax 2vmin",
           borderRadius: "5%",
         }}
       >
         <CardContent>
-          <Typography variant="h5" color="red">
+          <Typography variant="h5" color="primary">
             Ask us a question:
           </Typography>
-          <Typography color="textSecondary" variant="body2" component="p">
+          <Typography
+            gutterBottom
+            color="textSecondary"
+            variant="body2"
+            component="p"
+          >
             Fill the form and our team will get back at you within 24 hours!
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <TextField
-                color="error"
+                name="First_Name"
                 label="First Name"
                 placeholder=""
                 variant="outlined"
+                color="primary"
                 fullWidth
                 required
               ></TextField>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                color="error"
+                name="Last_Name"
                 label="Last name"
                 placeholder=""
                 variant="outlined"
+                color="primary"
                 fullWidth
                 required
               ></TextField>
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="error"
                 type="email"
-                label="e-mail"
+                name="Email_"
+                label="E-mail"
                 placeholder="@"
                 variant="outlined"
+                color="primary"
                 fullWidth
                 required
                 InputProps={{
@@ -71,10 +103,11 @@ const QueryField = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="error"
+                name="Phone_Number"
                 label="Phone Number"
                 placeholder="+1"
                 variant="outlined"
+                color="primary"
                 fullWidth
                 required
                 InputProps={{
@@ -88,13 +121,14 @@ const QueryField = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                color="error"
                 type="Message"
+                name="Message_"
+                label="Enter your question:"
+                placeholder=""
+                variant="outlined"
+                color="primary"
                 multiline
                 rows={3}
-                label="Your question:"
-                placeholder=""
-                variant="filled"
                 fullWidth
                 required
                 InputProps={{
@@ -107,8 +141,13 @@ const QueryField = () => {
               ></TextField>
             </Grid>
             <Grid item xs={12}>
-              <Button type="submit" variant="outlined" color="error" fullWidth>
-                Submit question
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                fullWidth
+              >
+                Submit your question
               </Button>
             </Grid>
           </Grid>
@@ -118,4 +157,4 @@ const QueryField = () => {
   );
 };
 
-export default QueryField;
+export default QuestionsForm;
