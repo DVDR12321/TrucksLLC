@@ -10,11 +10,13 @@ import {
   StyledSectionCaption,
   StyledGridRow,
   StyledMainGrid,
+  StyledGrid,
 } from "./StyledComponents";
 import Img1 from "../../assets/company.png";
 import Img2 from "../../assets/fleet.jpg";
 import Grid from "@mui/material/Grid";
 import OurBenefits from "./OurBenefits";
+import { Button } from "@mui/material";
 
 const AboutUsPage = () => {
   return (
@@ -32,7 +34,10 @@ const AboutUsPage = () => {
           alignItems="center"
         >
           <Grid item xs={6}>
-            <StyledCaption>Transportation done right!</StyledCaption>
+            <StyledCaption>
+              Transportation done{" "}
+              <span style={{ color: "rgb(0,0,0)" }}>right</span>
+            </StyledCaption>
           </Grid>
           <Grid item xs={6}>
             <StyledHeaderText>
@@ -55,29 +60,38 @@ const AboutUsPage = () => {
           <Grid item xs={12} sm={12} md={12} lg={6}>
             <StyledImage src={Img1} alt=""></StyledImage>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6}>
+          <StyledGrid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={6}
+            sx={{ justifyContent: "left" }}
+          >
             <StyledSectionCaption>About Us</StyledSectionCaption>
             <StyledText>
               We provide safe and reliable transportation services to a diverse
               group of customers throughout the continental United States,
               Canada and Mexico. Utilizing an integrated, multimodal approach,
               we provide capacity-oriented solutions centered on delivering
-              customer value and industry-leading service.{" "}
+              customer value and industry-leading service. We also provide
+              customized freight movement and systems services that are tailored
+              to meet individual customers’ requirements and typically involve
+              long-term contracts. Our customer base is extremely diverse and
+              includes some of Fortune 500 companies. Our ability to offer
+              multiple services, utilizing our four business segments and a full
+              complement of logistics services through third parties, represents
+              a competitive advantage. We believe this unique operating strategy
+              can add value to customers and increase our profits and returns to
+              stockholders.
             </StyledText>
             <StyledText>
-              We also provide customized freight movement and systems services
-              that are tailored to meet individual customers’ requirements and
-              typically involve long-term contracts. Our customer base is
-              extremely diverse and includes some of Fortune 500 companies.
+              <Button variant="contained" color="primary">
+                {" "}
+                Our Services{" "}
+              </Button>
             </StyledText>
-            <StyledText>
-              Our ability to offer multiple services, utilizing our four
-              business segments and a full complement of logistics services
-              through third parties, represents a competitive advantage. We
-              believe this unique operating strategy can add value to customers
-              and increase our profits and returns to stockholders.
-            </StyledText>
-          </Grid>
+          </StyledGrid>
         </StyledGridRow>
         <StyledGridRow container>
           <Grid item xs={12} sm={12} md={12} lg={6}>

@@ -55,7 +55,7 @@ export const StyledCaption = styled(Typography)(
   font-size: 36px;
   line-height: 40px;
   letter-spacing: 1px;
-  font-weight: 300;
+  font-weight: 700;
 `
 );
 
@@ -78,25 +78,34 @@ export const StyledText = styled("p")`
 `;
 
 export const StyledImage = styled("img")`
-  border-radius: 15%;
+  border-radius: 10% 0 0 10%;
   height: 80vh;
   width: 100%;
-  padding: 5%;
 `;
 
 export const StyledSectionCaption = styled(Typography)(
   ({ theme }) => `
   color: ${theme.palette.primary.light};;
-  font-size: 30px;
+  font-size: 50px;
   line-height: 40px;
   letter-spacing: 1px;
-  font-weight: 300;
+  font-weight: 700;
   text-align: center;
 `
 );
 
 export const StyledGridRow = styled(Grid)`
   margin-bottom: 30px;
+`;
+
+export const StyledGrid = styled(Grid)`
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(198, 161, 161, 1) 75%,
+    rgba(213, 0, 0, 0.7203081061526173) 100%
+  );
 `;
 
 export const StyledMainGrid = styled(Grid)``;
