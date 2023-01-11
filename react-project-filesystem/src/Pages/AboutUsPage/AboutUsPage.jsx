@@ -15,8 +15,12 @@ import Img1 from "../../assets/company.png";
 import Img2 from "../../assets/fleet.jpg";
 import Grid from "@mui/material/Grid";
 import OurBenefits from "./OurBenefits";
+import { useEffect } from "react";
 
 const AboutUsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <StyledContainer>
       <StyledHeaderImage></StyledHeaderImage>

@@ -4,6 +4,7 @@ import { Screen1 } from "./Screen1";
 import { Screen2 } from "./Screen2";
 import Screen3 from "./Screen3";
 import img from "./LogoForm.png";
+import { useEffect } from "react";
 
 const FirstPageButton = (props) => {
   return (
@@ -43,6 +44,9 @@ const ThirdPageButton = (props) => {
 };
 
 export const Apply = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const data = {
     FirstName: "",
     LastName: "",

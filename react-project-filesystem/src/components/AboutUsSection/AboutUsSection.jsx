@@ -44,7 +44,7 @@ const AboutUsSection = (props) => {
               the most convenient practices, tailored to suit your every need
               and make your job as easy as possible. You drive - we pay!
             </StyledText>
-            <StyledLink to="/finances">
+            <StyledLink to="/aboutus">
               <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
                 Learn More
               </Button>

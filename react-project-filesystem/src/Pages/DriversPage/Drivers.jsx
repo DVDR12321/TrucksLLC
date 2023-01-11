@@ -5,8 +5,12 @@ import Referral from "./RefferalForm";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";
 import { StyledGrid, StyledHeaderText, StyledSpan } from "./StyledComponents";
+import { useEffect } from "react";
 
 function Drivers() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Grid container spacing={3} sx={{ justifyContent: "center" }}>
       <StyledGrid container>
