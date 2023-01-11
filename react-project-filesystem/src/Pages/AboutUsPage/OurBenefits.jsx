@@ -38,8 +38,8 @@ const OurBenefits = () => {
       alignItems="center"
       spacing={3}
     >
-      <Grid item justifyContent="center">
-        <StyledSectionCaption> Our services for you </StyledSectionCaption>
+      <Grid xs={12} item justifyContent="center">
+        <StyledSectionCaption> Our Services </StyledSectionCaption>
       </Grid>
       <Grid item>
         <Divider></Divider>

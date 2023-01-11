@@ -74,23 +74,32 @@ export const StyledText = styled("p")`
   text-align: justify;
   width: 100%;
   overflow: hidden;
-  padding: 5%;
+  padding: 0 5% 5% 5%;
 `;
 
-export const StyledImage = styled("img")`
-  border-radius: 10% 0 0 10%;
+export const StyledImageLeft = styled("img")`
+  border-radius: 5% 0 0 5%;
+  height: 80vh;
+  width: 100%;
+`;
+export const StyledImageRight = styled("img")`
+  border-radius: 0 5% 5% 0;
   height: 80vh;
   width: 100%;
 `;
 
 export const StyledSectionCaption = styled(Typography)(
   ({ theme }) => `
-  color: ${theme.palette.primary.light};;
+  color: ${theme.palette.primary.main};;
   font-size: 50px;
-  line-height: 40px;
   letter-spacing: 1px;
   font-weight: 700;
   text-align: center;
+  margin-bottom:10vh;
+  margin-right: 5vw;
+  margin-left: 10vw;
+  border-bottom: 2px inset grey;
+  
 `
 );
 
@@ -98,15 +107,14 @@ export const StyledGridRow = styled(Grid)`
   margin-bottom: 30px;
 `;
 
-export const StyledGrid = styled(Grid)`
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    125deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(198, 161, 161, 1) 75%,
-    rgba(213, 0, 0, 0.7203081061526173) 100%
-  );
-`;
+export const StyledGridRight = styled(Grid)(
+  ({ theme }) => `
+  color: ${theme.palette.white};
+  background: ${theme.palette.common.white}
+`
+);
+
+export const StyledGridLeft = styled(Grid)``;
 
 export const StyledMainGrid = styled(Grid)``;
 
