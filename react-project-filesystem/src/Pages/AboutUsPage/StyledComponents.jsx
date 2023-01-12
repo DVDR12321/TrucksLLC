@@ -79,12 +79,12 @@ export const StyledText = styled("p")`
 
 export const StyledImageLeft = styled("img")`
   border-radius: 5% 0 0 5%;
-  height: 80vh;
+  height: 100%;
   width: 100%;
 `;
 export const StyledImageRight = styled("img")`
   border-radius: 0 5% 5% 0;
-  height: 80vh;
+  height: 100%;
   width: 100%;
 `;
 
@@ -95,10 +95,10 @@ export const StyledSectionCaption = styled(Typography)(
   letter-spacing: 1px;
   font-weight: 700;
   text-align: center;
-  margin-bottom:10vh;
+  margin-bottom: 10vh;
   margin-right: 5vw;
-  margin-left: 10vw;
-  border-bottom: 2px inset grey;
+  margin-left: 5vw;
+  border-bottom: 1px inset ${theme.palette.common.grey};
   
 `
 );
@@ -109,12 +109,24 @@ export const StyledGridRow = styled(Grid)`
 
 export const StyledGridRight = styled(Grid)(
   ({ theme }) => `
-  color: ${theme.palette.white};
-  background: ${theme.palette.common.white}
+  color: ${theme.palette.common.grey};
+  background-color: ${theme.palette.common.white};
+  padding-top:5%;
+`
+);
+export const StyledImageGridLeft = styled(Grid)(
+  ({ theme }) => `
+ 
 `
 );
 
-export const StyledGridLeft = styled(Grid)``;
+export const StyledGridLeft = styled(Grid)(
+  ({ theme }) => `
+  color: ${theme.palette.common.grey};
+  background-color: ${theme.palette.common.white};
+  padding-top:5%;
+`
+);
 
 export const StyledMainGrid = styled(Grid)``;
 
@@ -185,4 +197,16 @@ export const StyledCard = styled(Grid)(
 
 export const StyledFrontCard = styled("div")`
   background: url(${CardImage});
+`;
+
+export const StyledCardHeader = styled("h3")(
+  ({ theme }) => `
+  margin: 5%;
+  padding:1%;
+  border-bottom: 1px inset ${theme.palette.common.grey};
+`
+);
+
+export const StyledCardImage = styled("img")`
+  object-fit: scale-down;
 `;

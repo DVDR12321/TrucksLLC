@@ -13,15 +13,28 @@ import {
   StyledMainGrid,
   StyledGridRight,
   StyledGridLeft,
+  StyledImageGridLeft,
 } from "./StyledComponents";
-import Img1 from "../../assets/company.png";
-import Img2 from "../../assets/fleet.jpg";
+import Img1 from "../../assets/AboutPage/company.png";
+import Img2 from "../../assets/AboutPage/fleet.jpg";
 import Grid from "@mui/material/Grid";
 import OurBenefits from "./OurBenefits";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useState } from "react";
 
 const AboutUsPage = () => {
+  const sectionRef = useRef();
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(true);
+    if (isClicked === true) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+      console.log("it is clicked");
+    }
+  };
   return (
     <StyledContainer>
       <Grid item sx={{ height: "100vh" }}>
@@ -65,9 +78,9 @@ const AboutUsPage = () => {
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <StyledSectionCaption>About Us</StyledSectionCaption>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={6}>
+          <StyledImageGridLeft item xs={12} sm={12} md={12} lg={6}>
             <StyledImageLeft src={Img1} alt=""></StyledImageLeft>
-          </Grid>
+          </StyledImageGridLeft>
           <StyledGridRight
             item
             xs={12}
@@ -96,14 +109,14 @@ const AboutUsPage = () => {
               our profits and returns to stockholders.
             </StyledText>
             <StyledText>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={handleClick}>
                 {" "}
                 Our Services{" "}
               </Button>
             </StyledText>
           </StyledGridRight>
         </StyledGridRow>
-        <StyledGridRow container>
+        <StyledGridRow container sx={{ marginTop: "50px" }}>
           <Grid item xs={12}>
             <StyledSectionCaption>Our Fleet</StyledSectionCaption>
           </Grid>
@@ -129,7 +142,7 @@ const AboutUsPage = () => {
         </StyledGridRow>
       </StyledMainGrid>
 
-      <OurBenefits></OurBenefits>
+      <OurBenefits ref={sectionRef}></OurBenefits>
     </StyledContainer>
   );
 };
