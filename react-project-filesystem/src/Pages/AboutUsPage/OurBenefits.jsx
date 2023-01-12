@@ -15,6 +15,7 @@ import img4 from "../../assets/AboutPage/Load.png";
 import img5 from "../../assets/AboutPage/Tracking.png";
 import img6 from "../../assets/AboutPage/Parking.png";
 import { Stack } from "@mui/system";
+import { useRef } from "react";
 
 const FrontCard = (props) => (
   <StyledFrontCard>
@@ -36,9 +37,19 @@ const cards = [
   { name: "Yard parking ", image: img6 },
 ];
 
-const OurBenefits = () => {
+const OurBenefits = (props) => {
+  const { isClicked, setIsClicked } = props;
+  const sectionRef = useRef(null);
+
+  if (isClicked === true) {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    console.log("it is clicked");
+    setIsClicked(false);
+  }
+
   return (
     <StyledCardWrapper
+      ref={sectionRef}
       container
       direction="row"
       justifyContent="center"

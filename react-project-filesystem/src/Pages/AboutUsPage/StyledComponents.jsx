@@ -7,6 +7,7 @@ import CardImage from "../../assets/card.png";
 import BeneftisImage from "../../assets/app__background2.png";
 import { grey } from "@mui/material/colors";
 
+// Top ************************************************************************************
 export const StyledContainer = styled("div")`
   background: #ada996;
   background: -webkit-linear-gradient(
@@ -37,7 +38,7 @@ export const StyledHeaderImage = styled(Grid)(
 
 export const StyledHeaderBox = styled(Box)(
   ({ theme }) => `
-  background: ${theme.palette.primary.main};
+  background: ${theme.palette.common.grey};
   height: 35vh;
   margin-left: 200px;
   margin-right: 200px;
@@ -52,10 +53,11 @@ export const StyledCaption = styled(Typography)(
   color: ${theme.palette.common.white};
   float: left;
   padding-left: 20px;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 60px;
+  line-height: 60px;
   letter-spacing: 1px;
   font-weight: 700;
+  font-family: 'Archivo Black', sans-serif;
 `
 );
 
@@ -70,12 +72,36 @@ export const StyledHeaderText = styled(Typography)(
 `
 );
 
+// Sections ************************************************************************************
+export const StyledHeader = styled("h1")(
+  ({ theme }) => `
+  font-size:50px;
+  text-align:left;
+  color: ${theme.palette.common.grey};
+  padding: 0 5% 5% 5% ;
+  font-family: 'Archivo Black', sans-serif;
+
+`
+);
+export const StyledHeaderSpan = styled("span")(
+  ({ theme }) => `
+    color: ${theme.palette.primary.main};
+    font-family: 'Archivo Black', sans-serif;
+  `
+);
+
 export const StyledText = styled("p")`
   text-align: justify;
   width: 100%;
   overflow: hidden;
   padding: 0 5% 5% 5%;
 `;
+export const StyledTextSpan = styled("span")(
+  ({ theme }) => `
+    color: ${theme.palette.primary.main};
+    font-weight:bold;
+  `
+);
 
 export const StyledImageLeft = styled("img")`
   border-radius: 5% 0 0 5%;
@@ -98,13 +124,16 @@ export const StyledSectionCaption = styled(Typography)(
   margin-bottom: 10vh;
   margin-right: 5vw;
   margin-left: 5vw;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 70px;
   border-bottom: 1px inset ${theme.palette.common.grey};
   
 `
 );
 
 export const StyledGridRow = styled(Grid)`
-  margin-bottom: 30px;
+  margin-bottom: 25vh;
+  justifycontent: center;
 `;
 
 export const StyledGridRight = styled(Grid)(
@@ -120,6 +149,45 @@ export const StyledImageGridLeft = styled(Grid)(
 `
 );
 
+export const StyledSectionBox = styled(Grid)(
+  ({ theme }) => `
+background: ${theme.palette.common.grey};
+width:100%;
+margin-left: 200px;
+margin-right: 200px;
+height:35vh;
+border-radius: 0px 0px 50px 50px;
+border-top : 5px solid white;
+`
+);
+
+export const StyledTypography = styled(Typography)(
+  ({ theme }) => `
+  font-size: 55px;
+  padding: 5%;
+  text-align:center;
+  font-weight: 800;
+  font-family: 'Archivo Black', sans-serif;
+  color: ${theme.palette.common.white};
+  &:hover{
+    color: ${theme.palette.primary.main};
+  }
+
+`
+);
+export const StyledTypography2 = styled(Typography)(
+  ({ theme }) => `
+  font-size: 20px;
+  padding: 5px;
+  text-align:center;
+  font-weight: 800;
+  font-family: 'Archivo Black', sans-serif;
+  color: ${theme.palette.common.black};
+
+
+`
+);
+
 export const StyledGridLeft = styled(Grid)(
   ({ theme }) => `
   color: ${theme.palette.common.grey};
@@ -129,6 +197,8 @@ export const StyledGridLeft = styled(Grid)(
 );
 
 export const StyledMainGrid = styled(Grid)``;
+
+// Cards ************************************************************************************
 
 export const StyledCardBox = styled(Box)(
   ({ theme }) => `
@@ -204,6 +274,7 @@ export const StyledCardHeader = styled("h3")(
   margin: 5%;
   padding:1%;
   border-bottom: 1px inset ${theme.palette.common.grey};
+  
 `
 );
 
