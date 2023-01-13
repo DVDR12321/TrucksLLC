@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { red, grey } from "@mui/material/colors";
 
 const PRIMARY_LIGHT = "#da1e2c";
 const PRIMARY_MAIN = red.A700;
@@ -7,6 +7,7 @@ const PRIMARY_DARK = red[900];
 const WHITE_COLOR = "#ffffff";
 const BLACK_COLOR = "#000000";
 const SECONDARY_COLOR = "#6d0713";
+const GREY_COLOR = grey[700];
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ const theme = createTheme({
     common: {
       white: WHITE_COLOR,
       black: BLACK_COLOR,
+      grey: GREY_COLOR,
     },
     contrastThreshold: 3,
     tonalOffset: 0.2,
