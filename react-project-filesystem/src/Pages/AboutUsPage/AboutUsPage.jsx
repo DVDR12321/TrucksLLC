@@ -22,7 +22,7 @@ import {
   StyledTextSpan,
 } from "./StyledComponents";
 import Img1 from "../../assets/AboutPage/company.png";
-import Img2 from "../../assets/AboutPage/fleet.jpg";
+import Img2 from "../../assets/AboutPage/Fleet.png";
 import Grid from "@mui/material/Grid";
 import OurBenefits from "./OurBenefits";
 import { Button } from "@mui/material";
