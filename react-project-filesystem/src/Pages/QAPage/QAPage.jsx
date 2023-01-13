@@ -1,11 +1,9 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import image from "../../assets/Logo_Gray_Background.jpg";
-import { StyledImg } from "./StyledComponents";
+import { StyledHeaderTypography, StyledImg } from "./StyledComponents";
 import Form from "./QuestionsForm";
 import Accordion from "./QuestionsAccordion";
-import { Typography } from "@mui/material";
-import { useEffect } from "react";
 
 const QAPage = () => {
   useEffect(() => {
@@ -22,17 +20,17 @@ const QAPage = () => {
       </Grid>
 
       <Grid item xs={12} md={10}>
-        <Typography variant="h3" color="primary" gutterBottom>
+        <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
           {" "}
-          About our firm
-        </Typography>
+          Regarding our firm
+        </StyledHeaderTypography>
         <Accordion></Accordion>
       </Grid>
       <Grid item xs={12} md={10}>
-        <Typography variant="h3" color="primary" gutterBottom>
+        <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
           {" "}
-          About our fleet
-        </Typography>
+          Regarding our fleet
+        </StyledHeaderTypography>
         <Accordion></Accordion>
       </Grid>
       <Grid item xs={12}>

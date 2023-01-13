@@ -143,7 +143,7 @@ const QuestionsForm = () => {
             <Grid item xs={12}>
               <Button
                 type="submit"
-                variant="outlined"
+                variant="contained"
                 color="primary"
                 fullWidth
               >
