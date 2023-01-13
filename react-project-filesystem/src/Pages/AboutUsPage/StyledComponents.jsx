@@ -6,6 +6,7 @@ import Image from "../../assets/headerimage.jpg";
 import CardImage from "../../assets/card.png";
 import BeneftisImage from "../../assets/app__background2.png";
 import { grey } from "@mui/material/colors";
+import image from "../../assets/AboutPage/Map.png";
 
 // Top ************************************************************************************
 export const StyledContainer = styled("div")`
@@ -151,7 +152,10 @@ export const StyledImageGridLeft = styled(Grid)(
 
 export const StyledSectionBox = styled(Grid)(
   ({ theme }) => `
-background: ${theme.palette.common.grey};
+background-image: url(${image});
+background-size:cover;
+background-attachment: fixed;
+//background: ${theme.palette.common.grey};
 width:100%;
 margin-left: 200px;
 margin-right: 200px;
