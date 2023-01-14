@@ -250,6 +250,7 @@ export const StyledFlipCardInner = styled(Grid)`
 
 export const StyledCard = styled(Grid)(
   ({ theme }) => `
+  
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -266,6 +267,7 @@ export const StyledCard = styled(Grid)(
     background-color: ${theme.palette.common.white};
     color: #2d2d2d;
   }
+
 `
 );
 
@@ -275,13 +277,14 @@ export const StyledFrontCard = styled("div")`
 
 export const StyledCardHeader = styled("h3")(
   ({ theme }) => `
-  margin: 5%;
-  padding:1%;
+  margin: 5% 5% 10% 5%;
+  padding:5%;
   border-bottom: 1px inset ${theme.palette.common.grey};
   
 `
 );
 
 export const StyledCardImage = styled("img")`
-  object-fit: scale-down;
+  height: 70%;
+  width: 70%;
 `;

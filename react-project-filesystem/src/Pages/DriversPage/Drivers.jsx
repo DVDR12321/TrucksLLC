@@ -41,7 +41,7 @@ function Drivers() {
             button1="Learn more"
             button2="Apply"
             link2="/apply"
-            link1="CompanyDrivers"
+            link1="/CompanyDrivers"
           ></DriverCard>
           <Divider orientation="vertical" variant="middle" flexItem />
           <Referral></Referral>

@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/apply" element={<Apply />} />
             <Route path="/drivers" element={<Drivers />} />
             <Route path="/OwnerOperators" element={<OwnerOperators />} />
-            <Route path="/CompanyDrivers" elemet={<CompanyDrivers />} />
+            <Route path="/CompanyDrivers" element={<CompanyDrivers />} />
             <Route path="/q&a" element={<QAPage />} />
             <Route path="/" element={<MainGrid />} />
             <Route path="*" element={<ErrorPage />} />

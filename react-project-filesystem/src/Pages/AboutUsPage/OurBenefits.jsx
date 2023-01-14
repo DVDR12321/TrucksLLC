@@ -19,7 +19,7 @@ import { useRef } from "react";
 
 const FrontCard = (props) => (
   <StyledFrontCard>
-    <Stack direction="column">
+    <Stack direction="column" sx={{ alignItems: "center" }}>
       <StyledCardHeader>{props.name} </StyledCardHeader>
       <StyledCardImage src={props.image} alt=""></StyledCardImage>{" "}
     </Stack>
