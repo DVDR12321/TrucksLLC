@@ -28,8 +28,12 @@ import OurBenefits from "./OurBenefits";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const AboutUsPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {

@@ -4,11 +4,13 @@ import image from "../../assets/Logo_Gray_Background.jpg";
 import { StyledHeaderTypography, StyledImg } from "./StyledComponents";
 import Form from "./QuestionsForm";
 import Accordion from "./QuestionsAccordion";
+import { useEffect } from "react";
 
 const QAPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <Grid
       container

@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Button, Grid } from "@mui/material";
+import { Button, Card, Grid } from "@mui/material";
 import Image from "../../assets/DriversHeader.jpg";
 
 export const StyledGrid = styled(Grid)(
@@ -21,6 +21,8 @@ export const StyledHeaderText = styled("h1")(
   text-align: center;
   color: ${theme.palette.common.white};
   position: relative;
+  font-family: 'Archivo Black', sans-serif;
+  
 `
 );
 
@@ -40,7 +42,17 @@ export const StyledSpan = styled("span")(
 
 export const StyledButton = styled(Button)(
   ({ theme }) => `
-  border-radius: 5px;
+  
   color: ${theme.palette.common.white};
 `
 );
+
+export const StyledCard = styled(Card)`
+  width: 30%;
+  height: 80vh;
+  border-radius: 3%;
+`;
+
+export const StyledSpan2 = styled("span")`
+  text-align: center;
+`;

@@ -4,7 +4,7 @@ import DriverCard from "./DriverCard";
 import Referral from "./RefferalForm";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";
-import { StyledGrid, StyledHeaderText, StyledSpan } from "./StyledComponents";
+import { StyledGrid, StyledHeaderText } from "./StyledComponents";
 import { useEffect } from "react";
 
 function Drivers() {
@@ -15,10 +15,7 @@ function Drivers() {
     <Grid container spacing={3} sx={{ justifyContent: "center" }}>
       <StyledGrid container>
         <Stack>
-          <StyledHeaderText>
-            {" "}
-            Drive With Us - <StyledSpan>Today!</StyledSpan>{" "}
-          </StyledHeaderText>
+          <StyledHeaderText>Drive With Us</StyledHeaderText>
         </Stack>
       </StyledGrid>
       <Grid item xs={12} sx={{ margin: "10px" }}>
@@ -33,6 +30,8 @@ function Drivers() {
             text="Become an owner operator; become a part of TrucksLLC family today!"
             button1="Learn more"
             button2="Apply"
+            link2="/apply"
+            link1="/OwnerOperators"
           ></DriverCard>
           <Divider orientation="vertical" variant="middle" flexItem />
           <DriverCard
@@ -41,6 +40,8 @@ function Drivers() {
             text="No truck? No worries! Become our company driver - we will handle the stress, you handle the miles!"
             button1="Learn more"
             button2="Apply"
+            link2="/apply"
+            link1="CompanyDrivers"
           ></DriverCard>
           <Divider orientation="vertical" variant="middle" flexItem />
           <Referral></Referral>

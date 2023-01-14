@@ -1,7 +1,7 @@
 import React from "react";
 
-const FleetPage = () => {
+const CompanyDrivers = () => {
   return <div>Our fleet information</div>;
 };
 
-export default FleetPage;
+export default CompanyDrivers;

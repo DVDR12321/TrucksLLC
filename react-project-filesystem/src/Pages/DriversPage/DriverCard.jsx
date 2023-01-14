@@ -1,14 +1,22 @@
 import * as React from "react";
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { StyledButton } from "./StyledComponents";
+import { StyledButton, StyledCard } from "./StyledComponents";
+import { Link } from "react-router-dom";
 
-export default function DriverCard({ img1, text, header, button1, button2 }) {
+export default function DriverCard({
+  img1,
+  text,
+  header,
+  button1,
+  button2,
+  link1,
+  link2,
+}) {
   return (
-    <Card sx={{ width: 450, borderRadius: "5%" }}>
+    <StyledCard>
       <CardMedia component="img" height="60%" image={img1} alt=" " />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -19,13 +27,17 @@ export default function DriverCard({ img1, text, header, button1, button2 }) {
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
-        <StyledButton variant="contained" color="secondary">
-          {button1}
-        </StyledButton>
-        <StyledButton variant="contained" color="secondary">
-          {button2}
-        </StyledButton>
+        <Link to={link1}>
+          <StyledButton variant="contained" color="primary">
+            {button1}
+          </StyledButton>
+        </Link>
+        <Link to={link2}>
+          <StyledButton variant="contained" color="primary">
+            {button2}
+          </StyledButton>
+        </Link>
       </CardActions>
-    </Card>
+    </StyledCard>
   );
 }

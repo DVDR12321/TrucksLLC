@@ -10,11 +10,11 @@ import {
 import React from "react";
 import EmailIcon from "@mui/icons-material/Email";
 import MessageIcon from "@mui/icons-material/Message";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import { StyledSpan2 } from "./StyledComponents";
 
 const RefferalForm = () => {
   return (
-    <form>
+    <form style={{ height: "80vh" }}>
       <Card
         sx={{
           maxWidth: "450px",
@@ -108,12 +108,12 @@ const RefferalForm = () => {
             <Grid item xs={12}>
               <Button
                 type="submit"
-                variant="outlined"
-                color="error"
+                variant="contained"
+                color="primary"
                 fullWidth
-                endIcon={<AttachMoneyIcon />}
               >
-                Submit Refferal
+                <StyledSpan2> $ </StyledSpan2> Submit Refferal{" "}
+                <StyledSpan2> $ </StyledSpan2>
               </Button>
             </Grid>
           </Grid>
