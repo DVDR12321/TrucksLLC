@@ -1,14 +1,17 @@
-import { Grid, Stack } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useEffect } from "react";
+import img from "../../assets/Drivers/ScrollBarWhite.png";
 import {
   StyledContentGrid,
   StyledHeaderGrid,
+  StyledImage,
   StyledList,
   StyledMainDescription,
   StyledMainGrid,
   StyledMainHeader,
   StyledParagraph,
+  StyledScrollGrid,
   StyledSectionHeader,
 } from "./StyledComponents";
 
@@ -26,6 +29,10 @@ const OwnerOperators = () => {
             as a team or a solo driver, we have a plan for you here at Trucks
             LLC
           </StyledMainDescription>
+          <StyledScrollGrid container>
+            <StyledImage src={img} alt="scroll"></StyledImage>
+            <Typography> Scroll to learn more</Typography>
+          </StyledScrollGrid>
         </Stack>
       </StyledHeaderGrid>
       <StyledContentGrid>
@@ -37,10 +44,11 @@ const OwnerOperators = () => {
             you!
           </StyledParagraph>
           <StyledParagraph>
-            We offer different choices of operating options, such as Dedicated,
-            Over the Road, Regional, and Short Hauls and with an assigned
-            dispatcher you’re always going to find the mix of miles and home
-            time that you want with a great pay.
+            At our company, we provide a variety of operating options, including
+            dedicated lanes, one-day runs, and multi-day runs. Additionally,
+            each driver is assigned their own dispatcher to ensure they can find
+            the perfect balance of miles and home time. All of this is offered
+            with the added bonus of competitive pay.
           </StyledParagraph>
         </Grid>
         <Grid container sx={{ textAlign: "left" }}>
@@ -67,7 +75,7 @@ const OwnerOperators = () => {
                 Accounting services - get all your needs met quickly. Payout
                 every week.
               </li>
-              <li>Pre Pass</li>
+              <li>PrePass</li>
               <li>Fuel cards</li>
             </StyledList>
           </Grid>
@@ -94,7 +102,7 @@ const OwnerOperators = () => {
                 Accounting services - get all your needs met quickly. Payout
                 every week.
               </li>
-              <li>Pre Pass</li>
+              <li>PrePass</li>
               <li>Fuel cards</li>
             </StyledList>
           </Grid>

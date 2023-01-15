@@ -1,14 +1,17 @@
-import { Grid, Stack } from "@mui/material";
+import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useEffect } from "react";
+import img from "../../assets/Drivers/ScrollBarWhite.png";
 import {
   StyledContentGrid,
   StyledHeaderGrid,
+  StyledImage,
   StyledList,
   StyledMainDescription,
   StyledMainGrid,
   StyledMainHeader,
   StyledParagraph,
+  StyledScrollGrid,
   StyledSectionHeader,
 } from "./StyledComponents";
 
@@ -25,31 +28,40 @@ const CompanyDrivers = () => {
             Wether you are solo or a team driver, want to be paid by mile or buy
             %, you will find yourself at home at Trucks LLC as a company driver.
           </StyledMainDescription>
+          <StyledScrollGrid container>
+            <StyledImage src={img} alt="scroll"></StyledImage>
+            <Typography> Scroll to learn more</Typography>
+          </StyledScrollGrid>
         </Stack>
       </StyledHeaderGrid>
       <StyledContentGrid>
         <Grid item xs={12}>
           <StyledParagraph>
-            Whether you are bringing your own truck , or you are looking for an
-            opportunity to lease a top of the line truck and pull steady dry van
-            freight for excellent earnings – Trucks LLC is the right choice for
-            you!
+            At Trucks LLC, we value our drivers and want to ensure they are
+            fraily compensated for their hard work. That's why we offer a pay
+            structure that includes a percentage off of the load,r pay per miles
+            run for our company drivers. In addition to competitive pay, we also
+            provide our drivers with well-maintained trucks and trailers to
+            ensure they have the necessary tools to do their job safely and
+            efficiently.
           </StyledParagraph>
           <StyledParagraph>
-            We offer different choices of operating options, such as Dedicated,
-            Over the Road, Regional, and Short Hauls and with an assigned
-            dispatcher you’re always going to find the mix of miles and home
-            time that you want with a great pay.
+            At our company, we provide a variety of operating options, including
+            dedicated lanes, one-day runs, and multi-day runs. Additionally,
+            each driver is assigned their own dispatcher to ensure they can find
+            the perfect balance of miles and home time. All of this is offered
+            with the added bonus of competitive pay..
           </StyledParagraph>
         </Grid>
         <Grid container sx={{ textAlign: "left" }}>
           <Grid item xs={12} md={12} lg={6}>
             <StyledSectionHeader>Get paid by mile</StyledSectionHeader>
             <StyledList>
-              <li>Competitive payment</li>
+              <li>Get payed by mile - up do 1$/mile!</li>
+              <li>Load every day, average 2500 miles per week</li>
+              <li>Paid ticked to Chicago and accomodation when hired</li>
               <li>
-                Get payed by load, up to 88% - small fee is deducted for
-                dispatch eld and accounting services
+                3 days off per 2 weeks guaranteed + days off for emergencies
               </li>
               <li>Liability, cargo trailer and OCC insurance</li>
               <li>Dispath services - 27/7 dispatch 7 days a week</li>
@@ -57,7 +69,7 @@ const CompanyDrivers = () => {
                 Personalized dispatch - get a dispatcher that works for your
                 style of driving
               </li>
-              <li>No forced dispatch!</li>
+              <li>Truck and trailer mantained in great condition</li>
               <li>
                 ELD services - 24/7 7 days a week. Incudes all your logbook
                 needs
@@ -73,10 +85,14 @@ const CompanyDrivers = () => {
           <Grid item xs={12} md={12} lg={6}>
             <StyledSectionHeader>Get paid by % </StyledSectionHeader>
             <StyledList>
-              <li>Competitive payment</li>
               <li>
-                Get payed by load, up to 88% - small fee is deducted for
-                dispatch eld and accounting services
+                Get paid by percentafe off of a load - set up a deal that wors
+                for you
+              </li>
+              <li>Load every day, average 5000+ miles per week</li>
+              <li>Paid ticked to Chicago and accomodation when hired</li>
+              <li>
+                3 days off per 2 weeks guaranteed + days off for emergencies
               </li>
               <li>Liability, cargo trailer and OCC insurance</li>
               <li>Dispath services - 27/7 dispatch 7 days a week</li>
@@ -93,15 +109,15 @@ const CompanyDrivers = () => {
                 Accounting services - get all your needs met quickly. Payout
                 every week.
               </li>
-              <li>Pre Pass</li>
-              <li>Fuel cards</li>
+              <li>PrePass</li>
+              <li>Fuelcards</li>
             </StyledList>
           </Grid>
         </Grid>
         <Grid item xs={12}>
           <StyledSectionHeader>
             {" "}
-            Owner operator requirements{" "}
+            Company drivers requirements{" "}
           </StyledSectionHeader>
           <StyledParagraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacus

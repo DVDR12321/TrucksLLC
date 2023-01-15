@@ -22,6 +22,7 @@ export const StyledHeaderText = styled("h1")(
   color: ${theme.palette.common.white};
   position: relative;
   font-family: 'Archivo Black', sans-serif;
+  font-size:15vmin;
   
 `
 );
@@ -37,20 +38,22 @@ export const StyledParagraph = styled("p")(
 export const StyledSpan = styled("span")(
   ({ theme }) => `
   color: ${theme.palette.primary.main};
+  font-weight:bold;
 `
 );
 
 export const StyledButton = styled(Button)(
   ({ theme }) => `
-  
   color: ${theme.palette.common.white};
+  border-radius: 3px;
+  
 `
 );
 
 export const StyledCard = styled(Card)`
-  width: 30%;
-  height: 80vh;
+  height: 100%;
   border-radius: 3%;
+  max-width: 350px;
 `;
 
 export const StyledSpan2 = styled("span")`

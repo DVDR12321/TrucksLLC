@@ -1,6 +1,4 @@
 import {
-  Button,
-  Card,
   CardContent,
   Grid,
   TextField,
@@ -10,23 +8,27 @@ import {
 import React from "react";
 import EmailIcon from "@mui/icons-material/Email";
 import MessageIcon from "@mui/icons-material/Message";
-import { StyledSpan2 } from "./StyledComponents";
+import {
+  StyledButton,
+  StyledCard,
+  StyledSpan,
+  StyledSpan2,
+} from "./StyledComponents";
 
 const RefferalForm = () => {
   return (
-    <form style={{ height: "80vh" }}>
-      <Card
+    <form>
+      <StyledCard
         sx={{
-          maxWidth: "450px",
-          margin: "0 auto",
           padding: "2vmax 2vmin",
-          borderRadius: "5%",
+          borderRadius: "3%",
         }}
       >
         <CardContent>
           <Typography variant="h5">Reffer a friend:</Typography>
           <Typography color="textSecondary" variant="body2" component="p">
-            Fill the form and become eligible for our refferal bonus!
+            Fill the form and become eligible for our
+            <StyledSpan> refferal bonus!</StyledSpan>
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
@@ -106,7 +108,7 @@ const RefferalForm = () => {
               ></TextField>
             </Grid>
             <Grid item xs={12}>
-              <Button
+              <StyledButton
                 type="submit"
                 variant="contained"
                 color="primary"
@@ -114,11 +116,11 @@ const RefferalForm = () => {
               >
                 <StyledSpan2> $ </StyledSpan2> Submit Refferal{" "}
                 <StyledSpan2> $ </StyledSpan2>
-              </Button>
+              </StyledButton>
             </Grid>
           </Grid>
         </CardContent>
-      </Card>
+      </StyledCard>
     </form>
   );
 };

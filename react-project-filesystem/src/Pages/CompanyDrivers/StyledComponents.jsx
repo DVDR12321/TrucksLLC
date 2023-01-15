@@ -64,3 +64,24 @@ export const StyledList = styled("ul")`
     margin-bottom: 1%;
   }
 `;
+export const StyledImage = styled("img")(
+  ({ theme }) => `
+  
+  object-fit:contain;
+  height:100%;
+  `
+);
+
+export const StyledScrollGrid = styled(Grid)(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
+  margin-top:20vh;
+  height:10vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style: italic;
+  font-weight: 700;
+
+`
+);
