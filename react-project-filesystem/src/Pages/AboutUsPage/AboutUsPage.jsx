@@ -20,12 +20,15 @@ import {
   StyledHeader,
   StyledHeaderSpan,
   StyledTextSpan,
+  StyledScrollGrid,
+  StyledImage,
 } from "./StyledComponents";
+import img from "../../assets/AboutPage/ScrollBarRed.png";
 import Img1 from "../../assets/AboutPage/company.png";
 import Img2 from "../../assets/AboutPage/Fleet.png";
 import Grid from "@mui/material/Grid";
 import OurBenefits from "./OurBenefits";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -67,6 +70,11 @@ const AboutUsPage = () => {
                 we're here to help.
               </StyledHeaderText>
             </Grid>
+
+            <StyledScrollGrid container>
+              <StyledImage src={img} alt="scroll"></StyledImage>
+              <Typography> Scroll to learn more</Typography>
+            </StyledScrollGrid>
           </Grid>
         </StyledHeaderBox>
       </Grid>

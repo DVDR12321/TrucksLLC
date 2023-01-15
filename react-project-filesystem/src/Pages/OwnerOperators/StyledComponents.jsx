@@ -81,6 +81,6 @@ export const StyledScrollGrid = styled(Grid)(
   display:flex;
   align-items:center;
   justify-content:center;
-  font-style: italic;
+  font-style: italic; 
 `
 );

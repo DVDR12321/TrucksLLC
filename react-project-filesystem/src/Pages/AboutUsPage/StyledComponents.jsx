@@ -70,6 +70,29 @@ export const StyledHeaderText = styled(Typography)(
   font-size: 18px;
   letter-spacing: 1px;
   font-style: italic;
+  text-align:justify;
+`
+);
+
+export const StyledImage = styled("img")(
+  ({ theme }) => `
+  
+  object-fit:contain;
+  height:100%;
+  `
+);
+
+export const StyledScrollGrid = styled(Grid)(
+  ({ theme }) => `
+  color: ${theme.palette.primary.main};
+  margin-top:10vh;
+  height:10vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style: italic;
+  font-weight: 700;
+
 `
 );
 
