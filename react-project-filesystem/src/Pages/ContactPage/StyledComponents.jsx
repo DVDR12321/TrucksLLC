@@ -1,9 +1,11 @@
-import { IconButton } from "@mui/material";
+import { Grid, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledHeader = styled("h1")(
   ({ theme }) => `
     color:${theme.palette.primary.main};
+    margin-bottom:5vh;
+    margin-top: 10vh;
     `
 );
 export const StyledIconButton = styled(IconButton)`
@@ -15,5 +17,19 @@ export const StyledIconButton = styled(IconButton)`
     #d6249f 60%,
     #285aeb 90%
   );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+`;
+
+export const StyledContactGrid = styled(Grid)`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+`;
+
+export const StyledListItem = styled("li")`
+  padding: 2ch;
 `;
