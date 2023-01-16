@@ -11,6 +11,7 @@ import { Apply } from "./Pages/DriverApplicationPage/DriverApplicationPage";
 import MainGrid from "./components/MainGrid/MainGrid";
 import Drivers from "./Pages/DriversPage/Drivers";
 import CompanyDrivers from "./Pages/CompanyDrivers/CompanyDrivers";
+import ContactPage from "./Pages/ContactPage/ContactPage";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/OwnerOperators" element={<OwnerOperators />} />
             <Route path="/CompanyDrivers" element={<CompanyDrivers />} />
             <Route path="/q&a" element={<QAPage />} />
+            <Route path="/Contact" element={<ContactPage />} />
             <Route path="/" element={<MainGrid />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>

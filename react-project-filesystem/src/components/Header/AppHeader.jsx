@@ -26,7 +26,7 @@ const navigationLinks = [
   { name: "Apply", href: "apply" },
   { name: "For Drivers", href: "/drivers" },
   { name: "Q&A", href: "/q&a" },
-  { name: "Contact", href: "" },
+  { name: "Contact", href: "/Contact" },
 ];
 
 const AppHeader = () => {

@@ -16,6 +16,7 @@
     "@types/react": "^18.0.25",
     "@videojs/themes": "^1.0.1",
     "eslint-config-prettier": "^8.5.0",
+    "google-maps-react": "^2.0.6",
     "netlify-cli": "^12.2.8",
     "npm": "^8.19.3",
     "prettier": "^2.7.1",
