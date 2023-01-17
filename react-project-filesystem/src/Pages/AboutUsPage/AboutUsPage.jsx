@@ -37,6 +37,7 @@ const AboutUsPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Grid, Stack } from "@mui/material";
+import { Divider, Grid } from "@mui/material";
 import {
   StyledBox,
   StyledImage,

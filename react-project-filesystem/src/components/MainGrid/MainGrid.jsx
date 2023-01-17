@@ -14,6 +14,7 @@ import {
 import BackToTop from "../BackToTop/BackToTop";
 import { useState } from "react";
 import Quotes from "../QuotesPage/Quotes";
+import LaurelsPage from "../LaurelsPage/LaurelsPage";
 
 const MainGrid = () => {
   const [scrollTo, setScrollTo] = useState({ about: "", laurels: "" });
@@ -27,6 +28,9 @@ const MainGrid = () => {
             scrollTo={scrollTo}
             setScrollTo={setScrollTo}
           ></MainScreen>
+        </Grid>
+        <Grid item xs={12}>
+          <LaurelsPage></LaurelsPage>
         </Grid>
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>
           <AboutUsSection
