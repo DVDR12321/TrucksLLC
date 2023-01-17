@@ -1,7 +1,7 @@
-import img3 from "../../assets/CardMoney.png";
-import img4 from "../../assets/logo.gif";
-import img5 from "../../assets/CardTruck.png";
-import img6 from "../../assets/Card Pie Chart.gif";
+import img3 from "../../assets/MainPage/CardMoney.png";
+import img4 from "../../assets/MainPage/CardAbout.png";
+import img5 from "../../assets/MainPage/CardTruck.png";
+import img6 from "../../assets/MainPage/Card Pie Chart.gif";
 import Grid from "@mui/material/Grid";
 import BrokerCard from "../BrokerCard/BrokerCard";
 import { Link as LinkScroll } from "react-scroll";

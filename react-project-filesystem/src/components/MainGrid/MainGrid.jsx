@@ -3,11 +3,11 @@ import Grid from "@mui/material/Grid";
 import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
 import AboutUsSection from "../AboutUsSection/AboutUsSection";
-import { Testimonials } from "../TestimonialsPage/Testimonials";
 
 import {
   StyledAboutGrid,
   StyledBox,
+  StyledGridContainer,
   StyledTestimonialsGrid,
   StyledVideoGrid,
 } from "./StyledComponents";
@@ -21,7 +21,7 @@ const MainGrid = () => {
 
   return (
     <StyledBox sx={{ flexGrow: 2 }}>
-      <Grid container spacing={0}>
+      <StyledGridContainer container spacing={0}>
         <Grid item xs={12} sx={{ height: "100%" }}>
           <MainScreen
             scrollTo={scrollTo}
@@ -45,7 +45,7 @@ const MainGrid = () => {
             <h1>? $ Payments $ ?</h1>
           </div>
         </Grid>
-      </Grid>
+      </StyledGridContainer>
       <BackToTop
         BackToTopButton={BackToTopButton}
         setBackToTopButton={setBackToTopButton}
