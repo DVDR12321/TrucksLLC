@@ -12,7 +12,7 @@ import {
 } from "./StyledComponents";
 import Button from "@mui/material/Button";
 import { StyledLink } from "../MainScreen/StyledComponents";
-import { Stack } from "@mui/system";
+import { borderRadius, Stack } from "@mui/system";
 import { useEffect } from "react";
 import { useRef } from "react";
 
@@ -45,7 +45,11 @@ const AboutUsSection = (props) => {
               and make your job as easy as possible. You drive - we pay!
             </StyledText>
             <StyledLink to="/aboutus">
-              <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
+              <Button
+                color="primary"
+                variant="outlined"
+                sx={{ margin: "5%", borderRadius: "3px" }}
+              >
                 Learn More
               </Button>
             </StyledLink>
@@ -65,7 +69,11 @@ const AboutUsSection = (props) => {
               such and such and and suchand such
             </StyledText>
             <StyledLink to="/aboutus">
-              <Button color="error" variant="outlined" sx={{ margin: "5%" }}>
+              <Button
+                color="primary"
+                variant="outlined"
+                sx={{ margin: "5%", borderRadius: "3px" }}
+              >
                 Learn More
               </Button>
             </StyledLink>

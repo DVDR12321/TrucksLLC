@@ -8,11 +8,11 @@ import { StyledCard } from "./StyledComponents";
 const BrokerCard = (props) => {
   const { imagep, headerp, onClickCard } = props;
   return (
-    <StyledCard>
-      <CardActionArea onClick={onClickCard}>
+    <StyledCard sx={{ height: "28vh" }}>
+      <CardActionArea onClick={onClickCard} sx={{ height: "100%" }}>
         <CardMedia
           component="img"
-          height="120"
+          height="90"
           image={imagep}
           alt=""
           sx={{ objectFit: "contain" }}
@@ -22,7 +22,7 @@ const BrokerCard = (props) => {
             gutterBottom
             color="white"
             component="div"
-            sx={{ textAlign: "center", fontSize: "4vmin" }}
+            sx={{ textAlign: "center", fontSize: "200%" }}
           >
             {headerp}
           </Typography>

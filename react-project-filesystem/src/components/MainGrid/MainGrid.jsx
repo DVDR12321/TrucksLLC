@@ -13,6 +13,7 @@ import {
 } from "./StyledComponents";
 import BackToTop from "../BackToTop/BackToTop";
 import { useState } from "react";
+import Quotes from "../QuotesPage/Quotes";
 
 const MainGrid = () => {
   const [scrollTo, setScrollTo] = useState({ about: "", laurels: "" });
@@ -37,10 +38,7 @@ const MainGrid = () => {
           <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
         <StyledTestimonialsGrid item xs={12}>
-          <Testimonials
-            scrollTo={scrollTo}
-            setScrollTo={setScrollTo}
-          ></Testimonials>
+          <Quotes scrollTo={scrollTo} setScrollTo={setScrollTo}></Quotes>
         </StyledTestimonialsGrid>
         <Grid item xs={12}>
           <div style={{ textAlign: "center" }}>

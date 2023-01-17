@@ -11,6 +11,5 @@ export const StyledHeaderTypography = styled(Typography)(
   ({ theme }) => `
   padding 5%;
   border-bottom: 1px inset ${theme.palette.common.black};
-  font-family: 'Archivo Black', sans-serif;
   `
 );

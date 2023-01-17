@@ -15,9 +15,9 @@ export const SectionOverlay = styled(Grid)`
   background-image: url(${Background});
   align-items: center;
   border-radius: 30px 30px 0 0;
-  border-top: 5px solid ${grey[600]};
-  border-left: 5px solid ${grey[600]};
-  border-right: 5px solid ${grey[600]};
+  border-top: 3px solid ${grey[600]};
+  border-left: 3px solid ${grey[600]};
+  border-right: 3px solid ${grey[600]};
 `;
 
 export const AboutusDrivers = styled(Grid)`

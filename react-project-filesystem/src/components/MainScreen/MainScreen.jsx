@@ -15,6 +15,8 @@ import {
   StyledHeaderGrid,
   StyledLink,
 } from "./StyledComponents";
+import { makeStyles } from "@material-ui/core/styles";
+import { Stack } from "@mui/system";
 
 const MainScreen = (props) => {
   const { setScrollTo, scrollTo } = props;
@@ -34,26 +36,41 @@ const MainScreen = (props) => {
     console.log(scrollTo);
   };
 
+  const useStyles = makeStyles((theme) => ({
+    outlined: {
+      borderWidth: "2px",
+      color: "primary",
+    },
+  }));
+  const classes = useStyles();
+
   return (
     <StyledGrid container>
       <Grid container spacing={0}>
-        <StyledHeaderGrid item xs={12} md={6}>
-          <StyledMainTitle color="primary">
-            Transporation Done Right
-          </StyledMainTitle>
+        <Grid xs={0} md={1}></Grid>
+        <StyledHeaderGrid item xs={12} md={5}>
+          <Stack>
+            <StyledMainTitle color="primary">
+              Transporation Done Right
+            </StyledMainTitle>
+            <StyledLink to="apply">
+              <StyledButton
+                variant="contained"
+                color="secondary"
+                className={classes.outlined}
+              >
+                Apply
+              </StyledButton>
+            </StyledLink>
+          </Stack>
         </StyledHeaderGrid>
-        <StyledButtonGrid item xs={0} md={6}>
-          <StyledLink to="apply">
-            <StyledButton variant="outlined" color="secondary">
-              Join us
-            </StyledButton>
-          </StyledLink>
-        </StyledButtonGrid>
+        <StyledButtonGrid item xs={0} md={5}></StyledButtonGrid>
+        <Grid xs={0} md={1}></Grid>
       </Grid>
       <Grid item xs={0} md={1}></Grid>
       <StyledCardsGrid item xs={12} md={10}>
-        <Grid container sx={{ justifyContent: "center" }} spacing={15}>
-          <Grid item xs={12} md={3}>
+        <Grid container sx={{ justifyContent: "center" }} spacing={10}>
+          <Grid item xs={12} sm={6} md={3}>
             <StyledLink to="">
               <BrokerCard
                 sx={{ objectFit: "contain" }}
@@ -63,7 +80,7 @@ const MainScreen = (props) => {
               />
             </StyledLink>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <StyledLink to="/drivers">
               <BrokerCard
                 href="/drivers"
@@ -72,12 +89,12 @@ const MainScreen = (props) => {
               />
             </StyledLink>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <StyledLink to="/aboutus">
               <BrokerCard imagep={img5} headerp="Our fleet" />
             </StyledLink>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <LinkScroll to="/#references">
               <BrokerCard
                 onClickCard={handleClickLaurels}

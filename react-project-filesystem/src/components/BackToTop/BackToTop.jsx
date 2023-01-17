@@ -24,16 +24,17 @@ const BackToTop = (props) => {
       <IconButton
         sx={{
           position: "fixed",
-          bottom: "50px",
-          right: "50px",
-          height: "50px",
-          width: "50px",
+          bottom: "30px",
+          right: "30px",
+          height: "30px",
+          width: "30px",
+          backgroundColor: "white",
         }}
         onClick={ScrollUp}
       >
         <ArrowCircleUpIcon
           color="primary"
-          sx={{ height: "50px", width: "50px" }}
+          sx={{ height: "40px", width: "40px" }}
         />
       </IconButton>
     )
