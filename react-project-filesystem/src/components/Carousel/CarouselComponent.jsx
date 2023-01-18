@@ -25,7 +25,7 @@ const CarouselComponent = () => {
       id: 3,
       name: "- Joe Schmoe",
       description:
-        "Love working for Trucks! They have the best dispatchers, I have high expectations of big moeny with modest miles, but they make it happen all the same!",
+        "Love working for Trucks! They have the best dispatchers, I have high expectations of big dinero with modest miles, but they make it happen all the same!",
       image: img3,
     },
   ];
