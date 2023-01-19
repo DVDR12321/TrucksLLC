@@ -29,9 +29,7 @@ const MainGrid = () => {
             setScrollTo={setScrollTo}
           ></MainScreen>
         </Grid>
-        <Grid item xs={12}>
-          <LaurelsPage></LaurelsPage>
-        </Grid>
+
         <StyledAboutGrid item xs={12} sx={{ paddingTop: "10vmin" }}>
           <AboutUsSection
             scrollTo={scrollTo}
@@ -41,9 +39,13 @@ const MainGrid = () => {
         <StyledVideoGrid item xs={12}>
           <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
+
         <StyledTestimonialsGrid item xs={12}>
           <Quotes scrollTo={scrollTo} setScrollTo={setScrollTo}></Quotes>
         </StyledTestimonialsGrid>
+        <Grid item xs={12}>
+          <LaurelsPage></LaurelsPage>
+        </Grid>
         <Grid item xs={12}>
           <div style={{ textAlign: "center" }}>
             <h1>? $ Payments $ ?</h1>

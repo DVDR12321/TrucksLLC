@@ -31,7 +31,7 @@ export const StyledBox = styled(Box)(
  height:60px;
  margin-left:30px;
  margin-top:-90px;
- background-color:${theme.palette.primary.main};
+ background-color:${theme.palette.secondary.main};
  border-radius:3px;
  font-size:100px;
  text-align:center;

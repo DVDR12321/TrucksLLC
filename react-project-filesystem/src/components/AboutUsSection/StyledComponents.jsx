@@ -9,15 +9,16 @@ export const ContainingDiv = styled("div")`
   justify-content: center;
   height: 100%;
   width: 100vw;
+  padding-top: 10vh;
 `;
 
 export const SectionOverlay = styled(Grid)`
   background-image: url(${Background});
   align-items: center;
   border-radius: 30px 30px 0 0;
-  border-top: 3px solid ${grey[600]};
-  border-left: 3px solid ${grey[600]};
-  border-right: 3px solid ${grey[600]};
+  border-top: 3px solid ${grey[50]};
+  border-left: 3px solid ${grey[50]};
+  border-right: 3px solid ${grey[50]};
 `;
 
 export const AboutusDrivers = styled(Grid)`

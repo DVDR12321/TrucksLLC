@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
-import img from "../../assets/main_background_colored_cropped.png";
+import img from "../../assets/MainPage/main_background_blured.png";
 
 // Grids ------------------------------------------------------------------
 export const StyledGrid = styled(Grid)`
@@ -14,7 +14,7 @@ export const StyledGrid = styled(Grid)`
 export const StyledHeaderGrid = styled(Grid)`
   display: flex;
   align-items: end;
-  padding-bottom: 17vh;
+  padding-bottom: 10vh;
   height: 64vh;
 `;
 
@@ -22,7 +22,6 @@ export const StyledButtonGrid = styled(Grid)`
   display: flex;
   align-items: end;
   justify-content: end;
-  font-family: "Roboto", sans-serif;
   padding-bottom: 20vh;
 `;
 
@@ -40,7 +39,7 @@ export const StyledMainTitle = styled("h1")(
   text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   font-family: "Archivo Black", sans-serif;
   font-style: bold;
-  font-size: 12vmin;
+  font-size: 11vmin;
   color: white;
 `
 );
@@ -54,6 +53,7 @@ export const StyledButton = styled(Button)(
   height: 7vmin;
   width: 20vmax;
   border-radius: 3px;
+  margin-top:10vh;
 `
 );
 

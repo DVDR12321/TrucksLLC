@@ -3,7 +3,7 @@ import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { StyledCard } from "./StyledComponents";
+import { StyledCard, StyledTypography } from "./StyledComponents";
 
 const BrokerCard = (props) => {
   const { imagep, headerp, onClickCard } = props;
@@ -18,14 +18,9 @@ const BrokerCard = (props) => {
           sx={{ objectFit: "contain" }}
         />
         <CardContent>
-          <Typography
-            gutterBottom
-            color="white"
-            component="div"
-            sx={{ textAlign: "center", fontSize: "200%" }}
-          >
+          <StyledTypography gutterBottom color="white" component="div">
             {headerp}
-          </Typography>
+          </StyledTypography>
         </CardContent>
       </CardActionArea>
     </StyledCard>

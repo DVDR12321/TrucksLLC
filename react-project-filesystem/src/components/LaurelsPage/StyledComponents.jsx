@@ -5,7 +5,10 @@ export const StyledWrapper = styled(Grid)`
   height: 60vh;
 `;
 
-export const CardWrapperGrid = styled(Grid)`
+export const CardWrapperGrid = styled(Grid)(
+  ({ theme }) => `
+  border-top: 5px solid ${theme.palette.secondary.main};
   display: flex;
-  justify-content: center;
-`;
+  align-items: center;
+`
+);

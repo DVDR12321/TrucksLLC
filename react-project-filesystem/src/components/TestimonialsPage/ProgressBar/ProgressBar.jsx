@@ -1,19 +1,14 @@
 import React from "react";
-import { useRef } from "react";
 import "./ProgressBar.css";
 
-export const ProgressBar = ({ color1, color2, number }) => {
-  let ref = useRef(95);
-  let MyNumber = Number(number);
-  if (Number(ref.current) === MyNumber) {
-  } else {
-  }
+export const ProgressBar = ({ color1, color2, number, headerColor }) => {
+  const dashoffset = (100 - number) * 4.35 + 320;
 
   return (
-    <div className="skill">
-      <div className="circle__outer">
+    <div className="skill" style={{ justifyContent: "center" }}>
+      <div className="circle__outer" style={{ "--color": headerColor }}>
         <div className="circle__inner" id="number">
-          {number}
+          {number}%
         </div>
       </div>
       <svg className="circle__svg" version="1.1" width="160px" height="160px">
@@ -24,12 +19,12 @@ export const ProgressBar = ({ color1, color2, number }) => {
           </linearGradient>
         </defs>
         <circle
-          style={{ "--number": number }}
+          style={{ "--number": dashoffset }}
           id="mycircle"
           cx="75"
           cy="75"
           r="70"
-          strokeLinecap="round"
+          strokeLinecap="suqare"
         />
       </svg>
     </div>

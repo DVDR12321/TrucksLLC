@@ -16,9 +16,10 @@ export const ContainingGrid = styled(Grid)(
   ({ theme }) => `
   background-color: ${theme.palette.common.white};
   border-radius: 0 0 30px 30px;
-  border-bottom: 3px solid ${grey[600]};
-  border-left: 3px solid ${grey[600]};
-  border-right: 3px solid ${grey[600]};
+  border-bottom: 3px solid ${grey[50]};
+  border-left: 3px solid ${grey[50]};
+  border-right: 3px solid ${grey[50]};
   background-image: url(${Background});
+  padding-bottom:2vh;
 `
 );

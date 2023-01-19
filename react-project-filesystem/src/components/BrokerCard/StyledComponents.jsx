@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
+import { Typography } from "@mui/material";
 
 export const StyledCard = styled(Card)(
   ({ theme }) => `
@@ -17,5 +18,14 @@ export const StyledCard = styled(Card)(
     backdrop-filter: blur(1px) sepia(10%);
   }
   border-radius: 5px 5px 5px 5px;
+`
+);
+
+export const StyledTypography = styled(Typography)(
+  ({ theme }) => `
+ font-family: "Roboto Serif";
+ text-align: center;
+ font-size: 170%;
+ 
 `
 );
