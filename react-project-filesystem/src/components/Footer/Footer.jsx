@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, TextField, Button } from "@mui/material";
 import logo from "../../assets/footerlogo.png";
 import { Container } from "@mui/system";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -12,35 +12,28 @@ import {
   StyledBottomText,
   StyledBox,
   StyledCaption,
+  StyledCaptionCenter,
+  StyledFooterDown,
+  StyledFooterUp,
   StyledLink,
+  StyledNewsletterGrid,
+  StyledSubscribeTextField,
   StyledText,
 } from "./StyledComponents";
 import { grey } from "@mui/material/colors";
+import { useTheme } from "@mui/material/styles";
 
-const Footer = () => (
-  <footer>
+const Footer = () => {
+  const theme = useTheme();
+  return (
     <Box
-      px={{ xs: 3, sm: 10 }}
-      py={{ xs: 5, sm: 10 }}
-      bgcolor={grey[800]}
+      px={{ xs: 3, sm: 0 }}
+      py={{ xs: 5, sm: 5 }}
+      bgcolor={grey[900]}
       color="white"
     >
       <Container maxWidth="lg">
-        <Grid container spacing={5}>
-          <Grid item xs={12} sm={4}>
-            <img src={logo} alt="logo"></img>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <StyledBox>
-              <StyledCaption> Our mission </StyledCaption>
-            </StyledBox>
-            <StyledText>
-              We forge long-term relationships with key customers that include
-              supply chain management as an integral part of their strategy.
-              Working in concert, we drive out cost, add value and function as
-              an extension of their enterprise.{" "}
-            </StyledText>
-          </Grid>
+        <StyledFooterUp container spacing={4} justifyContent="space-between">
           <Grid item xs={12} sm={4}>
             <StyledBox>
               <StyledCaption>Contact Info</StyledCaption>{" "}
@@ -52,31 +45,77 @@ const Footer = () => (
               <EmailIcon fontSize="small" /> info@trucksllc.com{" "}
             </StyledText>
           </Grid>
-        </Grid>
-        <Box textAlign="center" pt={{ xs: 1, sm: 2 }} pb={{ xs: 5, sm: 0 }}>
-          <StyledLink
-            href="https://m.facebook.com/TrucksLLC/?locale2=sr_RS"
-            target="_blank"
-          >
-            <StlyedFacebookIcon />
-          </StyledLink>
-          <StyledLink
-            href="https://www.instagram.com/trucks.llc/"
-            target="_blank"
-          >
-            <StlyedInstagramIcon />
-          </StyledLink>
-          <StyledLink href="" target="_blank">
-            <StlyedYoutubeIcon />
-          </StyledLink>
-        </Box>
+          <Grid item xs={12} sm={4}>
+            <StyledBox>
+              <StyledCaption> Our mission </StyledCaption>
+            </StyledBox>
+            <StyledText>
+              We believe in building strong and lasting partnerships with our
+              key customers. We understand the importance of supply chain
+              management as a vital aspect of your business strategy, and we're
+              here to help..{" "}
+            </StyledText>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <StyledBox>
+              <StyledCaptionCenter>
+                {" "}
+                Subscribe to our newsletter!{" "}
+              </StyledCaptionCenter>
+            </StyledBox>
+            <StyledNewsletterGrid
+              container
+              direction="column"
+              spacing={2}
+              px={{ sm: 5 }}
+            >
+              <StyledSubscribeTextField
+                sx={{ input: { color: "white" }, border: { color: "white" } }}
+                id="outlined-basic"
+                label="Your email"
+                color="primary"
+                variant="outlined"
+              />
+              <Button variant="contained">Subscribe me</Button>
+            </StyledNewsletterGrid>
+          </Grid>
+        </StyledFooterUp>
+
         <hr></hr>
-        <StyledBottomText>
-          Trucks LLC | &reg; {new Date().getFullYear()}
-        </StyledBottomText>
+        <StyledFooterDown
+          container
+          direction="row"
+          justifyContent="space-between"
+        >
+          <Grid item>
+            <StyledBottomText>
+              Copyright &copy; {new Date().getFullYear()} Trucks LLC | All
+              rights reserved
+            </StyledBottomText>
+          </Grid>
+          <Grid item alignItems="right">
+            <Box>
+              <StyledLink
+                href="https://m.facebook.com/TrucksLLC/?locale2=sr_RS"
+                target="_blank"
+              >
+                <StlyedFacebookIcon />
+              </StyledLink>
+              <StyledLink
+                href="https://www.instagram.com/trucks.llc/"
+                target="_blank"
+              >
+                <StlyedInstagramIcon />
+              </StyledLink>
+              <StyledLink href="" target="_blank">
+                <StlyedYoutubeIcon />
+              </StyledLink>
+            </Box>
+          </Grid>
+        </StyledFooterDown>
       </Container>
     </Box>
-  </footer>
-);
+  );
+};
 
 export default Footer;

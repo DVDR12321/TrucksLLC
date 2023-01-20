@@ -29,7 +29,7 @@ const navigationLinks = [
   { name: "Contact", href: "/Contact" },
 ];
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   const [open, setOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -72,10 +72,19 @@ const AppHeader = () => {
                   href={item.href}
                   key={item.name}
                 >
-                  <StyledText>{item.name}</StyledText>
+                  <StyledText
+                    onClick={() => props.setSelectedMenuItem(item.name)}
+                    style={{
+                      color:
+                        props.selectedMenuItem === item.name ? "red" : "black",
+                    }}
+                  >
+                    {item.name}
+                  </StyledText>
                 </Link>
               ))}
             </StyledAppHeaderItems>
+            <StyledText> +1 312 466 11 01</StyledText>
           </Hidden>
           <Hidden smUp>
             <StyledAppHeaderItems>
