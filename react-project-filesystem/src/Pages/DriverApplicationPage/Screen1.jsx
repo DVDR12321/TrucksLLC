@@ -15,12 +15,12 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
-import emailjs from "@emailjs/browser";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
 import { StyledSpan, StyledTextField } from "./StyledComponents";
+import axios from "axios";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -30,6 +30,7 @@ export const Screen1 = (props) => {
   const { state, setState } = props;
 
   const [open, setOpen] = useState(false);
+  const [sent, setSent] = useState(false);
   const formRef = useRef(null);
   const emailRef = useRef(null);
   const phoneNumberRef = useRef(null);
@@ -90,24 +91,28 @@ export const Screen1 = (props) => {
     setOpen(false);
   };
 
-  const handleClickSubmit = () => {
-    emailjs
-      .sendForm(
-        "default_service",
-        "template_5muable",
-        formRef.current,
-        "Bt5FJk_8UapAuvKNi"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
+  const handleSubmit = async () => {
+    setSent(true);
+    console.log(sent);
+    try {
+      await axios.post(
+        "http://localhost:4000/send_mail",
+        {
+          state,
         },
-        (error) => {
-          console.log(error.text);
+        {
+          headers: {
+            Origin: window.location.origin,
+          },
         }
       );
-
+    } catch (error) {
+      console.log(error);
+    }
+    setSent(false);
+    console.log(sent);
     setOpen(false);
+    console.log(state);
     formRef.current.reset();
   };
 
@@ -266,7 +271,9 @@ export const Screen1 = (props) => {
                   </DialogContent>
                   <DialogActions>
                     <Button onClick={handleCloseDialog}>Cancel</Button>
-                    <Button onClick={handleClickSubmit}>Submit</Button>
+                    <Button disabled={sent} onClick={handleSubmit}>
+                      {sent ? "Sending..." : "Submit"}
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </div>
