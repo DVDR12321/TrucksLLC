@@ -71,21 +71,14 @@ const AboutUsPage = () => {
                 we're here to help.
               </StyledHeaderText>
             </Grid>
-
-            <StyledScrollGrid container>
-              <StyledImage src={img} alt="scroll"></StyledImage>
-              <Typography> Scroll to learn more</Typography>
-            </StyledScrollGrid>
           </Grid>
         </StyledHeaderBox>
+        <StyledScrollGrid container>
+          <StyledImage src={img} alt="scroll"></StyledImage>
+          <Typography> Scroll to learn more</Typography>
+        </StyledScrollGrid>
       </Grid>
-      <StyledMainGrid
-        container
-        spacing={2}
-        paddingLeft={0}
-        paddingRight={0}
-        sx={{ marginTop: "50px" }}
-      >
+      <StyledMainGrid container spacing={2} paddingLeft={0} paddingRight={0}>
         <StyledGridRow container>
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <StyledSectionCaption>About Us</StyledSectionCaption>
@@ -119,8 +112,10 @@ const AboutUsPage = () => {
               business segments and third parties sets us apart.
             </StyledText>
             <StyledText>
-              So why wait? Contact us today to streamline your business
-              logistics.
+              We're not just a trucking company, we're a transportation
+              <StyledTextSpan> solution</StyledTextSpan>. So why wait? Contact
+              us today and experience the difference our unparalleled customer
+              service can make.
             </StyledText>
             <StyledText>
               <Button variant="contained" color="primary" onClick={handleClick}>
@@ -186,13 +181,6 @@ const AboutUsPage = () => {
               driving fewer miles, making us not only efficient but also
               environmentally responsible.
             </StyledText>{" "}
-            <StyledText>
-              We're not just a trucking company, we're a transportation
-              <StyledTextSpan> solution</StyledTextSpan>. Trust the experts at
-              TRUCKS LLC to handle your transportation needs and experience the
-              difference that a top-of-the-line fleet and unparalleled customer
-              service can make.
-            </StyledText>
             <StyledText>
               <Link to="/drivers">
                 <Button variant="contained" color="primary">

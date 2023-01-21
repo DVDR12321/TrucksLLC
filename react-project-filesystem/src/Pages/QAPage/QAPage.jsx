@@ -1,7 +1,11 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import image from "../../assets/Logo_Gray_Background.jpg";
-import { StyledHeaderTypography, StyledImg } from "./StyledComponents";
+import {
+  StyledGridContainer,
+  StyledHeaderTypography,
+  StyledImg,
+} from "./StyledComponents";
 import Form from "./QuestionsForm";
 import Accordion from "./QuestionsAccordion";
 import { useEffect } from "react";
@@ -12,7 +16,7 @@ const QAPage = () => {
   }, []);
 
   return (
-    <Grid
+    <StyledGridContainer
       container
       spacing={5}
       sx={{ justifyContent: "center", textAlign: "center" }}
@@ -38,7 +42,7 @@ const QAPage = () => {
       <Grid item xs={12}>
         <Form></Form>
       </Grid>
-    </Grid>
+    </StyledGridContainer>
   );
 };
 export default QAPage;

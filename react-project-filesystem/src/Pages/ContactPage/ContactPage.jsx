@@ -30,7 +30,7 @@ const ContactPage = () => {
           <Stack direction="row">
             <StyledIconButton href="https://www.instagram.com/trucks.llc/">
               <InstagramIcon
-                sx={{ height: "5vh", width: "5vh", color: "#8a3ab9" }}
+                sx={{ height: "5vh", width: "5vh", color: "#E4405F" }}
               ></InstagramIcon>
             </StyledIconButton>
             <IconButton size="large" href="https://m.facebook.com/TrucksLLC/">

@@ -41,14 +41,19 @@ const QuestionsForm = () => {
     <form onSubmit={handleSubmit} ref={formRef}>
       <Card
         sx={{
-          maxWidth: "450px",
-          margin: "10px auto",
+          maxWidth: "850px",
+          margin: "20px auto",
           padding: "2vmax 2vmin",
-          borderRadius: "5%",
+          borderRadius: "10px",
         }}
       >
         <CardContent>
-          <Typography variant="h5" color="primary">
+          <Typography
+            variant="h5"
+            color="primary"
+            gutterBottom
+            sx={{ fontWeight: "bold" }}
+          >
             Ask us a question:
           </Typography>
           <Typography
@@ -109,7 +114,6 @@ const QuestionsForm = () => {
                 variant="outlined"
                 color="primary"
                 fullWidth
-                required
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -147,7 +151,7 @@ const QuestionsForm = () => {
                 color="primary"
                 fullWidth
               >
-                Submit your question
+                Submit
               </Button>
             </Grid>
           </Grid>

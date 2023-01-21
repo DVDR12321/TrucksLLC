@@ -27,7 +27,7 @@ const RefferalForm = () => {
         <CardContent>
           <Typography variant="h5">Reffer a friend:</Typography>
           <Typography color="textSecondary" variant="body2" component="p">
-            Fill the form and become eligible for our
+            Refer a driver you know and become eligible for the
             <StyledSpan> refferal bonus!</StyledSpan>
           </Typography>
           <Grid container spacing={1}>
@@ -114,8 +114,7 @@ const RefferalForm = () => {
                 color="primary"
                 fullWidth
               >
-                <StyledSpan2> $ </StyledSpan2> Submit Refferal{" "}
-                <StyledSpan2> $ </StyledSpan2>
+                Submit Refferal
               </StyledButton>
             </Grid>
           </Grid>
