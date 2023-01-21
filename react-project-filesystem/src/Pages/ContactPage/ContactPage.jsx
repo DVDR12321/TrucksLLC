@@ -7,6 +7,7 @@ import {
   StyledContactGrid,
   StyledHeader,
   StyledIconButton,
+  StyledList,
   StyledListItem,
 } from "./StyledComponents";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -25,30 +26,32 @@ const ContactPage = () => {
       </Grid>
       <StyledContactGrid item xs={12} md={6}>
         <Stack sx={{ alignItems: "center" }}>
-          <StyledHeader>Get social</StyledHeader>
+          <StyledHeader>Our social media</StyledHeader>
           <Stack direction="row">
-            <StyledIconButton>
+            <StyledIconButton href="https://www.instagram.com/trucks.llc/">
               <InstagramIcon
-                sx={{ height: "5vh", width: "5vh" }}
+                sx={{ height: "5vh", width: "5vh", color: "#8a3ab9" }}
               ></InstagramIcon>
             </StyledIconButton>
-            <IconButton size="large">
+            <IconButton size="large" href="https://m.facebook.com/TrucksLLC/">
               <FacebookIcon
-                sx={{ color: "blue", height: "5vh", width: "5vh" }}
+                sx={{ color: "#1877F2", height: "5vh", width: "5vh" }}
               ></FacebookIcon>
             </IconButton>
-            <IconButton size="large" color="primary">
-              <YouTubeIcon sx={{ height: "5vh", width: "5vh" }}></YouTubeIcon>
+            <IconButton size="large" href="https://www.youtube.com/c/VladUrdov">
+              <YouTubeIcon
+                sx={{ height: "5vh", width: "5vh", color: "#CD201F" }}
+              ></YouTubeIcon>
             </IconButton>
           </Stack>
           <StyledHeader>Contact Information</StyledHeader>
-          <ul>
+          <StyledList>
             <StyledListItem>
               905 175th St Unit 3SW, Homewood, IL 60430
             </StyledListItem>
             <StyledListItem>+ 1.312-466-1101</StyledListItem>
             <StyledListItem>info@trucksllc.com</StyledListItem>
-          </ul>
+          </StyledList>
         </Stack>
       </StyledContactGrid>
       <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>

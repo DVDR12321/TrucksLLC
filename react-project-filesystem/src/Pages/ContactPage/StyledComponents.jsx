@@ -33,3 +33,8 @@ export const StyledContactGrid = styled(Grid)`
 export const StyledListItem = styled("li")`
   padding: 2ch;
 `;
+
+export const StyledList = styled("ul")`
+  text-align: left;
+  font-size: 3vh;
+`;

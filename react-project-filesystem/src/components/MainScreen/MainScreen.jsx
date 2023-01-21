@@ -15,7 +15,7 @@ import {
   StyledHeaderGrid,
   StyledLink,
 } from "./StyledComponents";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import { Stack } from "@mui/system";
 
 const MainScreen = (props) => {
