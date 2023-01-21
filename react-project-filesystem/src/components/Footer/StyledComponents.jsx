@@ -22,9 +22,30 @@ export const StyledNewsletterGrid = styled(Grid)`
   padding-top: 20px;
 `;
 
-export const StyledSubscribeTextField = styled(TextField)`
-  // border: solid 1px white;
-`;
+export const StyledSubscribeTextField = styled(TextField)(
+  ({ theme }) => `
+  &.MuiOutlinedInput-root {
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: ${theme.palette.common.white};
+    }
+  }
+  & .MuiOutlinedInput-notchedOutline {
+      border-color: ${theme.palette.common.white};
+  }
+  input {
+    & ::placeholder {
+      color: white;
+  }
+  }
+ 
+& .MuiInputBase-input {
+    color: white;
+}
+& .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+`
+);
 
 export const StyledCaption = styled(Typography)(
   ({ theme }) => `

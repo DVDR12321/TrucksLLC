@@ -1,6 +1,5 @@
 import React from "react";
-import { Grid, Box, TextField, Button } from "@mui/material";
-import logo from "../../assets/footerlogo.png";
+import { Grid, Box, Button } from "@mui/material";
 import { Container } from "@mui/system";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -21,10 +20,8 @@ import {
   StyledText,
 } from "./StyledComponents";
 import { grey } from "@mui/material/colors";
-import { useTheme } from "@mui/material/styles";
 
 const Footer = () => {
-  const theme = useTheme();
   return (
     <Box
       px={{ xs: 3, sm: 0 }}
@@ -70,11 +67,13 @@ const Footer = () => {
               px={{ sm: 5 }}
             >
               <StyledSubscribeTextField
-                sx={{ input: { color: "white" }, border: { color: "white" } }}
                 id="outlined-basic"
                 label="Your email"
                 color="primary"
                 variant="outlined"
+                InputLabelProps={{
+                  style: { color: "white" },
+                }}
               />
               <Button variant="contained">Subscribe me</Button>
             </StyledNewsletterGrid>
