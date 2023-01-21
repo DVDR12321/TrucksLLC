@@ -6,8 +6,16 @@ export const StyledAppBar = styled(AppBar)(
   height: 90px;
   padding: 0 5px;
   background: ${theme.palette.common.white};
-  animation: ${fadeIn} 0  5s ease-i n-out;
-  transition: visibility 1s ease-i n-out;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-100%);
+
+  &.fade-in {
+    transform: translateY(0);
+  }
+  &.fade-out {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

@@ -50,11 +50,9 @@ const AppHeader = (props) => {
 
   return (
     <StyledAppBar
+      className={`${showHeader ? "fade-in" : ""}`}
       position="sticky"
       color="default"
-      style={{
-        display: showHeader ? "block" : "none",
-      }}
     >
       <Container>
         <Toolbar disableGutters>
