@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import MainScreen from "../MainScreen/MainScreen";
 import VideoPlayer from "../VideoScreen/VideoPlayer";
 import AboutUsSection from "../AboutUsSection/AboutUsSection";
+import OurColaborators from "../OurColaborators/OurColaborators";
 
 import {
   StyledAboutGrid,
@@ -45,6 +46,9 @@ const MainGrid = () => {
         </StyledTestimonialsGrid>
         <Grid item xs={12}>
           <LaurelsPage></LaurelsPage>
+        </Grid>
+        <Grid item xs={12}>
+          <OurColaborators />
         </Grid>
         <Grid item xs={12}>
           <div style={{ textAlign: "center" }}>

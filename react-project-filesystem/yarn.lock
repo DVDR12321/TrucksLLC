@@ -14074,6 +14074,11 @@ react-signature-pad@^0.0.6:
   resolved "https://registry.yarnpkg.com/react-signature-pad/-/react-signature-pad-0.0.6.tgz#335547c1f523a36b8396e5365e2f49521e56b9cf"
   integrity sha512-eAb9n2PH2mRhxQOFtHdE0/beFqCPFMXindwlbN721g6TKswTB/59kQKnSWPxqqZbq7iromF+7jxkm7yhqhLfsA==
 
+react-spinners@^0.13.8:
+  version "0.13.8"
+  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.13.8.tgz#5262571be0f745d86bbd49a1e6b49f9f9cb19acc"
+  integrity sha512-3e+k56lUkPj0vb5NDXPVFAOkPC//XyhKPJjvcGjyMNPWsBKpplfeyialP74G7H7+It7KzhtET+MvGqbKgAqpZA==
+
 react-swipeable-views-core@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/react-swipeable-views-core/-/react-swipeable-views-core-0.14.0.tgz#6ac443a7cc7bc5ea022fbd549292bb5fff361cce"

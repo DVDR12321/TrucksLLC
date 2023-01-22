@@ -2,7 +2,7 @@ import { Box, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 export const StyledPaper = styled(Paper)`
-  margin-top: 50px;
+  margin-top: 5vh;
   height: 50vh;
   width: 100%;
   padding: 9%;
@@ -18,6 +18,8 @@ export const StyledParagraph = styled("p")`
 
 export const StyledParagraphGrid = styled(Grid)`
   height: 100%;
+  display: flex;
+  align-items: center;
 `;
 
 export const StyledImage = styled("img")`
@@ -25,12 +27,12 @@ export const StyledImage = styled("img")`
   width: 60px;
 `;
 
-export const StyledBox = styled(Box)(
+export const StyledBox2 = styled(Box)(
   ({ theme }) => `
  width:60px;
  height:60px;
  margin-left:30px;
- margin-top:-90px;
+ margin-top:-13vh;
  background-color:${theme.palette.secondary.main};
  border-radius:3px;
  font-size:100px;

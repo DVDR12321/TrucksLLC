@@ -81,6 +81,7 @@ export const StyledCustomersHeader = styled("h1")(
 export const StyledSpan = styled("span")(
   ({ theme }) => `
   color: ${theme.palette.primary.main};
+  font-weight:bold;
 `
 );
 

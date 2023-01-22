@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Button, Card, Grid } from "@mui/material";
-import Image from "../../assets/DriversHeader.jpg";
+import Image from "../../assets/Drivers/DriversHeader.png";
 
 export const StyledGrid = styled(Grid)(
   ({ theme }) => `

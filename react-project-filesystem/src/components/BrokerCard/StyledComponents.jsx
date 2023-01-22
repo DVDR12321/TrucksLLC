@@ -26,6 +26,7 @@ export const StyledTypography = styled(Typography)(
  font-family: "Roboto Serif";
  text-align: center;
  font-size: 170%;
+ font-weight:bold;
  
 `
 );

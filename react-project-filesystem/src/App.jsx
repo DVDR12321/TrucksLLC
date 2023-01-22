@@ -13,25 +13,23 @@ import Drivers from "./Pages/DriversPage/Drivers";
 import CompanyDrivers from "./Pages/CompanyDrivers/CompanyDrivers";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 
-class App extends Component {
-  render() {
-    return (
-      <Layout>
-        <Router>
-          <Routes>
-            <Route path="/aboutus" element={<AboutUsPage />} />
-            <Route path="/apply" element={<Apply />} />
-            <Route path="/drivers" element={<Drivers />} />
-            <Route path="/OwnerOperators" element={<OwnerOperators />} />
-            <Route path="/CompanyDrivers" element={<CompanyDrivers />} />
-            <Route path="/q&a" element={<QAPage />} />
-            <Route path="/Contact" element={<ContactPage />} />
-            <Route path="/" element={<MainGrid />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </Router>
-      </Layout>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Layout>
+      <Router>
+        <Routes>
+          <Route path="/aboutus" element={<AboutUsPage />} />
+          <Route path="/apply" element={<Apply />} />
+          <Route path="/drivers" element={<Drivers />} />
+          <Route path="/OwnerOperators" element={<OwnerOperators />} />
+          <Route path="/CompanyDrivers" element={<CompanyDrivers />} />
+          <Route path="/q&a" element={<QAPage />} />
+          <Route path="/Contact" element={<ContactPage />} />
+          <Route path="/" element={<MainGrid />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Router>
+    </Layout>
+  );
+};
 export default App;

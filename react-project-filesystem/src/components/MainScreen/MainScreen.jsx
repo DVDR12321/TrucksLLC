@@ -17,9 +17,27 @@ import {
 } from "./StyledComponents";
 import { makeStyles } from "@mui/styles";
 import { Stack } from "@mui/system";
+import { useState, useEffect } from "react";
+import GridLoader from "react-spinners/GridLoader";
 
 const MainScreen = (props) => {
   const { setScrollTo, scrollTo } = props;
+  const [loading, setLoading] = useState(true);
+  const override = {
+    top: "50vh",
+    left: "50vw",
+  };
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
 
   const handleClickAbout = () => {
     setScrollTo((scrollTo) => ({
@@ -45,68 +63,92 @@ const MainScreen = (props) => {
   const classes = useStyles();
 
   return (
-    <StyledGrid container>
-      <Grid container spacing={0}>
-        <Grid xs={0} md={1}></Grid>
-        <StyledHeaderGrid item xs={12} md={5}>
-          <Stack>
-            <StyledMainTitle color="primary">
-              Transporation Done Right
-            </StyledMainTitle>
-            <StyledLink to="apply">
-              <StyledButton
-                variant="contained"
-                color="secondary"
-                className={classes.outlined}
-              >
-                Apply
-              </StyledButton>
-            </StyledLink>
-          </Stack>
-        </StyledHeaderGrid>
-        <StyledButtonGrid item xs={0} md={5}></StyledButtonGrid>
-        <Grid xs={0} md={1}></Grid>
-      </Grid>
-      <Grid item xs={0} md={1}></Grid>
-      <StyledCardsGrid item xs={12} md={10}>
-        <Grid container sx={{ justifyContent: "center" }} spacing={10}>
-          <Grid item xs={12} sm={6} md={3}>
-            <StyledLink to="">
-              <BrokerCard
-                sx={{ objectFit: "contain" }}
-                imagep={img4}
-                headerp="About Us"
-                onClickCard={handleClickAbout}
-              />
-            </StyledLink>
+    <div>
+      {loading ? (
+        <div
+          style={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <GridLoader
+            cssOverride={override}
+            color="#b71c1c"
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      ) : (
+        <StyledGrid container>
+          <Grid container spacing={0}>
+            <Grid xs={0} md={1}></Grid>
+            <StyledHeaderGrid item xs={12} md={5}>
+              <Stack>
+                <StyledMainTitle color="primary">
+                  Transporation Done Right
+                </StyledMainTitle>
+                <StyledLink to="apply">
+                  <StyledButton
+                    variant="contained"
+                    color="secondary"
+                    className={classes.outlined}
+                  >
+                    Apply
+                  </StyledButton>
+                </StyledLink>
+              </Stack>
+            </StyledHeaderGrid>
+            <StyledButtonGrid item xs={0} md={5}></StyledButtonGrid>
+            <Grid xs={0} md={1}></Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <StyledLink to="/drivers">
-              <BrokerCard
-                href="/drivers"
-                imagep={img3}
-                headerp="Driver benefits"
-              />
-            </StyledLink>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <StyledLink to="/aboutus">
-              <BrokerCard imagep={img5} headerp="Our fleet" />
-            </StyledLink>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <LinkScroll to="/#references">
-              <BrokerCard
-                onClickCard={handleClickLaurels}
-                imagep={img6}
-                headerp="Recognitions"
-              />
-            </LinkScroll>
-          </Grid>
-        </Grid>
-      </StyledCardsGrid>
-      <Grid item xs={0} md={1}></Grid>
-    </StyledGrid>
+          <Grid item xs={0} md={1}></Grid>
+          <StyledCardsGrid item xs={12} md={10}>
+            <Grid container sx={{ justifyContent: "center" }} spacing={10}>
+              <Grid item xs={12} sm={6} md={3}>
+                <StyledLink to="">
+                  <BrokerCard
+                    sx={{ objectFit: "contain" }}
+                    imagep={img4}
+                    headerp="About Us"
+                    onClickCard={handleClickAbout}
+                  />
+                </StyledLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <StyledLink to="/drivers">
+                  <BrokerCard
+                    href="/drivers"
+                    imagep={img3}
+                    headerp="Driver benefits"
+                  />
+                </StyledLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <StyledLink to="/aboutus">
+                  <BrokerCard imagep={img5} headerp="Our fleet" />
+                </StyledLink>
+              </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <LinkScroll to="/#references">
+                  <BrokerCard
+                    onClickCard={handleClickLaurels}
+                    imagep={img6}
+                    headerp="Recognitions"
+                  />
+                </LinkScroll>
+              </Grid>
+            </Grid>
+          </StyledCardsGrid>
+          <Grid item xs={0} md={1}></Grid>
+        </StyledGrid>
+      )}
+      ;
+    </div>
   );
 };
 export default MainScreen;
