@@ -20,7 +20,6 @@ import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
 import { StyledSpan, StyledTextField } from "./StyledComponents";
-import axios from "axios";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -93,26 +92,24 @@ export const Screen1 = (props) => {
 
   const handleSubmit = async () => {
     setSent(true);
-    console.log(sent);
-    try {
-      await axios.post(
-        "http://localhost:4000/send_mail",
-        {
-          state,
-        },
-        {
-          headers: {
-            Origin: window.location.origin,
-          },
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    const options = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ state }),
+    };
+    fetch("http://localhost:4000/api/mailer", options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => console.log(res))
+      .catch((res) => {
+        console.log(res);
+      });
     setSent(false);
-    console.log(sent);
     setOpen(false);
-    console.log(state);
+    //console.log(state);
     formRef.current.reset();
   };
 
