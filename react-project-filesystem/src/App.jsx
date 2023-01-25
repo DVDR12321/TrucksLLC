@@ -16,8 +16,8 @@ import ContactPage from "./Pages/ContactPage/ContactPage";
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <Router>
+      <Router>
+        <Layout>
           <Routes>
             <Route path="/aboutus" element={<AboutUsPage />} />
             <Route path="/apply" element={<Apply />} />
@@ -29,8 +29,8 @@ class App extends Component {
             <Route path="/" element={<MainGrid />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     );
   }
 }

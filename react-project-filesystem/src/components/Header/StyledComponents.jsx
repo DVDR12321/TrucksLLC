@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { AppBar, Grid, keyframes } from "@mui/material";
+import { AppBar, Grid } from "@mui/material";
 
 export const StyledAppBar = styled(AppBar)(
   ({ theme }) => `
@@ -8,7 +8,7 @@ export const StyledAppBar = styled(AppBar)(
   background: ${theme.palette.common.white};
   transition: all 0.3s ease-in-out;
   transform: translateY(-100%);
-
+  margin-top: -89px;
   &.fade-in {
     transform: translateY(0);
   }
@@ -22,20 +22,8 @@ export const StyledAppBar = styled(AppBar)(
 `
 );
 
-const fadeIn = keyframes`
-  from {
-    transform: scale(.25);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`;
-
 export const StyledAppHeaderItems = styled(Grid)`
   margin: auto;
-  // margin-right: 5px;
 `;
 
 export const StyledLogo = styled("img")`
@@ -43,14 +31,35 @@ export const StyledLogo = styled("img")`
   height: 70px;
 `;
 
-export const StyledText = styled("span")(
+export const StyledMenuItem = styled("span")(
   ({ theme }) => `
   text-transform: none;
   font-family: Montserrat;
   font-size: 14px;
+  font-weight: 500;
   line-height: 80px;
   letter-spacing: 1px;
   &: hover {
+    color: ${theme.palette.primary.dark};
+  }
+  &.active {
+    color: ${theme.palette.primary.dark};
+  }
+`
+);
+
+export const StyledSideMenuItem = styled("span")(
+  ({ theme }) => `
+  text-transform: none;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: 1px;
+  &: hover {
+    color: ${theme.palette.primary.dark};
+  }
+  &.active {
     color: ${theme.palette.primary.dark};
   }
 `

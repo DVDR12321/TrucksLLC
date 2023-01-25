@@ -17,19 +17,23 @@ import {
   StyledAppBar,
   StyledAppHeaderItems,
   StyledLogo,
-  StyledText,
+  StyledMenuItem,
+  StyledSideMenuItem,
 } from "./StyledComponents";
+import { useLocation } from "react-router-dom";
 
 const navigationLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "aboutus" },
-  { name: "Apply", href: "apply" },
-  { name: "For Drivers", href: "/drivers" },
-  { name: "Q&A", href: "/q&a" },
-  { name: "Contact", href: "/Contact" },
+  { name: "Home", route: "/" },
+  { name: "About", route: "/aboutus" },
+  { name: "Apply", route: "/apply" },
+  { name: "For Drivers", route: "/drivers" },
+  { name: "Q&A", route: "/q&a" },
+  { name: "Contact", route: "/Contact" },
 ];
 
-const AppHeader = (props) => {
+const AppHeader = () => {
+  const location = useLocation();
+  const path = location.pathname;
   const [open, setOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -67,22 +71,18 @@ const AppHeader = (props) => {
                   color="textPrimary"
                   variant="button"
                   underline="none"
-                  href={item.href}
+                  href={item.route}
                   key={item.name}
                 >
-                  <StyledText
-                    onClick={() => props.setSelectedMenuItem(item.name)}
-                    style={{
-                      color:
-                        props.selectedMenuItem === item.name ? "red" : "black",
-                    }}
+                  <StyledMenuItem
+                    className={path === item.route ? "active" : ""}
                   >
                     {item.name}
-                  </StyledText>
+                  </StyledMenuItem>
                 </Link>
               ))}
             </StyledAppHeaderItems>
-            <StyledText> +1 312 466 11 01</StyledText>
+            <StyledMenuItem> +1 312 466 11 01</StyledMenuItem>
           </Hidden>
           <Hidden smUp>
             <StyledAppHeaderItems>
@@ -115,14 +115,18 @@ const AppHeader = (props) => {
             <ListItem key={item.name}>
               <Link
                 style={{
-                  marginRight: 20,
+                  marginRight: 40,
                 }}
                 color="textPrimary"
                 type="button"
                 underline="none"
-                href={item.href}
+                href={item.route}
               >
-                {item.name}
+                <StyledSideMenuItem
+                  className={path === item.route ? "active" : ""}
+                >
+                  {item.name}
+                </StyledSideMenuItem>
               </Link>
             </ListItem>
           ))}
