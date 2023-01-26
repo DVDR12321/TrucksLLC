@@ -97,8 +97,9 @@ export const Screen1 = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ state }),
+      body: JSON.stringify(state),
     };
+
     fetch("http://localhost:4000/api/mailer", options)
       .then((res) => {
         return res.json();

@@ -53,7 +53,7 @@ export const Apply = () => {
     Compare: false,
     Adress: [""],
     Accident: [{ Date: "", Description: "" }],
-    Licence: [{ Date: "", Description: "" }],
+    Licence: [{ LDate: "", LDescription: "" }],
     Employment: [{ Name: "", DateFrom: "", DateTo: "" }],
     Position: "",
   };

@@ -1,12 +1,13 @@
+require("dotenv").config();
 const upload = require("../libs/multer");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+
 
 const handle = (promise) => {
     return promise
-    .then((data) => ([data, undefined]))
-    .catch((error) => Promise.resolve([undefined, error]));
-}
+        .then((data) => ([data, undefined]))
+        .catch((error) => Promise.resolve([undefined, error]));
+};
 
 const mailerController = {
     sendMail: (req, res) => {
@@ -19,13 +20,25 @@ const mailerController = {
             } else {
 
                 console.log(req.body);
-                const { state } = req.body; // mozda mora da se promeni 
-                const image = req.file;
-                const contentHTML = `
-                    <h1>The driver ${state.FirstName} ${state.LastName} wants to apply for the position of ${state.Position}. His prone number is : ${state.PhoneNumber} and his email adres is:${state.Email}</h1>
-                `;
+                 const {FirstName, LastName, Email, PhoneNumber, Adress, Accident, Licence, Employment, Position } = req.body; 
+                //console.log(Accident, Employment, Licence, Adress);
+                // const image = req.file;
+                const accidentData = Accident.map(({ Date, Description }) => `Date: ${Date}, Description: ${Description}`).join(', ');
+                const licenceData = Licence.map(({ LDate, LDescription }) => `Date of expiration: ${LDate}, Licence number: ${LDescription}`).join(', ');
+                const employementData = Employment.map(({ Name, DateFrom, DateTo }) => `Name: ${Name}, worked from: ${DateFrom}, worked to:${DateTo}`).join(', ');
+             
 
-                console.log(state.FirstName);
+                const contentHTML = `
+                    <h2>The driver: ${FirstName}, ${LastName} wants to apply for the position of : ${Position}</h2>
+                    <h3> Their core data is : </h3>
+                    <p> Email adress: ${Email}, phone number :${PhoneNumber} </p>
+                    <h3> Additional data provided: </h3>
+                    <p> Current and previous adresses of residence:${Adress}</p>
+                    <p> Accidents they got into in the past: ${accidentData}</p>
+                    <p> Driving licence(s):${licenceData}</p>
+                    <p> Previous employment data:${employementData}</p>
+                   
+                `;
                 
                 //create transporter
                 const transporter = nodemailer.createTransport({
@@ -44,7 +57,7 @@ const mailerController = {
                             from: process.env.FROM,
                             to: process.env.TO
                         },
-                        subject: "Subject",
+                        subject: "New Driver Application",
                         html: contentHTML
                     })
                 );
