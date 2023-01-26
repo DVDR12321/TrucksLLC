@@ -177,7 +177,6 @@ export const StyledSectionBox = styled(Grid)(
 background-image: url(${image});
 background-size:cover;
 background-attachment: fixed;
-//background: ${theme.palette.common.grey};
 width:100%;
 margin-left: 200px;
 margin-right: 200px;
