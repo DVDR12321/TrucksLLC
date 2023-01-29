@@ -24,6 +24,7 @@ export const StyledFlipInnerCard = styled("div")`
 
 export const StyledFrontCard = styled("div")`
   position: absolute;
+  transform: rotateX(0deg);
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
@@ -37,6 +38,7 @@ export const StyledFrontCard = styled("div")`
 export const StyledBackCard = styled("div")(
   ({ theme }) => `
   position: absolute;
+  transform: rotateX(0deg);
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
