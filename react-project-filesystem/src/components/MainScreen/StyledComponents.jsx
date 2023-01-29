@@ -39,7 +39,7 @@ export const StyledMainTitle = styled("h1")(
   text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   font-family: "Archivo Black", sans-serif;
   font-style: bold;
-  font-size: 11vmin;
+  font-size: 12vmin;
   color: white;
 `
 );
@@ -51,9 +51,12 @@ export const StyledButton = styled(Button)(
   font-family: "Archivo-Black", sans-serif;
   font-size: 6vmin;
   height: 7vmin;
-  width: 20vmax;
+  width: 15vmax;
   border-radius: 3px;
   margin-top:10vh;
+  &:hover{
+    background-color:${theme.palette.primary.dark};
+  }
 `
 );
 

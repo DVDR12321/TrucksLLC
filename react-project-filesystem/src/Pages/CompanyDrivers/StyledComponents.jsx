@@ -31,10 +31,14 @@ export const StyledMainDescription = styled("p")(
  `
 );
 
-export const StyledContentGrid = styled(Grid)`
+export const StyledContentGrid = styled(Grid)(
+  ({ theme }) =>
+    ` 
+  border:5px solid ${theme.palette.primary.dark};
   padding: 0 8% 8% 8%;
   text-align: justify;
-`;
+`
+);
 
 export const StyledSectionHeader = styled("h1")(
   ({ theme }) => `

@@ -35,14 +35,17 @@ const AboutUsSection = (props) => {
             <StyledAboutHeader>About us</StyledAboutHeader>
             <StyledText>
               {" "}
-              Benefits for our drivers include no - force{" "}
-              <StyledSpan>24h dispatch</StyledSpan>. Flexible truck ownership
-              configurations - be an owner operator, lease, or rent your truck.
-              100% transparency for your weekly statements - as well as{" "}
-              <StyledSpan> 0$ down </StyledSpan> on your monthly gross. Earn
-              driver refferal bonuses and most miles covered bonuses - we have
-              the most convenient practices, tailored to suit your every need
-              and make your job as easy as possible. You drive - we pay!
+              Trucks LLC is a Chicago-based trucking company. We have been
+              successfully serving the transportation industry for over
+              <StyledSpan> 15 years</StyledSpan>. Our 24/7 dispatch system
+              guarantees prompt and efficient service, ensuring that your cargo
+              is delivered on time. Our drivers can earn
+              <StyledSpan> competitive wages</StyledSpan> and benefit from
+              referral bonuses. We understand the unique needs of our clients
+              and have implemented convenient practices that are tailored to
+              meet those needs and make your job as effortless as possible. At
+              our company, you focus on driving and we take care of the rest -
+              including paying you for your services.
             </StyledText>
             <StyledLink to="/aboutus">
               <Button
@@ -60,13 +63,17 @@ const AboutUsSection = (props) => {
           <Stack>
             <StyledCustomersHeader>Our Services</StyledCustomersHeader>
             <StyledText>
-              Benefints for our customers imclude such and such and such and
-              such and such and such and such and such and Benefints for our
-              customers imclude such and such and such and such and such and
-              such and such and such and such and such imclude such and such and
-              such and such and such and such and such and such and such and
-              such imclude such and such and such and such and such and such and
-              such and such and and suchand such
+              At Trucks LLC, we are committed to providing our customers with
+              the <StyledSpan>highest level </StyledSpan>of service and support.
+              We understand that the safe and timely delivery of your cargo is
+              of the utmost importance, which is why we prioritize freight
+              safety above all else. Our fleet of dry vans and box trucks,
+              combined with our <StyledSpan>24/7 responsiveness</StyledSpan> ,
+              allows us to meet the diverse transportation needs of our
+              customers. Rest assured that your cargo is in good hands with our
+              experienced drivers and dedicated top-notch team. We are dedicated
+              to ensuring that your transportation needs are met with the
+              highest level of professionalism and efficiency.
             </StyledText>
             <StyledLink to="/aboutus">
               <Button

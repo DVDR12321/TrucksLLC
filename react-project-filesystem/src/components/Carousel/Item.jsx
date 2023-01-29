@@ -1,7 +1,7 @@
 import React from "react";
 import { Divider, Grid } from "@mui/material";
 import {
-  StyledBox,
+  StyledBox2,
   StyledImage,
   StyledPaper,
   StyledParagraph,
@@ -11,7 +11,7 @@ import {
 const Item = (props) => {
   return (
     <StyledPaper elevation={3}>
-      <StyledBox>''</StyledBox>
+      <StyledBox2>''</StyledBox2>
       <StyledParagraphGrid>
         <StyledParagraph>" {props.item.description} "</StyledParagraph>
       </StyledParagraphGrid>

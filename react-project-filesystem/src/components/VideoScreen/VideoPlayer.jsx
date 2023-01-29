@@ -24,7 +24,7 @@ const VideoPlayer = () => {
 
           <Video
             loop
-            muted
+            //muted
             controls={["PlayPause", "Seek", "Time", "Volume", "Fullscreen"]}
             //poster="http://sourceposter.jpg"
             onCanPlayThrough={() => {}}

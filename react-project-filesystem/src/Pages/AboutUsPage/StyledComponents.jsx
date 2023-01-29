@@ -85,7 +85,7 @@ export const StyledImage = styled("img")(
 export const StyledScrollGrid = styled(Grid)(
   ({ theme }) => `
   color: ${theme.palette.primary.main};
-  margin-top:10vh;
+  margin-top:3vh;
   height:10vh;
   display:flex;
   align-items:center;
@@ -119,6 +119,7 @@ export const StyledText = styled("p")`
   width: 100%;
   overflow: hidden;
   padding: 0 5% 5% 5%;
+  line-height: 3ch;
 `;
 export const StyledTextSpan = styled("span")(
   ({ theme }) => `
@@ -141,7 +142,7 @@ export const StyledImageRight = styled("img")`
 export const StyledSectionCaption = styled(Typography)(
   ({ theme }) => `
   color: ${theme.palette.primary.main};;
-  font-size: 50px;
+  font-size: 70px;
   letter-spacing: 1px;
   font-weight: 700;
   text-align: center;
@@ -149,20 +150,18 @@ export const StyledSectionCaption = styled(Typography)(
   margin-right: 5vw;
   margin-left: 5vw;
   font-family: 'Archivo Black', sans-serif;
-  font-size: 70px;
-  border-bottom: 1px inset ${theme.palette.common.grey};
-  
+  border-bottom: 2px inset ${theme.palette.common.grey};
 `
 );
 
 export const StyledGridRow = styled(Grid)`
-  margin-bottom: 25vh;
+  margin-bottom: 10vh;
   justifycontent: center;
 `;
 
 export const StyledGridRight = styled(Grid)(
   ({ theme }) => `
-  color: ${theme.palette.common.grey};
+  color: ${theme.palette.common.black};
   background-color: ${theme.palette.common.white};
   padding-top:5%;
 `
@@ -209,20 +208,20 @@ export const StyledTypography2 = styled(Typography)(
   font-weight: 800;
   font-family: 'Archivo Black', sans-serif;
   color: ${theme.palette.common.black};
-
-
 `
 );
 
 export const StyledGridLeft = styled(Grid)(
   ({ theme }) => `
-  color: ${theme.palette.common.grey};
+  color: ${theme.palette.common.black};
   background-color: ${theme.palette.common.white};
   padding-top:5%;
 `
 );
 
-export const StyledMainGrid = styled(Grid)``;
+export const StyledMainGrid = styled(Grid)`
+  margin-top: 15vh;
+`;
 
 // Cards ************************************************************************************
 
@@ -234,6 +233,7 @@ export const StyledCardBox = styled(Box)(
 );
 
 export const StyledCardWrapper = styled(Grid)`
+  margin-top: 16vh;
   height: 100%;
   padding-bottom: 10vh;
   // background: url(${BeneftisImage});

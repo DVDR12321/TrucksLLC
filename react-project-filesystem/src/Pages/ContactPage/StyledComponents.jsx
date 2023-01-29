@@ -29,7 +29,19 @@ export const StyledContactGrid = styled(Grid)`
   justify-content: center;
   text-align: center;
 `;
+export const StyledImageGrid = styled(Grid)`
+  width: 100vw;
+`;
 
 export const StyledListItem = styled("li")`
   padding: 2ch;
+`;
+
+export const StyledList = styled("ul")`
+  text-align: left;
+  font-size: 3vh;
+`;
+
+export const StyledImage = styled("img")`
+  width: 100%;
 `;

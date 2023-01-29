@@ -50,6 +50,7 @@ export const StyledText = styled("p")(
   color: ${theme.palette.common.black};
   font-family: "Roboto", sans-serif;
   padding: 5%;
+  line-height:3ch;
 `
 );
 
@@ -80,6 +81,7 @@ export const StyledCustomersHeader = styled("h1")(
 export const StyledSpan = styled("span")(
   ({ theme }) => `
   color: ${theme.palette.primary.main};
+  font-weight:bold;
 `
 );
 

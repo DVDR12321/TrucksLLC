@@ -11,13 +11,13 @@ const BrokerCard = (props) => {
       <CardActionArea onClick={onClickCard} sx={{ height: "100%" }}>
         <CardMedia
           component="img"
-          height="90"
+          height="130"
           image={imagep}
           alt=""
           sx={{ objectFit: "contain" }}
         />
         <CardContent>
-          <StyledTypography gutterBottom color="white" component="div">
+          <StyledTypography color="white" component="div">
             {headerp}
           </StyledTypography>
         </CardContent>
