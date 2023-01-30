@@ -20,12 +20,11 @@ const mailerController = {
             } else {
 
                 console.log(req.body);
-                 const {FirstName, LastName, Email, PhoneNumber, Adress, Accident, Licence, Employment, Position } = req.body; 
-                //console.log(Accident, Employment, Licence, Adress);
+                 const {FirstName, LastName, Email, PhoneNumber, Adress, Accident, Licence, Company, Position, Signature } = req.body; 
                 // const image = req.file;
                 const accidentData = Accident.map(({ Date, Description }) => `Date: ${Date}, Description: ${Description}`).join(', ');
                 const licenceData = Licence.map(({ LDate, LDescription }) => `Date of expiration: ${LDate}, Licence number: ${LDescription}`).join(', ');
-                const employementData = Employment.map(({ Name, DateFrom, DateTo }) => `Name: ${Name}, worked from: ${DateFrom}, worked to:${DateTo}`).join(', ');
+                const employementData = Company.map(({ Name, DateFrom, DateTo, Reason }) => `Name: ${Name}, worked from: ${DateFrom}, worked to:${DateTo}. Reason for leaving: ${Reason}`).join(', ');
              
 
                 const contentHTML = `
@@ -37,7 +36,7 @@ const mailerController = {
                     <p> Accidents they got into in the past: ${accidentData}</p>
                     <p> Driving licence(s):${licenceData}</p>
                     <p> Previous employment data:${employementData}</p>
-                   
+                    <p> His signature hash: ${Signature}
                 `;
                 
                 //create transporter

@@ -20,26 +20,41 @@ import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
 import { StyledSpan, StyledTextField } from "./StyledComponents";
+import SnackBarComponent from "../../components/SnackBar/SnackBarComponent";
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+
+const preventCopyPaste = () => {
+  const eInput = document.getElementById("echeck");
+  const tInput = document.getElementById("tcheck");
+  eInput.onpaste = (e) => e.preventDefault();
+  tInput.onpaste = (e) => e.preventDefault();
+};
 
 export const Screen1 = (props) => {
   const { state, setState } = props;
 
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
-  const formRef = useRef(null);
+  const [message, setMessage] = useState("");
+  const [snackbar, setSnackbar] = useState(false);
+  const formRef = useRef();
   const emailRef = useRef(null);
   const phoneNumberRef = useRef(null);
 
-  window.onload = () => {
-    const eInput = document.getElementById("echeck");
-    const tInput = document.getElementById("tcheck");
-    eInput.onpaste = (e) => e.preventDefault();
-    tInput.onpaste = (e) => e.preventDefault();
-  };
+  useEffect(() => {
+    preventCopyPaste();
+  }, []);
+
+  function reloadWithDelay() {
+    setTimeout(function () {
+      setOpen(false);
+      setSent(false);
+      window.location.reload();
+    }, 3000);
+  }
 
   const handlePositionChange = (event) => {
     setState((state) => ({ ...state, Position: event.target.value }));
@@ -104,14 +119,20 @@ export const Screen1 = (props) => {
       .then((res) => {
         return res.json();
       })
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setMessage("Data submitted successfully!");
+        setSnackbar(true);
+        reloadWithDelay();
+      })
       .catch((res) => {
         console.log(res);
+        setMessage("Error submitting data");
+        setSent(false);
+        setSnackbar(true);
       });
-    setSent(false);
-    setOpen(false);
-    //console.log(state);
-    formRef.current.reset();
+
+    //console.log(snackbar);
   };
 
   const HandleInputChange = (e) => {
@@ -233,6 +254,7 @@ export const Screen1 = (props) => {
                   value={state.Position}
                   label="I am applying for the position of:"
                   onChange={handlePositionChange}
+                  required
                 >
                   <MenuItem value={"Owner Operator"}>Owner Operator</MenuItem>
                   <MenuItem value={"Company driver"}>Company driver</MenuItem>
@@ -245,7 +267,7 @@ export const Screen1 = (props) => {
             {state.Compare === false && (
               <div>
                 <Button
-                  color="secondary"
+                  color="primary"
                   variant="outlined"
                   onClick={handleOpenDialog}
                   fullWidth
@@ -264,8 +286,8 @@ export const Screen1 = (props) => {
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
-                      You can provide aditional data on pages 2 and 3. Providing
-                      us with more information means our team will be
+                      You can provide aditional data on second and third page.
+                      Providing us with more information means our team will be
                       <StyledSpan>
                         prioritizing your application
                       </StyledSpan>{" "}
@@ -277,6 +299,12 @@ export const Screen1 = (props) => {
                     <Button disabled={sent} onClick={handleSubmit}>
                       {sent ? "Sending..." : "Submit"}
                     </Button>
+                    <SnackBarComponent
+                      snackbar={snackbar}
+                      setSnackbar={setSnackbar}
+                      message={message}
+                      setMessage={setMessage}
+                    ></SnackBarComponent>
                   </DialogActions>
                 </Dialog>
               </div>

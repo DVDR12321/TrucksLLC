@@ -11,24 +11,86 @@ import {
   Styledp1,
   StyledSpan,
 } from "./StyledComponents";
-import React from "react";
+import React, { useState } from "react";
 
 import { useRef } from "react";
+import SnackBarComponent from "../../components/SnackBar/SnackBarComponent";
 
-const Screen3 = () => {
+const Screen3 = (props) => {
+  const { state, setState } = props;
+  const [sent, setSent] = useState(false);
+  const [snackbar, setSnackbar] = useState(false);
+  const [message, setMessage] = useState("");
+
+  function reloadWithDelay() {
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
+  }
+
+  //signature pad stuff
   let SigPad = useRef({});
   let data = "";
-
   const clear = () => {
     SigPad.current.clear();
   };
   const save = () => {
     data = SigPad.current.toDataURL();
-    console.log(data);
+    setState((state) => ({
+      ...state,
+      Signature: data,
+    }));
+    console.log(state);
   };
   const show = () => {
     SigPad.current.fromDataURL(data);
-    console.log(data);
+  };
+
+  // email sending
+  const handleSubmit = () => {
+    if (state.Signature === "") {
+      setMessage("Sign the document and 'save' please");
+      setSnackbar(true);
+      return;
+    } else if (
+      state.FirstName === "" ||
+      state.LastName === "" ||
+      state.Email === "" ||
+      state.PhoneNumber === "" ||
+      state.EmailCheck === "" ||
+      state.PhoneNumberCheck === "" ||
+      state.PhoneNumberCheck !== state.PhoneNumber ||
+      state.Email !== state.EmailCheck
+    ) {
+      setMessage("Data from page one is incorrectly entered");
+      setSnackbar(true);
+    } else {
+      setSent(true);
+      const options = {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(state),
+      };
+      fetch("http://localhost:4000/api/mailer", options)
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+          setSent(false);
+          setMessage("Data submitted successfully!");
+          setSnackbar(true);
+          reloadWithDelay();
+        })
+        .catch((res) => {
+          console.log(res);
+          setSent(false);
+          setMessage("Failed submitting data");
+          setSnackbar(true);
+        });
+    }
   };
 
   return (
@@ -223,6 +285,18 @@ const Screen3 = () => {
           </Styledp1>
           <Styledp1>LAST UPDATED 2/11/2016</Styledp1>
         </Grid>
+      </Grid>
+      <Grid item xs={0} md={8}></Grid>
+      <Grid item xs={12} md={4} sx={{ marginBottom: "5vh" }}>
+        <Button variant="outlined" disabled={sent} onClick={handleSubmit}>
+          {sent ? "Sending..." : "Submit Application"}
+        </Button>
+        <SnackBarComponent
+          snackbar={snackbar}
+          setSnackbar={setSnackbar}
+          message={message}
+          setMessage={setMessage}
+        ></SnackBarComponent>
       </Grid>
     </Grid>
   );

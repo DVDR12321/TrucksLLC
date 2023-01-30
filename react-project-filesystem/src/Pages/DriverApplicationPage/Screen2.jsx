@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  CardContent,
-  IconButton,
-  Button,
-} from "@mui/material";
+import { Grid, Typography, CardContent, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
@@ -16,6 +10,7 @@ import { useRef } from "react";
 export const Screen2 = (props) => {
   const { state, setState } = props;
   let formRef2 = useRef(null);
+
   // ADRESS FIELD ******************************************************
 
   function AddAdress() {
@@ -100,27 +95,41 @@ export const Screen2 = (props) => {
       Licence: list,
     }));
   }
+
+  // COMPANIES .....................................................................
+  function AddCompany() {
+    setState((state) => ({
+      ...state,
+      Company: [
+        ...state.Company,
+        { Name: "", Reason: "", DateFrom: "", DateTo: "" },
+      ],
+    }));
+  }
+  function RemoveCompany(Licence) {
+    let list = [...state.Licence];
+    list.splice(-1);
+    setState((state) => ({
+      ...state,
+      Company: list,
+    }));
+  }
+
+  function CompanyChange(e, index) {
+    const { name, value } = e.target;
+    let list = [...state.Company];
+    //console.log("list update", list);
+    list[index][name] = value;
+    setState((state) => ({
+      ...state,
+      Company: list,
+    }));
+  }
+
   //Main render..................................................................
-  const handleSubmit = () => {
-    const options = {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(state),
-    };
-    fetch("http://localhost:4000/api/mailer", options)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => console.log(res))
-      .catch((res) => {
-        console.log(res);
-      });
-  };
 
   return (
-    <form ref={formRef2} onSubmit={handleSubmit}>
+    <form ref={formRef2}>
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -144,26 +153,30 @@ export const Screen2 = (props) => {
               {" "}
               Add current and previous adresses of residence:{" "}
             </Typography>
-            {state.Adress.map((Adress, index1) => {
-              return (
-                <Grid container key={index1}>
-                  <Grid item xs={12} md={12}>
-                    <StyledTextField
-                      name="Adress"
-                      color="primary"
-                      label={"Adress " + (index1 += 1).toString()}
-                      placeholder="476 Alderwood Rd.
+            <Grid container spacing={2}>
+              {state.Adress.map((Adress, index1) => {
+                return (
+                  <Grid key={index1} item xs={12}>
+                    <Grid container>
+                      <Grid item xs={12} md={12}>
+                        <StyledTextField
+                          name="Adress"
+                          color="primary"
+                          label={"Adress " + (index1 += 1).toString()}
+                          placeholder="476 Alderwood Rd.
                   Seymour, IN 47274"
-                      variant="outlined"
-                      fullWidth
-                      required
-                      onChange={(e) => AdressChange(e, index1)}
-                      shape="filled"
-                    ></StyledTextField>
+                          variant="outlined"
+                          fullWidth
+                          required
+                          onChange={(e) => AdressChange(e, index1)}
+                          shape="filled"
+                        ></StyledTextField>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                </Grid>
-              );
-            })}
+                );
+              })}
+            </Grid>
             <IconButton
               aria-label="add"
               color="primary"
@@ -187,35 +200,38 @@ export const Screen2 = (props) => {
               past, and/or did you receive any trafic tickets? If so please list
               the date with a brief description of the event:
             </Typography>
-
-            {state.Accident.map((x, index) => {
-              return (
-                <Grid container key={index} spacing={2}>
-                  <Grid item xs={12} md={3}>
-                    <StyledTextField
-                      name="Date"
-                      type="date"
-                      variant="outlined"
-                      fullWidth
-                      required
-                      onChange={(e) => AccidentChange(e, index)}
-                    ></StyledTextField>
+            <Grid container spacing={2}>
+              {state.Accident.map((x, index) => {
+                return (
+                  <Grid item xs={12} key={index}>
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} md={3}>
+                        <StyledTextField
+                          name="Date"
+                          type="date"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          onChange={(e) => AccidentChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                      <Grid item xs={12} md={9}>
+                        <StyledTextField
+                          name="Description"
+                          type="Message"
+                          label="Description"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          multiline
+                          onChange={(e) => AccidentChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} md={9}>
-                    <StyledTextField
-                      name="Description"
-                      type="Message"
-                      label="Description"
-                      variant="outlined"
-                      fullWidth
-                      required
-                      multiline
-                      onChange={(e) => AccidentChange(e, index)}
-                    ></StyledTextField>
-                  </Grid>
-                </Grid>
-              );
-            })}
+                );
+              })}
+            </Grid>
             <IconButton
               aria-label="add"
               color="primary"
@@ -240,15 +256,15 @@ export const Screen2 = (props) => {
             <Grid container spacing={2}>
               {state.Licence.map((x, index) => {
                 return (
-                  <Grid item xs={12}>
-                    <Grid container key={index} spacing={2}>
+                  <Grid item key={index} xs={12}>
+                    <Grid container spacing={2}>
                       <Grid item xs={12} md={3}>
                         <StyledTextField
                           name="LDate"
                           type="date"
                           variant="outlined"
                           fullWidth
-                          requiredf
+                          required
                           onChange={(e) => LicenceChange(e, index)}
                         ></StyledTextField>
                       </Grid>
@@ -296,43 +312,73 @@ export const Screen2 = (props) => {
                 enter the priod of time when you worked for them.
               </Typography>
             </Grid>
-            <Grid item xs={12} md={4}>
-              <PreviousEmployments> </PreviousEmployments>
+            <Grid container spacing={2}>
+              {state.Company.map((x, index) => {
+                return (
+                  <Grid item key={index} xs={12}>
+                    <Grid container spacing={2}>
+                      <Grid item xs={12} md={4}>
+                        <PreviousEmployments
+                          index={index}
+                          state={state}
+                          setState={setState}
+                        >
+                          {" "}
+                        </PreviousEmployments>
+                      </Grid>
+                      <Grid item xs={12} md={4}>
+                        <StyledTextField
+                          name="Reason"
+                          fullWidth
+                          variant="outlined"
+                          label="reason for leaving"
+                          multiline
+                          onChange={(e) => CompanyChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                      <Grid item xs={6} md={2}>
+                        <StyledTextField
+                          name="DateFrom"
+                          type="date"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          onChange={(e) => CompanyChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                      <Grid item xs={6} md={2}>
+                        <StyledTextField
+                          name="DateTo"
+                          type="date"
+                          variant="outlined"
+                          fullWidth
+                          required
+                          onChange={(e) => CompanyChange(e, index)}
+                        ></StyledTextField>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                );
+              })}
             </Grid>
-            <Grid item xs={12} md={4}>
-              <StyledTextField
-                name="Reason"
-                fullWidth
-                variant="outlined"
-                label="reason for leaving"
-                multiline
-              ></StyledTextField>
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <StyledTextField
-                name="DateFrom"
-                type="date"
-                variant="outlined"
-                fullWidth
-                required
-              ></StyledTextField>
-            </Grid>
-            <Grid item xs={6} md={2}>
-              <StyledTextField
-                name="DateTo"
-                type="date"
-                variant="outlined"
-                fullWidth
-                required
-              ></StyledTextField>
-            </Grid>
+            <IconButton
+              aria-label="add"
+              color="primary"
+              onClick={() => AddCompany()}
+            >
+              <AddIcon />
+            </IconButton>
+            <IconButton
+              aria-label="remove"
+              color="primary"
+              onClick={RemoveCompany}
+            >
+              <RemoveIcon />
+            </IconButton>
           </Grid>
+
           <Grid item xs={0} md={8}></Grid>
-          <Grid item xs={12} md={4}>
-            <Button variant="outlined" fullWidth onClick={handleSubmit}>
-              Submit Application
-            </Button>
-          </Grid>
+          <Grid item xs={12} md={4}></Grid>
         </Grid>
       </CardContent>
     </form>

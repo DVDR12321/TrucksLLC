@@ -6,18 +6,27 @@ import { debounce } from "lodash";
 import { useMemo } from "react";
 // WebKey : 85a1a1c4c94d781917fdf0ddb5bc09d49092c384
 
-const PreviousEmployments = () => {
-  const [name, setName] = useState("");
+const PreviousEmployments = (props) => {
+  const { state, setState, index } = props;
+  const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState([""]);
 
   const HandleChange = (e) => {
-    setName(e.target.value);
+    setKeyword(e.target.value);
+    let list = [...state.Company];
+    const { name, value } = e.target;
+    list[index][name] = value;
+    setState((state) => ({
+      ...state,
+      Company: list,
+    }));
   };
-  const DebounceHandleChange = useMemo(() => debounce(HandleChange, 2000), []);
+
+  const DebounceHandleChange = useMemo(() => debounce(HandleChange, 1500), []);
 
   useEffect(() => {
     fetch(
-      `https://mobile.fmcsa.dot.gov/qc/services/carriers/name/${name}?webKey=85a1a1c4c94d781917fdf0ddb5bc09d49092c384`
+      `https://mobile.fmcsa.dot.gov/qc/services/carriers/name/${keyword}?webKey=85a1a1c4c94d781917fdf0ddb5bc09d49092c384`
     )
       .then((response) => {
         return response.json();
@@ -27,7 +36,7 @@ const PreviousEmployments = () => {
         setPreviousEmployers(data.content);
         console.log(data);
       });
-  }, [name]);
+  }, [keyword]);
 
   const setPreviousEmployers = (data) => {
     data.forEach((element) => {
@@ -41,11 +50,11 @@ const PreviousEmployments = () => {
         options={result}
         renderInput={(params) => (
           <TextField
+            name="Name"
             {...params}
             onChange={(e) => {
               DebounceHandleChange(e);
             }}
-            fullWidth
           ></TextField>
         )}
       />
