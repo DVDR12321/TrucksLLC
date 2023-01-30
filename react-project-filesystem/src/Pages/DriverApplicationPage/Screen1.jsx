@@ -15,7 +15,6 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
-import emailjs from "@emailjs/browser";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
@@ -30,6 +29,7 @@ export const Screen1 = (props) => {
   const { state, setState } = props;
 
   const [open, setOpen] = useState(false);
+  const [sent, setSent] = useState(false);
   const formRef = useRef(null);
   const emailRef = useRef(null);
   const phoneNumberRef = useRef(null);
@@ -90,24 +90,27 @@ export const Screen1 = (props) => {
     setOpen(false);
   };
 
-  const handleClickSubmit = () => {
-    emailjs
-      .sendForm(
-        "default_service",
-        "template_5muable",
-        formRef.current,
-        "Bt5FJk_8UapAuvKNi"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const handleSubmit = async () => {
+    setSent(true);
+    const options = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(state),
+    };
 
+    fetch("http://localhost:4000/api/mailer", options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => console.log(res))
+      .catch((res) => {
+        console.log(res);
+      });
+    setSent(false);
     setOpen(false);
+    //console.log(state);
     formRef.current.reset();
   };
 
@@ -241,7 +244,12 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             {state.Compare === false && (
               <div>
-                <Button variant="outlined" onClick={handleOpenDialog} fullWidth>
+                <Button
+                  color="secondary"
+                  variant="outlined"
+                  onClick={handleOpenDialog}
+                  fullWidth
+                >
                   Submit Application
                 </Button>
                 <Dialog
@@ -266,7 +274,9 @@ export const Screen1 = (props) => {
                   </DialogContent>
                   <DialogActions>
                     <Button onClick={handleCloseDialog}>Cancel</Button>
-                    <Button onClick={handleClickSubmit}>Submit</Button>
+                    <Button disabled={sent} onClick={handleSubmit}>
+                      {sent ? "Sending..." : "Submit"}
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </div>
