@@ -244,7 +244,12 @@ export const Screen1 = (props) => {
           <Grid item xs={12} md={6}>
             {state.Compare === false && (
               <div>
-                <Button variant="outlined" onClick={handleOpenDialog} fullWidth>
+                <Button
+                  color="secondary"
+                  variant="outlined"
+                  onClick={handleOpenDialog}
+                  fullWidth
+                >
                   Submit Application
                 </Button>
                 <Dialog
