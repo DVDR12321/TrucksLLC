@@ -9,7 +9,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
-import emailjs from "@emailjs/browser";
+
 import { StyledTextField } from "./StyledComponents";
 import { useRef } from "react";
 
@@ -27,7 +27,6 @@ export const Screen2 = (props) => {
 
   function RemoveAdress(index1) {
     let list = [...state.Adress];
-    console.log(list);
     list.splice(-1);
     setState((state) => ({
       ...state,
@@ -78,7 +77,7 @@ export const Screen2 = (props) => {
   function AddLicence() {
     setState((state) => ({
       ...state,
-      Licence: [...state.Licence, { Date: "", Time: "" }],
+      Licence: [...state.Licence, { LDate: "", LDescription: "" }],
     }));
   }
 
@@ -103,22 +102,21 @@ export const Screen2 = (props) => {
   }
   //Main render..................................................................
   const handleSubmit = () => {
-    emailjs
-      .sendForm(
-        "default_service",
-        "template_5muable",
-        formRef2.current,
-        "Bt5FJk_8UapAuvKNi"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-    formRef2.current.reset();
+    const options = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(state),
+    };
+    fetch("http://localhost:4000/api/mailer", options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => console.log(res))
+      .catch((res) => {
+        console.log(res);
+      });
   };
 
   return (
@@ -246,17 +244,17 @@ export const Screen2 = (props) => {
                     <Grid container key={index} spacing={2}>
                       <Grid item xs={12} md={3}>
                         <StyledTextField
-                          name="LicenceDate"
+                          name="LDate"
                           type="date"
                           variant="outlined"
                           fullWidth
-                          required
+                          requiredf
                           onChange={(e) => LicenceChange(e, index)}
                         ></StyledTextField>
                       </Grid>
                       <Grid item xs={12} md={9}>
                         <StyledTextField
-                          name="LicenceDescription"
+                          name="LDescription"
                           type="Message"
                           label="State / Licence# / Type"
                           variant="outlined"
@@ -303,7 +301,7 @@ export const Screen2 = (props) => {
             </Grid>
             <Grid item xs={12} md={4}>
               <StyledTextField
-                name="reason"
+                name="Reason"
                 fullWidth
                 variant="outlined"
                 label="reason for leaving"
@@ -312,7 +310,7 @@ export const Screen2 = (props) => {
             </Grid>
             <Grid item xs={6} md={2}>
               <StyledTextField
-                name="Date"
+                name="DateFrom"
                 type="date"
                 variant="outlined"
                 fullWidth
@@ -321,7 +319,7 @@ export const Screen2 = (props) => {
             </Grid>
             <Grid item xs={6} md={2}>
               <StyledTextField
-                name="Date"
+                name="DateTo"
                 type="date"
                 variant="outlined"
                 fullWidth
