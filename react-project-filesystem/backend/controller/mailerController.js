@@ -1,6 +1,7 @@
 require("dotenv").config();
 const upload = require("../libs/multer");
 const nodemailer = require("nodemailer");
+const fs = require('fs');
 
 
 const handle = (promise) => {
@@ -19,13 +20,20 @@ const mailerController = {
                 
             } else {
 
-                console.log(req.body);
+                //console.log(req.body);
                  const {FirstName, LastName, Email, PhoneNumber, Adress, Accident, Licence, Company, Position, Signature } = req.body; 
                 // const image = req.file;
                 const accidentData = Accident.map(({ Date, Description }) => `Date: ${Date}, Description: ${Description}`).join(', ');
                 const licenceData = Licence.map(({ LDate, LDescription }) => `Date of expiration: ${LDate}, Licence number: ${LDescription}`).join(', ');
                 const employementData = Company.map(({ Name, DateFrom, DateTo, Reason }) => `Name: ${Name}, worked from: ${DateFrom}, worked to:${DateTo}. Reason for leaving: ${Reason}`).join(', ');
-             
+                //const base64 = '' 
+                let Sig = Signature;
+                let newSig = Sig.replace('data:image/png;base64,', '');
+                //console.log(newSig);
+                const buffer = Buffer.from(newSig, 'base64');
+                fs.writeFileSync('image.jpg', buffer);
+                const image = fs.readFileSync('image.jpg');
+                console.log(image);
 
                 const contentHTML = `
                     <h2>The driver: ${FirstName}, ${LastName} wants to apply for the position of : ${Position}</h2>
@@ -36,6 +44,7 @@ const mailerController = {
                     <p> Accidents they got into in the past: ${accidentData}</p>
                     <p> Driving licence(s):${licenceData}</p>
                     <p> Previous employment data:${employementData}</p>
+                    <img src=${image} alt="signature"></img>
                     <p> His signature hash: ${Signature}
                 `;
                 
