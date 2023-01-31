@@ -301,17 +301,17 @@ export const Screen2 = (props) => {
               <RemoveIcon />
             </IconButton>
           </Grid>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={12}>
-              <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
-                Please{" "}
-                <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
-                  search
-                </span>{" "}
-                the names of your previous employers. Describe why you left and
-                enter the priod of time when you worked for them.
-              </Typography>
-            </Grid>
+
+          <Grid item xs={12} md={12}>
+            <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
+              Please{" "}
+              <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
+                search
+              </span>{" "}
+              the companies you previously worked with. Describe why you left
+              and enter the priod of time when you worked for them.
+            </Typography>
+
             <Grid container spacing={2}>
               {state.Company.map((x, index) => {
                 return (
@@ -376,7 +376,6 @@ export const Screen2 = (props) => {
               <RemoveIcon />
             </IconButton>
           </Grid>
-
           <Grid item xs={0} md={8}></Grid>
           <Grid item xs={12} md={4}></Grid>
         </Grid>

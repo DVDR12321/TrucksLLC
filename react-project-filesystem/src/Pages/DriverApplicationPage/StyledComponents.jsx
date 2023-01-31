@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { TextField } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 export const StyledHeader1 = styled("h1")`
@@ -47,4 +47,8 @@ export const StyledDiv = styled("div")`
   border-left: 1px groove gray;
   border-right: 1px groove gray;
   margin-right: 1px;
+`;
+
+export const StyledSearchContainer = styled("div")`
+  object-fit: contain;
 `;

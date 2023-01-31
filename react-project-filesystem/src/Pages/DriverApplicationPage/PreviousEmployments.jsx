@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { debounce } from "lodash";
 import { useMemo } from "react";
+import { StyledSearchContainer } from "./StyledComponents";
 // WebKey : 85a1a1c4c94d781917fdf0ddb5bc09d49092c384
 
 const PreviousEmployments = (props) => {
@@ -45,7 +46,7 @@ const PreviousEmployments = (props) => {
   };
 
   return (
-    <div>
+    <StyledSearchContainer>
       <Autocomplete
         options={result}
         renderInput={(params) => (
@@ -58,7 +59,7 @@ const PreviousEmployments = (props) => {
           ></TextField>
         )}
       />
-    </div>
+    </StyledSearchContainer>
   );
 };
 export default PreviousEmployments;
