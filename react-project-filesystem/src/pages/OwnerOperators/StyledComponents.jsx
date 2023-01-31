@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import image from "../../assets/Drivers/OwnerOperator2.jpeg";
 import { styled } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 
 export const StyledMainGrid = styled(Grid)``;
 
@@ -34,9 +35,30 @@ export const StyledMainDescription = styled("p")(
 export const StyledContentGrid = styled(Grid)(
   ({ theme }) =>
     ` 
-  border:5px solid ${theme.palette.primary.dark};
+  //border:5px solid ${theme.palette.primary.dark};
   padding: 0 8% 8% 8%;
   text-align: justify;
+  background: #ada996;
+background: -webkit-linear-gradient(
+  to top,
+  ${grey[300]},
+  ${grey[200]},
+  ${grey[100]},
+  ${grey[50]}
+);
+background: linear-gradient(
+  to top,
+  ${grey[300]},
+  ${grey[200]},
+  ${grey[100]},
+  ${grey[50]}
+);
+`
+);
+
+export const StyledFirstParagraphGrid = styled(Grid)(
+  ({ theme }) => `
+ border-bottom: 1px dashed ${theme.palette.primary.dark};
 `
 );
 
@@ -44,7 +66,7 @@ export const StyledSectionHeader = styled("h1")(
   ({ theme }) => `
  font-size: 5vmin;
  color:${theme.palette.primary.main};
- margin-top:3ch;
+ margin-top:7ch;
  text-align:center;
  border-bottom: 1px inset ${theme.palette.common.black};
 `

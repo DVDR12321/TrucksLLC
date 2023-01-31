@@ -1,10 +1,17 @@
-import { Grid, Stack, Divider } from "@mui/material";
+import { Grid, Stack, Divider, Typography } from "@mui/material";
 import React from "react";
 import DriverCard from "./DriverCard";
 import Referral from "./RefferalForm";
+import img from "../../assets/Drivers/ScrollBarWhite.png";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";
-import { StyledGrid, StyledHeaderText } from "./StyledComponents";
+import {
+  StyledContentGrid,
+  StyledGrid,
+  StyledHeaderText,
+  StyledImage,
+  StyledScrollGrid,
+} from "./StyledComponents";
 import { useEffect, useState } from "react";
 import GridLoader from "react-spinners/GridLoader";
 
@@ -51,11 +58,16 @@ function Drivers() {
       ) : (
         <Grid container spacing={3} sx={{ justifyContent: "center" }}>
           <StyledGrid container>
-            <Stack>
+            <Grid item xs={12}>
               <StyledHeaderText>Drive With Us</StyledHeaderText>
-            </Stack>
+            </Grid>
+            <StyledScrollGrid container>
+              <StyledImage src={img} alt="scroll"></StyledImage>
+              <Typography> Scroll to learn more</Typography>
+            </StyledScrollGrid>
           </StyledGrid>
-          <Grid item xs={12} sx={{ margin: "10px" }}>
+
+          <StyledContentGrid item xs={12}>
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 1, sm: 2, md: 8 }}
@@ -83,7 +95,7 @@ function Drivers() {
               <Divider orientation="vertical" variant="middle" flexItem />
               <Referral></Referral>
             </Stack>
-          </Grid>
+          </StyledContentGrid>
         </Grid>
       )}
     </div>

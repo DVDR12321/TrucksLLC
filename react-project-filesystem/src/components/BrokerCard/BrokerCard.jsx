@@ -11,7 +11,7 @@ const BrokerCard = (props) => {
       <CardActionArea onClick={onClickCard} sx={{ height: "100%" }}>
         <CardMedia
           component="img"
-          height="130"
+          height="60%"
           image={imagep}
           alt=""
           sx={{ objectFit: "contain" }}

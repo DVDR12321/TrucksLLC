@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import img from "../../assets/Drivers/ScrollBarWhite.png";
 import {
   StyledContentGrid,
+  StyledFirstParagraphGrid,
   StyledHeaderGrid,
   StyledImage,
   StyledList,
@@ -73,7 +74,7 @@ const CompanyDrivers = () => {
             </Stack>
           </StyledHeaderGrid>
           <StyledContentGrid>
-            <Grid item xs={12}>
+            <StyledFirstParagraphGrid item xs={12}>
               <StyledParagraph>
                 At Trucks LLC, we value our drivers and want to ensure they are
                 fraily compensated for their hard work. That's why we offer a
@@ -90,7 +91,7 @@ const CompanyDrivers = () => {
                 ensure they can find the perfect balance of miles and home time.
                 All of this is offered with the added bonus of competitive pay..
               </StyledParagraph>
-            </Grid>
+            </StyledFirstParagraphGrid>
             <Grid container sx={{ textAlign: "left" }}>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Get paid by mile</StyledSectionHeader>

@@ -13,7 +13,7 @@ export const StyledCard = styled(Card)(
   :hover {
     outline-color: ${theme.palette.common.white};
     color: ${theme.palette.common.white};
-    transform: scale(1.15);
+    transform: scale(1.10);
     transition: transform 0.3s cubic-bezier(0,0,.58,1);
     backdrop-filter: blur(1px) sepia(10%);
   }
@@ -25,7 +25,7 @@ export const StyledTypography = styled(Typography)(
   ({ theme }) => `
  font-family: "Roboto Serif";
  text-align: center;
- font-size: 250%;
+ font-size: 190%;
  font-weight:bold;
  
 `

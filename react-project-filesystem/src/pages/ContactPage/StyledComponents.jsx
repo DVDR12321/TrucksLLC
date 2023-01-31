@@ -1,5 +1,6 @@
 import { Grid, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 
 export const StyledHeader = styled("h1")(
   ({ theme }) => `
@@ -23,12 +24,32 @@ export const StyledIconButton = styled(IconButton)`
   -webkit-text-fill-color: transparent;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 `;
-
-export const StyledContactGrid = styled(Grid)`
+export const StyledContentGrid = styled(Grid)(
+  ({ theme }) => `
+background: #ada996;
+background: -webkit-linear-gradient(
+  to top,
+  ${grey[300]},
+  ${grey[200]},
+  ${grey[100]},
+  ${grey[50]}
+);
+background: linear-gradient(
+  to top,
+  ${grey[300]},
+  ${grey[200]},
+  ${grey[100]},
+  ${grey[50]}
+);
+`
+);
+export const StyledContactGrid = styled(Grid)(
+  ({ theme }) => `
   display: flex;
   justify-content: center;
   text-align: center;
-`;
+`
+);
 export const StyledImageGrid = styled(Grid)`
   width: 100vw;
 `;

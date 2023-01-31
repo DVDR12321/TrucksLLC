@@ -6,7 +6,7 @@ export const StyledCard = styled(Card)`
   display: flex;
   align-items: start;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 5px;
   background: ${(props) => props.backgroundColor};
   width: 100%;
   outline: 1px solid white;

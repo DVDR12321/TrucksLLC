@@ -1,6 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Button, Card, Grid } from "@mui/material";
-import Image from "../../assets/Drivers/DriversHeader.png";
+import Image from "../../assets/Drivers/DriversHeader.jpg";
+import { grey } from "@mui/material/colors";
 
 export const StyledGrid = styled(Grid)(
   ({ theme }) => `
@@ -11,19 +12,40 @@ export const StyledGrid = styled(Grid)(
   text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   background-image: url(${Image});
   background-size: 100% 100%;
-  height: 60vh;
+  height: 100vh;
   width: 100vw;
+  
 `
 );
 
 export const StyledHeaderText = styled("h1")(
   ({ theme }) => `
   text-align: center;
+  padding-top:15vh;
   color: ${theme.palette.common.white};
   position: relative;
   font-family: 'Archivo Black', sans-serif;
   font-size:15vmin;
   
+`
+);
+export const StyledContentGrid = styled(Grid)(
+  ({ theme }) => `
+  background: #ada996;
+  background: -webkit-linear-gradient(
+    to top,
+    ${grey[300]},
+    ${grey[200]},
+    ${grey[100]},
+    ${grey[50]}
+  );
+  background: linear-gradient(
+    to top,
+    ${grey[300]},
+    ${grey[200]},
+    ${grey[100]},
+    ${grey[50]}
+  ); 
 `
 );
 
@@ -52,10 +74,32 @@ export const StyledButton = styled(Button)(
 
 export const StyledCard = styled(Card)`
   height: 100%;
-  border-radius: 3%;
+  border-radius: 2px;
   max-width: 350px;
 `;
 
 export const StyledSpan2 = styled("span")`
   text-align: center;
 `;
+
+export const StyledImage = styled("img")(
+  ({ theme }) => `
+  
+  object-fit:contain;
+  height:100%;
+  `
+);
+
+export const StyledScrollGrid = styled(Grid)(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
+  margin-top:5vh;
+  height:10vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style: italic;
+  font-weight: 700;
+
+`
+);

@@ -3,6 +3,7 @@ import React from "react";
 import img from "../../assets/Drivers/ScrollBarWhite.png";
 import {
   StyledContentGrid,
+  StyledFirstParagraphGrid,
   StyledHeaderGrid,
   StyledImage,
   StyledList,
@@ -73,7 +74,7 @@ const OwnerOperators = () => {
             </Stack>
           </StyledHeaderGrid>
           <StyledContentGrid>
-            <Grid item xs={12}>
+            <StyledFirstParagraphGrid item xs={12}>
               <StyledParagraph>
                 Whether you are bringing your own truck , or you are looking for
                 an opportunity to lease a top of the line truck and pull steady
@@ -87,7 +88,7 @@ const OwnerOperators = () => {
                 ensure they can find the perfect balance of miles and home time.
                 All of this is offered with the added bonus of competitive pay.
               </StyledParagraph>
-            </Grid>
+            </StyledFirstParagraphGrid>
             <Grid container sx={{ textAlign: "left" }}>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Solo Drivers</StyledSectionHeader>

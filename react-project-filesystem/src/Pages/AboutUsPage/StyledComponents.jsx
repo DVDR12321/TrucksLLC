@@ -10,20 +10,19 @@ import image from "../../assets/AboutPage/Map.png";
 
 // Top ************************************************************************************
 export const StyledContainer = styled("div")`
-  background: #ada996;
   background: -webkit-linear-gradient(
     to top,
-    ${grey[400]},
-    ${grey[100]},
     ${grey[300]},
-    ${grey[200]}
+    ${grey[200]},
+    ${grey[100]},
+    ${grey[50]}
   );
   background: linear-gradient(
     to top,
-    ${grey[400]},
-    ${grey[100]},
     ${grey[300]},
-    ${grey[200]}
+    ${grey[200]},
+    ${grey[100]},
+    ${grey[50]}
   );
 `;
 

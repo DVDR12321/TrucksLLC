@@ -4,6 +4,7 @@ import SendMessage from "../QAPage/QuestionsForm";
 import { IconButton, Stack } from "@mui/material";
 import {
   StyledContactGrid,
+  StyledContentGrid,
   StyledHeader,
   StyledIconButton,
   StyledImage,
@@ -64,48 +65,50 @@ const ContactPage = () => {
           <StyledImageGrid item xs={12}>
             <StyledImage src={img} alt="map"></StyledImage>
           </StyledImageGrid>
-          <StyledContactGrid item xs={12} md={6}>
-            <Stack sx={{ alignItems: "center" }}>
-              <StyledHeader>Our social media</StyledHeader>
-              <Stack direction="row">
-                <StyledIconButton href="https://www.instagram.com/trucks.llc/">
-                  <InstagramIcon
-                    sx={{ height: "5vh", width: "5vh", color: "#E4405F" }}
-                  ></InstagramIcon>
-                </StyledIconButton>
-                <IconButton
-                  size="large"
-                  href="https://m.facebook.com/TrucksLLC/"
-                >
-                  <FacebookIcon
-                    sx={{ color: "#1877F2", height: "5vh", width: "5vh" }}
-                  ></FacebookIcon>
-                </IconButton>
-                <IconButton
-                  size="large"
-                  href="https://www.youtube.com/c/VladUrdov"
-                >
-                  <YouTubeIcon
-                    sx={{ height: "5vh", width: "5vh", color: "#CD201F" }}
-                  ></YouTubeIcon>
-                </IconButton>
+          <StyledContentGrid container>
+            <StyledContactGrid item xs={12} md={6}>
+              <Stack sx={{ alignItems: "center" }}>
+                <StyledHeader>Our social media</StyledHeader>
+                <Stack direction="row">
+                  <StyledIconButton href="https://www.instagram.com/trucks.llc/">
+                    <InstagramIcon
+                      sx={{ height: "5vh", width: "5vh", color: "#E4405F" }}
+                    ></InstagramIcon>
+                  </StyledIconButton>
+                  <IconButton
+                    size="large"
+                    href="https://m.facebook.com/TrucksLLC/"
+                  >
+                    <FacebookIcon
+                      sx={{ color: "#1877F2", height: "5vh", width: "5vh" }}
+                    ></FacebookIcon>
+                  </IconButton>
+                  <IconButton
+                    size="large"
+                    href="https://www.youtube.com/c/VladUrdov"
+                  >
+                    <YouTubeIcon
+                      sx={{ height: "5vh", width: "5vh", color: "#CD201F" }}
+                    ></YouTubeIcon>
+                  </IconButton>
+                </Stack>
+                <StyledHeader>Contact Information</StyledHeader>
+                <StyledList>
+                  <StyledListItem>
+                    905 175th St Unit 3SW, Homewood, IL 60430
+                  </StyledListItem>
+                  <StyledListItem>+ 1.312-466-1101</StyledListItem>
+                  <StyledListItem>info@trucksllc.com</StyledListItem>
+                </StyledList>
               </Stack>
-              <StyledHeader>Contact Information</StyledHeader>
-              <StyledList>
-                <StyledListItem>
-                  905 175th St Unit 3SW, Homewood, IL 60430
-                </StyledListItem>
-                <StyledListItem>+ 1.312-466-1101</StyledListItem>
-                <StyledListItem>info@trucksllc.com</StyledListItem>
-              </StyledList>
-            </Stack>
-          </StyledContactGrid>
-          <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
-            <Stack direction="column">
-              <StyledHeader> Get in touch with us </StyledHeader>
-              <SendMessage></SendMessage>
-            </Stack>
-          </Grid>
+            </StyledContactGrid>
+            <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
+              <Stack direction="column">
+                <StyledHeader> Get in touch with us </StyledHeader>
+                <SendMessage></SendMessage>
+              </Stack>
+            </Grid>
+          </StyledContentGrid>
         </Grid>
       )}
     </div>
