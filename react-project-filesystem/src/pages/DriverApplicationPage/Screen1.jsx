@@ -144,12 +144,20 @@ export const Screen1 = (props) => {
     <form ref={formRef}>
       <CardContent>
         <Grid item xs={12}>
-          <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
+          <Typography
+            variant="h4"
+            component="p"
+            sx={{ margin: "1ch", textAlign: "center", fontWeight: "bold" }}
+          >
             {" "}
-            Fill out the form, and our recuriting team will get back at you as
-            soon as posible!{" "}
+            Fill out the form and our recuriting team will get back to you as
+            soon as posible{" "}
           </Typography>
-          <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
+          <Typography
+            variant="body3"
+            component="p"
+            sx={{ marginBottom: "1ch", fontWeight: "bold" }}
+          >
             {" "}
             * Symbol marks a{" "}
             <span style={{ color: "rgb(255, 0, 0)" }}>required</span> field{" "}

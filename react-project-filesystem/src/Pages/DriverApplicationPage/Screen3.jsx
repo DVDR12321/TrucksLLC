@@ -49,7 +49,7 @@ const Screen3 = (props) => {
   // email sending
   const handleSubmit = () => {
     if (state.Signature === "") {
-      setMessage("Sign the document and 'save' please");
+      setMessage("Sign the document and click 'save' please");
       setSnackbar(true);
       return;
     } else if (
@@ -287,8 +287,18 @@ const Screen3 = (props) => {
         </Grid>
       </Grid>
       <Grid item xs={0} md={8}></Grid>
-      <Grid item xs={12} md={4} sx={{ marginBottom: "5vh" }}>
-        <Button variant="outlined" disabled={sent} onClick={handleSubmit}>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        sx={{ marginBottom: "5vh", display: "flex", justifyContent: "end" }}
+      >
+        <Button
+          fullWidth
+          variant="outlined"
+          disabled={sent}
+          onClick={handleSubmit}
+        >
           {sent ? "Sending..." : "Submit Application"}
         </Button>
         <SnackBarComponent

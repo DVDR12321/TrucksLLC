@@ -51,6 +51,7 @@ const PreviousEmployments = (props) => {
         options={result}
         renderInput={(params) => (
           <TextField
+            label="Search"
             name="Name"
             {...params}
             onChange={(e) => {
