@@ -12,10 +12,12 @@ import {
 import React, { useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import logo from "../../assets/logo.png";
 import {
   StyledAppBar,
   StyledAppHeaderItems,
+  StyledButton,
   StyledLogo,
   StyledMenuItem,
   StyledSideMenuItem,
@@ -25,10 +27,10 @@ import { useLocation } from "react-router-dom";
 const navigationLinks = [
   { name: "Home", route: "/" },
   { name: "About", route: "/aboutus" },
-  { name: "Apply", route: "/apply" },
   { name: "For Drivers", route: "/drivers" },
   { name: "Q&A", route: "/q&a" },
   { name: "Contact", route: "/Contact" },
+  { name: "Apply", route: "/apply" },
 ];
 
 const AppHeader = () => {
@@ -77,12 +79,21 @@ const AppHeader = () => {
                   <StyledMenuItem
                     className={path === item.route ? "active" : ""}
                   >
-                    {item.name}
+                    {item.name === "Apply" ? (
+                      <StyledMenuItem>
+                        <StyledButton variant="contained">
+                          {item.name}
+                        </StyledButton>
+                      </StyledMenuItem>
+                    ) : (
+                      item.name
+                    )}
                   </StyledMenuItem>
                 </Link>
               ))}
             </StyledAppHeaderItems>
-            <StyledMenuItem> +1 312 466 11 01</StyledMenuItem>
+            <LocalPhoneIcon> </LocalPhoneIcon>
+            <StyledMenuItem> +1 312 466 11 01 </StyledMenuItem>
           </Hidden>
           <Hidden smUp>
             <StyledAppHeaderItems>
