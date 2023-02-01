@@ -52,6 +52,7 @@ export const StyledContactGrid = styled(Grid)(
 );
 export const StyledImageGrid = styled(Grid)`
   width: 100vw;
+  height: 70vh;
 `;
 
 export const StyledListItem = styled("li")`

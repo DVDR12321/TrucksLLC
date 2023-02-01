@@ -63,7 +63,16 @@ const ContactPage = () => {
       ) : (
         <Grid container spacing={0}>
           <StyledImageGrid item xs={12}>
-            <StyledImage src={img} alt="map"></StyledImage>
+            <iframe
+              title="company grounds"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9476.410324084296!2d-87.64498038123831!3d41.571797370049616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e1898af3c451f%3A0x425ad20dadff41c7!2s905%20175th%20St%20%233SW%2C%20Homewood%2C%20IL%2060430%2C%20USA!5e0!3m2!1sen!2srs!4v1675207860267!5m2!1sen!2srs"
+              width="100%"
+              height="100%"
+              //style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </StyledImageGrid>
           <StyledContentGrid container>
             <StyledContactGrid item xs={12} md={6}>

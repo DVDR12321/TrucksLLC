@@ -26,15 +26,37 @@ const FrontCard = (props) => (
   </StyledFrontCard>
 );
 
-const BackCard = () => <div> Back CARD </div>;
-
 const cards = [
-  { name: "Dry Van", image: img2 },
-  { name: "Box Truck", image: img3 },
-  { name: "FTL/LTL", image: img4 },
-  { name: "24/7 dispatch", image: img1 },
-  { name: "Live tracking", image: img5 },
-  { name: "Yard parking ", image: img6 },
+  {
+    name: "Dry Van",
+    image: img2,
+    back: "Fleet of 100+ dry vans for all of your freight needs",
+  },
+  {
+    name: "Box Truck",
+    image: img3,
+    back: "State of the art box trucks, for your needs! ",
+  },
+  {
+    name: "FTL/LTL",
+    image: img4,
+    back: "Full and partial truck load options, tailored to your means and requirements.",
+  },
+  {
+    name: "24/7 dispatch",
+    image: img1,
+    back: "At Trucks LLC, you will never feel you are all alone on the road. Get help at any given time",
+  },
+  {
+    name: "Live tracking",
+    image: img5,
+    back: "Never be out of the loop - know where your freight is at any given time.",
+  },
+  {
+    name: "Yard parking ",
+    image: img6,
+    back: "Our yard in Chicago offers ample space for all of our fleet, with mechanics on site.",
+  },
 ];
 
 const OurBenefits = (props) => {
@@ -71,7 +93,18 @@ const OurBenefits = (props) => {
                   FrontCard={() => (
                     <FrontCard name={card.name} image={card.image}></FrontCard>
                   )}
-                  BackCard={BackCard}
+                  BackCard={() => (
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {" "}
+                      {card.back}{" "}
+                    </div>
+                  )}
                 ></FlipCard>
               </Grid>
             );

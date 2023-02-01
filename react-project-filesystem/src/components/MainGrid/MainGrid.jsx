@@ -52,7 +52,7 @@ const MainGrid = () => {
         </Grid>
         <Grid item xs={12}>
           <div style={{ textAlign: "center" }}>
-            <h1>? $ Payments $ ?</h1>
+            <h1></h1>
           </div>
         </Grid>
       </StyledGridContainer>
