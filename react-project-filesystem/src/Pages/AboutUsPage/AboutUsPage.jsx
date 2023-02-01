@@ -120,7 +120,14 @@ const AboutUsPage = () => {
                 </Grid>
               </Grid>
             </StyledHeaderBox>
-            <StyledScrollGrid container>
+            <StyledScrollGrid
+              container
+              data-aos="fade-in"
+              data-aos-duration="500"
+              data-aos-delay="250"
+              data-aos-easing="ease-in"
+              data-aos-once
+            >
               <StyledImage src={img} alt="scroll"></StyledImage>
               <Typography> Scroll to learn more</Typography>
             </StyledScrollGrid>

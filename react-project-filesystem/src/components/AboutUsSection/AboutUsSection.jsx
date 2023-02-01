@@ -42,7 +42,7 @@ const AboutUsSection = (props) => {
           <Stack>
             <StyledAboutHeader
               data-aos="fade-in"
-              data-aos-duration="1500"
+              data-aos-duration="1000"
               data-aos-offset="150"
               data-aos-easing="ease-in-out"
             >
@@ -50,10 +50,10 @@ const AboutUsSection = (props) => {
             </StyledAboutHeader>
             <StyledText
               data-aos="fade-right"
-              data-aos-duration="750"
+              data-aos-duration="500"
               data-aos-offset="0"
               data-aos-easing="ease-in-out"
-              data-aos-delay="350"
+              data-aos-delay="250"
             >
               {" "}
               Trucks LLC is a Chicago-based trucking company. We have been
@@ -84,7 +84,7 @@ const AboutUsSection = (props) => {
           <Stack>
             <StyledCustomersHeader
               data-aos="fade-in"
-              data-aos-duration="1500"
+              data-aos-duration="1000"
               data-aos-offset="150"
               data-aos-easing="ease-in-out"
             >
@@ -92,10 +92,10 @@ const AboutUsSection = (props) => {
             </StyledCustomersHeader>
             <StyledText
               data-aos="fade-left"
-              data-aos-duration="750"
+              data-aos-duration="500"
               data-aos-offset="0"
               data-aos-easing="ease-in-out"
-              data-aos-delay="350"
+              data-aos-delay="250"
             >
               At Trucks LLC, we are committed to providing our customers with
               the <StyledSpan>highest level </StyledSpan>of service and support.

@@ -101,7 +101,7 @@ const MainScreen = (props) => {
               <Stack>
                 <StyledMainTitle
                   data-aos="fade-in"
-                  data-aos-duration="1000"
+                  data-aos-duration="500"
                   data-aos-offset="150"
                   data-aos-easing="ease-in-out"
                   color="primary"
@@ -114,10 +114,10 @@ const MainScreen = (props) => {
                     color="secondary"
                     className={classes.outlined}
                     data-aos="fade-in"
-                    data-aos-duration="1000"
+                    data-aos-duration="500"
                     data-aos-offset="150"
                     data-aos-easing="ease-in-out"
-                    data-aos-delay="1000"
+                    data-aos-delay="500"
                   >
                     Apply
                   </StyledButton>
@@ -136,10 +136,10 @@ const MainScreen = (props) => {
                 sm={6}
                 md={3}
                 data-aos="slide-up"
-                data-aos-duration="700"
+                data-aos-duration="350"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
-                data-aos-delay="2250"
+                data-aos-delay="1000"
               >
                 <StyledLink to="">
                   <BrokerCard
@@ -157,10 +157,10 @@ const MainScreen = (props) => {
                 sm={6}
                 md={3}
                 data-aos="slide-up"
-                data-aos-duration="700"
+                data-aos-duration="350"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
-                data-aos-delay="2500"
+                data-aos-delay="1150"
               >
                 <StyledLink to="/drivers">
                   <BrokerCard
@@ -177,10 +177,10 @@ const MainScreen = (props) => {
                 sm={6}
                 md={3}
                 data-aos="slide-up"
-                data-aos-duration="700"
+                data-aos-duration="350"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
-                data-aos-delay="2750"
+                data-aos-delay="1300"
               >
                 <StyledLink to="/aboutus">
                   <BrokerCard imagep={img5} headerp="Our fleet" />
@@ -192,10 +192,10 @@ const MainScreen = (props) => {
                 sm={6}
                 md={3}
                 data-aos="slide-up"
-                data-aos-duration="700"
+                data-aos-duration="350"
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
-                data-aos-delay="3000"
+                data-aos-delay="1450"
               >
                 <LinkScroll to="/#references">
                   <BrokerCard
