@@ -4,7 +4,11 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
 
-import { StyledTextField } from "./StyledComponents";
+import {
+  StyledTextField,
+  StyledTypography,
+  StyledTypographyWrapper,
+} from "./StyledComponents";
 import { useRef } from "react";
 
 export const Screen2 = (props) => {
@@ -133,12 +137,19 @@ export const Screen2 = (props) => {
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
+            <Typography
+              variant="h4"
+              sx={{ margin: "1ch", textAlign: "center", fontWeight: "bold" }}
+            >
               {" "}
-              Send us aditional information so that we may expedite recruitment
-              process for you !{" "}
+              Additional information expedites the recruitment process{" "}
             </Typography>
-            <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
+            <br></br>
+            <Typography
+              variant="body3"
+              component="p"
+              sx={{ fontWeight: "bold" }}
+            >
               {" "}
               * Symbol marks a{" "}
               <span style={{ color: "rgb(255, 0, 0)" }}>
@@ -149,10 +160,16 @@ export const Screen2 = (props) => {
           </Grid>
 
           <Grid item xs={12}>
-            <Typography variant="body3" component="p" sx={{ margin: "1ch" }}>
-              {" "}
-              Add current and previous adresses of residence:{" "}
-            </Typography>
+            <StyledTypographyWrapper>
+              <StyledTypography
+                variant="body3"
+                component="p"
+                sx={{ margin: "1ch" }}
+              >
+                {" "}
+                Add current and previous adresses of residence:{" "}
+              </StyledTypography>
+            </StyledTypographyWrapper>
             <Grid container spacing={2}>
               {state.Adress.map((Adress, index1) => {
                 return (
@@ -194,12 +211,14 @@ export const Screen2 = (props) => {
           </Grid>
 
           <Grid item xs={12}>
-            <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
-              {" "}
-              Were you in any major motor vehicle - related accidents in the
-              past, and/or did you receive any trafic tickets? If so please list
-              the date with a brief description of the event:
-            </Typography>
+            <StyledTypographyWrapper>
+              <StyledTypography variant="body1" component="p">
+                {" "}
+                Were you in any major motor vehicle - related accidents in the
+                past, and/or did you receive any trafic tickets? If so please
+                list the date with a brief description of the event:
+              </StyledTypography>
+            </StyledTypographyWrapper>
             <Grid container spacing={2}>
               {state.Accident.map((x, index) => {
                 return (
@@ -248,11 +267,13 @@ export const Screen2 = (props) => {
             </IconButton>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
-              {" "}
-              Please add your driving licences for the past 3 years along with
-              their expiration dates:
-            </Typography>
+            <StyledTypographyWrapper>
+              <StyledTypography variant="body1" component="p">
+                {" "}
+                Please add your driving licences for the past 3 years along with
+                their expiration dates:
+              </StyledTypography>
+            </StyledTypographyWrapper>
             <Grid container spacing={2}>
               {state.Licence.map((x, index) => {
                 return (
@@ -303,21 +324,22 @@ export const Screen2 = (props) => {
           </Grid>
 
           <Grid item xs={12} md={12}>
-            <Typography variant="body1" component="p" sx={{ margin: "1ch" }}>
-              Please{" "}
-              <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
-                search
-              </span>{" "}
-              the companies you previously worked with. Describe why you left
-              and enter the priod of time when you worked for them.
-            </Typography>
-
+            <StyledTypographyWrapper>
+              <StyledTypography variant="body1" component="p">
+                Please{" "}
+                <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
+                  search
+                </span>{" "}
+                the companies you previously worked with. Describe why you left
+                and enter the priod of time when you worked for them:
+              </StyledTypography>
+            </StyledTypographyWrapper>
             <Grid container spacing={2}>
               {state.Company.map((x, index) => {
                 return (
                   <Grid item key={index} xs={12}>
                     <Grid container spacing={2}>
-                      <Grid item xs={12} md={4}>
+                      <Grid item xs={12} md={3}>
                         <PreviousEmployments
                           index={index}
                           state={state}
@@ -326,17 +348,17 @@ export const Screen2 = (props) => {
                           {" "}
                         </PreviousEmployments>
                       </Grid>
-                      <Grid item xs={12} md={4}>
+                      <Grid item xs={12} md={3}>
                         <StyledTextField
                           name="Reason"
                           fullWidth
                           variant="outlined"
-                          label="reason for leaving"
+                          label="Reason for leaving"
                           multiline
                           onChange={(e) => CompanyChange(e, index)}
                         ></StyledTextField>
                       </Grid>
-                      <Grid item xs={6} md={2}>
+                      <Grid item xs={6} md={3}>
                         <StyledTextField
                           name="DateFrom"
                           type="date"
@@ -346,7 +368,7 @@ export const Screen2 = (props) => {
                           onChange={(e) => CompanyChange(e, index)}
                         ></StyledTextField>
                       </Grid>
-                      <Grid item xs={6} md={2}>
+                      <Grid item xs={6} md={3}>
                         <StyledTextField
                           name="DateTo"
                           type="date"

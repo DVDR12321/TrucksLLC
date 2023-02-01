@@ -1,6 +1,7 @@
 import { styled } from "@mui/material/styles";
-import { Grid, TextField } from "@mui/material";
+import { Grid, TextField, Typography } from "@mui/material";
 import { withStyles } from "@mui/styles";
+import { grey } from "@mui/material/colors";
 
 export const StyledHeader1 = styled("h1")`
   font-size: 2vmin;
@@ -52,3 +53,16 @@ export const StyledDiv = styled("div")`
 export const StyledSearchContainer = styled("div")`
   object-fit: contain;
 `;
+
+export const StyledTypographyWrapper = styled("div")(
+  ({ theme }) => `
+background-color:${grey[200]};
+margin: "1ch";
+`
+);
+export const StyledTypography = styled(Typography)(
+  ({ theme }) => `
+font-weight:bold;
+margin: 1ch;
+`
+);
