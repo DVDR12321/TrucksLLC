@@ -141,6 +141,7 @@ const AboutUsPage = () => {
                 data-aos-duration="500"
                 data-aos-offset="150"
                 data-aos-easing="ease-out"
+                data-aos-once
               >
                 <StyledImageGridLeft item xs={12} sm={12} md={12} lg={6}>
                   <StyledImageLeft src={Img1} alt=""></StyledImageLeft>
@@ -157,7 +158,13 @@ const AboutUsPage = () => {
                     Transportation
                     <br /> Done <StyledHeaderSpan>Right</StyledHeaderSpan>
                   </StyledHeader>
-                  <StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     At Trucks LLC, we offer
                     <StyledTextSpan> safe</StyledTextSpan> and{" "}
                     <StyledTextSpan>reliable</StyledTextSpan> transportation
@@ -165,7 +172,13 @@ const AboutUsPage = () => {
                     approach provides customized solutions for efficient and
                     valuable service.
                   </StyledText>
-                  <StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     {" "}
                     We specialize in tailored freight movement for diverse
                     customers, including Fortune 500 companies, through
@@ -173,7 +186,13 @@ const AboutUsPage = () => {
                     services and logistics options through business segments and
                     third parties sets us apart.
                   </StyledText>
-                  <StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     We're not just a trucking company, we're a transportation
                     <StyledTextSpan> solution</StyledTextSpan>. So why wait?
                     Contact us today and experience the difference our
@@ -191,51 +210,28 @@ const AboutUsPage = () => {
                   </StyledText>
                 </StyledGridRight>
               </Grid>
-
-              <StyledSectionBox
-                display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
-              >
-                <Grid
-                  container
-                  sx={{ width: "100%" }}
-                  data-aos="flip-down"
-                  data-aos-duration="500"
-                  data-aos-offset="150"
-                  data-aos-easing="ease-out"
-                >
-                  <Grid item xs={6} md={3}>
-                    <StyledTypography> 15 + </StyledTypography>
-                    <StyledTypography2> years in business</StyledTypography2>
-                  </Grid>
-
-                  <Grid item xs={6} md={3}>
-                    <StyledTypography> 15 000 </StyledTypography>
-                    <StyledTypography2> loads each year</StyledTypography2>
-                  </Grid>
-                  <Grid item xs={6} md={3}>
-                    <StyledTypography> 1M+ </StyledTypography>
-                    <StyledTypography2> miles each year </StyledTypography2>
-                  </Grid>
-                  <Grid item xs={6} md={3}>
-                    <StyledTypography>100%</StyledTypography>
-                    <StyledTypography2> Freight safety </StyledTypography2>
-                  </Grid>
-                </Grid>
-              </StyledSectionBox>
             </StyledGridRow>
-            <StyledGridRow container sx={{ marginTop: "50px" }}>
-              <Grid item xs={12}>
-                <StyledSectionCaption>Our Fleet</StyledSectionCaption>
-              </Grid>
+            <StyledGridRow container>
               <Grid
                 container
-                data-aos="flip-up"
+                data-aos="flip-down"
                 data-aos-duration="500"
                 data-aos-offset="150"
                 data-aos-easing="ease-out"
+                data-aos-once
               >
                 <StyledGridLeft item xs={12} sm={12} md={12} lg={6}>
-                  <StyledText>
+                  <StyledHeader>
+                    Our
+                    <StyledHeaderSpan> Fleet</StyledHeaderSpan>
+                  </StyledHeader>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     At Trucks LLC, we take pride in our state-of-the-art fleet
                     of over <StyledTextSpan>100 </StyledTextSpan> meticulously
                     maintained <StyledTextSpan> dry vans</StyledTextSpan>, as
@@ -244,7 +240,13 @@ const AboutUsPage = () => {
                     transportation needs with efficiency, safety and punctuality
                     in mind
                   </StyledText>
-                  <StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     {" "}
                     Our Chicago-based yard offers ample parking for our entire
                     fleet, including capacity for{" "}
@@ -256,7 +258,13 @@ const AboutUsPage = () => {
                     unexpected downtime or delays, ensuring that your goods will
                     always be delivered on time and in pristine condition.
                   </StyledText>
-                  <StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
                     {" "}
                     In addition to our top-notch fleet and maintenance
                     capabilities, we also pride ourselves on our commitment to
@@ -280,6 +288,37 @@ const AboutUsPage = () => {
                   <StyledImageRight src={Img2} alt=""></StyledImageRight>
                 </Grid>
               </Grid>
+              <StyledSectionBox
+                display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
+              >
+                <Grid
+                  container
+                  sx={{ width: "100%" }}
+                  data-aos="flip-down"
+                  data-aos-duration="500"
+                  data-aos-offset="150"
+                  data-aos-easing="ease-out"
+                  data-aos-once
+                >
+                  <Grid item xs={6} md={3}>
+                    <StyledTypography> 15 + </StyledTypography>
+                    <StyledTypography2> years in business</StyledTypography2>
+                  </Grid>
+
+                  <Grid item xs={6} md={3}>
+                    <StyledTypography> 15 000 </StyledTypography>
+                    <StyledTypography2> loads each year</StyledTypography2>
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <StyledTypography> 1M+ </StyledTypography>
+                    <StyledTypography2> miles each year </StyledTypography2>
+                  </Grid>
+                  <Grid item xs={6} md={3}>
+                    <StyledTypography>100%</StyledTypography>
+                    <StyledTypography2> Freight safety </StyledTypography2>
+                  </Grid>
+                </Grid>
+              </StyledSectionBox>
             </StyledGridRow>
           </StyledMainGrid>
 

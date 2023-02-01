@@ -49,8 +49,8 @@ const AboutUsSection = (props) => {
               About us
             </StyledAboutHeader>
             <StyledText
-              data-aos="fade-in"
-              data-aos-duration="1000"
+              data-aos="fade-right"
+              data-aos-duration="750"
               data-aos-offset="0"
               data-aos-easing="ease-in-out"
               data-aos-delay="350"
@@ -91,8 +91,8 @@ const AboutUsSection = (props) => {
               Our Services
             </StyledCustomersHeader>
             <StyledText
-              data-aos="fade-in"
-              data-aos-duration="1000"
+              data-aos="fade-left"
+              data-aos-duration="750"
               data-aos-offset="0"
               data-aos-easing="ease-in-out"
               data-aos-delay="350"

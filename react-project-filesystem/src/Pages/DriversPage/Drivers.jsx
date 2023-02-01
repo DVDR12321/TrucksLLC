@@ -14,6 +14,8 @@ import {
 } from "./StyledComponents";
 import { useEffect, useState } from "react";
 import GridLoader from "react-spinners/GridLoader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Drivers() {
   const [loading, setLoading] = useState(true);
@@ -21,6 +23,8 @@ function Drivers() {
     top: "50vh",
     left: "50vw",
   };
+
+  //page loader
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
@@ -30,8 +34,15 @@ function Drivers() {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
+
+  //fixing scroll to top when visited from another page ( in contrary scrolls to the height of that button)
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  //loading animation library
+  useEffect(() => {
+    AOS.init();
   }, []);
 
   return (
@@ -72,6 +83,12 @@ function Drivers() {
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 1, sm: 2, md: 8 }}
               sx={{ alignItems: "center", justifyContent: "center" }}
+              data-aos="slide-up"
+              data-aos-duration="500"
+              data-aos-offset="150"
+              data-aos-delay="250"
+              data-aos-easing="ease-out"
+              data-aos-once
             >
               <DriverCard
                 img1={Image}

@@ -16,6 +16,8 @@ import {
   StyledSectionHeader,
 } from "./StyledComponents";
 import GridLoader from "react-spinners/GridLoader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CompanyDrivers = () => {
   const [loading, setLoading] = useState(true);
@@ -23,6 +25,8 @@ const CompanyDrivers = () => {
     top: "50vh",
     left: "50vw",
   };
+
+  //page loader
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
@@ -32,8 +36,14 @@ const CompanyDrivers = () => {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
+  //fixing scroll to top when visited from another page ( in contrary scrolls to the height of that button)
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  //loading animation library
+  useEffect(() => {
+    AOS.init();
   }, []);
 
   return (
@@ -62,12 +72,25 @@ const CompanyDrivers = () => {
           <StyledHeaderGrid item xs={12}>
             <Stack direction="column">
               <StyledMainHeader>Company Driver</StyledMainHeader>
-              <StyledMainDescription>
+              <StyledMainDescription
+                data-aos="fade-in"
+                data-aos-duration="1500"
+                data-aos-delay="550"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
                 Wether you are solo or a team driver, want to be paid by mile or
                 buy %, you will find yourself at home at Trucks LLC as a company
                 driver.
               </StyledMainDescription>
-              <StyledScrollGrid container>
+              <StyledScrollGrid
+                container
+                data-aos="fade-in"
+                data-aos-duration="1500"
+                data-aos-delay="1000"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 <StyledImage src={img} alt="scroll"></StyledImage>
                 <Typography> Scroll to learn more</Typography>
               </StyledScrollGrid>
@@ -75,7 +98,14 @@ const CompanyDrivers = () => {
           </StyledHeaderGrid>
           <StyledContentGrid>
             <StyledFirstParagraphGrid item xs={12}>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-down"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="150"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
                 At Trucks LLC, we value our drivers and want to ensure they are
                 fraily compensated for their hard work. That's why we offer a
                 pay structure that includes a percentage off of the load,r pay
@@ -84,7 +114,14 @@ const CompanyDrivers = () => {
                 well-maintained trucks and trailers to ensure they have the
                 necessary tools to do their job safely and efficiently.
               </StyledParagraph>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-in"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="0"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 At our company, we provide a variety of operating options,
                 including dedicated lanes, one-day runs, and multi-day runs.
                 Additionally, each driver is assigned their own dispatcher to
@@ -95,7 +132,14 @@ const CompanyDrivers = () => {
             <Grid container sx={{ textAlign: "left" }}>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Get paid by mile</StyledSectionHeader>
-                <StyledList>
+                <StyledList
+                  data-aos="fade-in"
+                  data-aos-duration="500"
+                  data-aos-offset="50"
+                  data-aos-delay="0"
+                  data-aos-easing="ease-in"
+                  data-aos-once
+                >
                   <li>Get payed by mile - up do 1$/mile!</li>
                   <li>Load every day, average 2500 miles per week</li>
                   <li>Paid ticked to Chicago and accomodation when hired</li>
@@ -123,7 +167,14 @@ const CompanyDrivers = () => {
               </Grid>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Get paid by % </StyledSectionHeader>
-                <StyledList>
+                <StyledList
+                  data-aos="fade-in"
+                  data-aos-duration="500"
+                  data-aos-offset="50"
+                  data-aos-delay="0"
+                  data-aos-easing="ease-in"
+                  data-aos-once
+                >
                   <li>
                     Get paid by percentafe off of a load - set up a deal that
                     wors for you
@@ -158,14 +209,28 @@ const CompanyDrivers = () => {
                 {" "}
                 Company drivers requirements{" "}
               </StyledSectionHeader>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-in"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="0"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 lacus ante, suscipit quis faucibus at, auctor nec nibh.
                 Curabitur dictum elit sed dui malesuada, sit amet malesuada
                 lacus gravida. Nullam lorem neque, consectetur a metus euismod,
                 ullamcorper elementum quam.
               </StyledParagraph>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-in"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="0"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 Praesent ut sem sed velit tristique fermentum vel ut purus. Sed
                 sollicitudin, dui in fringilla venenatis, sem lectus auctor
                 tortor, sit amet dignissim dolor nisl at mi. Mauris ac tempus

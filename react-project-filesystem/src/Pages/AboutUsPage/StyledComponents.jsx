@@ -154,7 +154,6 @@ export const StyledSectionCaption = styled(Typography)(
 );
 
 export const StyledGridRow = styled(Grid)`
-  margin-bottom: 10vh;
   justifycontent: center;
 `;
 
