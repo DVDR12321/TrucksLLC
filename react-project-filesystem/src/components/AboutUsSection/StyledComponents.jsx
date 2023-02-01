@@ -15,7 +15,7 @@ export const ContainingDiv = styled("div")`
 export const SectionOverlay = styled(Grid)`
   background-image: url(${Background});
   align-items: center;
-  border-radius: 30px 30px 0 0;
+  border-radius: 10px 10px 0 0;
   border-top: 3px solid ${grey[50]};
   border-left: 3px solid ${grey[50]};
   border-right: 3px solid ${grey[50]};
@@ -42,6 +42,7 @@ export const StyledAboutHeader = styled("h1")(
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 5%;
+
 `
 );
 
@@ -75,6 +76,7 @@ export const StyledCustomersHeader = styled("h1")(
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
 `
 );
 

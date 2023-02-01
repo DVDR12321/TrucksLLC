@@ -16,6 +16,8 @@ import {
 } from "./StyledComponents";
 import { useEffect, useState } from "react";
 import GridLoader from "react-spinners/GridLoader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const OwnerOperators = () => {
   const [loading, setLoading] = useState(true);
@@ -23,6 +25,8 @@ const OwnerOperators = () => {
     top: "50vh",
     left: "50vw",
   };
+
+  //page loader
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
@@ -32,8 +36,14 @@ const OwnerOperators = () => {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
+  //fixing scroll to top when visited from another page ( in contrary scrolls to the height of that button)
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  //loading animation library
+  useEffect(() => {
+    AOS.init();
   }, []);
 
   return (
@@ -62,12 +72,25 @@ const OwnerOperators = () => {
           <StyledHeaderGrid item xs={12}>
             <Stack direction="column">
               <StyledMainHeader>Owner Operator</StyledMainHeader>
-              <StyledMainDescription>
+              <StyledMainDescription
+                data-aos="fade-in"
+                data-aos-duration="1500"
+                data-aos-delay="550"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
                 Wether you are bringing your own truck leasing or renting,
                 driving as a team or a solo driver, we have a plan for you here
                 at Trucks LLC
               </StyledMainDescription>
-              <StyledScrollGrid container>
+              <StyledScrollGrid
+                container
+                data-aos="fade-in"
+                data-aos-duration="1500"
+                data-aos-delay="1000"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 <StyledImage src={img} alt="scroll"></StyledImage>
                 <Typography> Scroll to learn more</Typography>
               </StyledScrollGrid>
@@ -75,13 +98,27 @@ const OwnerOperators = () => {
           </StyledHeaderGrid>
           <StyledContentGrid>
             <StyledFirstParagraphGrid item xs={12}>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-down"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="150"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
                 Whether you are bringing your own truck , or you are looking for
                 an opportunity to lease a top of the line truck and pull steady
                 dry van freight for excellent earnings – Trucks LLC is the right
                 choice for you!
               </StyledParagraph>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-down"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="150"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
                 At our company, we provide a variety of operating options,
                 including dedicated lanes, one-day runs, and multi-day runs.
                 Additionally, each driver is assigned their own dispatcher to
@@ -92,7 +129,14 @@ const OwnerOperators = () => {
             <Grid container sx={{ textAlign: "left" }}>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Solo Drivers</StyledSectionHeader>
-                <StyledList>
+                <StyledList
+                  data-aos="fade-in"
+                  data-aos-duration="500"
+                  data-aos-offset="50"
+                  data-aos-delay="0"
+                  data-aos-easing="ease-in"
+                  data-aos-once
+                >
                   <li>Competitive payment</li>
                   <li>
                     Get payed by load, up to 88% - small fee is deducted for
@@ -119,7 +163,14 @@ const OwnerOperators = () => {
               </Grid>
               <Grid item xs={12} md={12} lg={6}>
                 <StyledSectionHeader>Team Drivers</StyledSectionHeader>
-                <StyledList>
+                <StyledList
+                  data-aos="fade-in"
+                  data-aos-duration="500"
+                  data-aos-offset="50"
+                  data-aos-delay="0"
+                  data-aos-easing="ease-in"
+                  data-aos-once
+                >
                   <li>Competitive payment</li>
                   <li>
                     Get payed by load, up to 88% - small fee is deducted for
@@ -150,14 +201,28 @@ const OwnerOperators = () => {
                 {" "}
                 Lease and rent requirements{" "}
               </StyledSectionHeader>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-in"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="0"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 lacus ante, suscipit quis faucibus at, auctor nec nibh.
                 Curabitur dictum elit sed dui malesuada, sit amet malesuada
                 lacus gravida. Nullam lorem neque, consectetur a metus euismod,
                 ullamcorper elementum quam.
               </StyledParagraph>
-              <StyledParagraph>
+              <StyledParagraph
+                data-aos="fade-in"
+                data-aos-duration="500"
+                data-aos-offset="50"
+                data-aos-delay="0"
+                data-aos-easing="ease-in"
+                data-aos-once
+              >
                 Praesent ut sem sed velit tristique fermentum vel ut purus. Sed
                 sollicitudin, dui in fringilla venenatis, sem lectus auctor
                 tortor, sit amet dignissim dolor nisl at mi. Mauris ac tempus

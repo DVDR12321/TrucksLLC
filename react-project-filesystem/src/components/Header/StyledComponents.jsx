@@ -1,11 +1,11 @@
 import { styled } from "@mui/material/styles";
-import { AppBar, Grid } from "@mui/material";
+import { AppBar, Button, Grid } from "@mui/material";
 
 export const StyledAppBar = styled(AppBar)(
   ({ theme }) => `
   height: 90px;
   padding: 0 5px;
-  background: ${theme.palette.common.white};
+  background: rgba(255, 255, 255, 0.95);
   transition: all 0.3s ease-in-out;
   transform: translateY(-100%);
   margin-top: -89px;
@@ -35,7 +35,7 @@ export const StyledMenuItem = styled("span")(
   ({ theme }) => `
   text-transform: none;
   font-family: Montserrat;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 80px;
   letter-spacing: 1px;
@@ -45,6 +45,15 @@ export const StyledMenuItem = styled("span")(
   &.active {
     color: ${theme.palette.primary.dark};
   }
+`
+);
+
+export const StyledButton = styled(Button)(
+  ({ theme }) => `
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 500;
+  
 `
 );
 

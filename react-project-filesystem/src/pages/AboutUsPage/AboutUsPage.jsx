@@ -33,6 +33,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import GridLoader from "react-spinners/GridLoader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const AboutUsPage = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -41,6 +43,13 @@ const AboutUsPage = () => {
     top: "50vh",
     left: "50vw",
   };
+
+  //loading animation library
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  //page loader
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
@@ -51,6 +60,7 @@ const AboutUsPage = () => {
     };
   }, []);
 
+  //fix to scroll to top of the page when clicked a button from another one
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -125,58 +135,171 @@ const AboutUsPage = () => {
               <Grid item xs={12} sm={12} md={12} lg={12}>
                 <StyledSectionCaption>About Us</StyledSectionCaption>
               </Grid>
-              <StyledImageGridLeft item xs={12} sm={12} md={12} lg={6}>
-                <StyledImageLeft src={Img1} alt=""></StyledImageLeft>
-              </StyledImageGridLeft>
-              <StyledGridRight
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={6}
-                sx={{ justifyContent: "left" }}
+              <Grid
+                container
+                data-aos="flip-up"
+                data-aos-duration="500"
+                data-aos-offset="150"
+                data-aos-easing="ease-out"
+                data-aos-once
               >
-                <StyledHeader>
-                  Transportation
-                  <br /> Done <StyledHeaderSpan>Right</StyledHeaderSpan>
-                </StyledHeader>
-                <StyledText>
-                  At Trucks LLC, we offer<StyledTextSpan> safe</StyledTextSpan>{" "}
-                  and <StyledTextSpan>reliable</StyledTextSpan> transportation
-                  services throughout the continental US. Our multimodal
-                  approach provides customized solutions for efficient and
-                  valuable service.
-                </StyledText>
-                <StyledText>
-                  {" "}
-                  We specialize in tailored freight movement for diverse
-                  customers, including Fortune 500 companies, through long-term
-                  contracts. Our ability to offer meticulous services and
-                  logistics options through business segments and third parties
-                  sets us apart.
-                </StyledText>
-                <StyledText>
-                  We're not just a trucking company, we're a transportation
-                  <StyledTextSpan> solution</StyledTextSpan>. So why wait?
-                  Contact us today and experience the difference our
-                  unparalleled customer service can make.
-                </StyledText>
-                <StyledText>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleClick}
+                <StyledImageGridLeft item xs={12} sm={12} md={12} lg={6}>
+                  <StyledImageLeft src={Img1} alt=""></StyledImageLeft>
+                </StyledImageGridLeft>
+                <StyledGridRight
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={6}
+                  sx={{ justifyContent: "left" }}
+                >
+                  <StyledHeader>
+                    Transportation
+                    <br /> Done <StyledHeaderSpan>Right</StyledHeaderSpan>
+                  </StyledHeader>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
+                    At Trucks LLC, we offer
+                    <StyledTextSpan> safe</StyledTextSpan> and{" "}
+                    <StyledTextSpan>reliable</StyledTextSpan> transportation
+                    services throughout the continental US. Our multimodal
+                    approach provides customized solutions for efficient and
+                    valuable service.
+                  </StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
                   >
                     {" "}
-                    Our Services{" "}
-                  </Button>
-                </StyledText>
-              </StyledGridRight>
-
+                    We specialize in tailored freight movement for diverse
+                    customers, including Fortune 500 companies, through
+                    long-term contracts. Our ability to offer meticulous
+                    services and logistics options through business segments and
+                    third parties sets us apart.
+                  </StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
+                    We're not just a trucking company, we're a transportation
+                    <StyledTextSpan> solution</StyledTextSpan>. So why wait?
+                    Contact us today and experience the difference our
+                    unparalleled customer service can make.
+                  </StyledText>
+                  <StyledText>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={handleClick}
+                    >
+                      {" "}
+                      Our Services{" "}
+                    </Button>
+                  </StyledText>
+                </StyledGridRight>
+              </Grid>
+            </StyledGridRow>
+            <StyledGridRow container>
+              <Grid
+                container
+                data-aos="flip-down"
+                data-aos-duration="500"
+                data-aos-offset="150"
+                data-aos-easing="ease-out"
+                data-aos-once
+              >
+                <StyledGridLeft item xs={12} sm={12} md={12} lg={6}>
+                  <StyledHeader>
+                    Our
+                    <StyledHeaderSpan> Fleet</StyledHeaderSpan>
+                  </StyledHeader>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
+                    At Trucks LLC, we take pride in our state-of-the-art fleet
+                    of over <StyledTextSpan>100 </StyledTextSpan> meticulously
+                    maintained <StyledTextSpan> dry vans</StyledTextSpan>, as
+                    well as <StyledTextSpan> box trucks </StyledTextSpan>,
+                    making us able to handle even the most complex
+                    transportation needs with efficiency, safety and punctuality
+                    in mind
+                  </StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
+                    {" "}
+                    Our Chicago-based yard offers ample parking for our entire
+                    fleet, including capacity for{" "}
+                    <StyledTextSpan>
+                      {" "}
+                      on-site truck maintenance.
+                    </StyledTextSpan>{" "}
+                    This means that our drivers never have to worry about
+                    unexpected downtime or delays, ensuring that your goods will
+                    always be delivered on time and in pristine condition.
+                  </StyledText>
+                  <StyledText
+                    data-aos="fade-in"
+                    data-aos-duration="500"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in"
+                    data-aos-once
+                  >
+                    {" "}
+                    In addition to our top-notch fleet and maintenance
+                    capabilities, we also pride ourselves on our commitment to
+                    sustainability. Our fleet logs
+                    <StyledTextSpan> millions of miles </StyledTextSpan>each
+                    year, delivering products to thousands of locations across
+                    the country. But we don't just deliver more, we deliver more
+                    while driving fewer miles, making us not only efficient but
+                    also environmentally responsible.
+                  </StyledText>{" "}
+                  <StyledText>
+                    <Link to="/drivers">
+                      <Button variant="contained" color="primary">
+                        {" "}
+                        For Drivers{" "}
+                      </Button>
+                    </Link>
+                  </StyledText>
+                </StyledGridLeft>
+                <Grid item xs={12} sm={12} md={12} lg={6}>
+                  <StyledImageRight src={Img2} alt=""></StyledImageRight>
+                </Grid>
+              </Grid>
               <StyledSectionBox
                 display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
               >
-                <Grid container sx={{ width: "100%" }}>
+                <Grid
+                  container
+                  sx={{ width: "100%" }}
+                  data-aos="flip-down"
+                  data-aos-duration="500"
+                  data-aos-offset="150"
+                  data-aos-easing="ease-out"
+                  data-aos-once
+                >
                   <Grid item xs={6} md={3}>
                     <StyledTypography> 15 + </StyledTypography>
                     <StyledTypography2> years in business</StyledTypography2>
@@ -196,55 +319,6 @@ const AboutUsPage = () => {
                   </Grid>
                 </Grid>
               </StyledSectionBox>
-            </StyledGridRow>
-            <StyledGridRow container sx={{ marginTop: "50px" }}>
-              <Grid item xs={12}>
-                <StyledSectionCaption>Our Fleet</StyledSectionCaption>
-              </Grid>
-              <StyledGridLeft item xs={12} sm={12} md={12} lg={6}>
-                <StyledText>
-                  At Trucks LLC, we take pride in our state-of-the-art fleet of
-                  over <StyledTextSpan>100 </StyledTextSpan> meticulously
-                  maintained <StyledTextSpan> dry vans</StyledTextSpan>, as well
-                  as <StyledTextSpan> box trucks </StyledTextSpan>, making us
-                  able to handle even the most complex transportation needs with
-                  efficiency, safety and punctuality in mind
-                </StyledText>
-                <StyledText>
-                  {" "}
-                  Our Chicago-based yard offers ample parking for our entire
-                  fleet, including capacity for{" "}
-                  <StyledTextSpan>
-                    {" "}
-                    on-site truck maintenance.
-                  </StyledTextSpan>{" "}
-                  This means that our drivers never have to worry about
-                  unexpected downtime or delays, ensuring that your goods will
-                  always be delivered on time and in pristine condition.
-                </StyledText>
-                <StyledText>
-                  {" "}
-                  In addition to our top-notch fleet and maintenance
-                  capabilities, we also pride ourselves on our commitment to
-                  sustainability. Our fleet logs
-                  <StyledTextSpan> millions of miles </StyledTextSpan>each year,
-                  delivering products to thousands of locations across the
-                  country. But we don't just deliver more, we deliver more while
-                  driving fewer miles, making us not only efficient but also
-                  environmentally responsible.
-                </StyledText>{" "}
-                <StyledText>
-                  <Link to="/drivers">
-                    <Button variant="contained" color="primary">
-                      {" "}
-                      For Drivers{" "}
-                    </Button>
-                  </Link>
-                </StyledText>
-              </StyledGridLeft>
-              <Grid item xs={12} sm={12} md={12} lg={6}>
-                <StyledImageRight src={Img2} alt=""></StyledImageRight>
-              </Grid>
             </StyledGridRow>
           </StyledMainGrid>
 

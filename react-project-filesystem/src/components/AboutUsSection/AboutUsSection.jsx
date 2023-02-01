@@ -11,6 +11,8 @@ import {
   //SeparatorDiv,
 } from "./StyledComponents";
 import Button from "@mui/material/Button";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { StyledLink } from "../MainScreen/StyledComponents";
 import { borderRadius, Stack } from "@mui/system";
 import { useEffect } from "react";
@@ -20,6 +22,12 @@ const AboutUsSection = (props) => {
   const { scrollTo, setScrollTo } = props;
   const aboutRef = useRef();
 
+  //loading animation library
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  // scroll when card from first screen is clicked
   useEffect(() => {
     if (scrollTo.about === "About") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -32,8 +40,21 @@ const AboutUsSection = (props) => {
       <SectionOverlay container xs={12} md={10}>
         <AboutusDrivers xs={12} md={6}>
           <Stack>
-            <StyledAboutHeader>About us</StyledAboutHeader>
-            <StyledText>
+            <StyledAboutHeader
+              data-aos="fade-in"
+              data-aos-duration="1500"
+              data-aos-offset="150"
+              data-aos-easing="ease-in-out"
+            >
+              About us
+            </StyledAboutHeader>
+            <StyledText
+              data-aos="fade-right"
+              data-aos-duration="750"
+              data-aos-offset="0"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="350"
+            >
               {" "}
               Trucks LLC is a Chicago-based trucking company. We have been
               successfully serving the transportation industry for over
@@ -61,8 +82,21 @@ const AboutUsSection = (props) => {
         {/* <SeparatorDiv item xs={0} md={0}></SeparatorDiv> */}
         <AboutUsCustomers item xs={12} md={6}>
           <Stack>
-            <StyledCustomersHeader>Our Services</StyledCustomersHeader>
-            <StyledText>
+            <StyledCustomersHeader
+              data-aos="fade-in"
+              data-aos-duration="1500"
+              data-aos-offset="150"
+              data-aos-easing="ease-in-out"
+            >
+              Our Services
+            </StyledCustomersHeader>
+            <StyledText
+              data-aos="fade-left"
+              data-aos-duration="750"
+              data-aos-offset="0"
+              data-aos-easing="ease-in-out"
+              data-aos-delay="350"
+            >
               At Trucks LLC, we are committed to providing our customers with
               the <StyledSpan>highest level </StyledSpan>of service and support.
               We understand that the safe and timely delivery of your cargo is
