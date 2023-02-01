@@ -1,10 +1,15 @@
 import img3 from "../../assets/MainPage/CardMoney.png";
+import img3h from "../../assets/MainPage/CardMoneyHover.png";
 import img4 from "../../assets/MainPage/CardAbout.png";
+import img4h from "../../assets/MainPage/CardAboutHover.png";
 import img5 from "../../assets/MainPage/CardTruck.png";
 import img6 from "../../assets/MainPage/CardQuotes.png";
+import img6h from "../../assets/MainPage/CardQuotesHover.png";
 import Grid from "@mui/material/Grid";
 import BrokerCard from "../BrokerCard/BrokerCard";
 import { Link as LinkScroll } from "react-scroll";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import {
   StyledButton,
@@ -27,18 +32,23 @@ const MainScreen = (props) => {
     top: "50vh",
     left: "50vw",
   };
-
+  // page loader
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
     };
-
     window.addEventListener("load", handleLoad);
     return () => {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
 
+  //loading animation liberary
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  // links for cards
   const handleClickAbout = () => {
     setScrollTo((scrollTo) => ({
       ...scrollTo,
@@ -89,7 +99,13 @@ const MainScreen = (props) => {
             <Grid xs={0} md={1}></Grid>
             <StyledHeaderGrid item xs={12} md={5}>
               <Stack>
-                <StyledMainTitle color="primary">
+                <StyledMainTitle
+                  data-aos="fade-in"
+                  data-aos-duration="1000"
+                  data-aos-offset="150"
+                  data-aos-easing="ease-in-out"
+                  color="primary"
+                >
                   Transporation Done Right
                 </StyledMainTitle>
                 <StyledLink to="apply">
@@ -97,6 +113,11 @@ const MainScreen = (props) => {
                     variant="contained"
                     color="secondary"
                     className={classes.outlined}
+                    data-aos="fade-in"
+                    data-aos-duration="1000"
+                    data-aos-offset="150"
+                    data-aos-easing="ease-in-out"
+                    data-aos-delay="1000"
                   >
                     Apply
                   </StyledButton>
@@ -109,35 +130,78 @@ const MainScreen = (props) => {
           <Grid item xs={0} md={1}></Grid>
           <StyledCardsGrid item xs={12} md={10}>
             <Grid container sx={{ justifyContent: "center" }} spacing={10}>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                data-aos="slide-up"
+                data-aos-duration="700"
+                data-aos-offset="150"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="2250"
+              >
                 <StyledLink to="">
                   <BrokerCard
                     sx={{ objectFit: "contain" }}
                     imagep={img4}
+                    imageph={img4h}
                     headerp="About Us"
                     onClickCard={handleClickAbout}
                   />
                 </StyledLink>
               </Grid>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                data-aos="slide-up"
+                data-aos-duration="700"
+                data-aos-offset="150"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="2500"
+              >
                 <StyledLink to="/drivers">
                   <BrokerCard
                     href="/drivers"
                     imagep={img3}
+                    imageph={img3h}
                     headerp="Driver benefits"
                   />
                 </StyledLink>
               </Grid>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                data-aos="slide-up"
+                data-aos-duration="700"
+                data-aos-offset="150"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="2750"
+              >
                 <StyledLink to="/aboutus">
                   <BrokerCard imagep={img5} headerp="Our fleet" />
                 </StyledLink>
               </Grid>
-              <Grid item xs={12} sm={6} md={3}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={3}
+                data-aos="slide-up"
+                data-aos-duration="700"
+                data-aos-offset="150"
+                data-aos-easing="ease-in-out"
+                data-aos-delay="3000"
+              >
                 <LinkScroll to="/#references">
                   <BrokerCard
                     onClickCard={handleClickLaurels}
                     imagep={img6}
+                    imageph={img6h}
                     headerp="Recognitions"
                   />
                 </LinkScroll>

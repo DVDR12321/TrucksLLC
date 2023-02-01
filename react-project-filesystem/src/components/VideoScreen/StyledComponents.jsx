@@ -15,7 +15,7 @@ export const ContainingDiv = styled("div")`
 export const ContainingGrid = styled(Grid)(
   ({ theme }) => `
   background-color: ${theme.palette.common.white};
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 10px 10px;
   border-bottom: 3px solid ${grey[50]};
   border-left: 3px solid ${grey[50]};
   border-right: 3px solid ${grey[50]};

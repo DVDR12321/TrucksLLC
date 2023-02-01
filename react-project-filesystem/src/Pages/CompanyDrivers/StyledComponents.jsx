@@ -50,7 +50,7 @@ background: linear-gradient(
   ${grey[100]},
   ${grey[50]}
   );
-  border:5px solid ${theme.palette.primary.dark};
+  //border:5px solid ${theme.palette.primary.dark};
   padding: 0 8% 8% 8%;
   text-align: justify;
 `

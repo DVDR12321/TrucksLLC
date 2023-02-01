@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
-import { Typography } from "@mui/material";
+import { CardMedia, Typography } from "@mui/material";
 
 export const StyledCard = styled(Card)(
   ({ theme }) => `
@@ -30,3 +30,15 @@ export const StyledTypography = styled(Typography)(
  
 `
 );
+
+export const StyledImage = styled("img")`
+  height: 55%;
+  width: 55%;
+`;
+
+export const StyledCardMedia = styled(CardMedia)`
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
