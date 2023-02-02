@@ -215,7 +215,7 @@ export const Screen2 = (props) => {
               <StyledTypography variant="body1" component="p">
                 {" "}
                 Were you in any major motor vehicle - related accidents in the
-                past, and/or did you receive any trafic tickets? If so please
+                past, and/or did you receive any trafic tickets? If so, please
                 list the date with a brief description of the event:
               </StyledTypography>
             </StyledTypographyWrapper>
@@ -270,8 +270,8 @@ export const Screen2 = (props) => {
             <StyledTypographyWrapper>
               <StyledTypography variant="body1" component="p">
                 {" "}
-                Please add your driving licences for the past 3 years along with
-                their expiration dates:
+                Please add your driving licences for the past three years along
+                with their expiration dates:
               </StyledTypography>
             </StyledTypographyWrapper>
             <Grid container spacing={2}>
@@ -331,7 +331,7 @@ export const Screen2 = (props) => {
                   search
                 </span>{" "}
                 the companies you previously worked with. Describe why you left
-                and enter the priod of time when you worked for them:
+                and enter the period of time when you worked for them:
               </StyledTypography>
             </StyledTypographyWrapper>
             <Grid container spacing={2}>

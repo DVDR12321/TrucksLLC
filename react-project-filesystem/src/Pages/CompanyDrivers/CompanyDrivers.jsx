@@ -79,9 +79,8 @@ const CompanyDrivers = () => {
                 data-aos-easing="ease-out"
                 data-aos-once
               >
-                Wether you are solo or a team driver, want to be paid by mile or
-                buy %, you will find yourself at home at Trucks LLC as a company
-                driver.
+                Whether you are a solo or a team driver, want to be paid by mile
+                or buy percent, you will find yourself at home at Trucks LLC
               </StyledMainDescription>
               <StyledScrollGrid
                 container

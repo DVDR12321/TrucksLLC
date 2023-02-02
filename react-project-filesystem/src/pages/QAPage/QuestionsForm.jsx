@@ -54,7 +54,7 @@ const QuestionsForm = () => {
             gutterBottom
             sx={{ fontWeight: "bold" }}
           >
-            Ask us a question:
+            We are here for all your inquiries:
           </Typography>
           <Typography
             gutterBottom
@@ -62,7 +62,7 @@ const QuestionsForm = () => {
             variant="body2"
             component="p"
           >
-            Fill the form and our team will get back at you within 24 hours!
+            Fill in the form and our team will get back at you within 24 hours!
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>

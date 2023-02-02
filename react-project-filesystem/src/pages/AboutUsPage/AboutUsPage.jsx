@@ -115,7 +115,7 @@ const AboutUsPage = () => {
                     We believe in building strong and lasting partnerships with
                     our key customers. We understand the importance of supply
                     chain management as a vital aspect of your business
-                    strategy, and we're here to help.
+                    strategy, and we are here to help.
                   </StyledHeaderText>
                 </Grid>
               </Grid>
@@ -322,7 +322,7 @@ const AboutUsPage = () => {
                   </Grid>
                   <Grid item xs={6} md={3}>
                     <StyledTypography>100%</StyledTypography>
-                    <StyledTypography2> Freight safety </StyledTypography2>
+                    <StyledTypography2> freight safety </StyledTypography2>
                   </Grid>
                 </Grid>
               </StyledSectionBox>

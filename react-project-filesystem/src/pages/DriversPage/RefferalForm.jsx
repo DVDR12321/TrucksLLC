@@ -68,7 +68,7 @@ const RefferalForm = () => {
               <TextField
                 color="error"
                 type="email"
-                label="Referral email"
+                label="Referred person's email"
                 placeholder="Enter email of the person you wish to refer"
                 variant="outlined"
                 fullWidth

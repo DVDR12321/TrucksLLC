@@ -30,32 +30,32 @@ const cards = [
   {
     name: "Dry Van",
     image: img2,
-    back: "Fleet of 100+ dry vans for all of your freight needs",
+    back: "Fleet of 100+ dry vans for all of your needs",
   },
   {
     name: "Box Truck",
     image: img3,
-    back: "State of the art box trucks, for your needs! ",
+    back: "State-of-the-art  box trucks, for all your needs! ",
   },
   {
     name: "FTL/LTL",
     image: img4,
-    back: "Full and partial truck load options, tailored to your means and requirements.",
+    back: "Full and partial truck load options, tailored to your requirements.",
   },
   {
     name: "24/7 dispatch",
     image: img1,
-    back: "At Trucks LLC, you will never feel you are all alone on the road. Get help at any given time",
+    back: "At Trucks LLC, you will never be on your own. We are here to help you any time you need it.",
   },
   {
     name: "Live tracking",
     image: img5,
-    back: "Never be out of the loop - know where your freight is at any given time.",
+    back: "Never be out of the loop - always know where your freight is.",
   },
   {
     name: "Yard parking ",
     image: img6,
-    back: "Our yard in Chicago offers ample space for all of our fleet, with mechanics on site.",
+    back: "Our yard in Chicago offers enough room for all of our fleet, with mechanics on site.",
   },
 ];
 

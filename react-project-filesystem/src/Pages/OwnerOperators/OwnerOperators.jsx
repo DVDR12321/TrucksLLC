@@ -79,9 +79,8 @@ const OwnerOperators = () => {
                 data-aos-easing="ease-out"
                 data-aos-once
               >
-                Wether you are bringing your own truck leasing or renting,
-                driving as a team or a solo driver, we have a plan for you here
-                at Trucks LLC
+                Whether you bring your own truck leasing or renting, driving as
+                a team or a solo driver, Trucks LLC has a plan for you
               </StyledMainDescription>
               <StyledScrollGrid
                 container

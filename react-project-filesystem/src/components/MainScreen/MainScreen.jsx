@@ -3,6 +3,7 @@ import img3h from "../../assets/MainPage/CardMoneyHover.png";
 import img4 from "../../assets/MainPage/CardAbout.png";
 import img4h from "../../assets/MainPage/CardAboutHover.png";
 import img5 from "../../assets/MainPage/CardTruck.png";
+import img5h from "../../assets/MainPage/CardTruckGif.gif";
 import img6 from "../../assets/MainPage/CardQuotes.png";
 import img6h from "../../assets/MainPage/CardQuotesHover.png";
 import Grid from "@mui/material/Grid";
@@ -146,7 +147,7 @@ const MainScreen = (props) => {
                     sx={{ objectFit: "contain" }}
                     imagep={img4}
                     imageph={img4h}
-                    headerp="About Us"
+                    headerp="About us"
                     onClickCard={handleClickAbout}
                   />
                 </StyledLink>
@@ -167,7 +168,7 @@ const MainScreen = (props) => {
                     href="/drivers"
                     imagep={img3}
                     imageph={img3h}
-                    headerp="Driver benefits"
+                    headerp="Drivers' benefits"
                   />
                 </StyledLink>
               </Grid>
@@ -183,7 +184,11 @@ const MainScreen = (props) => {
                 data-aos-delay="1300"
               >
                 <StyledLink to="/aboutus">
-                  <BrokerCard imagep={img5} headerp="Our fleet" />
+                  <BrokerCard
+                    imagep={img5}
+                    imageph={img5h}
+                    headerp="Our fleet"
+                  />
                 </StyledLink>
               </Grid>
               <Grid

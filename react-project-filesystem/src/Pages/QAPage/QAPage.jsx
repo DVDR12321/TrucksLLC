@@ -64,7 +64,7 @@ const QAPage = () => {
           <Grid item xs={12} md={10}>
             <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
               {" "}
-              Regarding our firm
+              Regarding our company
             </StyledHeaderTypography>
             <Accordion></Accordion>
           </Grid>

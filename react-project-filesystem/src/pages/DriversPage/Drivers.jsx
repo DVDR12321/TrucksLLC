@@ -93,7 +93,7 @@ function Drivers() {
               <DriverCard
                 img1={Image}
                 header="Owner Operator"
-                text="Become an owner operator; become a part of TrucksLLC family today!"
+                text="Become an owner operator. Become a part of Trucks LLC family today. Become a happy driver forever! "
                 button1="Learn more"
                 button2="Apply"
                 link2="/apply"
@@ -103,7 +103,7 @@ function Drivers() {
               <DriverCard
                 img1={Image2}
                 header="Company Driver"
-                text="No truck? No worries! Become our company driver - we will handle the stress, you handle the miles!"
+                text="Don't have a truck? Don't worry! Become our company driver - you handle the miles, we handle the stress!"
                 button1="Learn more"
                 button2="Apply"
                 link2="/apply"
