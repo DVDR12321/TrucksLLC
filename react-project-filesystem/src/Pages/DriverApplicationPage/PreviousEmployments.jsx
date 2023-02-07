@@ -17,7 +17,9 @@ const PreviousEmployments = (props) => {
 
   //update keyword and set state
   const HandleChange = (e) => {
-    setKeyword(e.target.value);
+    if (e.target.value !== "") {
+      setKeyword(e.target.value);
+    }
     let list = [...state.Company];
     const { name, value } = e.target;
     list[index][name] = value;
@@ -26,25 +28,25 @@ const PreviousEmployments = (props) => {
       Company: list,
     }));
   };
+
   // wait before setting keyword, applying search and updating state ( HandleChange )
   const DebounceHandleChange = useMemo(() => debounce(HandleChange, 500), []);
+
   // fill the "result" array with fetched data
   const setPreviousEmployersName = (data) => {
     data.forEach((element) => {
       setResult((oldResult) => [...oldResult, element.carrier.legalName]);
     });
-    console.log(result);
+  };
+  const setPreviousEmployersDOTNumber = (data) => {
+    setResult([data.carrier.legalName]);
     setLoading(false && open);
   };
-  const setPreviousEmployersDOTNumber = (abc) => {
-    setResult([abc.company.legalName]);
-    console.log(result);
-    setLoading(false && open);
-  };
+
   // search database
   useEffect(() => {
-    setLoading(open);
-    if (isNaN(keyword)) {
+    setLoading(true && open);
+    if (isNaN(keyword) && keyword !== "") {
       fetch(
         `https://mobile.fmcsa.dot.gov/qc/services/carriers/name/${keyword}?webKey=85a1a1c4c94d781917fdf0ddb5bc09d49092c384`
       )
@@ -54,8 +56,12 @@ const PreviousEmployments = (props) => {
         .then((data) => {
           setResult([]);
           setPreviousEmployersName(data.content);
+          setLoading(false && open);
+        })
+        .catch((response) => {
+          setLoading(false && open);
         });
-    } else {
+    } else if (keyword !== "") {
       fetch(
         `https://mobile.fmcsa.dot.gov/qc/services/carriers/${Number(
           keyword
@@ -65,21 +71,29 @@ const PreviousEmployments = (props) => {
           return response.json();
         })
         .then((data) => {
-          setResult([]);
-          //setResult([data.content.carrier.legalName]);
-          // console.log(data);
-          // setLoading(false && open);
-          setPreviousEmployersDOTNumber(data.content);
+          if (data !== null) {
+            setPreviousEmployersDOTNumber(data.content);
+            console.log(result);
+          }
+        })
+        .catch((response) => {
+          setLoading(false && open);
+          console.log(response);
         });
     }
   }, [keyword]);
 
   // remove loading spinner if the field is empty
-  useEffect(() => {
-    if (result === []) {
-      setLoading(false && open);
-    }
-  }, [result]);
+  // useEffect(() => {
+  //   if (
+  //     result === [] ||
+  //     result === [""] ||
+  //     result === [null] ||
+  //     result === null
+  //   ) {
+  //     setLoading(false && open);
+  //   }
+  // }, [result]);
 
   return (
     <StyledSearchContainer>
@@ -102,7 +116,9 @@ const PreviousEmployments = (props) => {
                 <React.Fragment>
                   {loading ? (
                     <CircularProgress color="inherit" size={20} />
-                  ) : null}
+                  ) : (
+                    ""
+                  )}
                   {params.InputProps.endAdornment}
                 </React.Fragment>
               ),
