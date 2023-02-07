@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Button, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
-import img from "../../assets/MainPage/main_background_blured.png";
+import img from "../../assets/MainPage/main3.png";
 
 // Grids ------------------------------------------------------------------
 export const StyledGrid = styled(Grid)`
