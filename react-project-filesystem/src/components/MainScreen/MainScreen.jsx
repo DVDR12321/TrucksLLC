@@ -106,6 +106,7 @@ const MainScreen = (props) => {
                   data-aos-offset="150"
                   data-aos-easing="ease-in-out"
                   color="primary"
+                  data-aos-once
                 >
                   Transporation Done Right
                 </StyledMainTitle>
@@ -119,6 +120,7 @@ const MainScreen = (props) => {
                     data-aos-offset="150"
                     data-aos-easing="ease-in-out"
                     data-aos-delay="500"
+                    data-aos-once
                   >
                     Apply
                   </StyledButton>
@@ -141,6 +143,7 @@ const MainScreen = (props) => {
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
                 data-aos-delay="1000"
+                data-aos-once
               >
                 <StyledLink to="">
                   <BrokerCard
@@ -162,6 +165,7 @@ const MainScreen = (props) => {
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
                 data-aos-delay="1150"
+                data-aos-once
               >
                 <StyledLink to="/drivers">
                   <BrokerCard
@@ -182,6 +186,7 @@ const MainScreen = (props) => {
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
                 data-aos-delay="1300"
+                data-aos-once
               >
                 <StyledLink to="/aboutus">
                   <BrokerCard
@@ -201,6 +206,7 @@ const MainScreen = (props) => {
                 data-aos-offset="150"
                 data-aos-easing="ease-in-out"
                 data-aos-delay="1450"
+                data-aos-once
               >
                 <LinkScroll to="/#references">
                   <BrokerCard

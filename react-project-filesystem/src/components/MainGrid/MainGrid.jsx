@@ -40,7 +40,6 @@ const MainGrid = () => {
         <StyledVideoGrid item xs={12}>
           <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
-
         <StyledTestimonialsGrid item xs={12}>
           <Quotes scrollTo={scrollTo} setScrollTo={setScrollTo}></Quotes>
         </StyledTestimonialsGrid>
@@ -49,11 +48,6 @@ const MainGrid = () => {
         </Grid>
         <Grid item xs={12}>
           <OurColaborators />
-        </Grid>
-        <Grid item xs={12}>
-          <div style={{ textAlign: "center" }}>
-            <h1></h1>
-          </div>
         </Grid>
       </StyledGridContainer>
       <BackToTop

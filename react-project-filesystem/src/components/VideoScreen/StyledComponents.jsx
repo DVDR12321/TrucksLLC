@@ -8,12 +8,13 @@ export const ContainingDiv = styled("div")`
   align-items: start;
   justify-content: center;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 10px;
 `;
 
 export const ContainingGrid = styled(Grid)(
   ({ theme }) => `
+  height:80vh;
   background-color: ${theme.palette.common.white};
   border-radius: 0 0 10px 10px;
   border-bottom: 3px solid ${grey[50]};

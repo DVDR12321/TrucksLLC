@@ -2,6 +2,7 @@ import { Divider, Grid } from "@mui/material";
 import React from "react";
 import FlipCard from "../../components/FlipCard/FlipCard";
 import {
+  StyledBackCard,
   StyledCardHeader,
   StyledCardImage,
   StyledCardWrapper,
@@ -94,16 +95,9 @@ const OurBenefits = (props) => {
                     <FrontCard name={card.name} image={card.image}></FrontCard>
                   )}
                   BackCard={() => (
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {" "}
-                      {card.back}{" "}
-                    </div>
+                    <StyledBackCard container>
+                      <p> {card.back} </p>
+                    </StyledBackCard>
                   )}
                 ></FlipCard>
               </Grid>

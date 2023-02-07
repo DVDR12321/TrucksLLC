@@ -106,7 +106,10 @@ const Footer = () => {
               >
                 <StlyedInstagramIcon />
               </StyledLink>
-              <StyledLink href="" target="_blank">
+              <StyledLink
+                href="https://www.youtube.com/c/VladUrdov"
+                target="_blank"
+              >
                 <StlyedYoutubeIcon />
               </StyledLink>
             </Box>
