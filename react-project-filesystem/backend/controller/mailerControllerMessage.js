@@ -1,7 +1,7 @@
 require("dotenv").config();
 const upload = require("../libs/multer");
 const nodemailer = require("nodemailer");
-const fs = require('fs');
+const { Phone } = require("@mui/icons-material");
 
 // handle succes or error of (first email sent successfully)?
 const handle = (promise) => {
@@ -10,7 +10,7 @@ const handle = (promise) => {
         .catch((error) => Promise.resolve([undefined, error]));
 };
 
-const mailerController = {
+const mailerControllerMessage = {
     sendMail: (req, res) => {
         upload(req, res, async (err) => {
             if (err) {
@@ -21,28 +21,14 @@ const mailerController = {
             } else {
 
                 //Restructure data so that it may be sent
-                const {FirstName, LastName, Email, PhoneNumber, Adress, Accident, Licence, Company, Position, Signature } = req.body; 
-                const accidentData = Accident.map(({ Date, Description }) => `Date: ${Date} Description: ${Description},  `).join(', ');
-                const licenceData = Licence.map(({ LDate, LDescription }) => `Date of expiration: ${LDate} Licence number: ${LDescription},  `).join(', ');
-                const employementData = Company.map(({ Name, DateFrom, DateTo, Reason }) => `Name: ${Name} worked from: ${DateFrom} worked to:${DateTo}. Reason for leaving: ${Reason},  `).join(', ');
-                let Sig = Signature;
-                let newSig = Sig.replace('data:image/png;base64,', '');
-                const buffer = Buffer.from(newSig, 'base64');
-                fs.writeFileSync('image.jpg', buffer);
-                const image = fs.readFileSync('image.jpg');
-                console.log(image);
+                const {FirstName, LastName, Email, PhoneNumber, Message } = req.body; 
                 // pack data to HTML form
                 const contentHTML = `
-                    <h2> The driver: ${FirstName} ${LastName} wants to apply for the position of : ${Position}</h2>
-                    <h3> Their core data is : </h3>
-                    <p> Email adress: ${Email}; Phone number :${PhoneNumber} </p>
-                    <h3> Additional data provided: </h3>
-                    <p> Current and previous adresses of residence:${Adress}</p>
-                    <p> Accidents they got into in the past: ${accidentData}</p>
-                    <p> Driving licence(s):${licenceData}</p>
-                    <p> Previous employment:${employementData}</p>
+                <h1> ${FirstName} ${LastName} sent a mesage <h1>
+                <p>${Message}</p>
+                <p>His email is: ${Email}, and his phone number is: ${PhoneNumber} </p>
+
                 `;
-                
                 //create transporter
                 const transporter = nodemailer.createTransport({
                     host: process.env.HOST,
@@ -60,14 +46,9 @@ const mailerController = {
                             from: process.env.FROM,
                             to: process.env.TO
                         },
-                        subject: "New Driver Application",
+                        subject: "New Message",
                         html: contentHTML,
-                        attachments: [{
-                            filename: 'image.jpg',
-                            content: image,
-                            //contentType: 'image/jpeg',
-                            //encoding: 'base64',
-                          }]
+
                     })
                 );
                 // send Auto-reply to user, on success
@@ -92,10 +73,9 @@ const mailerController = {
                             from: process.env.FROM,
                             to: req.body.Email
                           },
-                          subject: "Auto-Reply: Thank you for your application",
+                          subject: "Auto-Reply: Thank you for your message",
                           html: `
-                            <p>Thank you for submitting your application for the position of ${Position} at Trucks LLC.
-                             Our recruiting team will review it and get back to you as soon as possible.<p>
+                            <p>Thank you for contacting us. Our team will get back at you as soon as possible<p>
                              <br>
                              <p><b>You can reach us at +1 312 466 1101 at any time</b></p>
                              <br>
@@ -122,5 +102,4 @@ const mailerController = {
     }
 };
 
-
-module.exports = mailerController;
+module.exports = mailerControllerMessage;

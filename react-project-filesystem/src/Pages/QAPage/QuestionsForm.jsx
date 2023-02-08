@@ -8,32 +8,67 @@ import {
   InputAdornment,
 } from "@mui/material";
 import React from "react";
-import emailjs from "@emailjs/browser";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import SnackBarComponent from "../../components/SnackBar/SnackBarComponent";
 
 const QuestionsForm = () => {
+  const [snackbar, setSnackbar] = useState(false);
+  const [message, setMessage] = useState("");
   const formRef = useRef(null);
 
+  // populate with form data
+  const data = {
+    FirstName: "",
+    LastName: "",
+    Email: "",
+    PhoneNumber: "",
+    Message: "",
+  };
+  const [state, setState] = useState(data);
+
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
+    console.log(state);
+  };
+
+  // reload wondow
+  function reloadWithDelay() {
+    setTimeout(function () {
+      window.location.reload();
+    }, 3000);
+  }
+  // form data packed for email
+  const options = {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(state),
+  };
+  //send email
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "default_service",
-        "template_13pemog",
-        formRef.current,
-        "Bt5FJk_8UapAuvKNi"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    fetch("http://localhost:4000/api/mailerMessage", options)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log(res);
+        setMessage("Message submitted successfully!");
+        setSnackbar(true);
+      })
+      .catch((res) => {
+        console.log(res);
+        setMessage("Failed submitting message");
+        setSnackbar(true);
+      });
     formRef.current.reset();
   };
 
@@ -67,36 +102,39 @@ const QuestionsForm = () => {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <TextField
-                name="First_Name"
+                name="FirstName"
                 label="First Name"
                 placeholder=""
                 variant="outlined"
                 color="primary"
                 fullWidth
                 required
+                onChange={(e) => handleChange(e)}
               ></TextField>
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                name="Last_Name"
+                name="LastName"
                 label="Last name"
                 placeholder=""
                 variant="outlined"
                 color="primary"
                 fullWidth
                 required
+                onChange={(e) => handleChange(e)}
               ></TextField>
             </Grid>
             <Grid item xs={12}>
               <TextField
                 type="email"
-                name="Email_"
+                name="Email"
                 label="E-mail"
                 placeholder="@"
                 variant="outlined"
                 color="primary"
                 fullWidth
                 required
+                onChange={(e) => handleChange(e)}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -108,12 +146,13 @@ const QuestionsForm = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                name="Phone_Number"
+                name="PhoneNumber"
                 label="Phone Number"
                 placeholder="+1"
                 variant="outlined"
                 color="primary"
                 fullWidth
+                onChange={(e) => handleChange(e)}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -126,7 +165,7 @@ const QuestionsForm = () => {
             <Grid item xs={12}>
               <TextField
                 type="Message"
-                name="Message_"
+                name="Message"
                 label="Enter your question:"
                 placeholder=""
                 variant="outlined"
@@ -134,6 +173,7 @@ const QuestionsForm = () => {
                 multiline
                 rows={3}
                 fullWidth
+                onChange={(e) => handleChange(e)}
                 required
                 InputProps={{
                   endAdornment: (
@@ -153,6 +193,12 @@ const QuestionsForm = () => {
               >
                 Submit
               </Button>
+              <SnackBarComponent
+                snackbar={snackbar}
+                setSnackbar={setSnackbar}
+                message={message}
+                setMessage={setMessage}
+              ></SnackBarComponent>
             </Grid>
           </Grid>
         </CardContent>

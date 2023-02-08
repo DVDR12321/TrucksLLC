@@ -22,6 +22,7 @@ const Screen3 = (props) => {
   const [snackbar, setSnackbar] = useState(false);
   const [message, setMessage] = useState("");
 
+  //reload window
   function reloadWithDelay() {
     setTimeout(function () {
       window.location.reload();
