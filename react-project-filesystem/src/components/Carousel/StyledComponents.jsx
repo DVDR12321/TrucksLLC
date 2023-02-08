@@ -9,6 +9,7 @@ export const StyledPaper = styled(Paper)`
 `;
 
 export const StyledParagraph = styled("p")`
+  font-family: "Roboto Serif";
   font-size: 24px;
   text-align: justify;
   padding-bottom: 5vh;

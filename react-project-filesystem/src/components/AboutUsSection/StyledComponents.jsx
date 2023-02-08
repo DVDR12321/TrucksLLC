@@ -8,7 +8,7 @@ export const ContainingDiv = styled("div")`
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100vw;
+  //width: 100vw;
   padding-top: 10vh;
 `;
 
@@ -49,7 +49,7 @@ export const StyledAboutHeader = styled("h1")(
 export const StyledText = styled("p")(
   ({ theme }) => `
   color: ${theme.palette.common.black};
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Serif";
   padding: 5%;
   line-height:3ch;
 `

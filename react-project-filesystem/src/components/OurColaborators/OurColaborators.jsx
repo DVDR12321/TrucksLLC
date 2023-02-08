@@ -12,7 +12,7 @@ const OurColaborators = () => {
     <StyledContainerGrid container columns={18} spacing={2}>
       <Grid item xs={0} md={1} lg={3}></Grid>
       <Grid item xs={12} lg={2}>
-        <h2>Our cutstomers:</h2>
+        <h3>Our partners:</h3>
       </Grid>
       <Grid item xs={2} md={2}>
         <StyledImage src={img1} alt="CH"></StyledImage>

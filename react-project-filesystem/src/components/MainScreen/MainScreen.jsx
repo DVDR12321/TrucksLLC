@@ -20,6 +20,7 @@ import {
   StyledCardsGrid,
   StyledHeaderGrid,
   StyledLink,
+  StyledMainDescription,
 } from "./StyledComponents";
 import { makeStyles } from "@mui/styles";
 import { Stack } from "@mui/system";
@@ -66,7 +67,7 @@ const MainScreen = (props) => {
           <Stack>
             <StyledMainTitle
               data-aos="fade-in"
-              data-aos-duration="500"
+              data-aos-duration="700"
               data-aos-offset="150"
               data-aos-easing="ease-in-out"
               color="primary"
@@ -74,6 +75,16 @@ const MainScreen = (props) => {
             >
               Transporation Done Right
             </StyledMainTitle>
+            <StyledMainDescription
+              data-aos="fade-in"
+              data-aos-duration="700"
+              data-aos-delay="0"
+              data-aos-easing="ease-out"
+              data-aos-once
+            >
+              We provide safe and reliable transportation services. Get your
+              freight where it needs to be, when it needs to be.
+            </StyledMainDescription>
             <StyledLink to="apply">
               <StyledButton
                 variant="contained"

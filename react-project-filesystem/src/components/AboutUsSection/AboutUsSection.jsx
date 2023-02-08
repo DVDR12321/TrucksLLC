@@ -38,7 +38,7 @@ const AboutUsSection = (props) => {
   return (
     <ContainingDiv ref={aboutRef}>
       <SectionOverlay container xs={12} md={10}>
-        <AboutusDrivers xs={12} md={6}>
+        <AboutusDrivers item xs={12} md={6}>
           <Stack>
             <StyledAboutHeader
               data-aos="fade-in"
@@ -100,8 +100,7 @@ const AboutUsSection = (props) => {
               At Trucks LLC, we are committed to providing our customers with
               the <StyledSpan>highest level </StyledSpan>of service and support.
               We understand that the safe and timely delivery of your cargo is
-              of the utmost importance, which is why we prioritize freight
-              safety above all else. Our fleet of dry vans and box trucks,
+              of the utmost importance. Our fleet of dry vans and box trucks,
               combined with our <StyledSpan>24/7 responsiveness</StyledSpan> ,
               allows us to meet the diverse transportation needs of our
               customers. Rest assured that your cargo is in good hands with our

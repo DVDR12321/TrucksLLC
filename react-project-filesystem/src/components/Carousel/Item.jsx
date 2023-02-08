@@ -18,7 +18,9 @@ const Item = (props) => {
       <Divider component="p"></Divider>
       <Grid sx={{ display: "flex", alignItems: "center" }}>
         <StyledImage src={props.item.image} alt="logo"></StyledImage>
-        <h2 style={{ paddingLeft: "3ch" }}>{props.item.name}</h2>
+        <h2 style={{ paddingLeft: "3ch", fontFamily: "Roboto Serif" }}>
+          {props.item.name}
+        </h2>
       </Grid>
     </StyledPaper>
   );

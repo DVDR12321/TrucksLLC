@@ -36,12 +36,27 @@ export const StyledCardsGrid = styled(Grid)`
 export const StyledMainTitle = styled("h1")(
   ({ theme }) => `
   //border-bottom: 4px outset ${theme.palette.primary.main};
-  text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
+  //font-family: "Roboto Serif";
+  //text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   font-family: "Archivo Black", sans-serif;
   font-style: bold;
   font-size: 12vmin;
   color: white;
+  line-height:1.5ch;
+  margin-bottom:5vh;
 `
+);
+
+export const StyledMainDescription = styled("p")(
+  ({ theme }) => `
+  color: ${theme.palette.common.white};
+
+font-family: "Roboto Serif";
+ font-weight: bold;
+ font-style: italic;
+ font-size: 3vmin;
+ margin-bottom:10vh;
+ `
 );
 
 export const StyledButton = styled(Button)(
@@ -53,10 +68,10 @@ export const StyledButton = styled(Button)(
   height: 7vmin;
   width: 15vmax;
   border-radius: 3px;
-  margin-top:10vh;
   &:hover{
     background-color:${theme.palette.primary.dark};
   }
+ 
 `
 );
 
