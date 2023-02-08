@@ -2,30 +2,38 @@ import * as React from "react";
 import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { StyledCard } from "./StyledComponents";
+import {
+  StyledCard,
+  StyledCardMedia,
+  StyledImage,
+  StyledTypography,
+} from "./StyledComponents";
+import { useState } from "react";
 
 const BrokerCard = (props) => {
-  const { imagep, headerp } = props;
+  const { imagep, imageph, headerp, onClickCard } = props;
+  //hover images
+  const ImageHover = () => {
+    const [image, setImage] = useState(imagep);
+    return (
+      <StyledImage
+        src={image}
+        alt="img"
+        onMouseEnter={() => setImage(imageph)}
+        onMouseLeave={() => setImage(imagep)}
+      ></StyledImage>
+    );
+  };
   return (
-    <StyledCard>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="120"
-          image={imagep}
-          alt=""
-          sx={{ objectFit: "contain" }}
-        />
-        <CardContent sx={{ padding: 0 }}>
-          <Typography
-            gutterBottom
-            color="white"
-            component="div"
-            sx={{ textAlign: "center", fontSize: "4vmin" }}
-          >
+    <StyledCard sx={{ height: "28vh" }}>
+      <CardActionArea onClick={onClickCard} sx={{ height: "100%" }}>
+        <StyledCardMedia>
+          <ImageHover></ImageHover>
+        </StyledCardMedia>
+        <CardContent>
+          <StyledTypography color="white" component="div">
             {headerp}
-          </Typography>
+          </StyledTypography>
         </CardContent>
       </CardActionArea>
     </StyledCard>

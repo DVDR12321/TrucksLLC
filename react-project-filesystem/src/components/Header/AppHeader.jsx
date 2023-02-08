@@ -12,24 +12,30 @@ import {
 import React, { useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import logo from "../../assets/logo.png";
 import {
   StyledAppBar,
   StyledAppHeaderItems,
+  StyledButton,
   StyledLogo,
-  StyledText,
+  StyledMenuItem,
+  StyledSideMenuItem,
 } from "./StyledComponents";
+import { useLocation } from "react-router-dom";
 
 const navigationLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "aboutus" },
-  { name: "Apply", href: "apply" },
-  { name: "For Drivers", href: "/drivers" },
-  { name: "Q&A", href: "/q&a" },
-  { name: "Contact", href: "" },
+  { name: "Home", route: "/" },
+  { name: "About", route: "/aboutus" },
+  { name: "For Drivers", route: "/drivers" },
+  { name: "Q&A", route: "/q&a" },
+  { name: "Contact", route: "/Contact" },
+  { name: "Apply", route: "/apply" },
 ];
 
 const AppHeader = () => {
+  const location = useLocation();
+  const path = location.pathname;
   const [open, setOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -50,11 +56,9 @@ const AppHeader = () => {
 
   return (
     <StyledAppBar
+      className={`${showHeader ? "fade-in" : ""}`}
       position="sticky"
       color="default"
-      style={{
-        display: showHeader ? "block" : "none",
-      }}
     >
       <Container>
         <Toolbar disableGutters>
@@ -69,13 +73,27 @@ const AppHeader = () => {
                   color="textPrimary"
                   variant="button"
                   underline="none"
-                  href={item.href}
+                  href={item.route}
                   key={item.name}
                 >
-                  <StyledText>{item.name}</StyledText>
+                  <StyledMenuItem
+                    className={path === item.route ? "active" : ""}
+                  >
+                    {item.name === "Apply" ? (
+                      <StyledMenuItem>
+                        <StyledButton variant="contained">
+                          {item.name}
+                        </StyledButton>
+                      </StyledMenuItem>
+                    ) : (
+                      item.name
+                    )}
+                  </StyledMenuItem>
                 </Link>
               ))}
             </StyledAppHeaderItems>
+            <LocalPhoneIcon> </LocalPhoneIcon>
+            <StyledMenuItem> +1 312 466 11 01 </StyledMenuItem>
           </Hidden>
           <Hidden smUp>
             <StyledAppHeaderItems>
@@ -108,14 +126,18 @@ const AppHeader = () => {
             <ListItem key={item.name}>
               <Link
                 style={{
-                  marginRight: 20,
+                  marginRight: 40,
                 }}
                 color="textPrimary"
                 type="button"
                 underline="none"
-                href={item.href}
+                href={item.route}
               >
-                {item.name}
+                <StyledSideMenuItem
+                  className={path === item.route ? "active" : ""}
+                >
+                  {item.name}
+                </StyledSideMenuItem>
               </Link>
             </ListItem>
           ))}

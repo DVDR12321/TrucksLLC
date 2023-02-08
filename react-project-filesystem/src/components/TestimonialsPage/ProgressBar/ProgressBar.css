@@ -1,40 +1,54 @@
 .skill {
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   position: relative;
 }
 .circle__outer {
-  height: 60px;
-  width: 60px;
-  padding: 5px;
+  height: 150px;
+  width: 150px;
+  padding: 5px ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color);
   border-radius: 50%;
-  box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.15),
-    -2px -2px 3px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 4px 4px 6px -2px rgba(0, 0, 0, 0.15),
+    -4px -4px 6px -2px rgba(255, 255, 255, 0.7);
 }
 .circle__inner {
-  height: 50px;
-  width: 50px;
+  height: 129px;
+  width: 129px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: inset 1px 1px 2px -1px rgba(0, 0, 0, 0.15),
-    inset -1px -1px 2px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 2px 2px 4px -2px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px -2px rgba(255, 255, 255, 0.7);
 }
 #number {
-  font-size: 90%;
+  font-size: 2vw;
   font-weight: 600;
-  color: #555;
+  color: #fff;
 }
 
-circle {
+#mycircle:hover{
   fill: none;
   stroke: url(#GradientColor);
-  stroke-width: 5px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
+  stroke-width: 10px;
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
   animation: anim 1s linear forwards;
 }
+
+#mycircle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 10px;
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+  animation: anim 1s linear forwards;
+}
+
 .circle__svg {
   position: absolute;
   top: 0;
@@ -42,6 +56,6 @@ circle {
 }
 @keyframes anim {
   100% {
-    stroke-dashoffset: 330;
+    stroke-dashoffset: var(--number );
   }
 }

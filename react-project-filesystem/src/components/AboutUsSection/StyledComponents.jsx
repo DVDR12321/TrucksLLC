@@ -1,41 +1,30 @@
+import { Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
+import Background from "../../assets/app__background.png";
 
 export const ContainingDiv = styled("div")`
   display: flex;
-  justify-content: center;
-`;
-
-export const SectionOverlay = styled("div")`
-  border-radius: 4% 4% 0 0;
-  display: flex;
-  position: relative;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 90%;
-  background: ${grey[100]};
-  background: -webkit-linear-gradient(to bottom, ${grey[100]}, ${grey[100]});
-  background: linear-gradient(to bottom, ${grey[100]}, ${grey[100]});
+  height: 100%;
+  width: 100vw;
+  padding-top: 10vh;
 `;
 
-export const StyledImage = styled("img")`
-  border-radius: 4% 4% 0 0;
-  position: absolute;
-  instet: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.85;
-  object-fit: cover;
+export const SectionOverlay = styled(Grid)`
+  background-image: url(${Background});
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  border-top: 3px solid ${grey[50]};
+  border-left: 3px solid ${grey[50]};
+  border-right: 3px solid ${grey[50]};
 `;
-export const AboutusDrivers = styled("div")`
-  position: relative;
+
+export const AboutusDrivers = styled(Grid)`
   z-index: 2;
-  width: 45%;
   text-align: end;
   padding: 10px;
-  border-right: 7px outset red;
 `;
 
 export const StyledAboutHeader = styled("h1")(
@@ -53,6 +42,7 @@ export const StyledAboutHeader = styled("h1")(
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 5%;
+
 `
 );
 
@@ -61,13 +51,12 @@ export const StyledText = styled("p")(
   color: ${theme.palette.common.black};
   font-family: "Roboto", sans-serif;
   padding: 5%;
+  line-height:3ch;
 `
 );
 
-export const AboutUsCustomers = styled("div")`
-  position: relative;
+export const AboutUsCustomers = styled(Grid)`
   z-index: 2;
-  width: 45%;
   text-align: start;
   padding: 10px;
 `;
@@ -87,21 +76,23 @@ export const StyledCustomersHeader = styled("h1")(
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
 `
 );
 
 export const StyledSpan = styled("span")(
   ({ theme }) => `
   color: ${theme.palette.primary.main};
+  font-weight:bold;
 `
 );
 
-export const SeparatorDiv = styled("div")(
+export const SeparatorDiv = styled(Grid)(
   ({ theme }) => `
-  position: absolute;
-  height: 90%;
+ 
+  height: 80%;
   z-index: 2;
-  width: 5px;
+  width: 50px;
   background: ${theme.palette.common.black};
   background: linear-gradient(
     0deg,
