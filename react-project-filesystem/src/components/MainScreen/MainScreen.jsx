@@ -27,7 +27,7 @@ import { useState, useEffect } from "react";
 import GridLoader from "react-spinners/GridLoader";
 
 const MainScreen = (props) => {
-  const { setScrollTo, scrollTo } = props;
+  const { setScrollTo } = props;
   const [loading, setLoading] = useState(true);
   const override = {
     top: "50vh",
@@ -55,14 +55,12 @@ const MainScreen = (props) => {
       ...scrollTo,
       about: "About",
     }));
-    console.log(scrollTo);
   };
   const handleClickLaurels = () => {
     setScrollTo((scrollTo) => ({
       ...scrollTo,
       laurels: "Laurels",
     }));
-    console.log(scrollTo);
   };
 
   const useStyles = makeStyles((theme) => ({

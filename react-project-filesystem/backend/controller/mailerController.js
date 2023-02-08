@@ -30,7 +30,6 @@ const mailerController = {
                 const buffer = Buffer.from(newSig, 'base64');
                 fs.writeFileSync('image.jpg', buffer);
                 const image = fs.readFileSync('image.jpg');
-                console.log(image);
                 // pack data to HTML form
                 const contentHTML = `
                     <h2> The driver: ${FirstName} ${LastName} wants to apply for the position of : ${Position}</h2>
@@ -105,7 +104,6 @@ const mailerController = {
                       );
                       
                       if (autoReplyResponse) {
-                        console.log("Auto-reply email sent successfully");
                       } else if (autoReplyResponseError) {
                         console.error("Error sending auto-reply email:", autoReplyResponseError);
                       }

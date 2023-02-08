@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useRef } from "react";
 import {
   ContainingDiv,
   SectionOverlay,
@@ -8,15 +9,12 @@ import {
   AboutUsCustomers,
   StyledSpan,
   StyledCustomersHeader,
-  //SeparatorDiv,
 } from "./StyledComponents";
 import Button from "@mui/material/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { StyledLink } from "../MainScreen/StyledComponents";
-import { borderRadius, Stack } from "@mui/system";
-import { useEffect } from "react";
-import { useRef } from "react";
+import { Stack } from "@mui/system";
 
 const AboutUsSection = (props) => {
   const { scrollTo, setScrollTo } = props;
@@ -41,10 +39,10 @@ const AboutUsSection = (props) => {
         <AboutusDrivers xs={12} md={6}>
           <Stack>
             <StyledAboutHeader
-              data-aos="fade-in"
-              data-aos-duration="1000"
-              data-aos-offset="150"
-              data-aos-easing="ease-in-out"
+            // data-aos="fade-in"
+            // data-aos-duration="1000"
+            // data-aos-offset="150"
+            // data-aos-easing="ease-in-out"
             >
               About us
             </StyledAboutHeader>
@@ -83,10 +81,10 @@ const AboutUsSection = (props) => {
         <AboutUsCustomers item xs={12} md={6}>
           <Stack>
             <StyledCustomersHeader
-              data-aos="fade-in"
-              data-aos-duration="1000"
-              data-aos-offset="150"
-              data-aos-easing="ease-in-out"
+            // data-aos="fade-in"
+            // data-aos-duration="1000"
+            // data-aos-offset="150"
+            // data-aos-easing="ease-in-out"
             >
               Our Services
             </StyledCustomersHeader>

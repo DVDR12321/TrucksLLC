@@ -35,6 +35,7 @@ import { useEffect } from "react";
 import GridLoader from "react-spinners/GridLoader";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { StyledLink } from "../../components/MainScreen/StyledComponents";
 
 const AboutUsPage = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -283,12 +284,12 @@ const AboutUsPage = () => {
                     also environmentally responsible.
                   </StyledText>{" "}
                   <StyledText>
-                    <Link to="/drivers">
+                    <StyledLink to="/drivers">
                       <Button variant="contained" color="primary">
                         {" "}
                         For Drivers{" "}
                       </Button>
-                    </Link>
+                    </StyledLink>
                   </StyledText>
                 </StyledGridLeft>
                 <Grid item xs={12} sm={12} md={12} lg={6}>

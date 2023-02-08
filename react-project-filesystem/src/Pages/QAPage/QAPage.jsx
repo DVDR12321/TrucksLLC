@@ -62,14 +62,14 @@ const QAPage = () => {
           </Grid>
 
           <Grid item xs={12} md={10}>
-            <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
+            <StyledHeaderTypography color="primary" gutterBottom>
               {" "}
               Regarding our company
             </StyledHeaderTypography>
             <Accordion></Accordion>
           </Grid>
           <Grid item xs={12} md={10}>
-            <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
+            <StyledHeaderTypography color="primary" gutterBottom>
               {" "}
               Regarding our fleet
             </StyledHeaderTypography>

@@ -2,8 +2,6 @@ import { Grid } from "@mui/material";
 import React from "react";
 import { CardWrapperGrid, StyledWrapper } from "./StyledComponents";
 import LaurelsCard from "../LaurelsCard/LaurelsCard";
-import { grey } from "@mui/material/colors";
-
 const cards = [
   {
     id: 1,
@@ -35,7 +33,7 @@ const cards = [
 ];
 const LaurelsPage = () => {
   return (
-    <StyledWrapper container>
+    <StyledWrapper container padding={2}>
       {" "}
       <Grid item xs={0} md={2}></Grid>
       <CardWrapperGrid item xs={12} md={8}>

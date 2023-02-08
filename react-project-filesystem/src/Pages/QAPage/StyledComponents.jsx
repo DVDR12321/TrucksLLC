@@ -13,8 +13,22 @@ export const StyledHeaderTypography = styled(Typography)(
   padding-bottom: 0.3ch;
   border-bottom: 1px inset ${theme.palette.common.black};
   font-weight:bold;
+  @media only screen and (min-width: 320px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 25px;
+  }
+
   `
 );
+
+export const StyledContactCaption = styled(Typography)`
+  font-size: 20px;
+`;
 
 export const StyledGridContainer = styled(Grid)(
   ({ theme }) => `

@@ -50,11 +50,6 @@ const MainGrid = () => {
         <Grid item xs={12}>
           <OurColaborators />
         </Grid>
-        <Grid item xs={12}>
-          <div style={{ textAlign: "center" }}>
-            <h1></h1>
-          </div>
-        </Grid>
       </StyledGridContainer>
       <BackToTop
         BackToTopButton={BackToTopButton}

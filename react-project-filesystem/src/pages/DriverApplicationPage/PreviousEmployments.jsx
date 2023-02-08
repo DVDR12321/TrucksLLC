@@ -35,7 +35,6 @@ const PreviousEmployments = (props) => {
       .then((data) => {
         setResult([""]);
         setPreviousEmployers(data.content);
-        console.log(data);
       });
   }, [keyword]);
 

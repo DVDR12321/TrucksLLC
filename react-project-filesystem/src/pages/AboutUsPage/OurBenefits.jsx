@@ -65,7 +65,6 @@ const OurBenefits = (props) => {
 
   if (isClicked === true) {
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    console.log("it is clicked");
     setIsClicked(false);
   }
 
@@ -94,16 +93,10 @@ const OurBenefits = (props) => {
                     <FrontCard name={card.name} image={card.image}></FrontCard>
                   )}
                   BackCard={() => (
-                    <div
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
+                    <Grid container textAlign="center" justifyContent="center">
                       {" "}
-                      {card.back}{" "}
-                    </div>
+                      <Grid item>{card.back}</Grid>{" "}
+                    </Grid>
                   )}
                 ></FlipCard>
               </Grid>

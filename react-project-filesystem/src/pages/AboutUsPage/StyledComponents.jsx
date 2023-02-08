@@ -98,11 +98,19 @@ export const StyledScrollGrid = styled(Grid)(
 // Sections ************************************************************************************
 export const StyledHeader = styled("h1")(
   ({ theme }) => `
-  font-size:50px;
-  text-align:left;
+  text-align: left;
   color: ${theme.palette.common.grey};
   padding: 0 5% 5% 5% ;
   font-family: 'Archivo Black', sans-serif;
+  @media only screen and (min-width: 320px) {
+    font-size: 30px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 50px;
+  }
 
 `
 );
@@ -140,8 +148,7 @@ export const StyledImageRight = styled("img")`
 
 export const StyledSectionCaption = styled(Typography)(
   ({ theme }) => `
-  color: ${theme.palette.primary.main};;
-  font-size: 70px;
+  color: ${theme.palette.primary.main};
   letter-spacing: 1px;
   font-weight: 700;
   text-align: center;
@@ -150,6 +157,15 @@ export const StyledSectionCaption = styled(Typography)(
   margin-left: 5vw;
   font-family: 'Archivo Black', sans-serif;
   border-bottom: 2px inset ${theme.palette.common.grey};
+  @media only screen and (min-width: 320px) {
+    font-size: 35px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 50px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 70px;
+  }
 `
 );
 

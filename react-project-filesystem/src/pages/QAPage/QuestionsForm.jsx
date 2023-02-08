@@ -13,6 +13,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
 import { useRef } from "react";
+import { StyledContactCaption } from "./StyledComponents";
 
 const QuestionsForm = () => {
   const formRef = useRef(null);
@@ -27,12 +28,8 @@ const QuestionsForm = () => {
         "Bt5FJk_8UapAuvKNi"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+        (result) => {},
+        (error) => {}
       );
     formRef.current.reset();
   };
@@ -48,14 +45,13 @@ const QuestionsForm = () => {
         }}
       >
         <CardContent>
-          <Typography
-            variant="h5"
+          <StyledContactCaption
             color="primary"
             gutterBottom
             sx={{ fontWeight: "bold" }}
           >
             We are here for all your inquiries:
-          </Typography>
+          </StyledContactCaption>
           <Typography
             gutterBottom
             color="textSecondary"

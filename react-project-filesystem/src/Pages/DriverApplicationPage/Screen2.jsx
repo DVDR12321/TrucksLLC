@@ -1,10 +1,12 @@
 import React from "react";
-import { Grid, Typography, CardContent, IconButton } from "@mui/material";
+import { Grid, CardContent, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import PreviousEmployments from "./PreviousEmployments";
 
 import {
+  StyledInstructionsText,
+  StyledLabelText,
   StyledTextField,
   StyledTypography,
   StyledTypographyWrapper,
@@ -64,7 +66,6 @@ export const Screen2 = (props) => {
   function AccidentChange(e, index) {
     const { name, value } = e.target;
     let list = [...state.Accident];
-    //console.log("list update", list);
     list[index][name] = value;
     setState((state) => ({
       ...state,
@@ -92,7 +93,6 @@ export const Screen2 = (props) => {
   function LicenceChange(e, index) {
     const { name, value } = e.target;
     let list = [...state.Licence];
-    //console.log("list update", list);
     list[index][name] = value;
     setState((state) => ({
       ...state,
@@ -122,7 +122,6 @@ export const Screen2 = (props) => {
   function CompanyChange(e, index) {
     const { name, value } = e.target;
     let list = [...state.Company];
-    //console.log("list update", list);
     list[index][name] = value;
     setState((state) => ({
       ...state,
@@ -137,35 +136,26 @@ export const Screen2 = (props) => {
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography
-              variant="h4"
+            <StyledInstructionsText
               sx={{ margin: "1ch", textAlign: "center", fontWeight: "bold" }}
             >
               {" "}
               Additional information expedites the recruitment process{" "}
-            </Typography>
+            </StyledInstructionsText>
             <br></br>
-            <Typography
-              variant="body3"
-              component="p"
-              sx={{ fontWeight: "bold" }}
-            >
+            <StyledLabelText sx={{ fontWeight: "bold" }}>
               {" "}
               * Symbol marks a{" "}
               <span style={{ color: "rgb(255, 0, 0)" }}>
                 required
               </span> field{" "}
-            </Typography>
+            </StyledLabelText>
             <br></br>
           </Grid>
 
           <Grid item xs={12}>
             <StyledTypographyWrapper>
-              <StyledTypography
-                variant="body3"
-                component="p"
-                sx={{ margin: "1ch" }}
-              >
+              <StyledTypography sx={{ margin: "1ch" }}>
                 {" "}
                 Add current and previous adresses of residence:{" "}
               </StyledTypography>

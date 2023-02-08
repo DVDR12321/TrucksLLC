@@ -5,13 +5,16 @@ import CarouselComponent from "../Carousel/CarouselComponent";
 
 const Quotes = (props) => {
   const { scrollTo, setScrollTo } = props;
-  const quotesRef = useRef();
+  const quotesRef = useRef(null);
   useEffect(() => {
     if (scrollTo.laurels === "Laurels") {
-      quotesRef.current.scrollIntoView({ behavior: "smooth" });
+      if (quotesRef?.current) {
+        console.dir(quotesRef.current);
+        quotesRef.current.scrollIntoView({ behavior: "smooth" });
+      }
       setScrollTo("");
     }
-  }, [scrollTo]);
+  }, [scrollTo, setScrollTo]);
   return (
     <Grid container ref={quotesRef}>
       <Grid item xs={0} sm={1} md={3}></Grid>

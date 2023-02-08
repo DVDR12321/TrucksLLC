@@ -6,8 +6,16 @@ import img from "../../assets/MainPage/main_background_blured.png";
 // Grids ------------------------------------------------------------------
 export const StyledGrid = styled(Grid)`
   height: 100%;
-  background-image: url(${img});
-  background-size: 100% 100%;
+  background: url(${img});
+  @media only screen and (min-width: 320px) {
+    background-size: cover;
+  }
+  @media only screen and (min-width: 768px) {
+    background-size: 100% 100%;
+  }
+  @media only screen and (min-width: 1024px) {
+    background-size: 100% 100%;
+  }
   justify-content: center;
 `;
 

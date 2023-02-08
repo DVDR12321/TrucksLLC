@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 
@@ -35,9 +36,8 @@ export const StyledFrontCard = styled("div")`
   padding: 5px;
 `;
 
-export const StyledBackCard = styled("div")(
+export const StyledBackCard = styled(Grid)(
   ({ theme }) => `
-  position: absolute;
   transform: rotateX(0deg);
   width: 100%;
   height: 100%;

@@ -5,6 +5,7 @@ import { Screen2 } from "./Screen2";
 import Screen3 from "./Screen3";
 import img from "../../assets/ApplyPage/LogoForm.png";
 import { useEffect } from "react";
+import { StyledCaption } from "./StyledComponents";
 
 const FirstPageButton = (props) => {
   return (
@@ -94,14 +95,14 @@ export const Apply = () => {
             ></img>
           </Grid>
           <Grid item xs={12} md={7}>
-            <Typography
-              variant="h2"
+            <StyledCaption
+              // variant="h2"
               textAlign="center"
               color="rgba(0, 0, 0, 0.3)"
             >
               {" "}
               Job Application Form
-            </Typography>
+            </StyledCaption>
           </Grid>
         </Grid>
         <Grid container>
