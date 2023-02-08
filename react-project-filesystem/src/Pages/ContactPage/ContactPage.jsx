@@ -7,7 +7,6 @@ import {
   StyledContentGrid,
   StyledHeader,
   StyledIconButton,
-  StyledImage,
   StyledImageGrid,
   StyledList,
   StyledListItem,
@@ -15,7 +14,6 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import img from "../../assets/ContactPage/map.png";
 import { useEffect, useState } from "react";
 import GridLoader from "react-spinners/GridLoader";
 
