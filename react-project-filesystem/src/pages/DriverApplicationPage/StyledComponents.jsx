@@ -60,9 +60,49 @@ background-color:${grey[200]};
 margin: "1ch";
 `
 );
-export const StyledTypography = styled(Typography)(
-  ({ theme }) => `
-font-weight:bold;
-margin: 1ch;
-`
-);
+export const StyledTypography = styled(Typography)`
+  font-weight: bold;
+  margin: 1ch;
+  @media only screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
+`;
+
+export const StyledCaption = styled(Typography)`
+  @media only screen and (min-width: 320px) {
+    font-size: 30px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 45px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 65px;
+  }
+`;
+
+export const StyledInstructionsText = styled(Typography)`
+  @media only screen and (min-width: 320px) {
+    font-size: 16px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 22px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 28px;
+  }
+`;
+
+export const StyledLabelText = styled(Typography)`
+  @media only screen and (min-width: 320px) {
+    font-size: 12px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+`;

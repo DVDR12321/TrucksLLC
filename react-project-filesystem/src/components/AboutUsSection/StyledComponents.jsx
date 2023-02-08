@@ -3,7 +3,7 @@ import { grey } from "@mui/material/colors";
 import { styled } from "@mui/material/styles";
 import Background from "../../assets/app__background.png";
 
-export const ContainingDiv = styled("div")`
+export const ContainingDiv = styled(Grid)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +42,15 @@ export const StyledAboutHeader = styled("h1")(
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 5%;
+  @media only screen and (min-width: 320px) {
+    font-size: 36px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 55px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 60px;
+  }
 
 `
 );
@@ -66,7 +75,6 @@ export const StyledCustomersHeader = styled("h1")(
   padding: 5%;
   color: ${theme.palette.common.white};
   font-family: "Roboto Serif", serif;
-  font-size: 4rem;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     210deg,
@@ -76,6 +84,15 @@ export const StyledCustomersHeader = styled("h1")(
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media only screen and (min-width: 320px) {
+    font-size: 36px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 55px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 60px;
+  }
 
 `
 );

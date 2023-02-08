@@ -41,14 +41,12 @@ const MainScreen = (props) => {
       ...scrollTo,
       about: "About",
     }));
-    console.log(scrollTo);
   };
   const handleClickLaurels = () => {
     setScrollTo((scrollTo) => ({
       ...scrollTo,
       laurels: "Laurels",
     }));
-    console.log(scrollTo);
   };
 
   const useStyles = makeStyles((theme) => ({

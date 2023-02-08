@@ -1,7 +1,7 @@
 import { Grid, Stack, Divider, Typography } from "@mui/material";
 import React from "react";
 import DriverCard from "./DriverCard";
-import Referral from "./RefferalForm";
+import ReferralForm from "./RefferalForm";
 import img from "../../assets/Drivers/ScrollBarWhite.png";
 import Image from "../../assets/OwnerOperator.jpg";
 import Image2 from "../../assets/CompanyDriver.webp";
@@ -41,42 +41,58 @@ function Drivers() {
         </StyledScrollGrid>
       </StyledGrid>
 
-      <StyledContentGrid item xs={12}>
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={{ xs: 1, sm: 2, md: 8 }}
-          sx={{ alignItems: "center", justifyContent: "center" }}
-          data-aos="slide-up"
-          data-aos-duration="500"
-          data-aos-offset="150"
-          data-aos-delay="250"
-          data-aos-easing="ease-out"
-          data-aos-once
-        >
-          <DriverCard
-            img1={Image}
-            header="Owner Operator"
-            text="Become an owner operator. Become a part of Trucks LLC family today. Become a happy driver forever! "
-            button1="Learn more"
-            button2="Apply"
-            link2="/apply"
-            link1="/OwnerOperators"
-          ></DriverCard>
-          <Divider orientation="vertical" variant="middle" flexItem />
-          <DriverCard
-            img1={Image2}
-            header="Company Driver"
-            text="Don't have a truck? Don't worry! Become our company driver - you handle the miles, we handle the stress!"
-            button1="Learn more"
-            button2="Apply"
-            link2="/apply"
-            link1="/CompanyDrivers"
-          ></DriverCard>
-          <Divider orientation="vertical" variant="middle" flexItem />
-          <Referral></Referral>
-        </Stack>
-      </StyledContentGrid>
-    </Grid>
+          <StyledContentGrid item xs={12}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={{ xs: 1, sm: 2, md: 8 }}
+              sx={{ alignItems: "center", justifyContent: "center" }}
+              data-aos="slide-up"
+              data-aos-duration="500"
+              data-aos-offset="150"
+              data-aos-delay="250"
+              data-aos-easing="ease-out"
+              data-aos-once
+            >
+              <Grid
+                container
+                direction="row"
+                justifyContent="space-around"
+                padding={2}
+                margin={2}
+              >
+                <Grid item>
+                  <DriverCard
+                    img1={Image}
+                    header="Owner Operator"
+                    text="Become an owner operator. Become a part of Trucks LLC family today. Become a happy driver forever! "
+                    button1="Learn more"
+                    button2="Apply"
+                    link2="/apply"
+                    link1="/OwnerOperators"
+                  ></DriverCard>
+                </Grid>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <Grid item>
+                  <DriverCard
+                    img1={Image2}
+                    header="Company Driver"
+                    text="Don't have a truck? Don't worry! Become our company driver - you handle the miles, we handle the stress!"
+                    button1="Learn more"
+                    button2="Apply"
+                    link2="/apply"
+                    link1="/CompanyDrivers"
+                  ></DriverCard>
+                </Grid>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <Grid item>
+                  <ReferralForm></ReferralForm>
+                </Grid>
+              </Grid>
+            </Stack>
+          </StyledContentGrid>
+        </Grid>
+      )}
+    </div>
   );
 }
 export default Drivers;

@@ -35,6 +35,7 @@ import { useEffect } from "react";
 import GridLoader from "react-spinners/GridLoader";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { StyledLink } from "../../components/MainScreen/StyledComponents";
 
 const AboutUsPage = () => {
   const [isClicked, setIsClicked] = useState(false);

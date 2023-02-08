@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Grid,
-  Typography,
   CardContent,
   Button,
   Box,
@@ -19,7 +18,12 @@ import Select from "@mui/material/Select";
 import { useState } from "react";
 import { forwardRef } from "react";
 import { useRef, useEffect } from "react";
-import { StyledSpan, StyledTextField } from "./StyledComponents";
+import {
+  StyledInstructionsText,
+  StyledLabelText,
+  StyledSpan,
+  StyledTextField,
+} from "./StyledComponents";
 import SnackBarComponent from "../../components/SnackBar/SnackBarComponent";
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -120,19 +124,15 @@ export const Screen1 = (props) => {
         return res.json();
       })
       .then((res) => {
-        console.log(res);
         setMessage("Data submitted successfully!");
         setSnackbar(true);
         reloadWithDelay();
       })
       .catch((res) => {
-        console.log(res);
         setMessage("Error submitting data");
         setSent(false);
         setSnackbar(true);
       });
-
-    //console.log(snackbar);
   };
 
   const HandleInputChange = (e) => {
@@ -144,24 +144,19 @@ export const Screen1 = (props) => {
     <form ref={formRef}>
       <CardContent>
         <Grid item xs={12}>
-          <Typography
-            variant="h4"
+          <StyledInstructionsText
             component="p"
             sx={{ margin: "1ch", textAlign: "center", fontWeight: "bold" }}
           >
             {" "}
             Fill out the form and our recuriting team will get back to you as
             soon as posible{" "}
-          </Typography>
-          <Typography
-            variant="body3"
-            component="p"
-            sx={{ marginBottom: "1ch", fontWeight: "bold" }}
-          >
+          </StyledInstructionsText>
+          <StyledLabelText sx={{ marginBottom: "1ch", fontWeight: "bold" }}>
             {" "}
             * Symbol marks a{" "}
             <span style={{ color: "rgb(255, 0, 0)" }}>required</span> field{" "}
-          </Typography>
+          </StyledLabelText>
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>

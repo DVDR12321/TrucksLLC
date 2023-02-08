@@ -41,7 +41,6 @@ const Screen3 = (props) => {
       ...state,
       Signature: data,
     }));
-    console.log(state);
   };
   const show = () => {
     SigPad.current.fromDataURL(data);
@@ -79,14 +78,12 @@ const Screen3 = (props) => {
           return res.json();
         })
         .then((res) => {
-          console.log(res);
           setSent(false);
           setMessage("Data submitted successfully!");
           setSnackbar(true);
           reloadWithDelay();
         })
         .catch((res) => {
-          console.log(res);
           setSent(false);
           setMessage("Failed submitting data");
           setSnackbar(true);

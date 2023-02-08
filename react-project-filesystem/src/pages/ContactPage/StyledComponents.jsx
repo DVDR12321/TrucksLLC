@@ -1,12 +1,22 @@
-import { Grid, IconButton } from "@mui/material";
+import { Grid, IconButton, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 
-export const StyledHeader = styled("h1")(
+export const StyledHeader = styled(Typography)(
   ({ theme }) => `
     color:${theme.palette.primary.main};
     margin-bottom:5vh;
     margin-top: 10vh;
+    @media only screen and (min-width: 320px) {
+      font-size: 30px;
+    }
+    @media only screen and (min-width: 768px) {
+      font-size: 30px;
+    }
+    @media only screen and (min-width: 1025px) {
+      font-size: 30px;
+    }
+  
     `
 );
 export const StyledIconButton = styled(IconButton)`

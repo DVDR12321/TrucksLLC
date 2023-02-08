@@ -83,11 +83,9 @@ const AppHeader = () => {
                     className={path === item.route ? "active" : ""}
                   >
                     {item.name === "Apply" ? (
-                      <StyledMenuItem>
-                        <StyledButton variant="contained">
-                          {item.name}
-                        </StyledButton>
-                      </StyledMenuItem>
+                      <StyledButton variant="contained">
+                        {item.name}
+                      </StyledButton>
                     ) : (
                       item.name
                     )}

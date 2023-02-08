@@ -66,7 +66,6 @@ const OurBenefits = (props) => {
 
   if (isClicked === true) {
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    console.log("it is clicked");
     setIsClicked(false);
   }
 

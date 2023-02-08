@@ -26,24 +26,26 @@ const QAPage = () => {
         <StyledImg src={image} alt="" />
       </Grid>
 
-      <Grid item xs={12} md={10}>
-        <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
-          {" "}
-          Regarding our company
-        </StyledHeaderTypography>
-        <Accordion></Accordion>
-      </Grid>
-      <Grid item xs={12} md={10}>
-        <StyledHeaderTypography variant="h3" color="primary" gutterBottom>
-          {" "}
-          Regarding our fleet
-        </StyledHeaderTypography>
-        <Accordion></Accordion>
-      </Grid>
-      <Grid item xs={12}>
-        <Form></Form>
-      </Grid>
-    </StyledGridContainer>
+          <Grid item xs={12} md={10}>
+            <StyledHeaderTypography color="primary" gutterBottom>
+              {" "}
+              Regarding our company
+            </StyledHeaderTypography>
+            <Accordion></Accordion>
+          </Grid>
+          <Grid item xs={12} md={10}>
+            <StyledHeaderTypography color="primary" gutterBottom>
+              {" "}
+              Regarding our fleet
+            </StyledHeaderTypography>
+            <Accordion></Accordion>
+          </Grid>
+          <Grid item xs={12}>
+            <Form></Form>
+          </Grid>
+        </StyledGridContainer>
+      )}
+    </div>
   );
 };
 export default QAPage;

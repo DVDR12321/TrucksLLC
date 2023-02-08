@@ -11,7 +11,17 @@ export const StyledGrid = styled(Grid)(
   font-size: 50px;
   text-shadow: -1px 0 ${theme.palette.common.black}, 0 1px ${theme.palette.common.black}, 1px 0 ${theme.palette.common.black}, 0 -1px ${theme.palette.common.black};
   background-image: url(${Image});
-  background-size: 100% 100%;
+  
+  
+  @media only screen and (min-width: 320px) {
+    background-size: cover;
+  }
+  @media only screen and (min-width: 768px) {
+    background-size: 100% 100%;
+  }
+  @media only screen and (min-width: 1024px) {
+    background-size: 100% 100%;
+  }
   height: 100vh;
   width: 100vw;
   
@@ -73,9 +83,18 @@ export const StyledButton = styled(Button)(
 );
 
 export const StyledCard = styled(Card)`
-  height: 100%;
   border-radius: 2px;
   max-width: 350px;
+  @media only screen and (min-width: 320px) {
+    margin-bottom: 20px;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+  }
+  @media only screen and (min-width: 1025px) {
+    height: 100%;
+  }
 `;
 
 export const StyledSpan2 = styled("span")`

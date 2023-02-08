@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { StyledButton, StyledCard } from "./StyledComponents";
 import { Link } from "react-router-dom";
+import { StyledLink } from "../../components/MainScreen/StyledComponents";
 
 export default function DriverCard({
   img1,
@@ -27,16 +28,16 @@ export default function DriverCard({
         </Typography>
       </CardContent>
       <CardActions sx={{ justifyContent: "space-between" }}>
-        <Link to={link1}>
+        <StyledLink to={link1}>
           <StyledButton variant="contained" color="primary">
             {button1}
           </StyledButton>
-        </Link>
-        <Link to={link2}>
+        </StyledLink>
+        <StyledLink to={link2}>
           <StyledButton variant="contained" color="primary">
             {button2}
           </StyledButton>
-        </Link>
+        </StyledLink>
       </CardActions>
     </StyledCard>
   );

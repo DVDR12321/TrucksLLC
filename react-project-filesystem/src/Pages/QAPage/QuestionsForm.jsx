@@ -13,6 +13,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MessageIcon from "@mui/icons-material/Message";
 import { useRef, useState } from "react";
 import SnackBarComponent from "../../components/SnackBar/SnackBarComponent";
+import { StyledContactCaption } from "./StyledComponents";
 
 const QuestionsForm = () => {
   const [snackbar, setSnackbar] = useState(false);
@@ -83,14 +84,13 @@ const QuestionsForm = () => {
         }}
       >
         <CardContent>
-          <Typography
-            variant="h5"
+          <StyledContactCaption
             color="primary"
             gutterBottom
             sx={{ fontWeight: "bold" }}
           >
             We are here for all your inquiries:
-          </Typography>
+          </StyledContactCaption>
           <Typography
             gutterBottom
             color="textSecondary"

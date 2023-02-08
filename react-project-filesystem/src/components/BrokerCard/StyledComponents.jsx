@@ -21,19 +21,26 @@ export const StyledCard = styled(Card)(
 `
 );
 
-export const StyledTypography = styled(Typography)(
-  ({ theme }) => `
- font-family: "Roboto Serif";
- text-align: center;
- font-size: 170%;
- font-weight:bold;
- 
-`
-);
+export const StyledTypography = styled(Typography)`
+  font-family: "Roboto Serif";
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+`;
 
 export const StyledImage = styled("img")`
-  height: 55%;
-  width: 55%;
+  @media only screen and (min-width: 320px) {
+    height: 30%;
+    width: 30%;
+  }
+  @media only screen and (min-width: 768px) {
+    height: 45%;
+    width: 45%;
+  }
+  @media only screen and (min-width: 1025px) {
+    height: 55%;
+    width: 55%;
+  }
 `;
 
 export const StyledCardMedia = styled(CardMedia)`

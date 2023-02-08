@@ -15,6 +15,15 @@ export const StyledParagraph = styled("p")`
   padding-bottom: 5vh;
   text-indent: 5ch;
   line-height: 2.5ch;
+  @media only screen and (min-width: 320px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 22px;
+  }
+  @media only screen and (min-width: 1024px) {
+    font-size: 24px;
+  }
 `;
 
 export const StyledParagraphGrid = styled(Grid)`
