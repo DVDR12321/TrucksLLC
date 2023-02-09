@@ -16,7 +16,7 @@ const OurColaborators = () => {
     <StyledContainerGrid container columns={18} spacing={2} padding={5}>
       <Grid item xs={0} md={1} lg={3}></Grid>
       <Grid item xs={18} md={6} lg={2}>
-        <StlyedTitle>Our customers:</StlyedTitle>
+        <StlyedTitle>Our partners:</StlyedTitle>
       </Grid>
       <Grid item xs={6} md={2}>
         <StyledImage src={img1} alt="CH"></StyledImage>

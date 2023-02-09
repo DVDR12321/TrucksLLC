@@ -1,5 +1,6 @@
 import { Card, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 
 export const StyledCard = styled(Card)`
   height: 100%;
@@ -9,7 +10,7 @@ export const StyledCard = styled(Card)`
   border-radius: 5px;
   background: ${(props) => props.backgroundColor};
   width: 100%;
-  outline: 1px solid white;
+  outline: 2px solid white;
   :hover {
     transform: scale(1.15);
     transition: transform 0.3s cubic-bezier(0, 0, 0.58, 1);
@@ -18,8 +19,13 @@ export const StyledCard = styled(Card)`
 
 export const StyledCardHeader = styled("h2")(
   ({ theme }) => `
+  font-family: "Roboto Serif";
   padding-top:1ch;
-  color: #fff;
+  color: #000;
+  margin-bottom:0.5ch;
+  text-decoration: underline;
+  text-decoration-color:1px solid ${grey[800]};
+  
 `
 );
 

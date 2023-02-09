@@ -12,15 +12,18 @@ import {
 import React, { useEffect, useState } from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+
 import logo from "../../assets/logo.png";
 import {
   StyledAppBar,
   StyledAppHeaderItems,
   StyledButton,
+  StyledInstagramIcon,
+  StyledLink,
   StyledLogo,
   StyledMenuItem,
   StyledSideMenuItem,
+  StyledWhatsAppIcon,
 } from "./StyledComponents";
 import { useLocation } from "react-router-dom";
 
@@ -90,7 +93,15 @@ const AppHeader = () => {
                 </Link>
               ))}
             </StyledAppHeaderItems>
-            <LocalPhoneIcon> </LocalPhoneIcon>
+            <StyledLink
+              href="https://www.instagram.com/trucks.llc/"
+              target="_blank"
+            >
+              <StyledInstagramIcon> </StyledInstagramIcon>
+            </StyledLink>
+            <StyledLink href="" target="_blank">
+              <StyledWhatsAppIcon> </StyledWhatsAppIcon>
+            </StyledLink>
             <StyledMenuItem> +1 312 466 11 01 </StyledMenuItem>
           </Hidden>
           <Hidden smUp>

@@ -40,7 +40,6 @@ const MainGrid = () => {
         <StyledVideoGrid item xs={12}>
           <VideoPlayer></VideoPlayer>
         </StyledVideoGrid>
-
         <StyledTestimonialsGrid item xs={12}>
           <Quotes scrollTo={scrollTo} setScrollTo={setScrollTo}></Quotes>
         </StyledTestimonialsGrid>
