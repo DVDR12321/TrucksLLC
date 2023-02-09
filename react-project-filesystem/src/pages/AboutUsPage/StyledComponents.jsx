@@ -311,15 +311,6 @@ export const StyledFrontCard = styled("div")`
   background: url(${CardImage});
 `;
 
-export const StyledBackCard = styled(Grid)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: justify;
-  padding: 3px;
-  height: 100%;
-`;
-
 export const StyledCardHeader = styled("h3")(
   ({ theme }) => `
   margin: 5% 5% 10% 5%;

@@ -316,16 +316,12 @@ export const Screen2 = (props) => {
           <Grid item xs={12} md={12}>
             <StyledTypographyWrapper>
               <StyledTypography variant="body1" component="p">
-                Please search the{" "}
+                Please{" "}
                 <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
-                  name
+                  search
                 </span>{" "}
-                or the{" "}
-                <span style={{ fontWeight: "bold", color: "rgb(255, 0, 0" }}>
-                  DOT number
-                </span>{" "}
-                a company you previously worked with. Describe why you left and
-                enter the dates of your starting and departure:
+                the companies you previously worked with. Describe why you left
+                and enter the period of time when you worked for them:
               </StyledTypography>
             </StyledTypographyWrapper>
             <Grid container spacing={2}>
